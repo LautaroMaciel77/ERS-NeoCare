@@ -80,9 +80,9 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(172, 591);
+            this.panel1.Size = new System.Drawing.Size(229, 727);
             this.panel1.TabIndex = 0;
             // 
             // panel6
@@ -94,9 +94,10 @@
             this.panel6.Controls.Add(this.iconButton7);
             this.panel6.Controls.Add(this.iconButton3);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 241);
+            this.panel6.Location = new System.Drawing.Point(0, 296);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(172, 350);
+            this.panel6.Size = new System.Drawing.Size(229, 431);
             this.panel6.TabIndex = 19;
             // 
             // iconButton4
@@ -113,10 +114,10 @@
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton4.IconSize = 35;
             this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(0, 120);
+            this.iconButton4.Location = new System.Drawing.Point(0, 147);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(172, 40);
+            this.iconButton4.Size = new System.Drawing.Size(229, 49);
             this.iconButton4.TabIndex = 15;
             this.iconButton4.Text = "Menu";
             this.iconButton4.UseVisualStyleBackColor = false;
@@ -135,10 +136,10 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 35;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 80);
+            this.iconButton1.Location = new System.Drawing.Point(0, 98);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(172, 40);
+            this.iconButton1.Size = new System.Drawing.Size(229, 49);
             this.iconButton1.TabIndex = 14;
             this.iconButton1.Text = "Menu";
             this.iconButton1.UseVisualStyleBackColor = false;
@@ -157,10 +158,10 @@
             this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton10.IconSize = 35;
             this.iconButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton10.Location = new System.Drawing.Point(0, 310);
-            this.iconButton10.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton10.Location = new System.Drawing.Point(0, 382);
+            this.iconButton10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButton10.Name = "iconButton10";
-            this.iconButton10.Size = new System.Drawing.Size(172, 40);
+            this.iconButton10.Size = new System.Drawing.Size(229, 49);
             this.iconButton10.TabIndex = 13;
             this.iconButton10.Text = "Salir";
             this.iconButton10.UseVisualStyleBackColor = false;
@@ -179,10 +180,10 @@
             this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton7.IconSize = 35;
             this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(0, 40);
+            this.iconButton7.Location = new System.Drawing.Point(0, 49);
             this.iconButton7.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(172, 40);
+            this.iconButton7.Size = new System.Drawing.Size(229, 49);
             this.iconButton7.TabIndex = 10;
             this.iconButton7.Text = "Menu";
             this.iconButton7.UseVisualStyleBackColor = false;
@@ -204,7 +205,7 @@
             this.iconButton3.Location = new System.Drawing.Point(0, 0);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(172, 40);
+            this.iconButton3.Size = new System.Drawing.Size(229, 49);
             this.iconButton3.TabIndex = 9;
             this.iconButton3.Text = "Pacientes";
             this.iconButton3.UseVisualStyleBackColor = false;
@@ -217,9 +218,10 @@
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 71);
+            this.panel5.Location = new System.Drawing.Point(0, 87);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(172, 170);
+            this.panel5.Size = new System.Drawing.Size(229, 209);
             this.panel5.TabIndex = 18;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
@@ -228,10 +230,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(17, 143);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(23, 176);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 14);
+            this.label6.Size = new System.Drawing.Size(0, 18);
             this.label6.TabIndex = 11;
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
@@ -239,10 +240,10 @@
             // 
             this.pictureBox1.BackgroundImage = global::ERS_NeoCare.Properties.Resources.Icons_Land_Medical_People_Patient_Male_256;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(42, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(56, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(125, 126);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -252,10 +253,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(18, 112);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(24, 138);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 17);
+            this.label4.Size = new System.Drawing.Size(168, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Nombre Apellido";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -265,10 +265,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(39, 129);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(52, 159);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 14);
+            this.label5.Size = new System.Drawing.Size(114, 18);
             this.label5.TabIndex = 10;
             this.label5.Text = "Administrativo";
             // 
@@ -278,18 +277,19 @@
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(172, 71);
+            this.panel4.Size = new System.Drawing.Size(229, 87);
             this.panel4.TabIndex = 17;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::ERS_NeoCare.Properties.Resources.logo_NeoCare2;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 6);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(13, 7);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(152, 63);
+            this.pictureBox2.Size = new System.Drawing.Size(203, 78);
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -329,13 +329,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
-            this.DGVAdministrativo.Location = new System.Drawing.Point(12, 72);
-            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
+            this.DGVAdministrativo.Location = new System.Drawing.Point(16, 89);
+            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGVAdministrativo.Name = "DGVAdministrativo";
             this.DGVAdministrativo.RowHeadersVisible = false;
             this.DGVAdministrativo.RowHeadersWidth = 51;
             this.DGVAdministrativo.RowTemplate.Height = 40;
-            this.DGVAdministrativo.Size = new System.Drawing.Size(767, 409);
+            this.DGVAdministrativo.Size = new System.Drawing.Size(1023, 503);
             this.DGVAdministrativo.TabIndex = 1;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
@@ -356,6 +356,7 @@
             // CApellido
             // 
             this.CApellido.HeaderText = "Apellido";
+            this.CApellido.MinimumWidth = 6;
             this.CApellido.Name = "CApellido";
             this.CApellido.ReadOnly = true;
             // 
@@ -392,10 +393,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
-            this.label1.Location = new System.Drawing.Point(79, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(105, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 18);
+            this.label1.Size = new System.Drawing.Size(120, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Pacientes";
             // 
@@ -405,10 +405,10 @@
             this.panel2.Controls.Add(this.iconPictureBox1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(172, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(229, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(791, 71);
+            this.panel2.Size = new System.Drawing.Size(1055, 87);
             this.panel2.TabIndex = 9;
             // 
             // iconPictureBox1
@@ -418,10 +418,11 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserInjured;
             this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 41;
-            this.iconPictureBox1.Location = new System.Drawing.Point(34, 17);
+            this.iconPictureBox1.IconSize = 50;
+            this.iconPictureBox1.Location = new System.Drawing.Point(45, 21);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(41, 41);
+            this.iconPictureBox1.Size = new System.Drawing.Size(55, 50);
             this.iconPictureBox1.TabIndex = 5;
             this.iconPictureBox1.TabStop = false;
             // 
@@ -433,11 +434,11 @@
             this.panel3.Controls.Add(this.iconButton2);
             this.panel3.Controls.Add(this.DGVAdministrativo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(172, 71);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(229, 87);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.panel3.Size = new System.Drawing.Size(791, 520);
+            this.panel3.Padding = new System.Windows.Forms.Padding(13, 0, 13, 0);
+            this.panel3.Size = new System.Drawing.Size(1055, 640);
             this.panel3.TabIndex = 10;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -445,20 +446,19 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 27);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(21, 33);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 17);
+            this.label7.Size = new System.Drawing.Size(67, 20);
             this.label7.TabIndex = 5;
             this.label7.Text = "Buscar";
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(76, 23);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Location = new System.Drawing.Point(101, 28);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 27);
+            this.textBox2.Size = new System.Drawing.Size(260, 32);
             this.textBox2.TabIndex = 6;
             // 
             // iconButton2
@@ -473,10 +473,10 @@
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 30;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(628, 15);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton2.Location = new System.Drawing.Point(837, 18);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(151, 40);
+            this.iconButton2.Size = new System.Drawing.Size(201, 49);
             this.iconButton2.TabIndex = 5;
             this.iconButton2.Text = "Nuevo Paciente";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -485,13 +485,13 @@
             // 
             // Administrativo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 591);
+            this.ClientSize = new System.Drawing.Size(1284, 727);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Administrativo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrativo";

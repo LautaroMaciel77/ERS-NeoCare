@@ -31,5 +31,25 @@ namespace ERS_NeoCare.Design
         {
 
         }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LFechaNacimiento_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
