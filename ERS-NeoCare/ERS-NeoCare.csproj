@@ -267,6 +267,12 @@
     <Compile Include="Design\enfermero.Designer.cs">
       <DependentUpon>enfermero.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +358,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\user background icon.png" />
     <None Include="Resources\logo-NeoCare3.png" />
     <None Include="Resources\logo-NeoCare2.png" />
     <None Include="Resources\logo-NeoCare.png" />
