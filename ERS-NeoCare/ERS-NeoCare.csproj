@@ -13,6 +13,9 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,11 +28,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,6 +49,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ERS_NeoCare.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
@@ -232,16 +235,19 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseDataSet.cs">
+      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Design\Administrativo.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Design\administrativo.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\Administrativo.Designer.cs">
-      <DependentUpon>Administrativo.cs</DependentUpon>
+    <Compile Include="Design\administrativo.Designer.cs">
+      <DependentUpon>administrativo.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\analisis.cs">
       <SubType>UserControl</SubType>
@@ -273,6 +279,12 @@
     <Compile Include="Design\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\lista_paciente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\lista_paciente.Designer.cs">
+      <DependentUpon>lista_paciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +296,12 @@
     </Compile>
     <Compile Include="Design\medico.Designer.cs">
       <DependentUpon>medico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\menu.Designer.cs">
+      <DependentUpon>menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\paciente.cs">
       <SubType>UserControl</SubType>
@@ -306,14 +324,32 @@
     <Compile Include="Paciente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Design\Administrativo.resx">
-      <DependentUpon>Administrativo.cs</DependentUpon>
+    <EmbeddedResource Include="Design\administrativo.resx">
+      <DependentUpon>administrativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\atencion.resx">
+      <DependentUpon>atencion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\enfermero.resx">
       <DependentUpon>enfermero.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\lista_paciente.resx">
+      <DependentUpon>lista_paciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\menu.resx">
+      <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\paciente.resx">
       <DependentUpon>paciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

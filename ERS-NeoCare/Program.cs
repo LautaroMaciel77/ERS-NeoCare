@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERS_NeoCare.Design;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,10 @@ namespace ERS_NeoCare
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Design.Administrativo());
+
+            // Crea una instancia del formulario de inicio de sesión y lo muestra.
+            Login loginForm = new Login();
+            Application.Run(loginForm);
         }
     }
 }

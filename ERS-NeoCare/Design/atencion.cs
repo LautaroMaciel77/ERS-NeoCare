@@ -16,5 +16,10 @@ namespace ERS_NeoCare.Design
         {
             InitializeComponent();
         }
+
+        private void atencion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
