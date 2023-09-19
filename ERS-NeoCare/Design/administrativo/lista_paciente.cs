@@ -17,16 +17,17 @@ namespace ERS_NeoCare.Design
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         private string userDni;
         //handler para cargar paciente
-        public event EventHandler<Tuple<int, UserControl>> historiaPacienteClick;
+        public event EventHandler<Tuple<string>> historiaPacienteClick;
 
         private menu MainForm { get; set; }
         // Declara un evento personalizado para notificar clics en los botones
 
         public lista_paciente()
         {
-            panelMenuPaciente.Visible = false;
+    
             InitializeComponent();
             CargarDatosPaciente();
+            //panelMenuPaciente.Visible = false;
         }
 
         private void CargarDatosPaciente()
@@ -60,7 +61,8 @@ namespace ERS_NeoCare.Design
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-
+            panelMenuPaciente.Visible = false;
+            panelAgregarPaciente.Visible = true;
 
 
         }
@@ -74,20 +76,22 @@ namespace ERS_NeoCare.Design
 
                 // Muestra el valor del dni (puedes hacer lo que desees con él)
                 // Muestra el panel de opciones
+                panelAgregarPaciente.Visible = false;
                 panelMenuPaciente.Visible = true;
-                // Puedes modificar el panelOpciones aquí
-            
+
             }
         }
 
-        private void panelMenuPaciente_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+  
         private void iconButton2_Click_1(object sender, EventArgs e)
         {
             panelMenuPaciente.Visible = false;
+        }
+
+    
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            historiaPacienteClick?.Invoke(this, Tuple.Create(userDni));
         }
     }
 }

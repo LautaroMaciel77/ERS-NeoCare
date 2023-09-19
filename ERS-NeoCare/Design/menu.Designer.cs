@@ -137,14 +137,14 @@
             // 
             this.panelOpciones.Location = new System.Drawing.Point(177, 0);
             this.panelOpciones.Name = "panelOpciones";
-            this.panelOpciones.Size = new System.Drawing.Size(627, 576);
+            this.panelOpciones.Size = new System.Drawing.Size(795, 576);
             this.panelOpciones.TabIndex = 1;
             // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 576);
+            this.ClientSize = new System.Drawing.Size(1039, 576);
             this.Controls.Add(this.panelOpciones);
             this.Controls.Add(this.panelMenu);
             this.Name = "menu";

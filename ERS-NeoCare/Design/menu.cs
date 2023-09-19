@@ -132,7 +132,7 @@ namespace ERS_NeoCare.Design
 
        
                 lista_paciente lista = new lista_paciente();
-            lista.historiaPacienteClick += ListaPaciente_CargarOtroControlClick;
+                lista.historiaPacienteClick += ListaPaciente_CargarOtroControlClick;
                 lista.Dock = DockStyle.Fill;
                 panelOpciones.Controls.Clear();
                 panelOpciones.Controls.Add(lista);
@@ -142,11 +142,16 @@ namespace ERS_NeoCare.Design
             // Puedes acceder a homeForm.panelOpciones y modificarlo aquí
         }
 
-        private void ListaPaciente_CargarOtroControlClick(object sender, Tuple<int, UserControl> args)
-            { 
+        private void ListaPaciente_CargarOtroControlClick(object sender, Tuple<string> args)
+            {
+            string dni_paciente = args.Item1;
+            paciente paciente = new paciente(dni_paciente);
+            paciente.Dock = DockStyle.Fill;
+            panelOpciones.Controls.Clear();
+            panelOpciones.Controls.Add(paciente);
+            paciente.BringToFront();
 
 
-        
         }
             private void pictureBoxLogo_Click(object sender, EventArgs e)
         {

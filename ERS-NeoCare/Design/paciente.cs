@@ -26,7 +26,7 @@ namespace ERS_NeoCare.Design
         {
             // Establece la cadena de conexión a la base de datos.
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
-
+            int dniInt = int.Parse(userDni);
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -34,12 +34,12 @@ namespace ERS_NeoCare.Design
                     connection.Open();
 
                     // Define la consulta SQL para obtener los datos del paciente con el dni correspondiente.
-                    string query = "SELECT dni, nombre, apellido, domicilio, fecha_nacimiento, sexo, obra_social, FROM paciente WHERE dni = @Dni";
+                    string query = "SELECT dni, nombre, apellido, domicilio, fecha_nacimiento, sexo, obra_social FROM Paciente WHERE dni = @Dni";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         // Establece el parámetro @Dni con el valor de userDni.
-                        command.Parameters.AddWithValue("@Dni", userDni);
+                        command.Parameters.AddWithValue("@Dni", dniInt);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
