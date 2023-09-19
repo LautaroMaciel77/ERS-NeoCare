@@ -20,6 +20,7 @@ namespace ERS_NeoCare.Design
   
         public menu(string dni)
         {
+
             this.userDni = dni;
             InitializeComponent();
 
@@ -95,12 +96,15 @@ namespace ERS_NeoCare.Design
             switch (profesionId)
             {
                 case 1:
-                    administrativo ad = new administrativo();   
-                        addUserControl(ad);
+                    administrativo ad = new administrativo();
+                    ad.OpcionesButtonClick += Administrativo_OpcionesButtonClick; // Suscribe al evento
+                   
+                    addUserControl(ad);
                     break;
                 case 2:
                     enfermero en = new enfermero(); 
                         addUserControl(en);
+
                     break;
                 case 3:
                     medico m = new medico();        
@@ -123,8 +127,42 @@ namespace ERS_NeoCare.Design
             panelSubMenu.Controls.Add(userControl);
             userControl.BringToFront();
         }
+        private void Administrativo_OpcionesButtonClick(object sender, EventArgs e)
+        {
 
-     
+       
+                lista_paciente lista = new lista_paciente();
+            lista.historiaPacienteClick += ListaPaciente_CargarOtroControlClick;
+                lista.Dock = DockStyle.Fill;
+                panelOpciones.Controls.Clear();
+                panelOpciones.Controls.Add(lista);
+                lista.BringToFront();
+              
+            // Realiza las acciones necesarias en el panelOpciones
+            // Puedes acceder a homeForm.panelOpciones y modificarlo aquí
+        }
+
+        private void ListaPaciente_CargarOtroControlClick(object sender, Tuple<int, UserControl> args)
+            { 
+
+
+        
+        }
+            private void pictureBoxLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelSubMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menu_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
     }
 
-}
+

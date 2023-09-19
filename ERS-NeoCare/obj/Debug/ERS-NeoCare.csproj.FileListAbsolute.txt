@@ -98,3 +98,4 @@ E:\taller programacion\neo care\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Fo
 E:\taller programacion\neo care\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.menu.resources
 E:\taller programacion\neo care\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Form1.resources
 E:\taller programacion\neo care\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.atencion.resources
+E:\taller programacion\neo care\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.menuPaciente.resources

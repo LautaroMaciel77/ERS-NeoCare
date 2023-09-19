@@ -243,10 +243,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Design\administrativo.cs">
+    <Compile Include="Design\administrativo\administrativo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\administrativo.Designer.cs">
+    <Compile Include="Design\administrativo\administrativo.Designer.cs">
       <DependentUpon>administrativo.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\analisis.cs">
@@ -279,10 +279,10 @@
     <Compile Include="Design\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\lista_paciente.cs">
+    <Compile Include="Design\administrativo\lista_paciente.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\lista_paciente.Designer.cs">
+    <Compile Include="Design\administrativo\lista_paciente.Designer.cs">
       <DependentUpon>lista_paciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\Login.cs">
@@ -302,6 +302,12 @@
     </Compile>
     <Compile Include="Design\menu.Designer.cs">
       <DependentUpon>menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\administrativo\menuPaciente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\administrativo\menuPaciente.Designer.cs">
+      <DependentUpon>menuPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\paciente.cs">
       <SubType>UserControl</SubType>
@@ -324,7 +330,7 @@
     <Compile Include="Paciente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Design\administrativo.resx">
+    <EmbeddedResource Include="Design\administrativo\administrativo.resx">
       <DependentUpon>administrativo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\atencion.resx">
@@ -336,7 +342,7 @@
     <EmbeddedResource Include="Design\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\lista_paciente.resx">
+    <EmbeddedResource Include="Design\administrativo\lista_paciente.resx">
       <DependentUpon>lista_paciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Login.resx">
@@ -344,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\menu.resx">
       <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\administrativo\menuPaciente.resx">
+      <DependentUpon>menuPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\paciente.resx">
       <DependentUpon>paciente.cs</DependentUpon>

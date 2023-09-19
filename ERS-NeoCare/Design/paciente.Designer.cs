@@ -36,15 +36,7 @@
             this.CAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelNroA = new System.Windows.Forms.Label();
             this.LObraSocial = new System.Windows.Forms.Label();
             this.LFechaNacimiento = new System.Windows.Forms.Label();
             this.LDomicilio = new System.Windows.Forms.Label();
@@ -55,9 +47,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.PBPaciente = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView4 = new System.Windows.Forms.ListView();
             this.listView3 = new System.Windows.Forms.ListView();
@@ -152,15 +141,7 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.textBox8);
-            this.panel5.Controls.Add(this.textBox7);
-            this.panel5.Controls.Add(this.textBox6);
-            this.panel5.Controls.Add(this.textBox5);
-            this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.textBox2);
-            this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.labelNroA);
             this.panel5.Controls.Add(this.LObraSocial);
             this.panel5.Controls.Add(this.LFechaNacimiento);
             this.panel5.Controls.Add(this.LDomicilio);
@@ -174,88 +155,15 @@
             this.panel5.Size = new System.Drawing.Size(296, 287);
             this.panel5.TabIndex = 1;
             // 
-            // textBox8
+            // labelNroA
             // 
-            this.textBox8.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(136, 202);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(156, 24);
-            this.textBox8.TabIndex = 16;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(105, 175);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(187, 24);
-            this.textBox7.TabIndex = 15;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(89, 147);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(203, 24);
-            this.textBox6.TabIndex = 14;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(60, 119);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(232, 24);
-            this.textBox5.TabIndex = 13;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(161, 92);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(131, 24);
-            this.textBox4.TabIndex = 12;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(89, 64);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 24);
-            this.textBox3.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(89, 37);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 24);
-            this.textBox2.TabIndex = 10;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(89, 9);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 24);
-            this.textBox1.TabIndex = 9;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(16, 205);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 17);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Numero afiliado:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.labelNroA.AutoSize = true;
+            this.labelNroA.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNroA.Location = new System.Drawing.Point(16, 205);
+            this.labelNroA.Name = "labelNroA";
+            this.labelNroA.Size = new System.Drawing.Size(122, 17);
+            this.labelNroA.TabIndex = 8;
+            this.labelNroA.Text = "Numero afiliado:";
             // 
             // LObraSocial
             // 
@@ -276,7 +184,6 @@
             this.LFechaNacimiento.Size = new System.Drawing.Size(156, 17);
             this.LFechaNacimiento.TabIndex = 6;
             this.LFechaNacimiento.Text = "Fecha de nacimiento:";
-            this.LFechaNacimiento.Click += new System.EventHandler(this.LFechaNacimiento_Click);
             // 
             // LDomicilio
             // 
@@ -307,7 +214,6 @@
             this.LSexo.Size = new System.Drawing.Size(50, 17);
             this.LSexo.TabIndex = 4;
             this.LSexo.Text = "Sexo:";
-            this.LSexo.Click += new System.EventHandler(this.label4_Click);
             // 
             // LApellido
             // 
@@ -318,7 +224,6 @@
             this.LApellido.Size = new System.Drawing.Size(68, 17);
             this.LApellido.TabIndex = 2;
             this.LApellido.Text = "Apellido:";
-            this.LApellido.Click += new System.EventHandler(this.label2_Click);
             // 
             // LDni
             // 
@@ -350,14 +255,12 @@
             this.PBPaciente.Size = new System.Drawing.Size(120, 130);
             this.PBPaciente.TabIndex = 0;
             this.PBPaciente.TabStop = false;
+            this.PBPaciente.Click += new System.EventHandler(this.PBPaciente_Click);
             // 
             // panel3
             // 
             this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
-            this.panel3.Controls.Add(this.textBox11);
-            this.panel3.Controls.Add(this.textBox10);
-            this.panel3.Controls.Add(this.textBox9);
             this.panel3.Controls.Add(this.listView1);
             this.panel3.Controls.Add(this.listView4);
             this.panel3.Controls.Add(this.listView3);
@@ -377,33 +280,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(715, 452);
             this.panel3.TabIndex = 3;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(392, 78);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(203, 24);
-            this.textBox11.TabIndex = 19;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(110, 106);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(203, 24);
-            this.textBox10.TabIndex = 18;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(110, 78);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(203, 24);
-            this.textBox9.TabIndex = 17;
             // 
             // listView1
             // 
@@ -562,7 +438,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "paciente";
             this.Size = new System.Drawing.Size(1011, 699);
             this.panel1.ResumeLayout(false);
@@ -598,19 +474,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CEvento;
         private System.Windows.Forms.DataGridViewTextBoxColumn CDatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn CAcciones;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelNroA;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView4;
         private System.Windows.Forms.ListView listView3;

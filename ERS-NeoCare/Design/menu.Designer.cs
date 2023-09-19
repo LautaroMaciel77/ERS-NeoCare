@@ -61,6 +61,7 @@
             this.panelSubMenu.Name = "panelSubMenu";
             this.panelSubMenu.Size = new System.Drawing.Size(169, 194);
             this.panelSubMenu.TabIndex = 19;
+            this.panelSubMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSubMenu_Paint);
             // 
             // pictureBox1
             // 
@@ -130,6 +131,7 @@
             this.pictureBoxLogo.Size = new System.Drawing.Size(167, 59);
             this.pictureBoxLogo.TabIndex = 17;
             this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
             // panelOpciones
             // 
@@ -147,6 +149,7 @@
             this.Controls.Add(this.panelMenu);
             this.Name = "menu";
             this.Text = "menu";
+            this.Load += new System.EventHandler(this.menu_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
