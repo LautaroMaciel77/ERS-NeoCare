@@ -267,17 +267,29 @@
     <Compile Include="Design\bioquimico.Designer.cs">
       <DependentUpon>bioquimico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\bioquimico\lista_paciente_bioquimico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\bioquimico\lista_paciente_bioquimico.Designer.cs">
+      <DependentUpon>lista_paciente_bioquimico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\enfermero.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Design\enfermero.Designer.cs">
       <DependentUpon>enfermero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\Form1.cs">
+    <Compile Include="Design\Enfermero\lista_paciente_enfermero.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Enfermero\lista_paciente_enfermero.Designer.cs">
+      <DependentUpon>lista_paciente_enfermero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\historia_clinica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Design\historia_clinica.Designer.cs">
+      <DependentUpon>historia_clinica.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\administrativo\lista_paciente.cs">
       <SubType>UserControl</SubType>
@@ -336,11 +348,17 @@
     <EmbeddedResource Include="Design\atencion.resx">
       <DependentUpon>atencion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\bioquimico\lista_paciente_bioquimico.resx">
+      <DependentUpon>lista_paciente_bioquimico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\enfermero.resx">
       <DependentUpon>enfermero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Design\Enfermero\lista_paciente_enfermero.resx">
+      <DependentUpon>lista_paciente_enfermero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\historia_clinica.resx">
+      <DependentUpon>historia_clinica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\administrativo\lista_paciente.resx">
       <DependentUpon>lista_paciente.cs</DependentUpon>

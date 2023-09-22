@@ -99,3 +99,11 @@ E:\taller programacion\neo care\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.De
 E:\taller programacion\neo care\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Form1.resources
 E:\taller programacion\neo care\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.atencion.resources
 E:\taller programacion\neo care\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.menuPaciente.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.atencion.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.lista_paciente_bioquimico.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Form1.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.lista_paciente.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Login.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.menu.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.menuPaciente.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Form1.resources

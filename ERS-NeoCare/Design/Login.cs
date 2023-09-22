@@ -63,5 +63,15 @@ namespace ERS_NeoCare.Design
                 }
             }
         }
+
+        private void labelContraseña_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

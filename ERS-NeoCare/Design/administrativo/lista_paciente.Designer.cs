@@ -28,13 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel = new System.Windows.Forms.Panel();
+            this.panelAgregarPaciente = new System.Windows.Forms.Panel();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.labelSexo = new System.Windows.Forms.Label();
+            this.LabelDomicilio = new System.Windows.Forms.Label();
             this.panelMenuPaciente = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.labelObra = new System.Windows.Forms.Label();
+            this.labelFecha = new System.Windows.Forms.Label();
+            this.labelDni = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.labelApellido = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
@@ -49,29 +66,12 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
-            this.panelAgregarPaciente = new System.Windows.Forms.Panel();
-            this.labelApellido = new System.Windows.Forms.Label();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.labelDni = new System.Windows.Forms.Label();
-            this.labelFecha = new System.Windows.Forms.Label();
-            this.labelObra = new System.Windows.Forms.Label();
-            this.LabelDomicilio = new System.Windows.Forms.Label();
-            this.labelSexo = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             this.panel.SuspendLayout();
+            this.panelAgregarPaciente.SuspendLayout();
             this.panelMenuPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.panelAgregarPaciente.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel
@@ -86,6 +86,121 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(781, 543);
             this.panel.TabIndex = 0;
+            // 
+            // panelAgregarPaciente
+            // 
+            this.panelAgregarPaciente.Controls.Add(this.btnRegistrar);
+            this.panelAgregarPaciente.Controls.Add(this.radioButton2);
+            this.panelAgregarPaciente.Controls.Add(this.radioButton1);
+            this.panelAgregarPaciente.Controls.Add(this.textBox6);
+            this.panelAgregarPaciente.Controls.Add(this.textBox5);
+            this.panelAgregarPaciente.Controls.Add(this.textBox4);
+            this.panelAgregarPaciente.Controls.Add(this.textBox3);
+            this.panelAgregarPaciente.Controls.Add(this.textBox1);
+            this.panelAgregarPaciente.Controls.Add(this.dateTimePicker1);
+            this.panelAgregarPaciente.Controls.Add(this.labelSexo);
+            this.panelAgregarPaciente.Controls.Add(this.LabelDomicilio);
+            this.panelAgregarPaciente.Controls.Add(this.panelMenuPaciente);
+            this.panelAgregarPaciente.Controls.Add(this.labelObra);
+            this.panelAgregarPaciente.Controls.Add(this.labelFecha);
+            this.panelAgregarPaciente.Controls.Add(this.labelDni);
+            this.panelAgregarPaciente.Controls.Add(this.labelNombre);
+            this.panelAgregarPaciente.Controls.Add(this.labelApellido);
+            this.panelAgregarPaciente.Location = new System.Drawing.Point(181, 165);
+            this.panelAgregarPaciente.Name = "panelAgregarPaciente";
+            this.panelAgregarPaciente.Size = new System.Drawing.Size(454, 341);
+            this.panelAgregarPaciente.TabIndex = 16;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(142, 267);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(139, 23);
+            this.btnRegistrar.TabIndex = 30;
+            this.btnRegistrar.Text = "button1";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(257, 209);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.TabIndex = 22;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(152, 209);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 29;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(152, 177);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 28;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(152, 147);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 27;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(152, 94);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 26;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(152, 68);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 25;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(152, 33);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 24;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(152, 118);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 23;
+            // 
+            // labelSexo
+            // 
+            this.labelSexo.AutoSize = true;
+            this.labelSexo.Location = new System.Drawing.Point(43, 209);
+            this.labelSexo.Name = "labelSexo";
+            this.labelSexo.Size = new System.Drawing.Size(31, 13);
+            this.labelSexo.TabIndex = 22;
+            this.labelSexo.Text = "Sexo";
+            // 
+            // LabelDomicilio
+            // 
+            this.LabelDomicilio.AutoSize = true;
+            this.LabelDomicilio.Location = new System.Drawing.Point(43, 177);
+            this.LabelDomicilio.Name = "LabelDomicilio";
+            this.LabelDomicilio.Size = new System.Drawing.Size(49, 13);
+            this.LabelDomicilio.TabIndex = 21;
+            this.LabelDomicilio.Text = "Domicilio";
             // 
             // panelMenuPaciente
             // 
@@ -133,6 +248,51 @@
             this.iconButton3.UseVisualStyleBackColor = false;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
+            // labelObra
+            // 
+            this.labelObra.AutoSize = true;
+            this.labelObra.Location = new System.Drawing.Point(43, 150);
+            this.labelObra.Name = "labelObra";
+            this.labelObra.Size = new System.Drawing.Size(59, 13);
+            this.labelObra.TabIndex = 20;
+            this.labelObra.Text = "ObraSocial";
+            // 
+            // labelFecha
+            // 
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.Location = new System.Drawing.Point(43, 126);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(93, 13);
+            this.labelFecha.TabIndex = 19;
+            this.labelFecha.Text = "Fecha Nacimiento";
+            // 
+            // labelDni
+            // 
+            this.labelDni.AutoSize = true;
+            this.labelDni.Location = new System.Drawing.Point(43, 97);
+            this.labelDni.Name = "labelDni";
+            this.labelDni.Size = new System.Drawing.Size(35, 13);
+            this.labelDni.TabIndex = 18;
+            this.labelDni.Text = "D.N.I:";
+            // 
+            // labelNombre
+            // 
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Location = new System.Drawing.Point(43, 64);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(47, 13);
+            this.labelNombre.TabIndex = 17;
+            this.labelNombre.Text = "Nombre:";
+            // 
+            // labelApellido
+            // 
+            this.labelApellido.AutoSize = true;
+            this.labelApellido.Location = new System.Drawing.Point(43, 36);
+            this.labelApellido.Name = "labelApellido";
+            this.labelApellido.Size = new System.Drawing.Size(44, 13);
+            this.labelApellido.TabIndex = 16;
+            this.labelApellido.Text = "Apellido";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -156,20 +316,20 @@
             // DGVAdministrativo
             // 
             this.DGVAdministrativo.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.DGVAdministrativo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DGVAdministrativo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVAdministrativo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVAdministrativo.BackgroundColor = System.Drawing.Color.White;
             this.DGVAdministrativo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGVAdministrativo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(219)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVAdministrativo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(219)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVAdministrativo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVAdministrativo.ColumnHeadersHeight = 40;
             this.DGVAdministrativo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CFoto,
@@ -179,14 +339,14 @@
             this.CFechaNacimiento,
             this.CCondicion,
             this.CAcciones});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
             this.DGVAdministrativo.Location = new System.Drawing.Point(12, 125);
             this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
@@ -307,166 +467,6 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.iconButton2_Click);
             // 
-            // panelAgregarPaciente
-            // 
-            this.panelAgregarPaciente.Controls.Add(this.btnRegistrar);
-            this.panelAgregarPaciente.Controls.Add(this.radioButton2);
-            this.panelAgregarPaciente.Controls.Add(this.radioButton1);
-            this.panelAgregarPaciente.Controls.Add(this.textBox6);
-            this.panelAgregarPaciente.Controls.Add(this.textBox5);
-            this.panelAgregarPaciente.Controls.Add(this.textBox4);
-            this.panelAgregarPaciente.Controls.Add(this.textBox3);
-            this.panelAgregarPaciente.Controls.Add(this.textBox1);
-            this.panelAgregarPaciente.Controls.Add(this.dateTimePicker1);
-            this.panelAgregarPaciente.Controls.Add(this.labelSexo);
-            this.panelAgregarPaciente.Controls.Add(this.LabelDomicilio);
-            this.panelAgregarPaciente.Controls.Add(this.panelMenuPaciente);
-            this.panelAgregarPaciente.Controls.Add(this.labelObra);
-            this.panelAgregarPaciente.Controls.Add(this.labelFecha);
-            this.panelAgregarPaciente.Controls.Add(this.labelDni);
-            this.panelAgregarPaciente.Controls.Add(this.labelNombre);
-            this.panelAgregarPaciente.Controls.Add(this.labelApellido);
-            this.panelAgregarPaciente.Location = new System.Drawing.Point(181, 165);
-            this.panelAgregarPaciente.Name = "panelAgregarPaciente";
-            this.panelAgregarPaciente.Size = new System.Drawing.Size(454, 341);
-            this.panelAgregarPaciente.TabIndex = 16;
-            // 
-            // labelApellido
-            // 
-            this.labelApellido.AutoSize = true;
-            this.labelApellido.Location = new System.Drawing.Point(43, 36);
-            this.labelApellido.Name = "labelApellido";
-            this.labelApellido.Size = new System.Drawing.Size(44, 13);
-            this.labelApellido.TabIndex = 16;
-            this.labelApellido.Text = "Apellido";
-            // 
-            // labelNombre
-            // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(43, 64);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(47, 13);
-            this.labelNombre.TabIndex = 17;
-            this.labelNombre.Text = "Nombre:";
-            // 
-            // labelDni
-            // 
-            this.labelDni.AutoSize = true;
-            this.labelDni.Location = new System.Drawing.Point(43, 97);
-            this.labelDni.Name = "labelDni";
-            this.labelDni.Size = new System.Drawing.Size(35, 13);
-            this.labelDni.TabIndex = 18;
-            this.labelDni.Text = "D.N.I:";
-            // 
-            // labelFecha
-            // 
-            this.labelFecha.AutoSize = true;
-            this.labelFecha.Location = new System.Drawing.Point(43, 126);
-            this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(93, 13);
-            this.labelFecha.TabIndex = 19;
-            this.labelFecha.Text = "Fecha Nacimiento";
-            // 
-            // labelObra
-            // 
-            this.labelObra.AutoSize = true;
-            this.labelObra.Location = new System.Drawing.Point(43, 150);
-            this.labelObra.Name = "labelObra";
-            this.labelObra.Size = new System.Drawing.Size(59, 13);
-            this.labelObra.TabIndex = 20;
-            this.labelObra.Text = "ObraSocial";
-            // 
-            // LabelDomicilio
-            // 
-            this.LabelDomicilio.AutoSize = true;
-            this.LabelDomicilio.Location = new System.Drawing.Point(43, 177);
-            this.LabelDomicilio.Name = "LabelDomicilio";
-            this.LabelDomicilio.Size = new System.Drawing.Size(49, 13);
-            this.LabelDomicilio.TabIndex = 21;
-            this.LabelDomicilio.Text = "Domicilio";
-            // 
-            // labelSexo
-            // 
-            this.labelSexo.AutoSize = true;
-            this.labelSexo.Location = new System.Drawing.Point(43, 209);
-            this.labelSexo.Name = "labelSexo";
-            this.labelSexo.Size = new System.Drawing.Size(31, 13);
-            this.labelSexo.TabIndex = 22;
-            this.labelSexo.Text = "Sexo";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(152, 118);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 23;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(152, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 24;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(152, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 25;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(152, 94);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 26;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(152, 147);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 27;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(152, 177);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 28;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(152, 209);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 29;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(257, 209);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 22;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(142, 267);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(139, 23);
-            this.btnRegistrar.TabIndex = 30;
-            this.btnRegistrar.Text = "button1";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            // 
             // lista_paciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,13 +476,13 @@
             this.Size = new System.Drawing.Size(789, 549);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            this.panelAgregarPaciente.ResumeLayout(false);
+            this.panelAgregarPaciente.PerformLayout();
             this.panelMenuPaciente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.panelAgregarPaciente.ResumeLayout(false);
-            this.panelAgregarPaciente.PerformLayout();
             this.ResumeLayout(false);
 
         }
