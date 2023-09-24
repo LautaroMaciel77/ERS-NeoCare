@@ -249,6 +249,18 @@
     <Compile Include="Design\administrativo\administrativo.Designer.cs">
       <DependentUpon>administrativo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\administrativo\agregar_paciente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\administrativo\agregar_paciente.Designer.cs">
+      <DependentUpon>agregar_paciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\administrativo\turnoAdministrativo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\administrativo\turnoAdministrativo.Designer.cs">
+      <DependentUpon>turnoAdministrativo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\analisis.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -344,6 +356,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Design\administrativo\administrativo.resx">
       <DependentUpon>administrativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\administrativo\agregar_paciente.resx">
+      <DependentUpon>agregar_paciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\administrativo\turnoAdministrativo.resx">
+      <DependentUpon>turnoAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\atencion.resx">
       <DependentUpon>atencion.cs</DependentUpon>

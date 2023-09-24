@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERS_NeoCare.Design.administrativo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,22 +13,27 @@ namespace ERS_NeoCare.Design
 {
     public partial class lista_paciente : UserControl
     {
-        // Establece la cadena de conexión a la base de datos.
+
 
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         private string userDni;
         //handler para cargar paciente
         public event EventHandler<Tuple<string>> historiaPacienteClick;
+        public event EventHandler<Tuple<string>> TurnoPacienteClick;
 
         private menu MainForm { get; set; }
         // Declara un evento personalizado para notificar clics en los botones
 
         public lista_paciente()
         {
-    
+       
             InitializeComponent();
             CargarDatosPaciente();
-            //panelMenuPaciente.Visible = false;
+            panelMenuPaciente.Visible = false;
+            panelOpciones.Visible = false;
+
+
+
         }
 
         private void CargarDatosPaciente()
@@ -62,36 +68,68 @@ namespace ERS_NeoCare.Design
         private void iconButton2_Click(object sender, EventArgs e)
         {
             panelMenuPaciente.Visible = false;
-            panelAgregarPaciente.Visible = true;
-
+            agregar_paciente agregar_Paciente = new agregar_paciente();
+            agregar_Paciente.UserControlClosed += closePanel;
+            agregar_Paciente.Dock = DockStyle.Fill;
+            panelOpciones.Controls.Clear();
+            panelOpciones.Controls.Add(agregar_Paciente);
+            agregar_Paciente.BringToFront();
+            panelOpciones.Visible = true;
 
         }
 
+        private void closePanel(object sender, EventArgs e) {
+            panelOpciones.Visible = false;
+        }
         private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == DGVAdministrativo.Columns["acciones"].Index)
+
+            if (e.RowIndex >= 0 && DGVAdministrativo.Rows.Count > 0)
             {
-                // Obtén el valor de la celda "dni" de la fila en la que se hizo clic
-                this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells["dni"].Value.ToString();
+                if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+                    panelOpciones.Visible = false;
+                    panelMenuPaciente.BringToFront();
+                    panelMenuPaciente.Visible = true;
+                    int columnIndexDNI = 0; // Reemplaza 'n' con el índice real de la columna DNI
+                    userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
+                    if (panelOpciones.Controls.Count > 0)
+                    {
+                        // Obtén el UserControl actual dentro del panelOpciones
+                        agregar_paciente ap = (agregar_paciente)panelOpciones.Controls[0];
 
-                // Muestra el valor del dni (puedes hacer lo que desees con él)
-                // Muestra el panel de opciones
-                panelAgregarPaciente.Visible = false;
-                panelMenuPaciente.Visible = true;
+                        // Remueve el UserControl del panelOpciones
+                        panelOpciones.Controls.Remove(ap);
 
+
+                        ap.Dispose();
+                    }
+
+
+
+                }
             }
-        }
 
-  
-        private void iconButton2_Click_1(object sender, EventArgs e)
+        }
+    
+    
+                
+
+        private void iconClose_Click_1(object sender, EventArgs e)
         {
             panelMenuPaciente.Visible = false;
         }
+   
+        private void iconTurno_Click(object sender, EventArgs e)
+        {
+            TurnoPacienteClick?.Invoke(this, Tuple.Create(userDni));
 
-    
-        private void iconButton3_Click(object sender, EventArgs e)
+        }
+
+        private void iconVer_Click(object sender, EventArgs e)
         {
             historiaPacienteClick?.Invoke(this, Tuple.Create(userDni));
+            
         }
     }
 }

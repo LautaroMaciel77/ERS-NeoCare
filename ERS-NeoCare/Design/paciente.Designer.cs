@@ -36,14 +36,6 @@
             this.CAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.labelNroA = new System.Windows.Forms.Label();
-            this.LObraSocial = new System.Windows.Forms.Label();
-            this.LFechaNacimiento = new System.Windows.Forms.Label();
-            this.LDomicilio = new System.Windows.Forms.Label();
-            this.LNombre = new System.Windows.Forms.Label();
-            this.LSexo = new System.Windows.Forms.Label();
-            this.LApellido = new System.Windows.Forms.Label();
-            this.LDni = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.PBPaciente = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -61,6 +53,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LHistoriaClinica = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.labelApellido = new System.Windows.Forms.Label();
+            this.labelSexo = new System.Windows.Forms.Label();
+            this.labelFecha = new System.Windows.Forms.Label();
+            this.labelDomicilio = new System.Windows.Forms.Label();
+            this.labelDni = new System.Windows.Forms.Label();
+            this.labelObra = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -141,99 +141,19 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.labelNroA);
-            this.panel5.Controls.Add(this.LObraSocial);
-            this.panel5.Controls.Add(this.LFechaNacimiento);
-            this.panel5.Controls.Add(this.LDomicilio);
-            this.panel5.Controls.Add(this.LNombre);
-            this.panel5.Controls.Add(this.LSexo);
-            this.panel5.Controls.Add(this.LApellido);
-            this.panel5.Controls.Add(this.LDni);
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.labelObra);
+            this.panel5.Controls.Add(this.labelDni);
+            this.panel5.Controls.Add(this.labelDomicilio);
+            this.panel5.Controls.Add(this.labelFecha);
+            this.panel5.Controls.Add(this.labelSexo);
+            this.panel5.Controls.Add(this.labelApellido);
+            this.panel5.Controls.Add(this.labelNombre);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 165);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(296, 287);
             this.panel5.TabIndex = 1;
-            // 
-            // labelNroA
-            // 
-            this.labelNroA.AutoSize = true;
-            this.labelNroA.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNroA.Location = new System.Drawing.Point(16, 205);
-            this.labelNroA.Name = "labelNroA";
-            this.labelNroA.Size = new System.Drawing.Size(122, 17);
-            this.labelNroA.TabIndex = 8;
-            this.labelNroA.Text = "Numero afiliado:";
-            // 
-            // LObraSocial
-            // 
-            this.LObraSocial.AutoSize = true;
-            this.LObraSocial.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LObraSocial.Location = new System.Drawing.Point(16, 177);
-            this.LObraSocial.Name = "LObraSocial";
-            this.LObraSocial.Size = new System.Drawing.Size(91, 17);
-            this.LObraSocial.TabIndex = 7;
-            this.LObraSocial.Text = "Obra social:";
-            // 
-            // LFechaNacimiento
-            // 
-            this.LFechaNacimiento.AutoSize = true;
-            this.LFechaNacimiento.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LFechaNacimiento.Location = new System.Drawing.Point(16, 94);
-            this.LFechaNacimiento.Name = "LFechaNacimiento";
-            this.LFechaNacimiento.Size = new System.Drawing.Size(156, 17);
-            this.LFechaNacimiento.TabIndex = 6;
-            this.LFechaNacimiento.Text = "Fecha de nacimiento:";
-            // 
-            // LDomicilio
-            // 
-            this.LDomicilio.AutoSize = true;
-            this.LDomicilio.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDomicilio.Location = new System.Drawing.Point(16, 150);
-            this.LDomicilio.Name = "LDomicilio";
-            this.LDomicilio.Size = new System.Drawing.Size(75, 17);
-            this.LDomicilio.TabIndex = 5;
-            this.LDomicilio.Text = "Domicilio:";
-            // 
-            // LNombre
-            // 
-            this.LNombre.AutoSize = true;
-            this.LNombre.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LNombre.Location = new System.Drawing.Point(16, 11);
-            this.LNombre.Name = "LNombre";
-            this.LNombre.Size = new System.Drawing.Size(74, 17);
-            this.LNombre.TabIndex = 1;
-            this.LNombre.Text = "Nombre: ";
-            // 
-            // LSexo
-            // 
-            this.LSexo.AutoSize = true;
-            this.LSexo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LSexo.Location = new System.Drawing.Point(16, 122);
-            this.LSexo.Name = "LSexo";
-            this.LSexo.Size = new System.Drawing.Size(50, 17);
-            this.LSexo.TabIndex = 4;
-            this.LSexo.Text = "Sexo:";
-            // 
-            // LApellido
-            // 
-            this.LApellido.AutoSize = true;
-            this.LApellido.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LApellido.Location = new System.Drawing.Point(16, 39);
-            this.LApellido.Name = "LApellido";
-            this.LApellido.Size = new System.Drawing.Size(68, 17);
-            this.LApellido.TabIndex = 2;
-            this.LApellido.Text = "Apellido:";
-            // 
-            // LDni
-            // 
-            this.LDni.AutoSize = true;
-            this.LDni.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDni.Location = new System.Drawing.Point(16, 67);
-            this.LDni.Name = "LDni";
-            this.LDni.Size = new System.Drawing.Size(40, 17);
-            this.LDni.TabIndex = 3;
-            this.LDni.Text = "DNI:";
             // 
             // panel4
             // 
@@ -431,6 +351,85 @@
             this.LHistoriaClinica.TabIndex = 0;
             this.LHistoriaClinica.Text = "Historia Clinica";
             // 
+            // labelNombre
+            // 
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Location = new System.Drawing.Point(17, 28);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(74, 17);
+            this.labelNombre.TabIndex = 9;
+            this.labelNombre.Text = "Nombre: ";
+            // 
+            // labelApellido
+            // 
+            this.labelApellido.AutoSize = true;
+            this.labelApellido.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApellido.Location = new System.Drawing.Point(18, 58);
+            this.labelApellido.Name = "labelApellido";
+            this.labelApellido.Size = new System.Drawing.Size(68, 17);
+            this.labelApellido.TabIndex = 10;
+            this.labelApellido.Text = "Apellido:";
+            // 
+            // labelSexo
+            // 
+            this.labelSexo.AutoSize = true;
+            this.labelSexo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSexo.Location = new System.Drawing.Point(18, 91);
+            this.labelSexo.Name = "labelSexo";
+            this.labelSexo.Size = new System.Drawing.Size(50, 17);
+            this.labelSexo.TabIndex = 11;
+            this.labelSexo.Text = "Sexo:";
+            // 
+            // labelFecha
+            // 
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFecha.Location = new System.Drawing.Point(17, 122);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(156, 17);
+            this.labelFecha.TabIndex = 13;
+            this.labelFecha.Text = "Fecha de nacimiento:";
+            // 
+            // labelDomicilio
+            // 
+            this.labelDomicilio.AutoSize = true;
+            this.labelDomicilio.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDomicilio.Location = new System.Drawing.Point(18, 150);
+            this.labelDomicilio.Name = "labelDomicilio";
+            this.labelDomicilio.Size = new System.Drawing.Size(75, 17);
+            this.labelDomicilio.TabIndex = 14;
+            this.labelDomicilio.Text = "Domicilio:";
+            // 
+            // labelDni
+            // 
+            this.labelDni.AutoSize = true;
+            this.labelDni.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDni.Location = new System.Drawing.Point(18, 210);
+            this.labelDni.Name = "labelDni";
+            this.labelDni.Size = new System.Drawing.Size(40, 17);
+            this.labelDni.TabIndex = 15;
+            this.labelDni.Text = "DNI:";
+            // 
+            // labelObra
+            // 
+            this.labelObra.AutoSize = true;
+            this.labelObra.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelObra.Location = new System.Drawing.Point(17, 184);
+            this.labelObra.Name = "labelObra";
+            this.labelObra.Size = new System.Drawing.Size(91, 17);
+            this.labelObra.TabIndex = 16;
+            this.labelObra.Text = "Obra social:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(173, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "label8";
+            // 
             // paciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,20 +460,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox PBPaciente;
-        private System.Windows.Forms.Label LApellido;
-        private System.Windows.Forms.Label LNombre;
-        private System.Windows.Forms.Label LDni;
-        private System.Windows.Forms.Label LDomicilio;
-        private System.Windows.Forms.Label LSexo;
-        private System.Windows.Forms.Label LFechaNacimiento;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label LObraSocial;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CEvento;
         private System.Windows.Forms.DataGridViewTextBoxColumn CDatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn CAcciones;
-        private System.Windows.Forms.Label labelNroA;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView4;
@@ -490,5 +481,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LHistoriaClinica;
+        private System.Windows.Forms.Label labelDni;
+        private System.Windows.Forms.Label labelDomicilio;
+        private System.Windows.Forms.Label labelFecha;
+        private System.Windows.Forms.Label labelSexo;
+        private System.Windows.Forms.Label labelApellido;
+        private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.Label labelObra;
+        private System.Windows.Forms.Label label8;
     }
 }

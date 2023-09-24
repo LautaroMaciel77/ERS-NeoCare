@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERS_NeoCare.Design.administrativo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace ERS_NeoCare.Design
         private string userDni;
         private int profesionId;
         private SqlConnection connection;
-  
+
         public menu(string dni)
         {
 
@@ -96,64 +97,66 @@ namespace ERS_NeoCare.Design
             switch (profesionId)
             {
                 case 1:
-                    administrativo ad = new administrativo();
+                    Administrativo ad = new Administrativo();
                     ad.OpcionesButtonClick += Administrativo_OpcionesButtonClick; // Suscribe al evento
-                   
-                    addUserControl(ad);
+                    ad.TurnoAdminButtonClick += AdmnistrativoTurnoAdminButtonClick;
+                    addUserControl(ad, panelSubMenu);
                     break;
                 case 2:
-                    enfermero en = new enfermero(); 
-                        addUserControl(en);
+                    enfermero en = new enfermero();
+                    addUserControl(en, panelSubMenu);
 
                     break;
                 case 3:
-                    medico m = new medico();        
-                        addUserControl(m);
+                    medico m = new medico();
+                    addUserControl(m, panelSubMenu);
                     break;
                 case 4:
-                    bioquimico b = new bioquimico();        
-                        addUserControl(b);
+                    bioquimico b = new bioquimico();
+                    addUserControl(b, panelSubMenu);
                     break;
 
                 default:
-                    // En caso de que el profesion_id no coincida con ninguna profesión conocida, puedes retornar un UserControl por defecto o lanzar una excepción.
+
                     break;
             }
         }
-        private void addUserControl(UserControl userControl)
+        private void addUserControl(UserControl userControl, Panel panel)
         {
-            userControl.Dock =DockStyle.Fill;
-            panelSubMenu.Controls.Clear();
-            panelSubMenu.Controls.Add(userControl);
+            userControl.Dock = DockStyle.Fill;
+            panel.Controls.Clear();
+            panel.Controls.Add(userControl);
             userControl.BringToFront();
         }
+
+        private void AdmnistrativoTurnoAdminButtonClick(object sender, EventArgs e)
+        {
+            turnoAdministrativo turno = new turnoAdministrativo(null);
+            addUserControl(turno, panelOpciones);
+        }
+
         private void Administrativo_OpcionesButtonClick(object sender, EventArgs e)
         {
-
-       
-                lista_paciente lista = new lista_paciente();
-                lista.historiaPacienteClick += ListaPaciente_CargarOtroControlClick;
-                lista.Dock = DockStyle.Fill;
-                panelOpciones.Controls.Clear();
-                panelOpciones.Controls.Add(lista);
-                lista.BringToFront();
-              
-            // Realiza las acciones necesarias en el panelOpciones
-            // Puedes acceder a homeForm.panelOpciones y modificarlo aquí
+            lista_paciente lista = new lista_paciente();
+            lista.historiaPacienteClick += ListaPaciente_CargarOtroControlClick;
+            lista.TurnoPacienteClick += turnoPacienteCargar;
+            addUserControl(lista, panelOpciones);
         }
 
         private void ListaPaciente_CargarOtroControlClick(object sender, Tuple<string> args)
-            {
+        {
             string dni_paciente = args.Item1;
             paciente paciente = new paciente(dni_paciente);
-            paciente.Dock = DockStyle.Fill;
-            panelOpciones.Controls.Clear();
-            panelOpciones.Controls.Add(paciente);
-            paciente.BringToFront();
-
-
+            addUserControl(paciente, panelOpciones);
         }
-            private void pictureBoxLogo_Click(object sender, EventArgs e)
+
+        private void turnoPacienteCargar(object sender, Tuple<string> args)
+        {
+            string dni_paciente = args.Item1;
+            turnoAdministrativo turno = new turnoAdministrativo(dni_paciente);
+            addUserControl(turno, panelOpciones);
+        }
+        private void pictureBoxLogo_Click(object sender, EventArgs e)
         {
 
         }
@@ -168,6 +171,4 @@ namespace ERS_NeoCare.Design
 
         }
     }
-    }
-
-
+}

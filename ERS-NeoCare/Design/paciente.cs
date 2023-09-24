@@ -14,67 +14,51 @@ namespace ERS_NeoCare.Design
     public partial class paciente : UserControl
     {
         private string userDni;
+        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         public paciente(string dni)
         {
             this.userDni = dni;
             // Establece la cadena de conexión a la base de datos.
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
-            CargarPaciente();
             InitializeComponent();
+            CargarPaciente();
+         
         }
         private void CargarPaciente()
         {
-            // Establece la cadena de conexión a la base de datos.
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
-            int dniInt = int.Parse(userDni);
+
+            int dniAsInt = int.Parse(userDni);
+            MessageBox.Show("DNI como entero: " + userDni, "Valor Convertido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                try
+                connection.Open();
+                string query = "SELECT * FROM Paciente WHERE dni = @dni"; // Cambia esto según tus necesidades
+
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    connection.Open();
-
-                    // Define la consulta SQL para obtener los datos del paciente con el dni correspondiente.
-                    string query = "SELECT dni, nombre, apellido, domicilio, fecha_nacimiento, sexo, obra_social FROM Paciente WHERE dni = @Dni";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    // Configura el parámetro para el ID del paciente que deseas cargar
+                    command.Parameters.AddWithValue("@dni", dniAsInt); 
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        // Establece el parámetro @Dni con el valor de userDni.
-                        command.Parameters.AddWithValue("@Dni", dniInt);
-
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        if (reader.Read())
                         {
-                            if (reader.Read())
-                            {
-                                // Obtiene los valores de las columnas de la consulta.
-                                string dni = reader["dni"].ToString();
-                                string nombre = reader["nombre"].ToString();
-                                string apellido = reader["apellido"].ToString();
-                                string domicilio = reader["domicilio"].ToString();
-                                DateTime fechaNacimiento = (DateTime)reader["fecha_nacimiento"];
-                                string sexo = reader["sexo"].ToString();
-                                string obraSocial = reader["obra_social"].ToString();
-                             
+                            string Nombre = reader["nombre"].ToString();
+                            string apellido = reader["apellido"].ToString();
+                            string domicilio = reader["domicilio"].ToString();
+                            string fechaNacimiento = reader["fecha_nacimiento"].ToString();
+                            string sexo = reader["sexo"].ToString();
+                            string obraSocial = reader["obra_social"].ToString();
+                            labelDni.Text += dniAsInt.ToString();
+                            labelNombre.Text += Nombre;
+                            labelApellido.Text += apellido;
+                            labelDomicilio.Text += domicilio;
+                            labelFecha.Text += fechaNacimiento;
+                            labelSexo.Text += sexo;
+                            labelObra.Text += obraSocial;
 
-                                // Asigna los valores a los Label correspondientes.
-                                LDni.Text += dni;
-                                LNombre.Text += nombre;
-                                LApellido.Text += apellido;
-                                LDomicilio.Text += domicilio;
-                                LFechaNacimiento.Text += fechaNacimiento.ToString("yyyy-MM-dd");
-                                LSexo.Text += sexo;
-                                LObraSocial.Text += obraSocial;
-                               
-                            }
-                            else
-                            {
-                                MessageBox.Show("Paciente no encontrado.");
-                            }
+
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar los datos del paciente: " + ex.Message);
                 }
             }
         }
@@ -84,6 +68,7 @@ namespace ERS_NeoCare.Design
 
         }
     }
+}
 
-    }
+       
 
