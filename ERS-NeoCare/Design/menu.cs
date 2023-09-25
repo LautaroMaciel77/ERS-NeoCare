@@ -1,4 +1,5 @@
 ﻿using ERS_NeoCare.Design.administrativo;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -104,11 +105,14 @@ namespace ERS_NeoCare.Design
                     break;
                 case 2:
                     enfermero en = new enfermero();
+                    
                     addUserControl(en, panelSubMenu);
 
                     break;
                 case 3:
                     medico m = new medico();
+                    m.TurnoAdminButtonClick += TurnoAdminButtonClick;
+                    m.PacienteButtonClick += PacienteButtonClick;
                     addUserControl(m, panelSubMenu);
                     break;
                 case 4:
@@ -121,6 +125,21 @@ namespace ERS_NeoCare.Design
                     break;
             }
         }
+
+        private void PacienteButtonClick(object sender, EventArgs e)
+        {
+            PacientesMedico pm = new PacientesMedico();
+            addUserControl(pm, panelOpciones);
+        }
+
+        private void TurnoAdminButtonClick(object sender, EventArgs e)
+        {
+            TurnosMedico tm = new TurnosMedico();
+            addUserControl(tm, panelOpciones);
+        }
+
+
+
         private void addUserControl(UserControl userControl, Panel panel)
         {
             userControl.Dock = DockStyle.Fill;
@@ -156,17 +175,15 @@ namespace ERS_NeoCare.Design
             turnoAdministrativo turno = new turnoAdministrativo(dni_paciente);
             addUserControl(turno, panelOpciones);
         }
-        private void pictureBoxLogo_Click(object sender, EventArgs e)
-        {
+        
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+       
+            this.Close();
         }
 
-        private void panelSubMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void menu_Load(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

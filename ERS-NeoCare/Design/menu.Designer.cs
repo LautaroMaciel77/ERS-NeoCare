@@ -61,7 +61,6 @@
             this.panelSubMenu.Name = "panelSubMenu";
             this.panelSubMenu.Size = new System.Drawing.Size(169, 194);
             this.panelSubMenu.TabIndex = 19;
-            this.panelSubMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSubMenu_Paint);
             // 
             // pictureBox1
             // 
@@ -73,6 +72,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(94, 102);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // labelNombre
             // 
@@ -107,6 +107,7 @@
             this.btnSalir.TabIndex = 18;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // labelProfesion
             // 
@@ -131,7 +132,6 @@
             this.pictureBoxLogo.Size = new System.Drawing.Size(167, 59);
             this.pictureBoxLogo.TabIndex = 17;
             this.pictureBoxLogo.TabStop = false;
-            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
             // panelOpciones
             // 
@@ -149,7 +149,6 @@
             this.Controls.Add(this.panelMenu);
             this.Name = "menu";
             this.Text = "menu";
-            this.Load += new System.EventHandler(this.menu_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

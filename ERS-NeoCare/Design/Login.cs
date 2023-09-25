@@ -46,12 +46,14 @@ namespace ERS_NeoCare.Design
                         {
                             if (reader.Read())
                             {
+                                textBoxUser.Text = string.Empty;
+                                textBoxPass.Text = string.Empty;    
                                 // Las credenciales son válidas, abre el formulario "Home".
                                 string userDniStr = dni.ToString();
 
                                 menu homeForm = new menu(userDniStr);
                                 homeForm.Show();
-                               
+                          
                             }
                             else
                             {
@@ -64,14 +66,6 @@ namespace ERS_NeoCare.Design
             }
         }
 
-        private void labelContraseña_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelUser_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

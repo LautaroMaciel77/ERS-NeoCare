@@ -315,10 +315,10 @@
     <Compile Include="Design\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\medico.cs">
+    <Compile Include="Design\Medico\medico.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\medico.Designer.cs">
+    <Compile Include="Design\Medico\medico.Designer.cs">
       <DependentUpon>medico.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\menu.cs">
@@ -339,11 +339,23 @@
     <Compile Include="Design\paciente.Designer.cs">
       <DependentUpon>paciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Medico\PacientesMedico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\PacientesMedico.Designer.cs">
+      <DependentUpon>PacientesMedico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\pedido.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Design\pedido.Designer.cs">
       <DependentUpon>pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Medico\TurnosMedico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\TurnosMedico.Designer.cs">
+      <DependentUpon>TurnosMedico.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -383,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\medico.resx">
+      <DependentUpon>medico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\menu.resx">
       <DependentUpon>menu.cs</DependentUpon>

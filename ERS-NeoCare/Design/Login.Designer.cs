@@ -79,7 +79,6 @@
             this.labelContraseña.Size = new System.Drawing.Size(84, 17);
             this.labelContraseña.TabIndex = 2;
             this.labelContraseña.Text = "Contraseña";
-            this.labelContraseña.Click += new System.EventHandler(this.labelContraseña_Click);
             // 
             // labelUser
             // 
@@ -91,7 +90,7 @@
             this.labelUser.Size = new System.Drawing.Size(54, 17);
             this.labelUser.TabIndex = 1;
             this.labelUser.Text = "Usuario";
-            this.labelUser.Click += new System.EventHandler(this.labelUser_Click);
+           
             // 
             // iconButtonIniciar
             // 
