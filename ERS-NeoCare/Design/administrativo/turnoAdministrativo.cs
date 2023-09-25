@@ -133,6 +133,11 @@ namespace ERS_NeoCare.Design.administrativo
                 return; 
             }
         }
+
+        private void iconBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

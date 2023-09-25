@@ -166,3 +166,5 @@ E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.De
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.csproj.Fody.CopyLocal.cache
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.csproj.CopyComplete
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.medico.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuMedicoPacientes.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.PacientesMedico.resources

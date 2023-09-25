@@ -166,6 +166,6 @@
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Label labelProfesion;
         private System.Windows.Forms.Panel panelSubMenu;
-        private System.Windows.Forms.Panel panelOpciones;
+        internal System.Windows.Forms.Panel panelOpciones;
     }
 }

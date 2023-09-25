@@ -321,6 +321,12 @@
     <Compile Include="Design\Medico\medico.Designer.cs">
       <DependentUpon>medico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Medico\MenuMedicoPacientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\MenuMedicoPacientes.Designer.cs">
+      <DependentUpon>MenuMedicoPacientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,6 +404,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\medico.resx">
       <DependentUpon>medico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\MenuMedicoPacientes.resx">
+      <DependentUpon>MenuMedicoPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\PacientesMedico.resx">
+      <DependentUpon>PacientesMedico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\menu.resx">
       <DependentUpon>menu.cs</DependentUpon>

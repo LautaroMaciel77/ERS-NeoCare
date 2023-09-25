@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridViewHora = new System.Windows.Forms.DataGridView();
+            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.labelDni = new System.Windows.Forms.Label();
             this.textboxDni = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.iconAgregar = new FontAwesome.Sharp.IconButton();
             this.iconBuscar = new FontAwesome.Sharp.IconButton();
+            this.iconAgregar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHora)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,22 @@
             this.dataGridViewHora.Size = new System.Drawing.Size(351, 150);
             this.dataGridViewHora.TabIndex = 1;
             this.dataGridViewHora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHora_CellContentClick);
+            // 
+            // hora
+            // 
+            this.hora.HeaderText = "hora";
+            this.hora.Name = "hora";
+            this.hora.ReadOnly = true;
+            // 
+            // disponible
+            // 
+            this.disponible.HeaderText = "disponible";
+            this.disponible.Name = "disponible";
+            // 
+            // Eleguir
+            // 
+            this.Eleguir.HeaderText = "Eleguir Hora";
+            this.Eleguir.Name = "Eleguir";
             // 
             // label1
             // 
@@ -99,22 +115,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // hora
-            // 
-            this.hora.HeaderText = "hora";
-            this.hora.Name = "hora";
-            this.hora.ReadOnly = true;
-            // 
-            // disponible
-            // 
-            this.disponible.HeaderText = "disponible";
-            this.disponible.Name = "disponible";
-            // 
-            // Eleguir
-            // 
-            this.Eleguir.HeaderText = "Eleguir Hora";
-            this.Eleguir.Name = "Eleguir";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -123,6 +123,19 @@
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "label2";
+            // 
+            // iconBuscar
+            // 
+            this.iconBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconBuscar.IconColor = System.Drawing.Color.Black;
+            this.iconBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconBuscar.Location = new System.Drawing.Point(446, 418);
+            this.iconBuscar.Name = "iconBuscar";
+            this.iconBuscar.Size = new System.Drawing.Size(156, 23);
+            this.iconBuscar.TabIndex = 8;
+            this.iconBuscar.Text = "Buscar Turno";
+            this.iconBuscar.UseVisualStyleBackColor = true;
+            this.iconBuscar.Click += new System.EventHandler(this.iconBuscar_Click);
             // 
             // iconAgregar
             // 
@@ -136,18 +149,6 @@
             this.iconAgregar.Text = "Guardar Turno";
             this.iconAgregar.UseVisualStyleBackColor = true;
             this.iconAgregar.Click += new System.EventHandler(this.iconAgregar_Click);
-            // 
-            // iconBuscar
-            // 
-            this.iconBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconBuscar.IconColor = System.Drawing.Color.Black;
-            this.iconBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBuscar.Location = new System.Drawing.Point(446, 418);
-            this.iconBuscar.Name = "iconBuscar";
-            this.iconBuscar.Size = new System.Drawing.Size(156, 23);
-            this.iconBuscar.TabIndex = 8;
-            this.iconBuscar.Text = "Buscar Turno";
-            this.iconBuscar.UseVisualStyleBackColor = true;
             // 
             // turnoAdministrativo
             // 

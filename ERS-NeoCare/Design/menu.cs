@@ -1,5 +1,5 @@
 ﻿using ERS_NeoCare.Design.administrativo;
-
+using ERS_NeoCare.Design.Medico;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +16,11 @@ namespace ERS_NeoCare.Design
 {
     public partial class menu : Form
     {
+
         private string userDni;
         private int profesionId;
         private SqlConnection connection;
-
+      
         public menu(string dni)
         {
 
@@ -140,7 +141,7 @@ namespace ERS_NeoCare.Design
 
 
 
-        private void addUserControl(UserControl userControl, Panel panel)
+        public void addUserControl(UserControl userControl, Panel panel)
         {
             userControl.Dock = DockStyle.Fill;
             panel.Controls.Clear();
