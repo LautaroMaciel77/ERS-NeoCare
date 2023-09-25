@@ -122,13 +122,14 @@
             // radioEnfermero
             // 
             this.radioEnfermero.AutoSize = true;
-            this.radioEnfermero.Location = new System.Drawing.Point(613, 410);
+            this.radioEnfermero.Location = new System.Drawing.Point(610, 410);
             this.radioEnfermero.Name = "radioEnfermero";
             this.radioEnfermero.Size = new System.Drawing.Size(73, 17);
             this.radioEnfermero.TabIndex = 18;
             this.radioEnfermero.TabStop = true;
             this.radioEnfermero.Text = "Enfermero";
             this.radioEnfermero.UseVisualStyleBackColor = true;
+            this.radioEnfermero.CheckedChanged += new System.EventHandler(this.radioEnfermero_CheckedChanged);
             // 
             // radioBio
             // 
@@ -140,6 +141,7 @@
             this.radioBio.TabStop = true;
             this.radioBio.Text = "Bioquimico";
             this.radioBio.UseVisualStyleBackColor = true;
+            this.radioBio.CheckedChanged += new System.EventHandler(this.radioBio_CheckedChanged);
             // 
             // labelEspecialista
             // 

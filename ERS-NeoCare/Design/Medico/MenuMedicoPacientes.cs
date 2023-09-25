@@ -29,7 +29,17 @@ namespace ERS_NeoCare.Design.Medico
 
         private void iconTurno_Click(object sender, EventArgs e)
         {
+            TurnosMedico tm = new TurnosMedico(userDni);
+            tm.Dock = DockStyle.Fill; // Ajusta el control al tamaño del panelOpciones
 
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                // Llama al método para agregar el control al panelOpciones
+                menuForm.addUserControl(tm, menuForm.panelOpciones);
+            }
         }
 
         private void iconVer_Click(object sender, EventArgs e)

@@ -135,7 +135,7 @@ namespace ERS_NeoCare.Design
 
         private void TurnoAdminButtonClick(object sender, EventArgs e)
         {
-            TurnosMedico tm = new TurnosMedico();
+            TurnosMedico tm = new TurnosMedico(null);
             addUserControl(tm, panelOpciones);
         }
 

@@ -411,6 +411,9 @@
     <EmbeddedResource Include="Design\Medico\PacientesMedico.resx">
       <DependentUpon>PacientesMedico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\TurnosMedico.resx">
+      <DependentUpon>TurnosMedico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\menu.resx">
       <DependentUpon>menu.cs</DependentUpon>
     </EmbeddedResource>

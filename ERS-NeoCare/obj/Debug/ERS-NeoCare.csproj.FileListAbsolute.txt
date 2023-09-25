@@ -168,3 +168,4 @@ E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.cs
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.medico.resources
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuMedicoPacientes.resources
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.PacientesMedico.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.TurnosMedico.resources

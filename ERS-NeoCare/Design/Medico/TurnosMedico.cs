@@ -15,9 +15,11 @@ namespace ERS_NeoCare.Design
     {
         private DateTime select;
         private string dni;
-        public TurnosMedico()
+        private string rangoHora;
+        public TurnosMedico(string dni)
         {
             InitializeComponent();
+            this.dni = dni;
             cargarHora();
         }
 
@@ -81,21 +83,70 @@ namespace ERS_NeoCare.Design
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-
+            select = monthCalendar1.SelectionStart;
+            label1.Text = "Fecha seleccionada: " + select.ToString("dd/MM/yyyy");
         }
 
         private void dataGridViewHora_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex >= 0 && dataGridViewHora.Rows.Count > 0)
+            {
+                if (dataGridViewHora.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+                    rangoHora = dataGridViewHora.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    label2.Text = "horario seleccionada: " + rangoHora;
+                }
+            }
         }
 
         private void iconAgregar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textboxDni.Text))
+            {
+                MessageBox.Show("El campo DNI no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            if (select == null || rangoHora == null)
+            {
+                MessageBox.Show("Asegúrate de seleccionar una fecha y un rango de hora antes de agregar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!radioBio.Checked && !radioEnfermero.Checked)
+            {
+                MessageBox.Show("Debes seleccionar al menos una opción (Enfermero o Bioquímico).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
         }
 
         private void textboxDni_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void radioBio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioEnfermero.Checked)
+            {
+
+                radioEnfermero.Checked = false;
+            }
+        }
+
+        private void radioEnfermero_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioBio.Checked)
+            {
+
+                radioBio.Checked = false;
+            }
 
         }
     }
