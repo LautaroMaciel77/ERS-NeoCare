@@ -56,7 +56,7 @@
             this.iconTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconTurno.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconTurno.ForeColor = System.Drawing.Color.Transparent;
-            this.iconTurno.IconChar = FontAwesome.Sharp.IconChar.UserInjured;
+            this.iconTurno.IconChar = FontAwesome.Sharp.IconChar.CalendarPlus;
             this.iconTurno.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
             this.iconTurno.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconTurno.IconSize = 35;

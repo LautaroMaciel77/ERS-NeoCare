@@ -67,6 +67,7 @@
             // 
             // panel
             // 
+            this.panel.AutoSize = true;
             this.panel.Controls.Add(this.panelOpciones);
             this.panel.Controls.Add(this.panelMenuPaciente);
             this.panel.Controls.Add(this.label7);
@@ -74,18 +75,19 @@
             this.panel.Controls.Add(this.DGVAdministrativo);
             this.panel.Controls.Add(this.panel2);
             this.panel.Controls.Add(this.btnAgregar);
+            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel.Location = new System.Drawing.Point(0, 0);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(781, 543);
+            this.panel.Size = new System.Drawing.Size(872, 549);
             this.panel.TabIndex = 0;
             // 
             // panelOpciones
             // 
             this.panelOpciones.BackColor = System.Drawing.Color.Transparent;
             this.panelOpciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelOpciones.Location = new System.Drawing.Point(181, 178);
+            this.panelOpciones.Location = new System.Drawing.Point(130, 184);
             this.panelOpciones.Name = "panelOpciones";
-            this.panelOpciones.Size = new System.Drawing.Size(433, 288);
+            this.panelOpciones.Size = new System.Drawing.Size(541, 299);
             this.panelOpciones.TabIndex = 16;
             // 
             // panelMenuPaciente
@@ -184,6 +186,8 @@
             // 
             this.DGVAdministrativo.AllowUserToAddRows = false;
             this.DGVAdministrativo.AllowUserToDeleteRows = false;
+            this.DGVAdministrativo.AllowUserToResizeColumns = false;
+            this.DGVAdministrativo.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.DGVAdministrativo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVAdministrativo.AutoGenerateColumns = false;
@@ -226,7 +230,7 @@
             this.DGVAdministrativo.RowHeadersVisible = false;
             this.DGVAdministrativo.RowHeadersWidth = 51;
             this.DGVAdministrativo.RowTemplate.Height = 40;
-            this.DGVAdministrativo.Size = new System.Drawing.Size(767, 411);
+            this.DGVAdministrativo.Size = new System.Drawing.Size(751, 411);
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
@@ -311,7 +315,7 @@
             this.CAcciones.ReadOnly = true;
             this.CAcciones.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.CAcciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.CAcciones.Text = "menu";
+            this.CAcciones.Text = ". . .";
             this.CAcciones.UseColumnTextForButtonValue = true;
             this.CAcciones.Width = 96;
             // 
@@ -334,7 +338,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(781, 71);
+            this.panel2.Size = new System.Drawing.Size(872, 71);
             this.panel2.TabIndex = 14;
             // 
             // iconPictureBox1
@@ -375,7 +379,7 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(619, 81);
+            this.btnAgregar.Location = new System.Drawing.Point(676, 81);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(151, 40);
@@ -395,7 +399,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel);
             this.Name = "lista_paciente";
-            this.Size = new System.Drawing.Size(789, 549);
+            this.Size = new System.Drawing.Size(872, 549);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             this.panelMenuPaciente.ResumeLayout(false);
@@ -406,6 +410,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -423,6 +428,10 @@
         private System.Windows.Forms.BindingSource pacienteBindingSource;
         private DatabaseDataSet databaseDataSet;
         private DatabaseDataSetTableAdapters.PacienteTableAdapter pacienteTableAdapter;
+        private System.Windows.Forms.Panel panelMenuPaciente;
+        private FontAwesome.Sharp.IconButton iconTurno;
+        private FontAwesome.Sharp.IconButton iconClose;
+        private FontAwesome.Sharp.IconButton iconVer;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
@@ -431,9 +440,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn obrasocialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn CAcciones;
-        private System.Windows.Forms.Panel panelMenuPaciente;
-        private FontAwesome.Sharp.IconButton iconTurno;
-        private FontAwesome.Sharp.IconButton iconClose;
-        private FontAwesome.Sharp.IconButton iconVer;
     }
 }
