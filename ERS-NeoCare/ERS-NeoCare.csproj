@@ -237,6 +237,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseDataSet.cs">
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </Compile>
@@ -299,28 +304,22 @@
     <Compile Include="Design\bioquimico\lista_paciente_bioquimico.Designer.cs">
       <DependentUpon>lista_paciente_bioquimico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\enfermero.cs">
+    <Compile Include="Design\enfermero\enfermero.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\enfermero.Designer.cs">
+    <Compile Include="Design\enfermero\enfermero.Designer.cs">
       <DependentUpon>enfermero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\Enfermero\enfermero.cs">
+    <Compile Include="Design\enfermero\lista_atenciones_enfermero.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\Enfermero\enfermero.Designer.cs">
-      <DependentUpon>enfermero.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Design\Enfermero\lista_atenciones_enfermero.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Design\Enfermero\lista_atenciones_enfermero.Designer.cs">
+    <Compile Include="Design\enfermero\lista_atenciones_enfermero.Designer.cs">
       <DependentUpon>lista_atenciones_enfermero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\Enfermero\lista_paciente_enfermero.cs">
+    <Compile Include="Design\enfermero\lista_paciente_enfermero.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\Enfermero\lista_paciente_enfermero.Designer.cs">
+    <Compile Include="Design\enfermero\lista_paciente_enfermero.Designer.cs">
       <DependentUpon>lista_paciente_enfermero.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\historia_clinica.cs">
@@ -352,6 +351,12 @@
     </Compile>
     <Compile Include="Design\Medico\MenuMedicoPacientes.Designer.cs">
       <DependentUpon>MenuMedicoPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Medico\ListaDeTurnos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\ListaDeTurnos.Designer.cs">
+      <DependentUpon>ListaDeTurnos.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\menu.cs">
       <SubType>Form</SubType>
@@ -419,16 +424,13 @@
     <EmbeddedResource Include="Design\bioquimico\lista_paciente_bioquimico.resx">
       <DependentUpon>lista_paciente_bioquimico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\enfermero.resx">
+    <EmbeddedResource Include="Design\enfermero\enfermero.resx">
       <DependentUpon>enfermero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Enfermero\enfermero.resx">
-      <DependentUpon>enfermero.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Design\Enfermero\lista_atenciones_enfermero.resx">
+    <EmbeddedResource Include="Design\enfermero\lista_atenciones_enfermero.resx">
       <DependentUpon>lista_atenciones_enfermero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Enfermero\lista_paciente_enfermero.resx">
+    <EmbeddedResource Include="Design\enfermero\lista_paciente_enfermero.resx">
       <DependentUpon>lista_paciente_enfermero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\historia_clinica.resx">
@@ -445,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\MenuMedicoPacientes.resx">
       <DependentUpon>MenuMedicoPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\ListaDeTurnos.resx">
+      <DependentUpon>ListaDeTurnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\PacientesMedico.resx">
       <DependentUpon>PacientesMedico.cs</DependentUpon>
@@ -474,6 +479,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Database1DataSet.xsc">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet.xss">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
     <None Include="DatabaseDataSet.xsc">
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </None>

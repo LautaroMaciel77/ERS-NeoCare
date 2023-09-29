@@ -1,5 +1,6 @@
 ﻿using ERS_NeoCare.Design.administrativo;
 using ERS_NeoCare.Design.Medico;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -105,7 +106,7 @@ namespace ERS_NeoCare.Design
                     addUserControl(ad, panelSubMenu);
                     break;
                 case 2:
-                    enfermero en = new enfermero();
+                    Enfermero en = new Enfermero();
                     
                     addUserControl(en, panelSubMenu);
 
