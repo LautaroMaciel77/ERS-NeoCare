@@ -93,5 +93,30 @@ namespace ERS_NeoCare.Design.administrativo
 
             }
         }
+
+        private void iconButtonClose_Click(object sender, EventArgs e)
+        {
+            UserControlClosed?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void labelSexo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textObra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelAgregarPaciente_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

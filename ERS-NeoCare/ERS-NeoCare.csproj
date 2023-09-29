@@ -77,7 +77,9 @@
     <Reference Include="RestSharp, Version=100.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharpSigned.105.2.3\lib\net46\RestSharp.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -279,6 +281,18 @@
     <Compile Include="Design\bioquimico.Designer.cs">
       <DependentUpon>bioquimico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\bioquimico\bioquimico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\bioquimico\bioquimico.Designer.cs">
+      <DependentUpon>bioquimico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\bioquimico\lista_analisis_bioquimico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\bioquimico\lista_analisis_bioquimico.Designer.cs">
+      <DependentUpon>lista_analisis_bioquimico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\bioquimico\lista_paciente_bioquimico.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -290,6 +304,18 @@
     </Compile>
     <Compile Include="Design\enfermero.Designer.cs">
       <DependentUpon>enfermero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Enfermero\enfermero.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Enfermero\enfermero.Designer.cs">
+      <DependentUpon>enfermero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Enfermero\lista_atenciones_enfermero.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Enfermero\lista_atenciones_enfermero.Designer.cs">
+      <DependentUpon>lista_atenciones_enfermero.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\Enfermero\lista_paciente_enfermero.cs">
       <SubType>UserControl</SubType>
@@ -384,11 +410,23 @@
     <EmbeddedResource Include="Design\atencion.resx">
       <DependentUpon>atencion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\bioquimico\bioquimico.resx">
+      <DependentUpon>bioquimico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\bioquimico\lista_analisis_bioquimico.resx">
+      <DependentUpon>lista_analisis_bioquimico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\bioquimico\lista_paciente_bioquimico.resx">
       <DependentUpon>lista_paciente_bioquimico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\enfermero.resx">
       <DependentUpon>enfermero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Enfermero\enfermero.resx">
+      <DependentUpon>enfermero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Enfermero\lista_atenciones_enfermero.resx">
+      <DependentUpon>lista_atenciones_enfermero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Enfermero\lista_paciente_enfermero.resx">
       <DependentUpon>lista_paciente_enfermero.cs</DependentUpon>
