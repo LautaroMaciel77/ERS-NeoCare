@@ -34,13 +34,13 @@
             this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelDni = new System.Windows.Forms.Label();
             this.textboxDni = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.iconBuscar = new FontAwesome.Sharp.IconButton();
             this.iconAgregar = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHora)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,15 +83,6 @@
             this.Eleguir.HeaderText = "Eleguir Hora";
             this.Eleguir.Name = "Eleguir";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(411, 332);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
             // labelDni
             // 
             this.labelDni.AutoSize = true;
@@ -114,15 +105,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(411, 366);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "label2";
             // 
             // iconBuscar
             // 
@@ -150,6 +132,24 @@
             this.iconAgregar.UseVisualStyleBackColor = true;
             this.iconAgregar.Click += new System.EventHandler(this.iconAgregar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(411, 332);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(411, 366);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            // 
             // turnoAdministrativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,15 +174,15 @@
 
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridView dataGridViewHora;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn disponible;
         private System.Windows.Forms.DataGridViewButtonColumn Eleguir;
         private System.Windows.Forms.Label labelDni;
         private System.Windows.Forms.TextBox textboxDni;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton iconAgregar;
         private FontAwesome.Sharp.IconButton iconBuscar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

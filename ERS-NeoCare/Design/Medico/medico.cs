@@ -32,5 +32,10 @@ namespace ERS_NeoCare.Design
         {
             TurnoAdminButtonClick?.Invoke(this, EventArgs.Empty);
         }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            TurnoAdminButtonClick?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

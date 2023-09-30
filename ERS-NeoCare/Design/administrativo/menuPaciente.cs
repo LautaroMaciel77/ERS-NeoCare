@@ -21,5 +21,15 @@ namespace ERS_NeoCare.Design
         {
 
         }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

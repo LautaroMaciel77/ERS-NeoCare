@@ -183,3 +183,10 @@ E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.cs
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.csproj.CopyComplete
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.exe
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.pdb
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.admin.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.agregar_usuario.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.lista_usuarios.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuAdminUsuarios.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.MenuBioquimicoAnalisis.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.MenuEnfermeroAtencion.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.ListaDeTurnos.resources

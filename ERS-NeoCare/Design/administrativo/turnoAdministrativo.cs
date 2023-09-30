@@ -79,7 +79,6 @@ namespace ERS_NeoCare.Design.administrativo
 
             // Actualizar la etiqueta de fecha seleccionada
             select = monthCalendar1.SelectionStart;
-            label1.Text = "Fecha seleccionada: " + select.ToString("dd/MM/yyyy");
         }
 
 
@@ -88,7 +87,6 @@ namespace ERS_NeoCare.Design.administrativo
         private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
         {
             select = monthCalendar1.SelectionStart;
-            label1.Text = "Fecha seleccionada: " + select.ToString("dd/MM/yyyy");
         }
 
         private void labelDni_Click(object sender, EventArgs e)

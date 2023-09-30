@@ -268,6 +268,30 @@
     <Compile Include="Design\administrativo\turnoAdministrativo.Designer.cs">
       <DependentUpon>turnoAdministrativo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\admin\admin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\admin\admin.Designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\admin\agregar_usuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\admin\agregar_usuario.Designer.cs">
+      <DependentUpon>agregar_usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\admin\lista_usuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\admin\lista_usuarios.Designer.cs">
+      <DependentUpon>lista_usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\admin\MenuAdminUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\admin\MenuAdminUsuarios.Designer.cs">
+      <DependentUpon>MenuAdminUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\analisis.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -304,6 +328,12 @@
     <Compile Include="Design\bioquimico\lista_paciente_bioquimico.Designer.cs">
       <DependentUpon>lista_paciente_bioquimico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\bioquimico\MenuBioquimicoAnalisis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\bioquimico\MenuBioquimicoAnalisis.Designer.cs">
+      <DependentUpon>MenuBioquimicoAnalisis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\enfermero\enfermero.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -321,6 +351,12 @@
     </Compile>
     <Compile Include="Design\enfermero\lista_paciente_enfermero.Designer.cs">
       <DependentUpon>lista_paciente_enfermero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\enfermero\MenuEnfermeroAtencion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\enfermero\MenuEnfermeroAtencion.Designer.cs">
+      <DependentUpon>MenuEnfermeroAtencion.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\historia_clinica.cs">
       <SubType>Form</SubType>
@@ -417,6 +453,18 @@
     <EmbeddedResource Include="Design\administrativo\turnoAdministrativo.resx">
       <DependentUpon>turnoAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\admin\admin.resx">
+      <DependentUpon>admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\admin\agregar_usuario.resx">
+      <DependentUpon>agregar_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\admin\lista_usuarios.resx">
+      <DependentUpon>lista_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\admin\MenuAdminUsuarios.resx">
+      <DependentUpon>MenuAdminUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\atencion.resx">
       <DependentUpon>atencion.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +477,9 @@
     <EmbeddedResource Include="Design\bioquimico\lista_paciente_bioquimico.resx">
       <DependentUpon>lista_paciente_bioquimico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\bioquimico\MenuBioquimicoAnalisis.resx">
+      <DependentUpon>MenuBioquimicoAnalisis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\enfermero\enfermero.resx">
       <DependentUpon>enfermero.cs</DependentUpon>
     </EmbeddedResource>
@@ -437,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\enfermero\lista_paciente_enfermero.resx">
       <DependentUpon>lista_paciente_enfermero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\enfermero\MenuEnfermeroAtencion.resx">
+      <DependentUpon>MenuEnfermeroAtencion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\historia_clinica.resx">
       <DependentUpon>historia_clinica.cs</DependentUpon>
