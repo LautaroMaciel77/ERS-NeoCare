@@ -16,5 +16,10 @@ namespace ERS_NeoCare.Design.Paciente
         {
             InitializeComponent();
         }
+
+        private void iconButtonClose_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ERS_NeoCare.Design.Paciente;
 namespace ERS_NeoCare.Design.Medico
 {
     public partial class MenuMedicoPacientes : UserControl
@@ -18,7 +11,7 @@ namespace ERS_NeoCare.Design.Medico
         public MenuMedicoPacientes(string dni)
         {
             this.userDni = dni;
-       
+
             InitializeComponent();
         }
 
@@ -38,13 +31,13 @@ namespace ERS_NeoCare.Design.Medico
             if (menuForm != null)
             {
                 // Llama al método para agregar el control al panelOpciones
-                menuForm.addUserControl(tm, menuForm.panelOpciones);
+
             }
         }
 
         private void iconVer_Click(object sender, EventArgs e)
         {
-            paciente pacienteControl = new paciente(userDni);
+            PacienteView pacienteControl = new PacienteView(userDni);
             pacienteControl.Dock = DockStyle.Fill; // Ajusta el control al tamaño del panelOpciones
 
             // Accede al formulario 'menu' desde el control actual
@@ -52,10 +45,20 @@ namespace ERS_NeoCare.Design.Medico
 
             if (menuForm != null)
             {
-                // Llama al método para agregar el control al panelOpciones
-                menuForm.addUserControl(pacienteControl, menuForm.panelOpciones);
-            }
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
 
+
+                // Borra cualquier control existente en el panelOpciones
+                panelOpciones.Controls.Clear();
+
+                // Agrega el control PacienteView al panelOpciones
+                panelOpciones.Controls.Add(pacienteControl);
+                // Llama al método para agregar el control al panelOpciones
+
+
+
+            }
         }
     }
-}
+ }
+

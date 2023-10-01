@@ -8,9 +8,12 @@ namespace ERS_NeoCare
 
 namespace ERS_NeoCare
 {
-}namespace ERS_NeoCare {
-    
-    
-    public partial class DatabaseDataSet {
+}
+namespace ERS_NeoCare
+{
+
+
+    public partial class DatabaseDataSet
+    {
     }
 }

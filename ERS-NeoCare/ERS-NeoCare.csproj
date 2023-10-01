@@ -292,24 +292,6 @@
     <Compile Include="Design\admin\MenuAdminUsuarios.Designer.cs">
       <DependentUpon>MenuAdminUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\analisis.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Design\analisis.Designer.cs">
-      <DependentUpon>analisis.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Design\atencion.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Design\atencion.Designer.cs">
-      <DependentUpon>atencion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Design\bioquimico.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Design\bioquimico.Designer.cs">
-      <DependentUpon>bioquimico.cs</DependentUpon>
-    </Compile>
     <Compile Include="Design\bioquimico\bioquimico.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -370,7 +352,9 @@
     <Compile Include="Design\administrativo\lista_paciente.Designer.cs">
       <DependentUpon>lista_paciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\ILogin.cs" />
+    <Compile Include="Logic\ImenuPresenter.cs" />
+    <Compile Include="Presenter\ProfesionService.cs" />
+    <Compile Include="view\ILogin.cs" />
     <Compile Include="Design\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,23 +391,23 @@
     <Compile Include="Design\administrativo\menuPaciente.Designer.cs">
       <DependentUpon>menuPaciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\paciente.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Design\paciente.Designer.cs">
-      <DependentUpon>paciente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Design\Medico\PacientesMedico.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Design\Medico\PacientesMedico.Designer.cs">
       <DependentUpon>PacientesMedico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\pedido.cs">
+    <Compile Include="Design\Paciente\HistoriaClinica.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\pedido.Designer.cs">
-      <DependentUpon>pedido.cs</DependentUpon>
+    <Compile Include="Design\Paciente\HistoriaClinica.Designer.cs">
+      <DependentUpon>HistoriaClinica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Paciente\pacienteview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Paciente\pacienteview.Designer.cs">
+      <DependentUpon>pacienteview.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\Medico\TurnosMedico.cs">
       <SubType>UserControl</SubType>
@@ -431,6 +415,7 @@
     <Compile Include="Design\Medico\TurnosMedico.Designer.cs">
       <DependentUpon>TurnosMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\IMenuView.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -440,8 +425,7 @@
     <Compile Include="Helper\Configuracion.cs" />
     <Compile Include="Logic\LoginPresenter.cs" />
     <Compile Include="Model\UsuarioModel.cs" />
-    <Compile Include="Model\UsuarioService.cs" />
-    <Compile Include="Paciente.cs" />
+    <Compile Include="Presenter\UsuarioService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Design\administrativo\administrativo.resx">
@@ -464,9 +448,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\admin\MenuAdminUsuarios.resx">
       <DependentUpon>MenuAdminUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Design\atencion.resx">
-      <DependentUpon>atencion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\bioquimico\bioquimico.resx">
       <DependentUpon>bioquimico.cs</DependentUpon>
@@ -522,8 +503,11 @@
     <EmbeddedResource Include="Design\administrativo\menuPaciente.resx">
       <DependentUpon>menuPaciente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\paciente.resx">
-      <DependentUpon>paciente.cs</DependentUpon>
+    <EmbeddedResource Include="Design\Paciente\HistoriaClinica.resx">
+      <DependentUpon>HistoriaClinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Paciente\pacienteview.resx">
+      <DependentUpon>pacienteview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -1,13 +1,7 @@
 ﻿using ERS_NeoCare.Design.Medico;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -28,7 +22,7 @@ namespace ERS_NeoCare.Design
         private void cargarDatosPaciente()
 
         {
-          
+
             // Crea una conexión a la base de datos.
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -69,12 +63,12 @@ namespace ERS_NeoCare.Design
                 {
                     int columnIndexDNI = 0; // Reemplaza 'n' con el índice real de la columna DNI
                     userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
-                  
-                    
+
+
                     MenuMedicoPacientes tm = new MenuMedicoPacientes(userDni);
-                 
-              
-                      // if (panelPaciente.Controls.Count > 0)
+
+
+                    // if (panelPaciente.Controls.Count > 0)
                     //  {
                     // Obtén el UserControl actual dentro del panelOpciones
                     //  agregar_paciente ap = (agregar_paciente)panelPaciente.Controls[0];

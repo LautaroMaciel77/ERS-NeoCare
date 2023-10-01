@@ -1,13 +1,7 @@
 ﻿using ERS_NeoCare.Design.Medico;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -72,9 +66,9 @@ namespace ERS_NeoCare.Design
                     panelPaciente.BringToFront();
                     panelPaciente.Visible = true;
                     MenuMedicoPacientes tm = new MenuMedicoPacientes(userDni);
-                 
+
                     panelPaciente.Controls.Add(tm);
-                      // if (panelPaciente.Controls.Count > 0)
+                    // if (panelPaciente.Controls.Count > 0)
                     //  {
                     // Obtén el UserControl actual dentro del panelOpciones
                     //  agregar_paciente ap = (agregar_paciente)panelPaciente.Controls[0];

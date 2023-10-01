@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ERS_NeoCare.Design.administrativo
@@ -121,14 +114,14 @@ namespace ERS_NeoCare.Design.administrativo
             if (string.IsNullOrWhiteSpace(textboxDni.Text))
             {
                 MessageBox.Show("El campo DNI no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
             }
 
-          
+
             if (select == null || rangoHora == null)
             {
                 MessageBox.Show("Asegúrate de seleccionar una fecha y un rango de hora antes de agregar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
             }
         }
 
@@ -138,5 +131,5 @@ namespace ERS_NeoCare.Design.administrativo
         }
     }
 }
-    
+
 

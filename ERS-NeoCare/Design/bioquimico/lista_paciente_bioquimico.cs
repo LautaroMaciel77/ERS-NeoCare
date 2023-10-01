@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace ERS_NeoCare.Design
 {
@@ -24,7 +18,7 @@ namespace ERS_NeoCare.Design
 
         public lista_paciente_bioquimico()
         {
-    
+
             InitializeComponent();
             CargarDatosPaciente();
             //panelMenuPaciente.Visible = false;
@@ -82,13 +76,13 @@ namespace ERS_NeoCare.Design
             }
         }
 
-  
+
         private void iconButton2_Click_1(object sender, EventArgs e)
         {
             //panelMenuPaciente.Visible = false;
         }
 
-    
+
         private void iconButton3_Click(object sender, EventArgs e)
         {
             historiaPacienteClick?.Invoke(this, Tuple.Create(userDni));

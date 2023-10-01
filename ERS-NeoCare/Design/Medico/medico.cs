@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ERS_NeoCare.Design
@@ -17,7 +10,7 @@ namespace ERS_NeoCare.Design
         // Declara un evento personalizado para notificar clics en los botones
         public event EventHandler PacienteButtonClick;
         public event EventHandler TurnoAdminButtonClick;
-
+        public event EventHandler ListaTurnosButtonClick;
         public medico()
         {
             InitializeComponent();
@@ -35,7 +28,7 @@ namespace ERS_NeoCare.Design
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            TurnoAdminButtonClick?.Invoke(this, EventArgs.Empty);
+            ListaTurnosButtonClick?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ERS_NeoCare.Design.administrativo
@@ -29,7 +22,7 @@ namespace ERS_NeoCare.Design.administrativo
             }
         }
 
-        
+
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
@@ -40,19 +33,19 @@ namespace ERS_NeoCare.Design.administrativo
         {
 
             // Verificar si textNombre, textApellido y textDomicilio no están vacíos
-            if (string.IsNullOrWhiteSpace(textNombre.Text) || string.IsNullOrWhiteSpace(textApellido.Text) 
+            if (string.IsNullOrWhiteSpace(textNombre.Text) || string.IsNullOrWhiteSpace(textApellido.Text)
                 || string.IsNullOrWhiteSpace(textDni.Text))
-                {
-                    MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; 
-                }
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                // Verificar si textDni contiene solo números y tiene un máximo de 8 caracteres
-                if (!int.TryParse(textDni.Text, out int dni) || textDni.Text.Length > 8)
-                {
-                    MessageBox.Show("El campo DNI debe contener solo números y tener un máximo de 8 caracteres.", "Formato de DNI incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+            // Verificar si textDni contiene solo números y tiene un máximo de 8 caracteres
+            if (!int.TryParse(textDni.Text, out int dni) || textDni.Text.Length > 8)
+            {
+                MessageBox.Show("El campo DNI debe contener solo números y tener un máximo de 8 caracteres.", "Formato de DNI incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (textDni.Text.Length > 8)
             {
                 MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -60,9 +53,9 @@ namespace ERS_NeoCare.Design.administrativo
             }
 
             // Verificar que al menos uno de los radio buttons esté seleccionado
-            
 
-              
+
+
         }
 
         private void textObra_KeyPress(object sender, KeyPressEventArgs e)
