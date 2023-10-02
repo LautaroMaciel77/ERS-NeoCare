@@ -45,7 +45,7 @@ namespace ERS_NeoCare.Design
                             string Nombre = reader["nombre"].ToString();
                             string apellido = reader["apellido"].ToString();
                             string domicilio = reader["domicilio"].ToString();
-                            string fechaNacimiento = reader["fecha_nacimiento"].ToString();
+                            string fechaNacimiento = reader["fecha_nacimiento"].ToString("MM/dd/yyyy");
                             string sexo = reader["sexo"].ToString();
                             string obraSocial = reader["obra_social"].ToString();
                             labelDni.Text += dniAsInt.ToString();
@@ -69,6 +69,16 @@ namespace ERS_NeoCare.Design
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelFecha_Click(object sender, EventArgs e)
         {
 
         }

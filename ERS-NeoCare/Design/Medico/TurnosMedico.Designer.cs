@@ -48,7 +48,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(377, 385);
+            this.label2.Location = new System.Drawing.Point(634, 608);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 14;
@@ -56,7 +56,7 @@
             // 
             // textboxDni
             // 
-            this.textboxDni.Location = new System.Drawing.Point(468, 411);
+            this.textboxDni.Location = new System.Drawing.Point(725, 634);
             this.textboxDni.Name = "textboxDni";
             this.textboxDni.Size = new System.Drawing.Size(100, 20);
             this.textboxDni.TabIndex = 13;
@@ -65,7 +65,7 @@
             // labelDni
             // 
             this.labelDni.AutoSize = true;
-            this.labelDni.Location = new System.Drawing.Point(377, 414);
+            this.labelDni.Location = new System.Drawing.Point(634, 637);
             this.labelDni.Name = "labelDni";
             this.labelDni.Size = new System.Drawing.Size(85, 13);
             this.labelDni.TabIndex = 12;
@@ -74,7 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(377, 351);
+            this.label1.Location = new System.Drawing.Point(634, 574);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 11;
@@ -89,7 +89,7 @@
             this.hora,
             this.disponible,
             this.Eleguir});
-            this.dataGridViewHora.Location = new System.Drawing.Point(20, 332);
+            this.dataGridViewHora.Location = new System.Drawing.Point(277, 555);
             this.dataGridViewHora.Name = "dataGridViewHora";
             this.dataGridViewHora.Size = new System.Drawing.Size(351, 150);
             this.dataGridViewHora.TabIndex = 10;
@@ -113,8 +113,8 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(3, 2);
-            this.monthCalendar1.Location = new System.Drawing.Point(9, 9);
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(4, 3);
+            this.monthCalendar1.Location = new System.Drawing.Point(230, 63);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 9;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
@@ -122,7 +122,7 @@
             // radioEnfermero
             // 
             this.radioEnfermero.AutoSize = true;
-            this.radioEnfermero.Location = new System.Drawing.Point(610, 410);
+            this.radioEnfermero.Location = new System.Drawing.Point(867, 633);
             this.radioEnfermero.Name = "radioEnfermero";
             this.radioEnfermero.Size = new System.Drawing.Size(73, 17);
             this.radioEnfermero.TabIndex = 18;
@@ -134,7 +134,7 @@
             // radioBio
             // 
             this.radioBio.AutoSize = true;
-            this.radioBio.Location = new System.Drawing.Point(610, 381);
+            this.radioBio.Location = new System.Drawing.Point(867, 604);
             this.radioBio.Name = "radioBio";
             this.radioBio.Size = new System.Drawing.Size(76, 17);
             this.radioBio.TabIndex = 19;
@@ -146,7 +146,7 @@
             // labelEspecialista
             // 
             this.labelEspecialista.AutoSize = true;
-            this.labelEspecialista.Location = new System.Drawing.Point(610, 351);
+            this.labelEspecialista.Location = new System.Drawing.Point(867, 574);
             this.labelEspecialista.Name = "labelEspecialista";
             this.labelEspecialista.Size = new System.Drawing.Size(63, 13);
             this.labelEspecialista.TabIndex = 20;
@@ -157,7 +157,7 @@
             this.iconBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconBuscar.IconColor = System.Drawing.Color.Black;
             this.iconBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBuscar.Location = new System.Drawing.Point(488, 459);
+            this.iconBuscar.Location = new System.Drawing.Point(745, 682);
             this.iconBuscar.Name = "iconBuscar";
             this.iconBuscar.Size = new System.Drawing.Size(156, 23);
             this.iconBuscar.TabIndex = 16;
@@ -169,7 +169,7 @@
             this.iconAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconAgregar.IconColor = System.Drawing.Color.Black;
             this.iconAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconAgregar.Location = new System.Drawing.Point(488, 488);
+            this.iconAgregar.Location = new System.Drawing.Point(745, 711);
             this.iconAgregar.Name = "iconAgregar";
             this.iconAgregar.Size = new System.Drawing.Size(156, 23);
             this.iconAgregar.TabIndex = 15;
@@ -193,7 +193,7 @@
             this.Controls.Add(this.dataGridViewHora);
             this.Controls.Add(this.monthCalendar1);
             this.Name = "TurnosMedico";
-            this.Size = new System.Drawing.Size(782, 541);
+            this.Size = new System.Drawing.Size(1196, 768);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHora)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
