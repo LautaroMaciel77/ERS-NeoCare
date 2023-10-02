@@ -32,53 +32,40 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
-            this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new ERS_NeoCare.DatabaseDataSet();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pacienteTableAdapter = new ERS_NeoCare.DatabaseDataSetTableAdapters.PacienteTableAdapter();
-            this.database1DataSet = new ERS_NeoCare.Database1DataSet();
-            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.turnoTableAdapter = new ERS_NeoCare.Database1DataSetTableAdapters.turnoTableAdapter();
-            this.databaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.turnoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechahoraDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.pacientedniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel.SuspendLayout();
+            this.turnoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new ERS_NeoCare.Database1DataSet();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new ERS_NeoCare.DatabaseDataSet();
+            this.pacienteTableAdapter = new ERS_NeoCare.DatabaseDataSetTableAdapters.PacienteTableAdapter();
+            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.turnoTableAdapter = new ERS_NeoCare.Database1DataSetTableAdapters.turnoTableAdapter();
+            this.databaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel
-            // 
-            this.panel.Controls.Add(this.label7);
-            this.panel.Controls.Add(this.textBox2);
-            this.panel.Controls.Add(this.DGVAdministrativo);
-            this.panel.Controls.Add(this.panel2);
-            this.panel.Location = new System.Drawing.Point(0, 0);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(787, 543);
-            this.panel.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 85);
+            this.label7.Location = new System.Drawing.Point(31, 83);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 18);
@@ -88,7 +75,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(76, 81);
+            this.textBox2.Location = new System.Drawing.Point(90, 80);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(196, 27);
@@ -97,6 +84,9 @@
             // DGVAdministrativo
             // 
             this.DGVAdministrativo.AllowUserToAddRows = false;
+            this.DGVAdministrativo.AllowUserToDeleteRows = false;
+            this.DGVAdministrativo.AllowUserToResizeColumns = false;
+            this.DGVAdministrativo.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.DGVAdministrativo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVAdministrativo.AutoGenerateColumns = false;
@@ -128,25 +118,50 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
-            this.DGVAdministrativo.Location = new System.Drawing.Point(2, 112);
+            this.DGVAdministrativo.Location = new System.Drawing.Point(34, 120);
             this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
             this.DGVAdministrativo.Name = "DGVAdministrativo";
             this.DGVAdministrativo.RowHeadersVisible = false;
             this.DGVAdministrativo.RowHeadersWidth = 51;
             this.DGVAdministrativo.RowTemplate.Height = 40;
-            this.DGVAdministrativo.Size = new System.Drawing.Size(783, 431);
+            this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
-            // pacienteBindingSource
+            // idDataGridViewTextBoxColumn
             // 
-            this.pacienteBindingSource.DataMember = "Paciente";
-            this.pacienteBindingSource.DataSource = this.databaseDataSet;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
-            // databaseDataSet
+            // fechaDataGridViewTextBoxColumn
             // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            // 
+            // fechahoraDataGridViewImageColumn
+            // 
+            this.fechahoraDataGridViewImageColumn.DataPropertyName = "fecha_hora";
+            this.fechahoraDataGridViewImageColumn.HeaderText = "fecha_hora";
+            this.fechahoraDataGridViewImageColumn.Name = "fechahoraDataGridViewImageColumn";
+            this.fechahoraDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // pacientedniDataGridViewTextBoxColumn
+            // 
+            this.pacientedniDataGridViewTextBoxColumn.DataPropertyName = "paciente_dni";
+            this.pacientedniDataGridViewTextBoxColumn.HeaderText = "paciente_dni";
+            this.pacientedniDataGridViewTextBoxColumn.Name = "pacientedniDataGridViewTextBoxColumn";
+            // 
+            // turnoBindingSource1
+            // 
+            this.turnoBindingSource1.DataMember = "turno";
+            this.turnoBindingSource1.DataSource = this.database1DataSet;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel2
             // 
@@ -157,7 +172,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(787, 71);
+            this.panel2.Size = new System.Drawing.Size(1196, 71);
             this.panel2.TabIndex = 14;
             // 
             // iconPictureBox1
@@ -187,14 +202,19 @@
             this.label1.Text = "Turnos de pacientes";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // pacienteBindingSource
+            // 
+            this.pacienteBindingSource.DataMember = "Paciente";
+            this.pacienteBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // pacienteTableAdapter
             // 
             this.pacienteTableAdapter.ClearBeforeFill = true;
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // turnoBindingSource
             // 
@@ -210,62 +230,32 @@
             this.databaseDataSetBindingSource.DataSource = this.databaseDataSet;
             this.databaseDataSetBindingSource.Position = 0;
             // 
-            // turnoBindingSource1
-            // 
-            this.turnoBindingSource1.DataMember = "turno";
-            this.turnoBindingSource1.DataSource = this.database1DataSet;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
-            // fechahoraDataGridViewImageColumn
-            // 
-            this.fechahoraDataGridViewImageColumn.DataPropertyName = "fecha_hora";
-            this.fechahoraDataGridViewImageColumn.HeaderText = "fecha_hora";
-            this.fechahoraDataGridViewImageColumn.Name = "fechahoraDataGridViewImageColumn";
-            this.fechahoraDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // pacientedniDataGridViewTextBoxColumn
-            // 
-            this.pacientedniDataGridViewTextBoxColumn.DataPropertyName = "paciente_dni";
-            this.pacientedniDataGridViewTextBoxColumn.HeaderText = "paciente_dni";
-            this.pacientedniDataGridViewTextBoxColumn.Name = "pacientedniDataGridViewTextBoxColumn";
-            // 
             // ListaDeTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.DGVAdministrativo);
             this.Name = "ListaDeTurnos";
-            this.Size = new System.Drawing.Size(787, 545);
-            this.panel.ResumeLayout(false);
-            this.panel.PerformLayout();
+            this.Size = new System.Drawing.Size(1196, 768);
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView DGVAdministrativo;
