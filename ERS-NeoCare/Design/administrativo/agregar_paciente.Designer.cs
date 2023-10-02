@@ -74,8 +74,7 @@
             this.panelAgregarPaciente.Name = "panelAgregarPaciente";
             this.panelAgregarPaciente.Size = new System.Drawing.Size(478, 415);
             this.panelAgregarPaciente.TabIndex = 17;
-            this.panelAgregarPaciente.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAgregarPaciente_Paint);
-            // 
+           // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -85,7 +84,7 @@
             this.label1.Size = new System.Drawing.Size(125, 18);
             this.label1.TabIndex = 33;
             this.label1.Text = "Nuevo Paciente";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          
             // 
             // btnRegistrar
             // 
@@ -140,7 +139,7 @@
             this.textObra.Name = "textObra";
             this.textObra.Size = new System.Drawing.Size(236, 23);
             this.textObra.TabIndex = 27;
-            this.textObra.TextChanged += new System.EventHandler(this.textObra_TextChanged);
+         
             this.textObra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textObra_KeyPress);
             // 
             // textDni
@@ -185,7 +184,7 @@
             this.labelSexo.Size = new System.Drawing.Size(37, 17);
             this.labelSexo.TabIndex = 22;
             this.labelSexo.Text = "Sexo";
-            this.labelSexo.Click += new System.EventHandler(this.labelSexo_Click);
+    
             // 
             // LabelDomicilio
             // 

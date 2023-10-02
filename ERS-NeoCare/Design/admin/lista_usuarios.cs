@@ -63,8 +63,7 @@ namespace ERS_NeoCare.Design
         {
             panelMenuPaciente.Visible = false;
             agregar_paciente agregar_Paciente = new agregar_paciente();
-            agregar_Paciente.UserControlClosed += closePanel;
-            agregar_Paciente.Dock = DockStyle.Fill;
+              agregar_Paciente.Dock = DockStyle.Fill;
             panelOpciones.Controls.Clear();
             panelOpciones.Controls.Add(agregar_Paciente);
             agregar_Paciente.BringToFront();

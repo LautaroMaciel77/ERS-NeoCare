@@ -352,11 +352,16 @@
     <Compile Include="Design\administrativo\lista_paciente.Designer.cs">
       <DependentUpon>lista_paciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\AgregarPacientePresenter.cs" />
     <Compile Include="Logic\ImenuPresenter.cs" />
+    <Compile Include="Logic\PacientePresenter.cs" />
+    <Compile Include="Logic\TurnoPresenter.cs" />
     <Compile Include="Model\PacienteModel.cs" />
     <Compile Include="Model\PacienteService.cs" />
     <Compile Include="Model\ProfesionService.cs" />
-    <Compile Include="Presenter\IListaPacientePresenter.cs" />
+    <Compile Include="Model\TurnoModel.cs" />
+    <Compile Include="Model\TurnoService.cs" />
+    <Compile Include="Logic\IListaPacientePresenter.cs" />
     <Compile Include="view\IlistaPacienteViewAdmin.cs" />
     <Compile Include="view\ILogin.cs" />
     <Compile Include="Design\Login.cs">
@@ -433,6 +438,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="view\IViewListaPaciente.cs" />
+    <Compile Include="view\PacienteView.cs" />
     <EmbeddedResource Include="Design\administrativo\administrativo.resx">
       <DependentUpon>administrativo.cs</DependentUpon>
     </EmbeddedResource>

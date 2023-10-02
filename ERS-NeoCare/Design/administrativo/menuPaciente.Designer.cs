@@ -54,7 +54,7 @@
             this.iconButton3.TabIndex = 17;
             this.iconButton3.Text = "Ver paciente";
             this.iconButton3.UseVisualStyleBackColor = false;
-  
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // iconButton1
             // 
@@ -77,7 +77,6 @@
             this.iconButton1.TabIndex = 18;
             this.iconButton1.Text = "wip";
             this.iconButton1.UseVisualStyleBackColor = false;
-         
             // 
             // iconButtonClose
             // 
@@ -106,7 +105,7 @@
             this.Controls.Add(this.iconButton3);
             this.Name = "menuPaciente";
             this.Size = new System.Drawing.Size(260, 150);
-             this.ResumeLayout(false);
+            this.ResumeLayout(false);
 
         }
 

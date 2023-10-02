@@ -21,6 +21,7 @@ namespace ERS_NeoCare.Design
 
             InitializeComponent();
             CargarDatosPaciente();
+
             //panelMenuPaciente.Visible = false;
         }
 

@@ -91,7 +91,7 @@
             this.labelDni.Size = new System.Drawing.Size(85, 13);
             this.labelDni.TabIndex = 3;
             this.labelDni.Text = "Dni del Paciente";
-            this.labelDni.Click += new System.EventHandler(this.labelDni_Click);
+         
             // 
             // textboxDni
             // 

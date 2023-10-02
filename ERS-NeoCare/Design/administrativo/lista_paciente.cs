@@ -1,9 +1,12 @@
 ﻿using ERS_NeoCare.Design.administrativo;
 using ERS_NeoCare.Helper;
+using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
+using ERS_NeoCare.Presenter;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 namespace ERS_NeoCare.Design
 {
@@ -15,11 +18,16 @@ namespace ERS_NeoCare.Design
         private menu MainForm { get; set; }
         // Declara un evento personalizado para notificar clics en los botones
 
-
+        public string dni;
+       
+        public PacienteModel paciente;
+        private PacientePresenter _presenter;
         public lista_paciente()
         {
             InitializeComponent();
             panelAgregar.Visible = false;
+            _presenter = new PacientePresenter(this, new PacienteService(Configuracion.ConnectionString));
+
             CargarDatosPaciente();
         }
 
@@ -28,9 +36,10 @@ namespace ERS_NeoCare.Design
             DGVAdministrativo.DataSource = data;
         }
 
+
         private void CargarDatosPaciente()
         {
-            PacienteModel modelo = new PacienteModel(Configuracion.ConnectionString);
+            PacienteService modelo = new PacienteService(Configuracion.ConnectionString);
             DataTable data = modelo.ObtenerDatosPaciente();
             MostrarDatosPaciente(data);
         }
@@ -40,8 +49,69 @@ namespace ERS_NeoCare.Design
         {
             panelAgregar.Visible = true;
             agregar_paciente ap = new agregar_paciente();
-            //ap.closeclick += closeclick();
+            ap.closeagregarclick += closeagregarclick;
+            ap.actualizarTabla += Ap_actualizarTabla;
             cargarUserControl(ap);
+        }
+
+        private void Ap_actualizarTabla(object sender, EventArgs e)
+        {
+            CargarDatosPaciente();
+        }
+
+        private void closeagregarclick(object sender, EventArgs e)
+        {
+
+            panelAgregar.Visible = false;
+        }
+
+    
+
+        public void MostrarMenu(PacienteModel paciente)
+        {
+            panelAgregar.Visible = true;
+            menuPaciente mp = new menuPaciente();
+            this.paciente = paciente;
+            mp.closeclick += closeclick;
+            mp.verclick += verclick;
+            cargarUserControl(mp);
+        }
+
+        private void verclick(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void verpacienteclick()
+        {
+            
+              //PacienteView pacienteControl = new PacienteView(paciente);
+                //pacienteControl.Dock = DockStyle.Fill; // Ajusta el control al tamaño del panelOpciones
+
+                // Accede al formulario 'menu' desde el control actual
+                //menu menuForm = this.ParentForm as menu;
+
+                //if (menuForm != null)
+                //{
+                 //   Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+                    // Borra cualquier control existente en el panelOpciones
+                   // panelOpciones.Controls.Clear();
+
+                    // Agrega el control PacienteView al panelOpciones
+                   // panelOpciones.Controls.Add(pacienteControl);
+                    // Llama al método para agregar el control al panelOpciones
+
+
+
+                //}
+
+        }
+
+        private void closeclick(object sender, EventArgs e)
+        {
+            panelAgregar.Visible = false;
         }
 
         private void closePanel(object sender, EventArgs e)
@@ -54,11 +124,10 @@ namespace ERS_NeoCare.Design
             {
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
-                    menuPaciente menu = new menuPaciente();
-                    panelAgregar.Visible = true;
-                    //menu.closeclick += closeclick();
-                    cargarUserControl(menu);
-
+                    int columnIndexDNI = 0;
+                    this.dni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
+                    _presenter.cargarMenu();
+               
                 }
             }
 

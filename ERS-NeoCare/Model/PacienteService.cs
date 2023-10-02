@@ -5,6 +5,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ERS_NeoCare.Design.Paciente;
+using System.Net;
+using System.Windows;
+using ERS_NeoCare.Model;
+using System.Windows.Forms;
 
 namespace ERS_NeoCare.Presenter
 {
@@ -16,6 +21,8 @@ namespace ERS_NeoCare.Presenter
         {
             _connectionString = connectionString;
         }
+
+
         public DataTable ObtenerDatosPaciente()
         {
             DataTable data = new DataTable();
@@ -25,8 +32,11 @@ namespace ERS_NeoCare.Presenter
                 {
                     connection.Open();
                     string query = "SELECT * FROM paciente";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    adapter.Fill(data);
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        adapter.Fill(data);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -35,6 +45,64 @@ namespace ERS_NeoCare.Presenter
             }
             return data;
         }
+        public PacienteModel Paciente(string dni)
+        {
+          
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                System.Windows.Forms.MessageBox.Show("El número de DNI es: " + dni, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                using (SqlCommand command = new SqlCommand("SELECT * FROM Paciente WHERE dni = @dni", connection))
+                {
+                    command.Parameters.AddWithValue("@dni", dni);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+
+                            return new PacienteModel
+                            {
+                                Dni = Convert.ToInt32(reader["dni"]),
+                                Nombre = reader["nombre"].ToString(),
+                                Apellido = reader["apellido"].ToString(),
+                                Domicilio = reader["Domicilio"].ToString(),
+                                Condicion = reader["Condicion"].ToString(),
+                            
+
+                            };
+
+                        }
+                    }
+                }
+            }
+            return null; // Si no se encuentra el usuario
+
+        }
+
+        public bool InsertarPaciente(PacienteModel paciente)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("INSERT INTO Paciente (dni, nombre, apellido, domicilio, sexo, obra_social) " +
+                                                            "VALUES (@dni, @nombre, @apellido, @domicilio, @sexo, @obra_social)", connection))
+                {
+                    command.Parameters.AddWithValue("@dni", paciente.Dni);
+                    command.Parameters.AddWithValue("@nombre", paciente.Nombre);
+                    command.Parameters.AddWithValue("@apellido", paciente.Apellido);
+                    command.Parameters.AddWithValue("@domicilio", paciente.Domicilio);
+                    command.Parameters.AddWithValue("@sexo", paciente.Sexo);
+                    command.Parameters.AddWithValue("@obra_social", paciente.ObraSocial);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    return rowsAffected > 0; 
+                }
+            }
+        }
 
     }
 }
+
