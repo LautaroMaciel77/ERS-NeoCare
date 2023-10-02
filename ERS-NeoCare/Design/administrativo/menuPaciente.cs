@@ -5,24 +5,16 @@ namespace ERS_NeoCare.Design
 {
     public partial class menuPaciente : UserControl
     {
+        public event EventHandler closeclick;
         public menuPaciente()
         {
             InitializeComponent();
         }
 
-        private void menuPaciente_Load(object sender, EventArgs e)
+   
+        private void iconButtonClose_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-
+            closeclick?.Invoke(this, EventArgs.Empty);
         }
     }
 }

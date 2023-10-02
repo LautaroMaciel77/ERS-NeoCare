@@ -13,7 +13,7 @@ namespace ERS_NeoCare.Logic
 {
     internal class ImenuPresenter
     {
-        private IMenuView _view; // Interfaz de la Vista
+        private IMenuView _view; 
         private UsuarioModel _usuario;
         private ProfesionService _profesionService;
         public ImenuPresenter(IMenuView view, UsuarioModel usuario,ProfesionService profesionService)

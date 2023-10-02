@@ -29,15 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel = new System.Windows.Forms.Panel();
-            this.panelOpciones = new System.Windows.Forms.Panel();
-            this.panelMenuPaciente = new System.Windows.Forms.Panel();
-            this.iconTurno = new FontAwesome.Sharp.IconButton();
-            this.iconClose = new FontAwesome.Sharp.IconButton();
-            this.iconVer = new FontAwesome.Sharp.IconButton();
+            this.panelAgregar = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
@@ -57,7 +53,6 @@
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.pacienteTableAdapter = new ERS_NeoCare.DatabaseDataSetTableAdapters.PacienteTableAdapter();
             this.panel.SuspendLayout();
-            this.panelMenuPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -68,8 +63,7 @@
             // panel
             // 
             this.panel.AutoSize = true;
-            this.panel.Controls.Add(this.panelOpciones);
-            this.panel.Controls.Add(this.panelMenuPaciente);
+            this.panel.Controls.Add(this.panelAgregar);
             this.panel.Controls.Add(this.label7);
             this.panel.Controls.Add(this.textBox2);
             this.panel.Controls.Add(this.DGVAdministrativo);
@@ -81,86 +75,15 @@
             this.panel.Size = new System.Drawing.Size(872, 549);
             this.panel.TabIndex = 0;
             // 
-            // panelOpciones
+            // panelAgregar
             // 
-            this.panelOpciones.BackColor = System.Drawing.Color.Transparent;
-            this.panelOpciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelOpciones.Location = new System.Drawing.Point(130, 184);
-            this.panelOpciones.Name = "panelOpciones";
-            this.panelOpciones.Size = new System.Drawing.Size(541, 299);
-            this.panelOpciones.TabIndex = 16;
-            // 
-            // panelMenuPaciente
-            // 
-            this.panelMenuPaciente.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panelMenuPaciente.Controls.Add(this.iconTurno);
-            this.panelMenuPaciente.Controls.Add(this.iconClose);
-            this.panelMenuPaciente.Controls.Add(this.iconVer);
-            this.panelMenuPaciente.Location = new System.Drawing.Point(297, 220);
-            this.panelMenuPaciente.Name = "panelMenuPaciente";
-            this.panelMenuPaciente.Size = new System.Drawing.Size(217, 129);
-            this.panelMenuPaciente.TabIndex = 16;
-            // 
-            // iconTurno
-            // 
-            this.iconTurno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconTurno.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.iconTurno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(77)))), ((int)(((byte)(101)))));
-            this.iconTurno.FlatAppearance.BorderSize = 0;
-            this.iconTurno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
-            this.iconTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconTurno.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconTurno.ForeColor = System.Drawing.Color.Transparent;
-            this.iconTurno.IconChar = FontAwesome.Sharp.IconChar.UserInjured;
-            this.iconTurno.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
-            this.iconTurno.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconTurno.IconSize = 35;
-            this.iconTurno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconTurno.Location = new System.Drawing.Point(0, 76);
-            this.iconTurno.Margin = new System.Windows.Forms.Padding(0);
-            this.iconTurno.Name = "iconTurno";
-            this.iconTurno.Size = new System.Drawing.Size(216, 40);
-            this.iconTurno.TabIndex = 22;
-            this.iconTurno.Text = "agregar Turno";
-            this.iconTurno.UseVisualStyleBackColor = false;
-            this.iconTurno.Click += new System.EventHandler(this.iconTurno_Click);
-            // 
-            // iconClose
-            // 
-            this.iconClose.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconClose.IconColor = System.Drawing.Color.Black;
-            this.iconClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconClose.Location = new System.Drawing.Point(139, -1);
-            this.iconClose.Name = "iconClose";
-            this.iconClose.Size = new System.Drawing.Size(75, 23);
-            this.iconClose.TabIndex = 21;
-            this.iconClose.Text = "cerrar";
-            this.iconClose.UseVisualStyleBackColor = true;
-            this.iconClose.Click += new System.EventHandler(this.iconClose_Click_1);
-            // 
-            // iconVer
-            // 
-            this.iconVer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconVer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.iconVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(77)))), ((int)(((byte)(101)))));
-            this.iconVer.FlatAppearance.BorderSize = 0;
-            this.iconVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
-            this.iconVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconVer.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconVer.ForeColor = System.Drawing.Color.Transparent;
-            this.iconVer.IconChar = FontAwesome.Sharp.IconChar.UserInjured;
-            this.iconVer.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
-            this.iconVer.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconVer.IconSize = 35;
-            this.iconVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconVer.Location = new System.Drawing.Point(1, 25);
-            this.iconVer.Margin = new System.Windows.Forms.Padding(0);
-            this.iconVer.Name = "iconVer";
-            this.iconVer.Size = new System.Drawing.Size(216, 40);
-            this.iconVer.TabIndex = 19;
-            this.iconVer.Text = "ver paciente";
-            this.iconVer.UseVisualStyleBackColor = false;
-            this.iconVer.Click += new System.EventHandler(this.iconVer_Click);
+            this.panelAgregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelAgregar.BackColor = System.Drawing.Color.Transparent;
+            this.panelAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelAgregar.Location = new System.Drawing.Point(155, 172);
+            this.panelAgregar.Name = "panelAgregar";
+            this.panelAgregar.Size = new System.Drawing.Size(541, 299);
+            this.panelAgregar.TabIndex = 16;
             // 
             // label7
             // 
@@ -188,21 +111,21 @@
             this.DGVAdministrativo.AllowUserToDeleteRows = false;
             this.DGVAdministrativo.AllowUserToResizeColumns = false;
             this.DGVAdministrativo.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.DGVAdministrativo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DGVAdministrativo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVAdministrativo.AutoGenerateColumns = false;
             this.DGVAdministrativo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVAdministrativo.BackgroundColor = System.Drawing.Color.White;
             this.DGVAdministrativo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGVAdministrativo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(219)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVAdministrativo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(219)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVAdministrativo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVAdministrativo.ColumnHeadersHeight = 40;
             this.DGVAdministrativo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dniDataGridViewTextBoxColumn,
@@ -214,14 +137,14 @@
             this.obrasocialDataGridViewTextBoxColumn,
             this.CAcciones});
             this.DGVAdministrativo.DataSource = this.pacienteBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
             this.DGVAdministrativo.Location = new System.Drawing.Point(19, 125);
             this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
@@ -379,7 +302,7 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(676, 81);
+            this.btnAgregar.Location = new System.Drawing.Point(619, 81);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(151, 40);
@@ -402,7 +325,6 @@
             this.Size = new System.Drawing.Size(872, 549);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-            this.panelMenuPaciente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
@@ -424,14 +346,10 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnAgregar;
-        private System.Windows.Forms.Panel panelOpciones;
+        private System.Windows.Forms.Panel panelAgregar;
         private System.Windows.Forms.BindingSource pacienteBindingSource;
         private DatabaseDataSet databaseDataSet;
         private DatabaseDataSetTableAdapters.PacienteTableAdapter pacienteTableAdapter;
-        private System.Windows.Forms.Panel panelMenuPaciente;
-        private FontAwesome.Sharp.IconButton iconTurno;
-        private FontAwesome.Sharp.IconButton iconClose;
-        private FontAwesome.Sharp.IconButton iconVer;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;

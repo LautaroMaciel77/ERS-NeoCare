@@ -353,7 +353,11 @@
       <DependentUpon>lista_paciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\ImenuPresenter.cs" />
-    <Compile Include="Presenter\ProfesionService.cs" />
+    <Compile Include="Model\PacienteModel.cs" />
+    <Compile Include="Model\PacienteService.cs" />
+    <Compile Include="Model\ProfesionService.cs" />
+    <Compile Include="Presenter\IListaPacientePresenter.cs" />
+    <Compile Include="view\IlistaPacienteViewAdmin.cs" />
     <Compile Include="view\ILogin.cs" />
     <Compile Include="Design\Login.cs">
       <SubType>Form</SubType>
@@ -425,9 +429,10 @@
     <Compile Include="Helper\Configuracion.cs" />
     <Compile Include="Logic\LoginPresenter.cs" />
     <Compile Include="Model\UsuarioModel.cs" />
-    <Compile Include="Presenter\UsuarioService.cs" />
+    <Compile Include="Model\UsuarioService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\IViewListaPaciente.cs" />
     <EmbeddedResource Include="Design\administrativo\administrativo.resx">
       <DependentUpon>administrativo.cs</DependentUpon>
     </EmbeddedResource>
