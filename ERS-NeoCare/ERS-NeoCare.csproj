@@ -77,7 +77,9 @@
     <Reference Include="RestSharp, Version=100.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharpSigned.105.2.3\lib\net46\RestSharp.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -235,6 +237,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseDataSet.cs">
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </Compile>
@@ -261,23 +268,47 @@
     <Compile Include="Design\administrativo\turnoAdministrativo.Designer.cs">
       <DependentUpon>turnoAdministrativo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\analisis.cs">
+    <Compile Include="Design\admin\admin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\analisis.Designer.cs">
+    <Compile Include="Design\admin\admin.Designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\admin\agregar_usuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\admin\agregar_usuario.Designer.cs">
+      <DependentUpon>agregar_usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\admin\lista_usuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\admin\lista_usuarios.Designer.cs">
+      <DependentUpon>lista_usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\admin\MenuAdminUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\admin\MenuAdminUsuarios.Designer.cs">
+      <DependentUpon>MenuAdminUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\bioquimico\analisis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\bioquimico\analisis.Designer.cs">
       <DependentUpon>analisis.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\atencion.cs">
+    <Compile Include="Design\bioquimico\bioquimico.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\atencion.Designer.cs">
-      <DependentUpon>atencion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Design\bioquimico.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Design\bioquimico.Designer.cs">
+    <Compile Include="Design\bioquimico\bioquimico.Designer.cs">
       <DependentUpon>bioquimico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\bioquimico\lista_analisis_bioquimico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\bioquimico\lista_analisis_bioquimico.Designer.cs">
+      <DependentUpon>lista_analisis_bioquimico.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\bioquimico\lista_paciente_bioquimico.cs">
       <SubType>UserControl</SubType>
@@ -285,17 +316,41 @@
     <Compile Include="Design\bioquimico\lista_paciente_bioquimico.Designer.cs">
       <DependentUpon>lista_paciente_bioquimico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\enfermero.cs">
+    <Compile Include="Design\bioquimico\MenuBioquimicoAnalisis.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\enfermero.Designer.cs">
+    <Compile Include="Design\bioquimico\MenuBioquimicoAnalisis.Designer.cs">
+      <DependentUpon>MenuBioquimicoAnalisis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\enfermero\atencion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\enfermero\atencion.Designer.cs">
+      <DependentUpon>atencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\enfermero\enfermero.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\enfermero\enfermero.Designer.cs">
       <DependentUpon>enfermero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\Enfermero\lista_paciente_enfermero.cs">
+    <Compile Include="Design\enfermero\lista_atenciones_enfermero.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\Enfermero\lista_paciente_enfermero.Designer.cs">
+    <Compile Include="Design\enfermero\lista_atenciones_enfermero.Designer.cs">
+      <DependentUpon>lista_atenciones_enfermero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\enfermero\lista_paciente_enfermero.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\enfermero\lista_paciente_enfermero.Designer.cs">
       <DependentUpon>lista_paciente_enfermero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\enfermero\MenuEnfermeroAtencion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\enfermero\MenuEnfermeroAtencion.Designer.cs">
+      <DependentUpon>MenuEnfermeroAtencion.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\historia_clinica.cs">
       <SubType>Form</SubType>
@@ -309,6 +364,23 @@
     <Compile Include="Design\administrativo\lista_paciente.Designer.cs">
       <DependentUpon>lista_paciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ReemplazoPanelEventArgs .cs" />
+    <Compile Include="Logic\AgregarPacientePresenter.cs" />
+    <Compile Include="Logic\ImenuPresenter.cs" />
+    <Compile Include="Logic\ListaMedico.cs" />
+    <Compile Include="Logic\ListaPacienteBio.cs" />
+    <Compile Include="Logic\ListaPacienteEnf.cs" />
+    <Compile Include="Logic\PacientePresenter.cs" />
+    <Compile Include="Logic\TurnoMedico.cs" />
+    <Compile Include="Logic\TurnoPresenter.cs" />
+    <Compile Include="Model\PacienteModel.cs" />
+    <Compile Include="Model\PacienteService.cs" />
+    <Compile Include="Model\ProfesionService.cs" />
+    <Compile Include="Model\TurnoModel.cs" />
+    <Compile Include="Model\TurnoService.cs" />
+    <Compile Include="Logic\IListaPacientePresenter.cs" />
+    <Compile Include="view\IlistaPacienteViewAdmin.cs" />
+    <Compile Include="view\ILogin.cs" />
     <Compile Include="Design\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,6 +399,12 @@
     <Compile Include="Design\Medico\MenuMedicoPacientes.Designer.cs">
       <DependentUpon>MenuMedicoPacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Medico\ListaDeTurnos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\ListaDeTurnos.Designer.cs">
+      <DependentUpon>ListaDeTurnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,23 +417,23 @@
     <Compile Include="Design\administrativo\menuPaciente.Designer.cs">
       <DependentUpon>menuPaciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\paciente.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Design\paciente.Designer.cs">
-      <DependentUpon>paciente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Design\Medico\PacientesMedico.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Design\Medico\PacientesMedico.Designer.cs">
       <DependentUpon>PacientesMedico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\pedido.cs">
+    <Compile Include="Design\Paciente\HistoriaClinica.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\pedido.Designer.cs">
-      <DependentUpon>pedido.cs</DependentUpon>
+    <Compile Include="Design\Paciente\HistoriaClinica.Designer.cs">
+      <DependentUpon>HistoriaClinica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Paciente\pacienteview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Paciente\pacienteview.Designer.cs">
+      <DependentUpon>pacienteview.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\Medico\TurnosMedico.cs">
       <SubType>UserControl</SubType>
@@ -363,15 +441,21 @@
     <Compile Include="Design\Medico\TurnosMedico.Designer.cs">
       <DependentUpon>TurnosMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\IMenuView.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Paciente.cs" />
+    <Compile Include="Helper\Configuracion.cs" />
+    <Compile Include="Logic\LoginPresenter.cs" />
+    <Compile Include="Model\UsuarioModel.cs" />
+    <Compile Include="Model\UsuarioService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\IViewListaPaciente.cs" />
+    <Compile Include="view\PacienteView.cs" />
     <EmbeddedResource Include="Design\administrativo\administrativo.resx">
       <DependentUpon>administrativo.cs</DependentUpon>
     </EmbeddedResource>
@@ -381,17 +465,47 @@
     <EmbeddedResource Include="Design\administrativo\turnoAdministrativo.resx">
       <DependentUpon>turnoAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\atencion.resx">
-      <DependentUpon>atencion.cs</DependentUpon>
+    <EmbeddedResource Include="Design\admin\admin.resx">
+      <DependentUpon>admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\admin\agregar_usuario.resx">
+      <DependentUpon>agregar_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\admin\lista_usuarios.resx">
+      <DependentUpon>lista_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\admin\MenuAdminUsuarios.resx">
+      <DependentUpon>MenuAdminUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\bioquimico\analisis.resx">
+      <DependentUpon>analisis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\bioquimico\bioquimico.resx">
+      <DependentUpon>bioquimico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\bioquimico\lista_analisis_bioquimico.resx">
+      <DependentUpon>lista_analisis_bioquimico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\bioquimico\lista_paciente_bioquimico.resx">
       <DependentUpon>lista_paciente_bioquimico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\enfermero.resx">
+    <EmbeddedResource Include="Design\bioquimico\MenuBioquimicoAnalisis.resx">
+      <DependentUpon>MenuBioquimicoAnalisis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\enfermero\atencion.resx">
+      <DependentUpon>atencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\enfermero\enfermero.resx">
       <DependentUpon>enfermero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Enfermero\lista_paciente_enfermero.resx">
+    <EmbeddedResource Include="Design\enfermero\lista_atenciones_enfermero.resx">
+      <DependentUpon>lista_atenciones_enfermero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\enfermero\lista_paciente_enfermero.resx">
       <DependentUpon>lista_paciente_enfermero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\enfermero\MenuEnfermeroAtencion.resx">
+      <DependentUpon>MenuEnfermeroAtencion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\historia_clinica.resx">
       <DependentUpon>historia_clinica.cs</DependentUpon>
@@ -408,6 +522,9 @@
     <EmbeddedResource Include="Design\Medico\MenuMedicoPacientes.resx">
       <DependentUpon>MenuMedicoPacientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\ListaDeTurnos.resx">
+      <DependentUpon>ListaDeTurnos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\PacientesMedico.resx">
       <DependentUpon>PacientesMedico.cs</DependentUpon>
     </EmbeddedResource>
@@ -420,8 +537,11 @@
     <EmbeddedResource Include="Design\administrativo\menuPaciente.resx">
       <DependentUpon>menuPaciente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\paciente.resx">
-      <DependentUpon>paciente.cs</DependentUpon>
+    <EmbeddedResource Include="Design\Paciente\HistoriaClinica.resx">
+      <DependentUpon>HistoriaClinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Paciente\pacienteview.resx">
+      <DependentUpon>pacienteview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -436,6 +556,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Database1DataSet.xsc">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet.xss">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
     <None Include="DatabaseDataSet.xsc">
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </None>
@@ -490,7 +621,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Logic\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

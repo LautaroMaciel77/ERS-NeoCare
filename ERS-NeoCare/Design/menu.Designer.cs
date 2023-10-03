@@ -50,9 +50,10 @@
             this.panelMenu.Controls.Add(this.btnSalir);
             this.panelMenu.Controls.Add(this.labelProfesion);
             this.panelMenu.Controls.Add(this.pictureBoxLogo);
-            this.panelMenu.Location = new System.Drawing.Point(2, 0);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(172, 576);
+            this.panelMenu.Size = new System.Drawing.Size(170, 768);
             this.panelMenu.TabIndex = 0;
             // 
             // panelSubMenu
@@ -66,20 +67,19 @@
             // 
             this.pictureBox1.BackgroundImage = global::ERS_NeoCare.Properties.Resources.Icons_Land_Medical_People_Patient_Male_256;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(42, 65);
+            this.pictureBox1.Location = new System.Drawing.Point(40, 71);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(94, 102);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.ForeColor = System.Drawing.Color.White;
-            this.labelNombre.Location = new System.Drawing.Point(19, 169);
+            this.labelNombre.Location = new System.Drawing.Point(17, 173);
             this.labelNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(136, 17);
@@ -100,10 +100,10 @@
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 35;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(0, 536);
+            this.btnSalir.Location = new System.Drawing.Point(0, 728);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(172, 40);
+            this.btnSalir.Size = new System.Drawing.Size(170, 40);
             this.btnSalir.TabIndex = 18;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -114,7 +114,7 @@
             this.labelProfesion.AutoSize = true;
             this.labelProfesion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProfesion.ForeColor = System.Drawing.Color.White;
-            this.labelProfesion.Location = new System.Drawing.Point(39, 196);
+            this.labelProfesion.Location = new System.Drawing.Point(39, 199);
             this.labelProfesion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProfesion.Name = "labelProfesion";
             this.labelProfesion.Size = new System.Drawing.Size(96, 14);
@@ -126,28 +126,32 @@
             this.pictureBoxLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(67)))), ((int)(((byte)(91)))));
             this.pictureBoxLogo.BackgroundImage = global::ERS_NeoCare.Properties.Resources.logo_NeoCare2;
             this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(2, 2);
+            this.pictureBoxLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(167, 59);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(170, 67);
             this.pictureBoxLogo.TabIndex = 17;
             this.pictureBoxLogo.TabStop = false;
             // 
             // panelOpciones
             // 
-            this.panelOpciones.Location = new System.Drawing.Point(177, 0);
+            this.panelOpciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelOpciones.Location = new System.Drawing.Point(170, 0);
             this.panelOpciones.Name = "panelOpciones";
-            this.panelOpciones.Size = new System.Drawing.Size(795, 576);
+            this.panelOpciones.Size = new System.Drawing.Size(1196, 768);
             this.panelOpciones.TabIndex = 1;
             // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 576);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.panelOpciones);
             this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "menu";
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();

@@ -1,12 +1,6 @@
-﻿using System;
+﻿using ERS_NeoCare.Model;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ERS_NeoCare.Design
@@ -16,10 +10,11 @@ namespace ERS_NeoCare.Design
         private DateTime select;
         private string dni;
         private string rangoHora;
-        public TurnosMedico(string dni)
+        private PacienteService paciente;
+        public TurnosMedico(PacienteService paciente)
         {
             InitializeComponent();
-            this.dni = dni;
+            this.paciente = paciente;
             cargarHora();
         }
 
@@ -29,7 +24,11 @@ namespace ERS_NeoCare.Design
             int totalHoras = 24;
             int totalColumnas = (totalHoras * 60) / intervaloEnMinutos;
             label2.Text = "horario seleccionada: ";
-            textboxDni.Text = dni;
+
+            if (paciente != null)
+            {
+                textboxDni.Text = paciente.Dni.ToString();
+            }
             for (int i = 0; i < totalColumnas; i++)
             {
 

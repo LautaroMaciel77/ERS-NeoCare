@@ -1,24 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ERS_NeoCare.Design.Paciente;
+using ERS_NeoCare.Model;
 
 namespace ERS_NeoCare.Design.Medico
 {
     public partial class MenuMedicoPacientes : UserControl
     {
         private menu MainForm { get; set; }
-        private string userDni;
-
-        public MenuMedicoPacientes(string dni)
+        private PacienteService paciente;
+        public event EventHandler closeclick;
+        public MenuMedicoPacientes(PacienteService paciente)
         {
-            this.userDni = dni;
-       
+            this.paciente = paciente;
+
             InitializeComponent();
         }
 
@@ -27,35 +22,53 @@ namespace ERS_NeoCare.Design.Medico
 
         }
 
+        //REMPLAZAR ESTO POR MANEJO EVENTO EN LA SEGUNDA PARTE DEL PROYECTO 
         private void iconTurno_Click(object sender, EventArgs e)
         {
-            TurnosMedico tm = new TurnosMedico(userDni);
-            tm.Dock = DockStyle.Fill; // Ajusta el control al tamaño del panelOpciones
+            TurnosMedico tm = new TurnosMedico(paciente);
+            tm.Dock = DockStyle.Fill; 
 
-            // Accede al formulario 'menu' desde el control actual
             menu menuForm = this.ParentForm as menu;
 
             if (menuForm != null)
             {
-                // Llama al método para agregar el control al panelOpciones
-                menuForm.addUserControl(tm, menuForm.panelOpciones);
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+                panelOpciones.Controls.Clear();
+                panelOpciones.Controls.Add(tm);
             }
         }
 
+
+        //REMPLAZAR ESTO POR MANEJO EVENTO EN LA SEGUNDA PARTE DEL PROYECTO 
         private void iconVer_Click(object sender, EventArgs e)
         {
-            paciente pacienteControl = new paciente(userDni);
-            pacienteControl.Dock = DockStyle.Fill; // Ajusta el control al tamaño del panelOpciones
+            PacienteView pacienteControl = new PacienteView(paciente);
+            pacienteControl.Dock = DockStyle.Fill; 
 
             // Accede al formulario 'menu' desde el control actual
             menu menuForm = this.ParentForm as menu;
 
             if (menuForm != null)
             {
-                // Llama al método para agregar el control al panelOpciones
-                menuForm.addUserControl(pacienteControl, menuForm.panelOpciones);
-            }
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
 
+
+               
+                panelOpciones.Controls.Clear();
+
+            
+                panelOpciones.Controls.Add(pacienteControl);
+              
+
+
+
+            }
+        }
+
+        private void iconButtonClose_Click(object sender, EventArgs e)
+        {
+            closeclick?.Invoke(this, EventArgs.Empty);
         }
     }
-}
+ }
+
