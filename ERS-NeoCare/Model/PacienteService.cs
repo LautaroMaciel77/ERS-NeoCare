@@ -45,7 +45,7 @@ namespace ERS_NeoCare.Presenter
             }
             return data;
         }
-        public PacienteModel Paciente(string dni)
+        public Model.PacienteService Paciente(string dni)
         {
           
             using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -61,7 +61,7 @@ namespace ERS_NeoCare.Presenter
                         if (reader.Read())
                         {
 
-                            return new PacienteModel
+                            return new Model.PacienteService
                             {
                                 Dni = Convert.ToInt32(reader["dni"]),
                                 Nombre = reader["nombre"].ToString(),
@@ -80,7 +80,7 @@ namespace ERS_NeoCare.Presenter
 
         }
 
-        public bool InsertarPaciente(PacienteModel paciente)
+        public bool InsertarPaciente(Model.PacienteService paciente)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {

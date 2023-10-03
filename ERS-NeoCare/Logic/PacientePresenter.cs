@@ -13,9 +13,9 @@ namespace ERS_NeoCare.Logic
     internal class PacientePresenter
     {
         private lista_paciente _view;
-        private PacienteService _service;
+        private Presenter.PacienteService _service;
 
-        public PacientePresenter(lista_paciente view, PacienteService pacienteService)
+        public PacientePresenter(lista_paciente view, Presenter.PacienteService pacienteService)
         {
             _view = view;
             _service = pacienteService;
@@ -24,8 +24,8 @@ namespace ERS_NeoCare.Logic
         public void cargarMenu()
         {
             string dni=_view.dni;
-           
-            PacienteModel paciente = _service.Paciente(dni);
+
+            Model.PacienteService paciente = _service.Paciente(dni);
 
             if (paciente != null)
             {

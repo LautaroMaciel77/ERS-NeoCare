@@ -96,6 +96,7 @@
             this.iconButtonClose.Size = new System.Drawing.Size(32, 23);
             this.iconButtonClose.TabIndex = 34;
             this.iconButtonClose.UseVisualStyleBackColor = false;
+            this.iconButtonClose.Click += new System.EventHandler(this.iconButtonClose_Click);
             // 
             // MenuMedicoPacientes
             // 

@@ -76,6 +76,7 @@
             this.iconButton3.TabIndex = 17;
             this.iconButton3.Text = "Ver orden";
             this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // iconButtonClose
             // 
@@ -92,6 +93,7 @@
             this.iconButtonClose.Size = new System.Drawing.Size(32, 23);
             this.iconButtonClose.TabIndex = 34;
             this.iconButtonClose.UseVisualStyleBackColor = false;
+            this.iconButtonClose.Click += new System.EventHandler(this.iconButtonClose_Click);
             // 
             // MenuEnfermeroAtencion
             // 

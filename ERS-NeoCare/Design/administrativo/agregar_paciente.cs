@@ -15,7 +15,7 @@ namespace ERS_NeoCare.Design.administrativo
         public agregar_paciente()
         {
             InitializeComponent();
-            _presenter = new AgregarPacientePresenter(new PacienteService(Configuracion.ConnectionString));
+            _presenter = new AgregarPacientePresenter(new Presenter.PacienteService(Configuracion.ConnectionString));
         }
 
         private void textDni_KeyPress(object sender, KeyPressEventArgs e)
@@ -80,7 +80,7 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("Seleccione una opción para el género.", "Género requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            PacienteModel paciente = new PacienteModel()
+            Model.PacienteService paciente = new Model.PacienteService()
             {
                 Nombre = textNombre.Text,
                 Apellido = textApellido.Text,

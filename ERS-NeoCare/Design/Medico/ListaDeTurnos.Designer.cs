@@ -35,10 +35,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechahoraDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pacientedniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turnoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new ERS_NeoCare.Database1DataSet();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,6 +46,9 @@
             this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.turnoTableAdapter = new ERS_NeoCare.Database1DataSetTableAdapters.turnoTableAdapter();
             this.databaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paciente_dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultados = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -104,10 +103,9 @@
             this.DGVAdministrativo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVAdministrativo.ColumnHeadersHeight = 40;
             this.DGVAdministrativo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.fechaDataGridViewTextBoxColumn,
-            this.fechahoraDataGridViewImageColumn,
-            this.pacientedniDataGridViewTextBoxColumn});
+            this.paciente_dni,
+            this.fecha,
+            this.resultados});
             this.DGVAdministrativo.DataSource = this.turnoBindingSource1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -127,31 +125,6 @@
             this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
-            // fechahoraDataGridViewImageColumn
-            // 
-            this.fechahoraDataGridViewImageColumn.DataPropertyName = "fecha_hora";
-            this.fechahoraDataGridViewImageColumn.HeaderText = "fecha_hora";
-            this.fechahoraDataGridViewImageColumn.Name = "fechahoraDataGridViewImageColumn";
-            this.fechahoraDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // pacientedniDataGridViewTextBoxColumn
-            // 
-            this.pacientedniDataGridViewTextBoxColumn.DataPropertyName = "paciente_dni";
-            this.pacientedniDataGridViewTextBoxColumn.HeaderText = "paciente_dni";
-            this.pacientedniDataGridViewTextBoxColumn.Name = "pacientedniDataGridViewTextBoxColumn";
             // 
             // turnoBindingSource1
             // 
@@ -230,6 +203,23 @@
             this.databaseDataSetBindingSource.DataSource = this.databaseDataSet;
             this.databaseDataSetBindingSource.Position = 0;
             // 
+            // paciente_dni
+            // 
+            this.paciente_dni.DataPropertyName = "paciente_dni";
+            this.paciente_dni.HeaderText = "paciente_dni";
+            this.paciente_dni.Name = "paciente_dni";
+            // 
+            // fecha
+            // 
+            this.fecha.DataPropertyName = "fecha";
+            this.fecha.HeaderText = "fecha";
+            this.fecha.Name = "fecha";
+            // 
+            // resultados
+            // 
+            this.resultados.HeaderText = "resultados";
+            this.resultados.Name = "resultados";
+            // 
             // ListaDeTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,11 +258,10 @@
         private System.Windows.Forms.BindingSource turnoBindingSource;
         private Database1DataSet database1DataSet;
         private Database1DataSetTableAdapters.turnoTableAdapter turnoTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn fechahoraDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pacientedniDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource turnoBindingSource1;
         private System.Windows.Forms.BindingSource databaseDataSetBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paciente_dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewButtonColumn resultados;
     }
 }

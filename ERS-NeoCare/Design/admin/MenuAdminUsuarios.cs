@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERS_NeoCare.Model;
+using System;
 using System.Windows.Forms;
 namespace ERS_NeoCare.Design.Medico
 {
@@ -6,10 +7,10 @@ namespace ERS_NeoCare.Design.Medico
     {
         private menu MainForm { get; set; }
         private string userDni;
-
-        public MenuAdminUsuarios(string dni)
+        private PacienteService paciente;
+        public MenuAdminUsuarios(PacienteService paciente)
         {
-            this.userDni = dni;
+            this.paciente = paciente;
 
             InitializeComponent();
         }
@@ -21,7 +22,7 @@ namespace ERS_NeoCare.Design.Medico
 
         private void iconTurno_Click(object sender, EventArgs e)
         {
-            TurnosMedico tm = new TurnosMedico(userDni);
+            TurnosMedico tm = new TurnosMedico(paciente);
             tm.Dock = DockStyle.Fill; // Ajusta el control al tamaño del panelOpciones
 
             // Accede al formulario 'menu' desde el control actual
@@ -36,7 +37,7 @@ namespace ERS_NeoCare.Design.Medico
 
         private void iconVer_Click(object sender, EventArgs e)
         {
-            PacienteView pacienteControl = new PacienteView(userDni);
+            PacienteView pacienteControl = new PacienteView(paciente);
             pacienteControl.Dock = DockStyle.Fill; // Ajusta el control al tamaño del panelOpciones
 
             // Accede al formulario 'menu' desde el control actual

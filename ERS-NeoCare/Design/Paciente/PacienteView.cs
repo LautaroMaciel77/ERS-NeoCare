@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ERS_NeoCare.Design.administrativo;
+using ERS_NeoCare.Design.Paciente;
+using ERS_NeoCare.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,73 +18,45 @@ namespace ERS_NeoCare.Design
     {
         private string userDni;
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
-        public PacienteView(string dni)
+          private menu MainForm { get; set; }
+        public delegate void AgregarUserControlEventHandler(object sender, PacienteService paciente);
+        public event AgregarUserControlEventHandler AgregarUserControlClicked;
+        public PacienteView(PacienteService paciente)
         {
-            this.userDni = dni;
+         
             // Establece la cadena de conexión a la base de datos.
             InitializeComponent();
-            CargarPaciente();
+            CargarPaciente(paciente);
          
         }
-        private void CargarPaciente()
+        private void CargarPaciente(PacienteService paciente)
         {
 
-            int dniAsInt = int.Parse(userDni);
-            MessageBox.Show("DNI como entero: " + userDni, "Valor Convertido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        
+                         
+                            labelDni.Text += paciente.Dni;
+                            labelNombre.Text += paciente.Nombre;
+                            labelApellido.Text += paciente.Apellido;
+                            labelDomicilio.Text += paciente.Domicilio;
+                            labelSexo.Text += paciente.Sexo;
+                            labelObra.Text += paciente.ObraSocial;
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = "SELECT * FROM Paciente WHERE dni = @dni"; // Cambia esto según tus necesidades
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    // Configura el parámetro para el ID del paciente que deseas cargar
-                    command.Parameters.AddWithValue("@dni", dniAsInt); 
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            string Nombre = reader["nombre"].ToString();
-                            string apellido = reader["apellido"].ToString();
-                            string domicilio = reader["domicilio"].ToString();
-                            string fechaNacimiento = reader["fecha_nacimiento"].ToString("MM/dd/yyyy");
-                            string sexo = reader["sexo"].ToString();
-                            string obraSocial = reader["obra_social"].ToString();
-                            labelDni.Text += dniAsInt.ToString();
-                            labelNombre.Text += Nombre;
-                            labelApellido.Text += apellido;
-                            labelDomicilio.Text += domicilio;
-                            labelFecha.Text += fechaNacimiento;
-                            labelSexo.Text += sexo;
-                            labelObra.Text += obraSocial;
-
-
-                        }
-                    }
-                }
-            }
+                    
         }
 
-        private void PBPaciente_Click(object sender, EventArgs e)
-        {
-
-        }
-
+   
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            HistoriaClinica historiaClinica = new HistoriaClinica();
+
+            historiaClinica.Dock = DockStyle.Fill;
+            panel3.Controls.Clear();
+            panel3.Controls.Add(historiaClinica);
+            historiaClinica.BringToFront();
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelFecha_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
 

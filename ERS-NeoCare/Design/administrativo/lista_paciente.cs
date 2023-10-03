@@ -20,13 +20,13 @@ namespace ERS_NeoCare.Design
 
         public string dni;
        
-        public PacienteModel paciente;
+        public Model.PacienteService paciente;
         private PacientePresenter _presenter;
         public lista_paciente()
         {
             InitializeComponent();
             panelAgregar.Visible = false;
-            _presenter = new PacientePresenter(this, new PacienteService(Configuracion.ConnectionString));
+            _presenter = new PacientePresenter(this, new Presenter.PacienteService(Configuracion.ConnectionString));
 
             CargarDatosPaciente();
         }
@@ -39,7 +39,7 @@ namespace ERS_NeoCare.Design
 
         private void CargarDatosPaciente()
         {
-            PacienteService modelo = new PacienteService(Configuracion.ConnectionString);
+            Presenter.PacienteService modelo = new Presenter.PacienteService(Configuracion.ConnectionString);
             DataTable data = modelo.ObtenerDatosPaciente();
             MostrarDatosPaciente(data);
         }
@@ -67,7 +67,7 @@ namespace ERS_NeoCare.Design
 
     
 
-        public void MostrarMenu(PacienteModel paciente)
+        public void MostrarMenu(Model.PacienteService paciente)
         {
             panelAgregar.Visible = true;
             menuPaciente mp = new menuPaciente();
@@ -144,6 +144,11 @@ namespace ERS_NeoCare.Design
         private void closeclick()
         {
             panelAgregar.Visible = false;
+        }
+
+        private void panelAgregar_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

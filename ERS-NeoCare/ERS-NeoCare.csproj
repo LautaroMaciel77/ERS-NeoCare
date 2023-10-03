@@ -352,9 +352,14 @@
     <Compile Include="Design\administrativo\lista_paciente.Designer.cs">
       <DependentUpon>lista_paciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ReemplazoPanelEventArgs .cs" />
     <Compile Include="Logic\AgregarPacientePresenter.cs" />
     <Compile Include="Logic\ImenuPresenter.cs" />
+    <Compile Include="Logic\ListaMedico.cs" />
+    <Compile Include="Logic\ListaPacienteBio.cs" />
+    <Compile Include="Logic\ListaPacienteEnf.cs" />
     <Compile Include="Logic\PacientePresenter.cs" />
+    <Compile Include="Logic\TurnoMedico.cs" />
     <Compile Include="Logic\TurnoPresenter.cs" />
     <Compile Include="Model\PacienteModel.cs" />
     <Compile Include="Model\PacienteService.cs" />

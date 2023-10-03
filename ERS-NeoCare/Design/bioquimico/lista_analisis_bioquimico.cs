@@ -53,13 +53,7 @@ namespace ERS_NeoCare.Design
             }
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            //panelMenuPaciente.Visible = false;
-            //panelAgregarPaciente.Visible = true;
-
-
-        }
+    
 
         private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -67,19 +61,9 @@ namespace ERS_NeoCare.Design
             {
                 // Obtén el valor de la celda "dni" de la fila en la que se hizo clic
                 this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells["dni"].Value.ToString();
-
-                // Muestra el valor del dni (puedes hacer lo que desees con él)
-                // Muestra el panel de opciones
-                //panelAgregarPaciente.Visible = false;
-                //panelMenuPaciente.Visible = true;
+         
 
             }
-        }
-
-
-        private void iconButton2_Click_1(object sender, EventArgs e)
-        {
-            //panelMenuPaciente.Visible = false;
         }
 
 

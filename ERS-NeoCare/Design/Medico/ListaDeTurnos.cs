@@ -1,4 +1,7 @@
 ﻿using ERS_NeoCare.Design.Medico;
+using ERS_NeoCare.Helper;
+using ERS_NeoCare.Logic;
+using ERS_NeoCare.Presenter;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -13,10 +16,13 @@ namespace ERS_NeoCare.Design
         private string userDni;
         public event EventHandler<Tuple<string>> TurnoMedicoClick;
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+        private TurnoMedico _presenter;
         public ListaDeTurnos()
         {
             InitializeComponent();
             cargarDatosPaciente();
+            _presenter = new TurnoMedico(new PacienteService(Configuracion.ConnectionString));
+           
         }
 
         private void cargarDatosPaciente()
@@ -61,11 +67,11 @@ namespace ERS_NeoCare.Design
             {
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
-                    int columnIndexDNI = 0; // Reemplaza 'n' con el índice real de la columna DNI
-                    userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
+                  //  int columnIndexDNI = 0; // Reemplaza 'n' con el índice real de la columna DNI
+                    //userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
+                   
 
-
-                    MenuMedicoPacientes tm = new MenuMedicoPacientes(userDni);
+                    //MenuMedicoPacientes tm = new MenuMedicoPacientes(_presenter.buscarPaciente(userDni));
 
 
                     // if (panelPaciente.Controls.Count > 0)
@@ -73,7 +79,7 @@ namespace ERS_NeoCare.Design
                     // Obtén el UserControl actual dentro del panelOpciones
                     //  agregar_paciente ap = (agregar_paciente)panelPaciente.Controls[0];
                     //
-                    // Remueve el UserControl del panelOpciones
+                    //
                     //   panelPaciente.Controls.Remove(ap);
                     //
                     //    ap.Dispose();

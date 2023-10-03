@@ -23,7 +23,7 @@ namespace ERS_NeoCare.Presenter
             _model = model;
         }
 
-        public bool IngresarPaciente(PacienteModel paciente)
+        public bool IngresarPaciente(Model.PacienteService paciente)
         {
             // Llama al método de inserción del modelo y devuelve el resultado
             return _model.InsertarPaciente(paciente);

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ERS_NeoCare.Model
 {
-    public class PacienteModel
+    public class PacienteService
     {
         private string _connectionString;
         public int Id { get; set; }

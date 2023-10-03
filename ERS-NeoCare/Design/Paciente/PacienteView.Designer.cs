@@ -183,7 +183,7 @@
             this.labelFecha.Size = new System.Drawing.Size(156, 17);
             this.labelFecha.TabIndex = 13;
             this.labelFecha.Text = "Fecha de nacimiento:";
-            this.labelFecha.Click += new System.EventHandler(this.labelFecha_Click);
+          
             // 
             // labelSexo
             // 
@@ -235,7 +235,7 @@
             this.PBPaciente.Size = new System.Drawing.Size(120, 130);
             this.PBPaciente.TabIndex = 0;
             this.PBPaciente.TabStop = false;
-            this.PBPaciente.Click += new System.EventHandler(this.PBPaciente_Click);
+           
             // 
             // panel3
             // 
