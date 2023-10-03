@@ -45,7 +45,7 @@ namespace ERS_NeoCare.Design
                             string Nombre = reader["nombre"].ToString();
                             string apellido = reader["apellido"].ToString();
                             string domicilio = reader["domicilio"].ToString();
-                            string fechaNacimiento = reader["fecha_nacimiento"].ToString("MM/dd/yyyy");
+                            string fechaNacimiento = reader["fecha_nacimiento"].ToString();
                             string sexo = reader["sexo"].ToString();
                             string obraSocial = reader["obra_social"].ToString();
                             labelDni.Text += dniAsInt.ToString();

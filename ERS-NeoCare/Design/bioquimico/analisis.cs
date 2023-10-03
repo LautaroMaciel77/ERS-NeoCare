@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace ERS_NeoCare.Design.administrativo
 {
-    public partial class agregar_paciente : UserControl
+    public partial class analisis : UserControl
     {
         public event EventHandler UserControlClosed;
         private lista_paciente MainForm { get; set; }
-        public agregar_paciente()
+        public analisis()
         {
             InitializeComponent();
         }
@@ -22,23 +22,7 @@ namespace ERS_NeoCare.Design.administrativo
             }
         }
 
-        private void radioMujer_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioMujer.Checked)
-            {
-
-                radioHombre.Checked = false;
-            }
-        }
-
-        private void radioHombre_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioHombre.Checked)
-            {
-
-                radioMujer.Checked = false;
-            }
-        }
+       
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
@@ -49,31 +33,20 @@ namespace ERS_NeoCare.Design.administrativo
         {
 
             // Verificar si textNombre, textApellido y textDomicilio no están vacíos
-            if (string.IsNullOrWhiteSpace(textNombre.Text) || string.IsNullOrWhiteSpace(textApellido.Text) || string.IsNullOrWhiteSpace(textDomicilio.Text)
-                || string.IsNullOrWhiteSpace(textDni.Text) || string.IsNullOrWhiteSpace(textObra.Text))
+            if (string.IsNullOrWhiteSpace(textObservaciones.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Verificar si textDni contiene solo números y tiene un máximo de 8 caracteres
-            if (!int.TryParse(textDni.Text, out int dni) || textDni.Text.Length > 8)
-            {
-                MessageBox.Show("El campo DNI debe contener solo números y tener un máximo de 8 caracteres.", "Formato de DNI incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (!int.TryParse(textObra.Text, out int obra) || textDni.Text.Length > 8)
+            
+            if (!int.TryParse(textObservaciones.Text, out int obra))
             {
                 MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Verificar que al menos uno de los radio buttons esté seleccionado
-            if (!radioMujer.Checked && !radioHombre.Checked)
-            {
-                MessageBox.Show("Seleccione una opción para el género.", "Género requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            
 
 
         }
@@ -112,7 +85,16 @@ namespace ERS_NeoCare.Design.administrativo
 
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void textDni_TextChanged(object sender, EventArgs e)
+        {
+                    }
+
+        private void LabelDomicilio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewResultados_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
