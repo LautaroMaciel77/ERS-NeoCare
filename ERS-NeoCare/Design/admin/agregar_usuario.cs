@@ -46,7 +46,7 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("El campo DNI debe contener solo números y tener un máximo de 8 caracteres.", "Formato de DNI incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (textDni.Text.Length > 8)
+            if (textMatricula.Text.Length > 12)
             {
                 MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -54,7 +54,7 @@ namespace ERS_NeoCare.Design.administrativo
 
             // Verificar que al menos uno de los radio buttons esté seleccionado
 
-
+            MessageBox.Show("Ingreso EXitoso","Nuevo User", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 

@@ -26,9 +26,12 @@ namespace ERS_NeoCare.Design
             adminUsuariosButtonClick?.Invoke(this, EventArgs.Empty);
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
         {
-            BajasAdminButtonClick?.Invoke(this, EventArgs.Empty);
+            {
+                BajasAdminButtonClick?.Invoke(this, EventArgs.Empty);
+            }
         }
     }
 }

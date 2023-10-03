@@ -35,12 +35,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHoraPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPrioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new ERS_NeoCare.Database1DataSet();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,6 +42,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pacienteTableAdapter = new ERS_NeoCare.Database1DataSetTableAdapters.PacienteTableAdapter();
             this.panelAgregar = new System.Windows.Forms.Panel();
+            this.dni = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHoraPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPrioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -124,47 +124,6 @@
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
-            // dni
-            // 
-            this.dni.DataPropertyName = "dni";
-            this.dni.HeaderText = "dni";
-            this.dni.Name = "dni";
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            // 
-            // CHoraPedido
-            // 
-            this.CHoraPedido.HeaderText = "Hora pedido";
-            this.CHoraPedido.MinimumWidth = 6;
-            this.CHoraPedido.Name = "CHoraPedido";
-            this.CHoraPedido.ReadOnly = true;
-            // 
-            // CPrioridad
-            // 
-            this.CPrioridad.HeaderText = "Prioridad";
-            this.CPrioridad.MinimumWidth = 6;
-            this.CPrioridad.Name = "CPrioridad";
-            this.CPrioridad.ReadOnly = true;
-            // 
-            // CAcciones
-            // 
-            this.CAcciones.HeaderText = "Acciones";
-            this.CAcciones.MinimumWidth = 6;
-            this.CAcciones.Name = "CAcciones";
-            this.CAcciones.ReadOnly = true;
-            this.CAcciones.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CAcciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // pacienteBindingSource
             // 
             this.pacienteBindingSource.DataMember = "Paciente";
@@ -228,6 +187,50 @@
             this.panelAgregar.Size = new System.Drawing.Size(260, 150);
             this.panelAgregar.TabIndex = 18;
             // 
+            // dni
+            // 
+            this.dni.DataPropertyName = "dni";
+            this.dni.HeaderText = "dni";
+            this.dni.Name = "dni";
+            this.dni.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dni.Text = "Menu";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // CHoraPedido
+            // 
+            this.CHoraPedido.HeaderText = "Hora pedido";
+            this.CHoraPedido.MinimumWidth = 6;
+            this.CHoraPedido.Name = "CHoraPedido";
+            this.CHoraPedido.ReadOnly = true;
+            // 
+            // CPrioridad
+            // 
+            this.CPrioridad.HeaderText = "Prioridad";
+            this.CPrioridad.MinimumWidth = 6;
+            this.CPrioridad.Name = "CPrioridad";
+            this.CPrioridad.ReadOnly = true;
+            // 
+            // CAcciones
+            // 
+            this.CAcciones.HeaderText = "Acciones";
+            this.CAcciones.MinimumWidth = 6;
+            this.CAcciones.Name = "CAcciones";
+            this.CAcciones.ReadOnly = true;
+            this.CAcciones.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CAcciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // lista_paciente_enfermero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,15 +260,15 @@
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.BindingSource pacienteBindingSource;
+        private Database1DataSet database1DataSet;
+        private Database1DataSetTableAdapters.PacienteTableAdapter pacienteTableAdapter;
+        private System.Windows.Forms.Panel panelAgregar;
+        private System.Windows.Forms.DataGridViewButtonColumn dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHoraPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPrioridad;
         private System.Windows.Forms.DataGridViewButtonColumn CAcciones;
-        private System.Windows.Forms.BindingSource pacienteBindingSource;
-        private Database1DataSet database1DataSet;
-        private Database1DataSetTableAdapters.PacienteTableAdapter pacienteTableAdapter;
-        private System.Windows.Forms.Panel panelAgregar;
     }
 }

@@ -63,16 +63,19 @@ namespace ERS_NeoCare.Design
 
         private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == DGVAdministrativo.Columns["acciones"].Index)
+            if (e.RowIndex >= 0 && DGVAdministrativo.Rows.Count > 0)
             {
-                // Obtén el valor de la celda "dni" de la fila en la que se hizo clic
-                this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells["dni"].Value.ToString();
+                if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+                    // Obtén el valor de la celda "dni" de la fila en la que se hizo clic
+                    this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells["dni"].Value.ToString();
 
-                // Muestra el valor del dni (puedes hacer lo que desees con él)
-                // Muestra el panel de opciones
-                //panelAgregarPaciente.Visible = false;
-                //panelMenuPaciente.Visible = true;
+                    // Muestra el valor del dni (puedes hacer lo que desees con él)
+                    // Muestra el panel de opciones
+                    //panelAgregarPaciente.Visible = false;
+                    //panelMenuPaciente.Visible = true;
 
+                }
             }
         }
 

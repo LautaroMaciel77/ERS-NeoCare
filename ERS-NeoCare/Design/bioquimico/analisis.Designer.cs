@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             this.panelAgregarPaciente = new System.Windows.Forms.Panel();
+            this.iconButtonCargar = new FontAwesome.Sharp.IconButton();
+            this.listViewResultados = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButtonClose = new FontAwesome.Sharp.IconButton();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.textObservaciones = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.LabelResultados = new System.Windows.Forms.Label();
             this.labelObservaciones = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
-            this.listViewResultados = new System.Windows.Forms.ListView();
-            this.iconButtonCargar = new FontAwesome.Sharp.IconButton();
             this.panelAgregarPaciente.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +46,6 @@
             this.panelAgregarPaciente.Controls.Add(this.iconButtonCargar);
             this.panelAgregarPaciente.Controls.Add(this.listViewResultados);
             this.panelAgregarPaciente.Controls.Add(this.label1);
-            this.panelAgregarPaciente.Controls.Add(this.iconButtonClose);
             this.panelAgregarPaciente.Controls.Add(this.btnRegistrar);
             this.panelAgregarPaciente.Controls.Add(this.textObservaciones);
             this.panelAgregarPaciente.Controls.Add(this.dateTimePicker1);
@@ -59,102 +57,6 @@
             this.panelAgregarPaciente.Size = new System.Drawing.Size(478, 415);
             this.panelAgregarPaciente.TabIndex = 17;
             this.panelAgregarPaciente.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAgregarPaciente_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(203, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 18);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Analisis";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // iconButtonClose
-            // 
-            this.iconButtonClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(67)))), ((int)(((byte)(44)))));
-            this.iconButtonClose.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.iconButtonClose.IconColor = System.Drawing.Color.White;
-            this.iconButtonClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonClose.IconSize = 12;
-            this.iconButtonClose.Location = new System.Drawing.Point(443, 3);
-            this.iconButtonClose.Name = "iconButtonClose";
-            this.iconButtonClose.Size = new System.Drawing.Size(32, 23);
-            this.iconButtonClose.TabIndex = 32;
-            this.iconButtonClose.UseVisualStyleBackColor = false;
-            this.iconButtonClose.Click += new System.EventHandler(this.iconButtonClose_Click);
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(182, 371);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(125, 23);
-            this.btnRegistrar.TabIndex = 30;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRegistrar.UseCompatibleTextRendering = true;
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // textObservaciones
-            // 
-            this.textObservaciones.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textObservaciones.Location = new System.Drawing.Point(210, 114);
-            this.textObservaciones.Name = "textObservaciones";
-            this.textObservaciones.Size = new System.Drawing.Size(236, 23);
-            this.textObservaciones.TabIndex = 27;
-            this.textObservaciones.TextChanged += new System.EventHandler(this.textObra_TextChanged);
-            this.textObservaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textObra_KeyPress);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(210, 71);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(236, 23);
-            this.dateTimePicker1.TabIndex = 23;
-            // 
-            // LabelResultados
-            // 
-            this.LabelResultados.AutoSize = true;
-            this.LabelResultados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelResultados.Location = new System.Drawing.Point(36, 157);
-            this.LabelResultados.Name = "LabelResultados";
-            this.LabelResultados.Size = new System.Drawing.Size(77, 17);
-            this.LabelResultados.TabIndex = 21;
-            this.LabelResultados.Text = "Resultados";
-            this.LabelResultados.Click += new System.EventHandler(this.LabelDomicilio_Click);
-            // 
-            // labelObservaciones
-            // 
-            this.labelObservaciones.AutoSize = true;
-            this.labelObservaciones.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelObservaciones.Location = new System.Drawing.Point(36, 117);
-            this.labelObservaciones.Name = "labelObservaciones";
-            this.labelObservaciones.Size = new System.Drawing.Size(103, 17);
-            this.labelObservaciones.TabIndex = 20;
-            this.labelObservaciones.Text = "Observaciones";
-            // 
-            // labelFecha
-            // 
-            this.labelFecha.AutoSize = true;
-            this.labelFecha.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFecha.Location = new System.Drawing.Point(36, 77);
-            this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(51, 17);
-            this.labelFecha.TabIndex = 19;
-            this.labelFecha.Text = "Fecha:";
-            // 
-            // listViewResultados
-            // 
-            this.listViewResultados.HideSelection = false;
-            this.listViewResultados.Location = new System.Drawing.Point(210, 157);
-            this.listViewResultados.Name = "listViewResultados";
-            this.listViewResultados.Size = new System.Drawing.Size(236, 145);
-            this.listViewResultados.TabIndex = 34;
-            this.listViewResultados.UseCompatibleStateImageBehavior = false;
-            this.listViewResultados.SelectedIndexChanged += new System.EventHandler(this.listViewResultados_SelectedIndexChanged);
             // 
             // iconButtonCargar
             // 
@@ -170,6 +72,88 @@
             this.iconButtonCargar.Text = "Cargar";
             this.iconButtonCargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonCargar.UseVisualStyleBackColor = true;
+            // 
+            // listViewResultados
+            // 
+            this.listViewResultados.HideSelection = false;
+            this.listViewResultados.Location = new System.Drawing.Point(210, 157);
+            this.listViewResultados.Name = "listViewResultados";
+            this.listViewResultados.Size = new System.Drawing.Size(236, 145);
+            this.listViewResultados.TabIndex = 34;
+            this.listViewResultados.UseCompatibleStateImageBehavior = false;
+            this.listViewResultados.SelectedIndexChanged += new System.EventHandler(this.listViewResultados_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(203, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 18);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Analisis";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(184, 361);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(125, 23);
+            this.btnRegistrar.TabIndex = 30;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRegistrar.UseCompatibleTextRendering = true;
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // textObservaciones
+            // 
+            this.textObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textObservaciones.Location = new System.Drawing.Point(210, 114);
+            this.textObservaciones.Name = "textObservaciones";
+            this.textObservaciones.Size = new System.Drawing.Size(236, 22);
+            this.textObservaciones.TabIndex = 27;
+            this.textObservaciones.TextChanged += new System.EventHandler(this.textObra_TextChanged);
+            this.textObservaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textObra_KeyPress);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(210, 71);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(236, 22);
+            this.dateTimePicker1.TabIndex = 23;
+            // 
+            // LabelResultados
+            // 
+            this.LabelResultados.AutoSize = true;
+            this.LabelResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelResultados.Location = new System.Drawing.Point(36, 157);
+            this.LabelResultados.Name = "LabelResultados";
+            this.LabelResultados.Size = new System.Drawing.Size(76, 16);
+            this.LabelResultados.TabIndex = 21;
+            this.LabelResultados.Text = "Resultados";
+            this.LabelResultados.Click += new System.EventHandler(this.LabelDomicilio_Click);
+            // 
+            // labelObservaciones
+            // 
+            this.labelObservaciones.AutoSize = true;
+            this.labelObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelObservaciones.Location = new System.Drawing.Point(36, 117);
+            this.labelObservaciones.Name = "labelObservaciones";
+            this.labelObservaciones.Size = new System.Drawing.Size(99, 16);
+            this.labelObservaciones.TabIndex = 20;
+            this.labelObservaciones.Text = "Observaciones";
+            // 
+            // labelFecha
+            // 
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFecha.Location = new System.Drawing.Point(36, 77);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(48, 16);
+            this.labelFecha.TabIndex = 19;
+            this.labelFecha.Text = "Fecha:";
             // 
             // analisis
             // 
@@ -193,7 +177,6 @@
         private System.Windows.Forms.Label LabelResultados;
         private System.Windows.Forms.Label labelObservaciones;
         private System.Windows.Forms.Label labelFecha;
-        private FontAwesome.Sharp.IconButton iconButtonClose;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButtonCargar;
         private System.Windows.Forms.ListView listViewResultados;

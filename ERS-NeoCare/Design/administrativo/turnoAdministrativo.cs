@@ -67,6 +67,10 @@ namespace ERS_NeoCare.Design.administrativo
         private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
         {
             select = monthCalendar1.SelectionStart;
+            DateTime fechaSeleccionada = monthCalendar1.SelectionStart;
+
+ 
+            label1.Text = fechaSeleccionada.ToString("dd/MM/yyyy");
         }
 
     

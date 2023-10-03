@@ -135,9 +135,7 @@ namespace ERS_NeoCare.Design.administrativo
             closeagregarclick?.Invoke(this, EventArgs.Empty);
         }
 
-<<<<<<< HEAD
-  
-=======
+
         private void labelSexo_Click(object sender, EventArgs e)
         {
 
@@ -162,6 +160,6 @@ namespace ERS_NeoCare.Design.administrativo
         {
 
         }
->>>>>>> 1c2bf2b3d594a4329ecccc02652adfc0cde058ff
+
     }
 }

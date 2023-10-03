@@ -292,6 +292,12 @@
     <Compile Include="Design\admin\MenuAdminUsuarios.Designer.cs">
       <DependentUpon>MenuAdminUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\bioquimico\analisis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\bioquimico\analisis.Designer.cs">
+      <DependentUpon>analisis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\bioquimico\bioquimico.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -315,6 +321,12 @@
     </Compile>
     <Compile Include="Design\bioquimico\MenuBioquimicoAnalisis.Designer.cs">
       <DependentUpon>MenuBioquimicoAnalisis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\enfermero\atencion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\enfermero\atencion.Designer.cs">
+      <DependentUpon>atencion.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\enfermero\enfermero.cs">
       <SubType>UserControl</SubType>
@@ -465,6 +477,9 @@
     <EmbeddedResource Include="Design\admin\MenuAdminUsuarios.resx">
       <DependentUpon>MenuAdminUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\bioquimico\analisis.resx">
+      <DependentUpon>analisis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\bioquimico\bioquimico.resx">
       <DependentUpon>bioquimico.cs</DependentUpon>
     </EmbeddedResource>
@@ -476,6 +491,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\bioquimico\MenuBioquimicoAnalisis.resx">
       <DependentUpon>MenuBioquimicoAnalisis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\enfermero\atencion.resx">
+      <DependentUpon>atencion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\enfermero\enfermero.resx">
       <DependentUpon>enfermero.cs</DependentUpon>

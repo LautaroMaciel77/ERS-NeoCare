@@ -8,9 +8,9 @@ namespace ERS_NeoCare.Design.Medico
         private menu MainForm { get; set; }
         private string userDni;
         private PacienteService paciente;
-        public MenuAdminUsuarios(PacienteService paciente)
+        public MenuAdminUsuarios( )
         {
-            this.paciente = paciente;
+            ;
 
             InitializeComponent();
         }

@@ -74,6 +74,7 @@
             this.iconButton1.TabIndex = 18;
             this.iconButton1.Text = "De baja";
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
             // admin
             // 

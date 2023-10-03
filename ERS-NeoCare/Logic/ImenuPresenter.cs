@@ -52,7 +52,7 @@ namespace ERS_NeoCare.Logic
                 case 2:
                     Enfermero en = new Enfermero();
                     en.enfermeroPacientesButtonClick += enfermeroPacientesButtonClick;
-                    en.enfermeroPacientesButtonClick += enfermeroAtencionButtonClick;
+                    en.enfermeroAtencionButtonClick += enfermeroAtencionButtonClick;
                     _view.AgregarUserControl(en);
                     break;
                 case 3:
@@ -83,18 +83,19 @@ namespace ERS_NeoCare.Logic
 
         private void adminUsuariosButtonClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            lista_usuarios lista = new lista_usuarios();
+            _view.AgregarSubMenu(lista);
         }
 
         private void enfermeroPacientesButtonClick(object sender, EventArgs e)
         {
-            lista_atenciones_enfermero lista = new lista_atenciones_enfermero();
+           lista_atenciones_enfermero lista = new lista_atenciones_enfermero();
             _view.AgregarSubMenu(lista);
         }
 
         private void enfermeroAtencionButtonClick(object sender, EventArgs e)
-        { 
-            lista_paciente_enfermero lista = new lista_paciente_enfermero();
+        {
+            lista_atenciones_enfermero lista = new lista_atenciones_enfermero();
             _view.AgregarSubMenu(lista);
         }
 

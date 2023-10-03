@@ -70,3 +70,5 @@ E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ER
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.csproj.CopyComplete
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.exe
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.pdb
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.analisis.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.atencion.resources

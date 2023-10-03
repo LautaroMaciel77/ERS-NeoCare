@@ -1,4 +1,5 @@
 ﻿using ERS_NeoCare.Design.administrativo;
+using ERS_NeoCare.Design.Medico;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -23,8 +24,8 @@ namespace ERS_NeoCare.Design
 
             InitializeComponent();
             CargarDatosPaciente();
-            panelMenuPaciente.Visible = false;
-            panelOpciones.Visible = false;
+            panelAgregar.Visible = false;
+         
 
 
 
@@ -59,50 +60,14 @@ namespace ERS_NeoCare.Design
             }
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            panelMenuPaciente.Visible = false;
-            agregar_usuario agregar_usuarios = new agregar_usuario();
-            agregar_usuarios.Dock = DockStyle.Fill;
-            panelOpciones.Controls.Clear();
-            panelOpciones.Controls.Add(agregar_usuarios);
-            agregar_usuarios.BringToFront();
-            panelOpciones.Visible = true;
+       
 
-        }
-
-        private void closePanel(object sender, EventArgs e)
-        {
-            panelOpciones.Visible = false;
-        }
+    
         private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.RowIndex >= 0 && DGVAdministrativo.Rows.Count > 0)
-            {
-                if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
-                {
-                    panelOpciones.Visible = false;
-                    panelMenuPaciente.BringToFront();
-                    panelMenuPaciente.Visible = true;
-                    int columnIndexDNI = 0; // Reemplaza 'n' con el índice real de la columna DNI
-                    userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
-                    if (panelOpciones.Controls.Count > 0)
-                    {
-                        // Obtén el UserControl actual dentro del panelOpciones
-                        agregar_usuario ap = (agregar_usuario)panelOpciones.Controls[0];
-
-                        // Remueve el UserControl del panelOpciones
-                        panelOpciones.Controls.Remove(ap);
-
-
-                        ap.Dispose();
-                    }
-
-
-
-                }
-            }
+         
+            
 
         }
 
@@ -111,7 +76,7 @@ namespace ERS_NeoCare.Design
 
         private void iconClose_Click_1(object sender, EventArgs e)
         {
-            panelMenuPaciente.Visible = false;
+            panelAgregar.Visible = false;
         }
 
         private void iconTurno_Click(object sender, EventArgs e)
@@ -124,6 +89,49 @@ namespace ERS_NeoCare.Design
         {
             historiaPacienteClick?.Invoke(this, Tuple.Create(userDni));
 
+        }
+
+        private void DGVAdministrativo_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && DGVAdministrativo.Rows.Count > 0)
+            {
+                if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+                    int columnIndexDNI = 0;                   
+                    panelAgregar.Visible = true;
+                    MenuAdminUsuarios ma = new MenuAdminUsuarios();
+                    panelAgregar.Visible = true;
+                    ma.Dock = DockStyle.Fill;
+                    panelAgregar.Controls.Clear();
+                    panelAgregar.Controls.Add(ma);
+                    ma.BringToFront();
+
+                }
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+            agregar_paciente ap = new agregar_paciente();
+           // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(ap);
+
+
+
+
+            }
         }
     }
 }

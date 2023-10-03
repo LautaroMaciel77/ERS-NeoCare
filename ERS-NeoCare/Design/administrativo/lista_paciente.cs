@@ -47,11 +47,31 @@ namespace ERS_NeoCare.Design
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            panelAgregar.Visible = true;
+ 
             agregar_paciente ap = new agregar_paciente();
             ap.closeagregarclick += closeagregarclick;
             ap.actualizarTabla += Ap_actualizarTabla;
-            cargarUserControl(ap);
+
+        
+
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(ap);
+
+
+
+
+            }
         }
 
         private void Ap_actualizarTabla(object sender, EventArgs e)
@@ -84,28 +104,28 @@ namespace ERS_NeoCare.Design
 
         private void verpacienteclick()
         {
-            
-              //PacienteView pacienteControl = new PacienteView(paciente);
-                //pacienteControl.Dock = DockStyle.Fill; // Ajusta el control al tamaño del panelOpciones
 
-                // Accede al formulario 'menu' desde el control actual
-                //menu menuForm = this.ParentForm as menu;
+            PacienteView pacienteControl = new PacienteView(paciente);
+            pacienteControl.Dock = DockStyle.Fill;
 
-                //if (menuForm != null)
-                //{
-                 //   Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
 
-
-                    // Borra cualquier control existente en el panelOpciones
-                   // panelOpciones.Controls.Clear();
-
-                    // Agrega el control PacienteView al panelOpciones
-                   // panelOpciones.Controls.Add(pacienteControl);
-                    // Llama al método para agregar el control al panelOpciones
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
 
 
 
-                //}
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
+
+
+
+
+            }
 
         }
 

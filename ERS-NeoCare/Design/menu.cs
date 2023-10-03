@@ -23,10 +23,10 @@ namespace ERS_NeoCare.Design
         {
             InitializeComponent();
 
-            // Crea una instancia del presentador y pasa la vista y el modelo de usuario
+            
             _presenter = new ImenuPresenter(this, usuario, new ProfesionService(Configuracion.ConnectionString));
 
-            // Llama al método para cargar la profesión
+            
             _presenter.CargarProfesion();
             _presenter.cargarUserControl();
             
@@ -41,8 +41,7 @@ namespace ERS_NeoCare.Design
             labelProfesion.Text = descripcion;
         }
 
-        // Método para obtener la descripción de la profesión basado en el profesion_id.
-
+        
 
 
         public void AgregarUserControl(UserControl userControl)

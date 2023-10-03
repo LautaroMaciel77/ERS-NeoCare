@@ -98,5 +98,10 @@ namespace ERS_NeoCare.Design.administrativo
         {
 
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

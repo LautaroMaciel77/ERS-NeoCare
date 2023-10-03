@@ -47,7 +47,7 @@
             // monthCalendar1
             // 
             this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(4, 3);
-            this.monthCalendar1.Location = new System.Drawing.Point(191, 73);
+            this.monthCalendar1.Location = new System.Drawing.Point(112, 73);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged_1);
@@ -61,7 +61,7 @@
             this.hora,
             this.disponible,
             this.Eleguir});
-            this.dataGridViewHora.Location = new System.Drawing.Point(287, 570);
+            this.dataGridViewHora.Location = new System.Drawing.Point(243, 570);
             this.dataGridViewHora.Name = "dataGridViewHora";
             this.dataGridViewHora.Size = new System.Drawing.Size(351, 150);
             this.dataGridViewHora.TabIndex = 1;
@@ -91,7 +91,6 @@
             this.labelDni.Size = new System.Drawing.Size(85, 13);
             this.labelDni.TabIndex = 3;
             this.labelDni.Text = "Dni del Paciente";
-         
             // 
             // textboxDni
             // 

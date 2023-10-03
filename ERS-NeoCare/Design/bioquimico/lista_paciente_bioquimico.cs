@@ -1,4 +1,5 @@
-﻿using ERS_NeoCare.Helper;
+﻿using ERS_NeoCare.Design.administrativo;
+using ERS_NeoCare.Helper;
 using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
 using ERS_NeoCare.Presenter;
@@ -39,7 +40,7 @@ namespace ERS_NeoCare.Design
         public void MostrarMenu(Model.PacienteService paciente)
         {
             panelAgregar.Visible = true;
-            menuPaciente mp = new menuPaciente();
+            MenuBioquimicoAnalisis mp = new MenuBioquimicoAnalisis();
             this.paciente = paciente;
             mp.closeclick += closeclick;
             mp.verclick += verclick;
@@ -53,7 +54,17 @@ namespace ERS_NeoCare.Design
 
         private void verclick(object sender, EventArgs e)
         {
-            //
+            analisis pacienteControl = new analisis();
+            pacienteControl.Dock = DockStyle.Fill;
+
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+                panelOpciones.Controls.Clear();
+                panelOpciones.Controls.Add(pacienteControl);
+            }
         }
 
         private void cargarUserControl(UserControl user)

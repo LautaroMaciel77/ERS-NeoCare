@@ -32,7 +32,7 @@ namespace ERS_NeoCare.Design
         private void CargarPaciente(PacienteService paciente)
         {
 
-<<<<<<< HEAD
+
         
                          
                             labelDni.Text += paciente.Dni;
@@ -41,7 +41,7 @@ namespace ERS_NeoCare.Design
                             labelDomicilio.Text += paciente.Domicilio;
                             labelSexo.Text += paciente.Sexo;
                             labelObra.Text += paciente.ObraSocial;
-=======
+
             int dniAsInt = int.Parse(userDni);
             MessageBox.Show("DNI como entero: " + userDni, "Valor Convertido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -81,7 +81,6 @@ namespace ERS_NeoCare.Design
 
         private void PBPaciente_Click(object sender, EventArgs e)
         {
->>>>>>> 1c2bf2b3d594a4329ecccc02652adfc0cde058ff
 
                     
         }
