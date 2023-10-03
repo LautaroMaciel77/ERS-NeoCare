@@ -63,7 +63,11 @@
             this.panelAgregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelAgregar.BackColor = System.Drawing.Color.Transparent;
             this.panelAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+<<<<<<< HEAD
             this.panelAgregar.Location = new System.Drawing.Point(374, 146);
+=======
+            this.panelAgregar.Location = new System.Drawing.Point(349, 266);
+>>>>>>> 1c2bf2b3d594a4329ecccc02652adfc0cde058ff
             this.panelAgregar.Name = "panelAgregar";
             this.panelAgregar.Size = new System.Drawing.Size(541, 299);
             this.panelAgregar.TabIndex = 16;

@@ -135,6 +135,33 @@ namespace ERS_NeoCare.Design.administrativo
             closeagregarclick?.Invoke(this, EventArgs.Empty);
         }
 
+<<<<<<< HEAD
   
+=======
+        private void labelSexo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textObra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelAgregarPaciente_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> 1c2bf2b3d594a4329ecccc02652adfc0cde058ff
     }
 }
