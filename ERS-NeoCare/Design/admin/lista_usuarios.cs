@@ -40,21 +40,21 @@ namespace ERS_NeoCare.Design
                     connection.Open();
 
                     // Define una consulta SQL para seleccionar todos los registros de la tabla paciente.
-                    string query = "SELECT * FROM paciente";
+                    string query = "SELECT * FROM personal_salud";
 
                     // Crea un adaptador de datos y un DataSet para almacenar los resultados.
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     DataSet dataSet = new DataSet();
 
                     // Llena el DataSet con los datos de la consulta.
-                    adapter.Fill(dataSet, "Paciente");
+                    adapter.Fill(dataSet, "personal_salud");
 
                     // Asigna el DataSet como origen de datos para el DataGridView.
-                    DGVAdministrativo.DataSource = dataSet.Tables["Paciente"];
+                    DGVAdministrativo.DataSource = dataSet.Tables["personal_salud"];
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar los datos de la tabla paciente: " + ex.Message);
+                    MessageBox.Show("Error al cargar los datos de la tabla personal salud: " + ex.Message);
                 }
             }
         }
@@ -62,11 +62,11 @@ namespace ERS_NeoCare.Design
         private void iconButton2_Click(object sender, EventArgs e)
         {
             panelMenuPaciente.Visible = false;
-            agregar_paciente agregar_Paciente = new agregar_paciente();
-              agregar_Paciente.Dock = DockStyle.Fill;
+            agregar_usuario agregar_usuarios = new agregar_usuario();
+            agregar_usuarios.Dock = DockStyle.Fill;
             panelOpciones.Controls.Clear();
-            panelOpciones.Controls.Add(agregar_Paciente);
-            agregar_Paciente.BringToFront();
+            panelOpciones.Controls.Add(agregar_usuarios);
+            agregar_usuarios.BringToFront();
             panelOpciones.Visible = true;
 
         }
@@ -90,7 +90,7 @@ namespace ERS_NeoCare.Design
                     if (panelOpciones.Controls.Count > 0)
                     {
                         // Obtén el UserControl actual dentro del panelOpciones
-                        agregar_paciente ap = (agregar_paciente)panelOpciones.Controls[0];
+                        agregar_usuario ap = (agregar_usuario)panelOpciones.Controls[0];
 
                         // Remueve el UserControl del panelOpciones
                         panelOpciones.Controls.Remove(ap);

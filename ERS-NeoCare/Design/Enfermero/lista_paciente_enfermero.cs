@@ -54,7 +54,17 @@ namespace ERS_NeoCare.Design
 
         private void verclick(object sender, EventArgs e)
         {
-            //
+            PacienteView pacienteControl = new PacienteView(paciente);
+            pacienteControl.Dock = DockStyle.Fill;
+
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+                panelOpciones.Controls.Clear();
+                panelOpciones.Controls.Add(pacienteControl);
+            }
         }
 
         private void cargarUserControl(UserControl user)
@@ -89,7 +99,7 @@ namespace ERS_NeoCare.Design
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            historiaPacienteClick?.Invoke(this, Tuple.Create(userDni));
+          
         }
     }
 }

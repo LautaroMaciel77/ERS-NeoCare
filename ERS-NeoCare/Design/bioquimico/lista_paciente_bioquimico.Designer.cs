@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
-            this.pacienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet = new ERS_NeoCare.Database1DataSet();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pacienteTableAdapter = new ERS_NeoCare.Database1DataSetTableAdapters.PacienteTableAdapter();
-            this.panelAgregar = new System.Windows.Forms.Panel();
-            this.pacienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPrioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHoraPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.pacienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new ERS_NeoCare.Database1DataSet();
+            this.pacienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pacienteTableAdapter = new ERS_NeoCare.Database1DataSetTableAdapters.PacienteTableAdapter();
+            this.panelAgregar = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -85,21 +85,21 @@
             this.DGVAdministrativo.AllowUserToDeleteRows = false;
             this.DGVAdministrativo.AllowUserToResizeColumns = false;
             this.DGVAdministrativo.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.DGVAdministrativo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DGVAdministrativo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVAdministrativo.AutoGenerateColumns = false;
             this.DGVAdministrativo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVAdministrativo.BackgroundColor = System.Drawing.Color.White;
             this.DGVAdministrativo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGVAdministrativo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(219)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVAdministrativo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(219)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVAdministrativo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVAdministrativo.ColumnHeadersHeight = 40;
             this.DGVAdministrativo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dni,
@@ -109,14 +109,14 @@
             this.CHoraPedido,
             this.CAcciones});
             this.DGVAdministrativo.DataSource = this.pacienteBindingSource2;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
             this.DGVAdministrativo.Location = new System.Drawing.Point(34, 129);
             this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
@@ -128,15 +128,61 @@
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
-            // pacienteBindingSource1
+            // dni
             // 
-            this.pacienteBindingSource1.DataMember = "Paciente";
-            this.pacienteBindingSource1.DataSource = this.database1DataSet;
+            this.dni.DataPropertyName = "dni";
+            this.dni.HeaderText = "dni";
+            this.dni.Name = "dni";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // CPrioridad
+            // 
+            this.CPrioridad.HeaderText = "Prioridad";
+            this.CPrioridad.MinimumWidth = 6;
+            this.CPrioridad.Name = "CPrioridad";
+            this.CPrioridad.ReadOnly = true;
+            // 
+            // CHoraPedido
+            // 
+            this.CHoraPedido.HeaderText = "Hora pedido";
+            this.CHoraPedido.MinimumWidth = 6;
+            this.CHoraPedido.Name = "CHoraPedido";
+            this.CHoraPedido.ReadOnly = true;
+            // 
+            // CAcciones
+            // 
+            this.CAcciones.HeaderText = "Acciones";
+            this.CAcciones.MinimumWidth = 6;
+            this.CAcciones.Name = "CAcciones";
+            this.CAcciones.ReadOnly = true;
+            this.CAcciones.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CAcciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // pacienteBindingSource2
+            // 
+            this.pacienteBindingSource2.DataMember = "Paciente";
+            this.pacienteBindingSource2.DataSource = this.database1DataSet;
             // 
             // database1DataSet
             // 
             this.database1DataSet.DataSetName = "Database1DataSet";
             this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pacienteBindingSource1
+            // 
+            this.pacienteBindingSource1.DataMember = "Paciente";
+            this.pacienteBindingSource1.DataSource = this.database1DataSet;
             // 
             // panel2
             // 
@@ -187,59 +233,14 @@
             // 
             // panelAgregar
             // 
-            this.panelAgregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelAgregar.BackColor = System.Drawing.Color.Transparent;
+            this.panelAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelAgregar.AutoSize = true;
+            this.panelAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.panelAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelAgregar.Location = new System.Drawing.Point(248, 179);
+            this.panelAgregar.Location = new System.Drawing.Point(468, 309);
             this.panelAgregar.Name = "panelAgregar";
-            this.panelAgregar.Size = new System.Drawing.Size(541, 299);
-            this.panelAgregar.TabIndex = 17;
-            // 
-            // pacienteBindingSource2
-            // 
-            this.pacienteBindingSource2.DataMember = "Paciente";
-            this.pacienteBindingSource2.DataSource = this.database1DataSet;
-            // 
-            // dni
-            // 
-            this.dni.DataPropertyName = "dni";
-            this.dni.HeaderText = "dni";
-            this.dni.Name = "dni";
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            // 
-            // CPrioridad
-            // 
-            this.CPrioridad.HeaderText = "Prioridad";
-            this.CPrioridad.MinimumWidth = 6;
-            this.CPrioridad.Name = "CPrioridad";
-            this.CPrioridad.ReadOnly = true;
-            // 
-            // CHoraPedido
-            // 
-            this.CHoraPedido.HeaderText = "Hora pedido";
-            this.CHoraPedido.MinimumWidth = 6;
-            this.CHoraPedido.Name = "CHoraPedido";
-            this.CHoraPedido.ReadOnly = true;
-            // 
-            // CAcciones
-            // 
-            this.CAcciones.HeaderText = "Acciones";
-            this.CAcciones.MinimumWidth = 6;
-            this.CAcciones.Name = "CAcciones";
-            this.CAcciones.ReadOnly = true;
-            this.CAcciones.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CAcciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.panelAgregar.Size = new System.Drawing.Size(260, 150);
+            this.panelAgregar.TabIndex = 19;
             // 
             // lista_paciente_bioquimico
             // 
@@ -253,13 +254,13 @@
             this.Name = "lista_paciente_bioquimico";
             this.Size = new System.Drawing.Size(1196, 768);
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,7 +277,6 @@
         private Database1DataSet database1DataSet;
         private Database1DataSetTableAdapters.PacienteTableAdapter pacienteTableAdapter;
         private System.Windows.Forms.BindingSource pacienteBindingSource1;
-        private System.Windows.Forms.Panel panelAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
@@ -284,5 +284,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHoraPedido;
         private System.Windows.Forms.DataGridViewButtonColumn CAcciones;
         private System.Windows.Forms.BindingSource pacienteBindingSource2;
+        private System.Windows.Forms.Panel panelAgregar;
     }
 }
