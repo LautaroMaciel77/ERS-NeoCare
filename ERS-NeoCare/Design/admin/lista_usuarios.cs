@@ -102,12 +102,18 @@ namespace ERS_NeoCare.Design
                     MenuAdminUsuarios ma = new MenuAdminUsuarios();
                     panelAgregar.Visible = true;
                     ma.Dock = DockStyle.Fill;
+                    ma.closeclick += closeclick;
                     panelAgregar.Controls.Clear();
                     panelAgregar.Controls.Add(ma);
                     ma.BringToFront();
 
                 }
             }
+        }
+
+        private void closeclick(object sender, EventArgs e)
+        {
+            panelAgregar.Visible = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

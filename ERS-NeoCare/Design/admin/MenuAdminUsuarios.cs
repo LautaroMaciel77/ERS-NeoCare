@@ -8,6 +8,7 @@ namespace ERS_NeoCare.Design.Medico
         private menu MainForm { get; set; }
         private string userDni;
         private PacienteService paciente;
+        public event EventHandler closeclick;
         public MenuAdminUsuarios( )
         {
             ;
@@ -53,7 +54,7 @@ namespace ERS_NeoCare.Design.Medico
 
         private void iconButtonClose_Click(object sender, EventArgs e)
         {
-
+            closeclick?.Invoke(this, EventArgs.Empty);
         }
     }
 }
