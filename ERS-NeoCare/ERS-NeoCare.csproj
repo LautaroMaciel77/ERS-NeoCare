@@ -366,6 +366,7 @@
     </Compile>
     <Compile Include="Helper\ReemplazoPanelEventArgs .cs" />
     <Compile Include="Logic\AgregarPacientePresenter.cs" />
+    <Compile Include="Logic\AgregarUsuarioPresenter.cs" />
     <Compile Include="Logic\ImenuPresenter.cs" />
     <Compile Include="Logic\ListaMedico.cs" />
     <Compile Include="Logic\ListaPacienteBio.cs" />

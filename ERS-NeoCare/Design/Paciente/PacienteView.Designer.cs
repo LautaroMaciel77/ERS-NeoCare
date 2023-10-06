@@ -73,9 +73,9 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(388, 22);
+            this.label1.Location = new System.Drawing.Point(307, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 18);
+            this.label1.Size = new System.Drawing.Size(296, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Historial actuaciones medicas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,12 +89,12 @@
             this.CEvento,
             this.CDatos,
             this.CAcciones});
-            this.dataGridView1.Location = new System.Drawing.Point(44, 52);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 52);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(801, 171);
+            this.dataGridView1.Size = new System.Drawing.Size(850, 171);
             this.dataGridView1.TabIndex = 0;
             // 
             // CEvento
@@ -183,7 +183,6 @@
             this.labelFecha.Size = new System.Drawing.Size(156, 17);
             this.labelFecha.TabIndex = 13;
             this.labelFecha.Text = "Fecha de nacimiento:";
-          
             // 
             // labelSexo
             // 
@@ -235,7 +234,6 @@
             this.PBPaciente.Size = new System.Drawing.Size(120, 130);
             this.PBPaciente.TabIndex = 0;
             this.PBPaciente.TabStop = false;
-           
             // 
             // panel3
             // 
@@ -263,7 +261,7 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(347, 350);
+            this.btnAgregar.Location = new System.Drawing.Point(338, 228);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.MaximumSize = new System.Drawing.Size(245, 76);
             this.btnAgregar.Name = "btnAgregar";

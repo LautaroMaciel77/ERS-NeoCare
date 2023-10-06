@@ -89,7 +89,7 @@ namespace ERS_NeoCare.Logic
 
         private void enfermeroPacientesButtonClick(object sender, EventArgs e)
         {
-           lista_atenciones_enfermero lista = new lista_atenciones_enfermero();
+           lista_paciente_enfermero lista = new lista_paciente_enfermero();
             _view.AgregarSubMenu(lista);
         }
 

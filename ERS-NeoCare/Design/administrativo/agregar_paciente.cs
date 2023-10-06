@@ -124,6 +124,14 @@ namespace ERS_NeoCare.Design.administrativo
 
             }
         }
+        private void textNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
+        }
 
         private void iconButtonClose_Click(object sender, EventArgs e)
         {
@@ -161,5 +169,13 @@ namespace ERS_NeoCare.Design.administrativo
 
         }
 
+        private void textApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
+        }
     }
 }

@@ -93,7 +93,7 @@ namespace ERS_NeoCare.Design
                 if (dataGridViewHora.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
                     rangoHora = dataGridViewHora.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    label2.Text = "horario seleccionada: " + rangoHora;
+                    label2.Text = "Horario seleccionado: " + rangoHora;
                 }
             }
         }
@@ -111,6 +111,12 @@ namespace ERS_NeoCare.Design
             {
                 MessageBox.Show("Asegúrate de seleccionar una fecha y un rango de hora antes de agregar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            if (select < DateTime.Now)
+            {
+                MessageBox.Show("Asegúrate de seleccionar una fecha correcta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
             }
 
             if (!radioBio.Checked && !radioEnfermero.Checked)
@@ -146,6 +152,21 @@ namespace ERS_NeoCare.Design
 
                 radioBio.Checked = false;
             }
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TurnosMedico_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

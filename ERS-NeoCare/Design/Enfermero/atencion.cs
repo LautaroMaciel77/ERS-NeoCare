@@ -39,14 +39,13 @@ namespace ERS_NeoCare.Design.administrativo
                 return;
             }
 
-            
-            if (!int.TryParse(textObservaciones.Text, out int obra))
+
+            if (string.IsNullOrWhiteSpace(textBoxIndicaciones.Text))
             {
-                MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            
 
 
         }

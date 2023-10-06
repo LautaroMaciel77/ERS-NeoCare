@@ -19,6 +19,7 @@ namespace ERS_NeoCare.Logic
             public ListaMedico(PacientesMedico view, Presenter.PacienteService pacienteService)
             {
                 _view = view;
+
                 _model = pacienteService;
 
             }
