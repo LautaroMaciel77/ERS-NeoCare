@@ -46,12 +46,12 @@
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 35;
             this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(24, 59);
+            this.iconButton3.Location = new System.Drawing.Point(32, 73);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(216, 40);
+            this.iconButton3.Size = new System.Drawing.Size(288, 49);
             this.iconButton3.TabIndex = 17;
-            this.iconButton3.Text = "Ver orden";
+            this.iconButton3.Text = "Ver paciente";
             this.iconButton3.UseVisualStyleBackColor = false;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
@@ -65,22 +65,24 @@
             this.iconButtonClose.IconColor = System.Drawing.Color.White;
             this.iconButtonClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonClose.IconSize = 12;
-            this.iconButtonClose.Location = new System.Drawing.Point(225, 3);
+            this.iconButtonClose.Location = new System.Drawing.Point(300, 4);
+            this.iconButtonClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButtonClose.Name = "iconButtonClose";
-            this.iconButtonClose.Size = new System.Drawing.Size(32, 23);
+            this.iconButtonClose.Size = new System.Drawing.Size(43, 28);
             this.iconButtonClose.TabIndex = 34;
             this.iconButtonClose.UseVisualStyleBackColor = false;
             this.iconButtonClose.Click += new System.EventHandler(this.iconButtonClose_Click);
             // 
             // MenuEnfermeroAtencion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.Controls.Add(this.iconButtonClose);
             this.Controls.Add(this.iconButton3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuEnfermeroAtencion";
-            this.Size = new System.Drawing.Size(260, 150);
+            this.Size = new System.Drawing.Size(347, 185);
             this.Load += new System.EventHandler(this.menuPaciente_Load);
             this.ResumeLayout(false);
 

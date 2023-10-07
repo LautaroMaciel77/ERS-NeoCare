@@ -80,6 +80,11 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("Seleccione una opción para el género.", "Género requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (!dateTimePicker1.Checked)
+            {
+                MessageBox.Show("Seleccione una fecha de nacimiento.", "Fecha de nacimiento requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             Model.PacienteService paciente = new Model.PacienteService()
             {
                 Nombre = textNombre.Text,
@@ -124,6 +129,14 @@ namespace ERS_NeoCare.Design.administrativo
 
             }
         }
+        private void textNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
+        }
 
         private void iconButtonClose_Click(object sender, EventArgs e)
         {
@@ -161,5 +174,13 @@ namespace ERS_NeoCare.Design.administrativo
 
         }
 
+        private void textApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
+        }
     }
 }

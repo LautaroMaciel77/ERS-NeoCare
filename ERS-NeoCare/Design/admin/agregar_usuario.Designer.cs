@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelAgregarPaciente = new System.Windows.Forms.Panel();
+            this.textBoxProfesion = new System.Windows.Forms.TextBox();
             this.textContraseña = new System.Windows.Forms.TextBox();
             this.labelContraseña = new System.Windows.Forms.Label();
             this.labelProfesion = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.textMatricula = new System.Windows.Forms.TextBox();
@@ -43,35 +42,22 @@
             this.labelDni = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelApellido = new System.Windows.Forms.Label();
-            this.panelAgregarPaciente.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelAgregarPaciente
+            // textBoxProfesion
             // 
-            this.panelAgregarPaciente.Controls.Add(this.textContraseña);
-            this.panelAgregarPaciente.Controls.Add(this.labelContraseña);
-            this.panelAgregarPaciente.Controls.Add(this.labelProfesion);
-            this.panelAgregarPaciente.Controls.Add(this.comboBox1);
-            this.panelAgregarPaciente.Controls.Add(this.label1);
-            this.panelAgregarPaciente.Controls.Add(this.btnRegistrar);
-            this.panelAgregarPaciente.Controls.Add(this.textMatricula);
-            this.panelAgregarPaciente.Controls.Add(this.textDni);
-            this.panelAgregarPaciente.Controls.Add(this.textNombre);
-            this.panelAgregarPaciente.Controls.Add(this.textApellido);
-            this.panelAgregarPaciente.Controls.Add(this.labelMatricula);
-            this.panelAgregarPaciente.Controls.Add(this.labelDni);
-            this.panelAgregarPaciente.Controls.Add(this.labelNombre);
-            this.panelAgregarPaciente.Controls.Add(this.labelApellido);
-            this.panelAgregarPaciente.Location = new System.Drawing.Point(0, 0);
-            this.panelAgregarPaciente.Name = "panelAgregarPaciente";
-            this.panelAgregarPaciente.Size = new System.Drawing.Size(478, 415);
-            this.panelAgregarPaciente.TabIndex = 17;
-            this.panelAgregarPaciente.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAgregarPaciente_Paint);
+            this.textBoxProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProfesion.Location = new System.Drawing.Point(517, 299);
+            this.textBoxProfesion.Name = "textBoxProfesion";
+            this.textBoxProfesion.Size = new System.Drawing.Size(236, 22);
+            this.textBoxProfesion.TabIndex = 41;
+            this.textBoxProfesion.TextChanged += new System.EventHandler(this.textBoxProfesion_TextChanged);
+            this.textBoxProfesion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textContraseña
             // 
             this.textContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textContraseña.Location = new System.Drawing.Point(212, 318);
+            this.textContraseña.Location = new System.Drawing.Point(517, 382);
             this.textContraseña.Name = "textContraseña";
             this.textContraseña.Size = new System.Drawing.Size(236, 22);
             this.textContraseña.TabIndex = 40;
@@ -81,7 +67,7 @@
             // 
             this.labelContraseña.AutoSize = true;
             this.labelContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContraseña.Location = new System.Drawing.Point(53, 321);
+            this.labelContraseña.Location = new System.Drawing.Point(358, 385);
             this.labelContraseña.Name = "labelContraseña";
             this.labelContraseña.Size = new System.Drawing.Size(79, 16);
             this.labelContraseña.TabIndex = 38;
@@ -92,32 +78,18 @@
             // 
             this.labelProfesion.AutoSize = true;
             this.labelProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProfesion.Location = new System.Drawing.Point(57, 235);
+            this.labelProfesion.Location = new System.Drawing.Point(362, 299);
             this.labelProfesion.Name = "labelProfesion";
             this.labelProfesion.Size = new System.Drawing.Size(64, 16);
             this.labelProfesion.TabIndex = 36;
             this.labelProfesion.Text = "Profesion";
             this.labelProfesion.Click += new System.EventHandler(this.labelProfesion_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Medico",
-            "Enfermero",
-            "Bioquimico",
-            "Administrativo"});
-            this.comboBox1.Location = new System.Drawing.Point(212, 234);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(236, 21);
-            this.comboBox1.TabIndex = 35;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(179, 27);
+            this.label1.Location = new System.Drawing.Point(484, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 18);
             this.label1.TabIndex = 33;
@@ -126,7 +98,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(182, 371);
+            this.btnRegistrar.Location = new System.Drawing.Point(487, 435);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(125, 23);
             this.btnRegistrar.TabIndex = 30;
@@ -139,17 +111,17 @@
             // textMatricula
             // 
             this.textMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMatricula.Location = new System.Drawing.Point(212, 271);
+            this.textMatricula.Location = new System.Drawing.Point(517, 335);
             this.textMatricula.Name = "textMatricula";
             this.textMatricula.Size = new System.Drawing.Size(236, 22);
             this.textMatricula.TabIndex = 27;
-            this.textMatricula.TextChanged += new System.EventHandler(this.textObra_TextChanged);
+            this.textMatricula.TextChanged += new System.EventHandler(this.textMatricula_TextChanged);
             this.textMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textObra_KeyPress);
             // 
             // textDni
             // 
             this.textDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDni.Location = new System.Drawing.Point(212, 154);
+            this.textDni.Location = new System.Drawing.Point(517, 218);
             this.textDni.Name = "textDni";
             this.textDni.Size = new System.Drawing.Size(236, 22);
             this.textDni.TabIndex = 26;
@@ -159,26 +131,28 @@
             // textNombre
             // 
             this.textNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNombre.Location = new System.Drawing.Point(212, 108);
+            this.textNombre.Location = new System.Drawing.Point(517, 172);
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(236, 22);
             this.textNombre.TabIndex = 25;
             this.textNombre.TextChanged += new System.EventHandler(this.textNombre_TextChanged);
+            this.textNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNombre_KeyPress);
             // 
             // textApellido
             // 
             this.textApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textApellido.Location = new System.Drawing.Point(212, 191);
+            this.textApellido.Location = new System.Drawing.Point(517, 261);
             this.textApellido.Name = "textApellido";
             this.textApellido.Size = new System.Drawing.Size(236, 22);
             this.textApellido.TabIndex = 24;
             this.textApellido.TextChanged += new System.EventHandler(this.textApellido_TextChanged);
+            this.textApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textApellido_KeyPress);
             // 
             // labelMatricula
             // 
             this.labelMatricula.AutoSize = true;
             this.labelMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMatricula.Location = new System.Drawing.Point(57, 277);
+            this.labelMatricula.Location = new System.Drawing.Point(362, 341);
             this.labelMatricula.Name = "labelMatricula";
             this.labelMatricula.Size = new System.Drawing.Size(64, 16);
             this.labelMatricula.TabIndex = 20;
@@ -189,7 +163,7 @@
             // 
             this.labelDni.AutoSize = true;
             this.labelDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDni.Location = new System.Drawing.Point(53, 154);
+            this.labelDni.Location = new System.Drawing.Point(358, 218);
             this.labelDni.Name = "labelDni";
             this.labelDni.Size = new System.Drawing.Size(39, 16);
             this.labelDni.TabIndex = 18;
@@ -200,7 +174,7 @@
             // 
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(53, 114);
+            this.labelNombre.Location = new System.Drawing.Point(358, 178);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(59, 16);
             this.labelNombre.TabIndex = 17;
@@ -211,7 +185,7 @@
             // 
             this.labelApellido.AutoSize = true;
             this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelApellido.Location = new System.Drawing.Point(57, 197);
+            this.labelApellido.Location = new System.Drawing.Point(362, 261);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(60, 16);
             this.labelApellido.TabIndex = 16;
@@ -222,18 +196,28 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelAgregarPaciente);
+            this.Controls.Add(this.textBoxProfesion);
+            this.Controls.Add(this.textContraseña);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelContraseña);
+            this.Controls.Add(this.labelApellido);
+            this.Controls.Add(this.labelProfesion);
+            this.Controls.Add(this.labelNombre);
+            this.Controls.Add(this.labelDni);
+            this.Controls.Add(this.btnRegistrar);
+            this.Controls.Add(this.labelMatricula);
+            this.Controls.Add(this.textMatricula);
+            this.Controls.Add(this.textApellido);
+            this.Controls.Add(this.textDni);
+            this.Controls.Add(this.textNombre);
             this.Name = "agregar_usuario";
-            this.Size = new System.Drawing.Size(478, 415);
-            this.panelAgregarPaciente.ResumeLayout(false);
-            this.panelAgregarPaciente.PerformLayout();
+            this.Size = new System.Drawing.Size(1127, 609);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelAgregarPaciente;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox textDni;
         private System.Windows.Forms.TextBox textNombre;
@@ -245,8 +229,8 @@
         private System.Windows.Forms.TextBox textMatricula;
         private System.Windows.Forms.Label labelMatricula;
         private System.Windows.Forms.Label labelProfesion;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textContraseña;
         private System.Windows.Forms.Label labelContraseña;
+        private System.Windows.Forms.TextBox textBoxProfesion;
     }
 }

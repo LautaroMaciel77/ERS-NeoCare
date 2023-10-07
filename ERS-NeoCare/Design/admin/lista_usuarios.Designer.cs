@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel = new System.Windows.Forms.Panel();
             this.panelAgregar = new System.Windows.Forms.Panel();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
             this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +51,6 @@
             this.databaseDataSet = new ERS_NeoCare.DatabaseDataSet();
             this.pacienteTableAdapter = new ERS_NeoCare.DatabaseDataSetTableAdapters.PacienteTableAdapter();
             this.personal_saludTableAdapter = new ERS_NeoCare.Database1DataSetTableAdapters.personal_saludTableAdapter();
-            this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -62,27 +60,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel
-            // 
-            this.panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel.Controls.Add(this.panelAgregar);
-            this.panel.Controls.Add(this.DGVAdministrativo);
-            this.panel.Controls.Add(this.label7);
-            this.panel.Controls.Add(this.textBox2);
-            this.panel.Controls.Add(this.panel2);
-            this.panel.Controls.Add(this.btnAgregar);
-            this.panel.Location = new System.Drawing.Point(0, 0);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1196, 768);
-            this.panel.TabIndex = 0;
-            // 
             // panelAgregar
             // 
             this.panelAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelAgregar.AutoSize = true;
             this.panelAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.panelAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelAgregar.Location = new System.Drawing.Point(361, 363);
+            this.panelAgregar.Location = new System.Drawing.Point(482, 348);
             this.panelAgregar.Name = "panelAgregar";
             this.panelAgregar.Size = new System.Drawing.Size(260, 150);
             this.panelAgregar.TabIndex = 21;
@@ -125,14 +109,14 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
-            this.DGVAdministrativo.Location = new System.Drawing.Point(34, 138);
-            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
+            this.DGVAdministrativo.Location = new System.Drawing.Point(34, 137);
+            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DGVAdministrativo.Name = "DGVAdministrativo";
             this.DGVAdministrativo.ReadOnly = true;
             this.DGVAdministrativo.RowHeadersVisible = false;
             this.DGVAdministrativo.RowHeadersWidth = 51;
             this.DGVAdministrativo.RowTemplate.Height = 40;
-            this.DGVAdministrativo.Size = new System.Drawing.Size(814, 471);
+            this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
             this.DGVAdministrativo.TabIndex = 15;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick_1);
             // 
@@ -140,6 +124,7 @@
             // 
             this.dniDataGridViewTextBoxColumn.DataPropertyName = "dni";
             this.dniDataGridViewTextBoxColumn.HeaderText = "dni";
+            this.dniDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
             this.dniDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -147,6 +132,7 @@
             // 
             this.matriculaDataGridViewTextBoxColumn.DataPropertyName = "matricula";
             this.matriculaDataGridViewTextBoxColumn.HeaderText = "matricula";
+            this.matriculaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.matriculaDataGridViewTextBoxColumn.Name = "matriculaDataGridViewTextBoxColumn";
             this.matriculaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -154,6 +140,7 @@
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -161,6 +148,7 @@
             // 
             this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
             this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
             this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -168,6 +156,7 @@
             // 
             this.Acciones.DataPropertyName = "Acciones";
             this.Acciones.HeaderText = "Acciones";
+            this.Acciones.MinimumWidth = 6;
             this.Acciones.Name = "Acciones";
             this.Acciones.ReadOnly = true;
             this.Acciones.Text = "Acciones";
@@ -186,7 +175,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 85);
+            this.label7.Location = new System.Drawing.Point(31, 104);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 18);
@@ -196,8 +185,8 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(76, 81);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Location = new System.Drawing.Point(91, 100);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(196, 27);
             this.textBox2.TabIndex = 13;
@@ -209,9 +198,9 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1196, 71);
+            this.panel2.Size = new System.Drawing.Size(1196, 78);
             this.panel2.TabIndex = 14;
             // 
             // iconPictureBox1
@@ -252,8 +241,8 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(676, 81);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Location = new System.Drawing.Point(1010, 93);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(151, 40);
             this.btnAgregar.TabIndex = 12;
@@ -284,11 +273,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel);
+            this.Controls.Add(this.panelAgregar);
+            this.Controls.Add(this.DGVAdministrativo);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox2);
             this.Name = "lista_usuarios";
-            this.Size = new System.Drawing.Size(872, 549);
-            this.panel.ResumeLayout(false);
-            this.panel.PerformLayout();
+            this.Size = new System.Drawing.Size(1196, 768);
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
@@ -298,12 +290,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel2;

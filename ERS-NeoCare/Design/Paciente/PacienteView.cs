@@ -42,7 +42,6 @@ namespace ERS_NeoCare.Design
                             labelSexo.Text += paciente.Sexo;
                             labelObra.Text += paciente.ObraSocial;
 
-         
 
         }
 

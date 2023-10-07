@@ -17,7 +17,7 @@ namespace ERS_NeoCare.Design
         public event EventHandler<Tuple<string>> TurnoPacienteClick;
 
         private menu MainForm { get; set; }
-        // Declara un evento personalizado para notificar clics en los botones
+
 
         public lista_usuarios()
         {
@@ -40,7 +40,7 @@ namespace ERS_NeoCare.Design
                 {
                     connection.Open();
 
-                    // Define una consulta SQL para seleccionar todos los registros de la tabla paciente.
+                    // Define una consulta SQL para seleccionar todos los registros de la tabla personal_Salud.
                     string query = "SELECT * FROM personal_salud";
 
                     // Crea un adaptador de datos y un DataSet para almacenar los resultados.
@@ -119,7 +119,7 @@ namespace ERS_NeoCare.Design
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            agregar_paciente ap = new agregar_paciente();
+            agregar_usuario ap = new agregar_usuario();
            // Accede al formulario 'menu' desde el control actual
             menu menuForm = this.ParentForm as menu;
 

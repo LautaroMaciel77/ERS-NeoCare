@@ -29,7 +29,7 @@ namespace ERS_NeoCare.Design
 
         {
 
-            // Crea una conexión a la base de datos.
+            // Crea  conexión  base de datos.
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try

@@ -44,5 +44,46 @@ namespace ERS_NeoCare.Model
 
             return null; // Si no se encuentra el usuario
         }
+        public bool InsertarUsuario(UsuarioModel usuario)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("INSERT INTO personal_salud (dni, matricula, nombre, apellido, profesion_id, pass) " +
+                                                                "VALUES (@dni, @matricula, @nombre, @apellido, @profesion_id, @pass)", connection))
+                    {
+                        command.Parameters.AddWithValue("@dni", usuario.DNI);
+                        command.Parameters.AddWithValue("@matricula", usuario.Matricula);
+                        command.Parameters.AddWithValue("@nombre", usuario.Nombre);
+                        command.Parameters.AddWithValue("@apellido", usuario.Apellido);
+                        command.Parameters.AddWithValue("@profesion_id", usuario.ProfesionID);
+                        command.Parameters.AddWithValue("@pass", usuario.Password);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                // excepción de SQL Server aquí.
+          
+                Console.WriteLine("Error de SQL: " + ex.Message);
+                return false; // O maneja de otra manera apropiada
+            }
+            catch (Exception ex)
+            {
+                //  excepciones generales aquí.
+                //  excepciones de conexión, null reference, etc.
+                Console.WriteLine("Error general: " + ex.Message);
+                return false; // O maneja de otra manera apropiada
+            }
+        }
+
     }
+
 }

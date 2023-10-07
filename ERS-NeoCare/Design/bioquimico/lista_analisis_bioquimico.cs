@@ -6,7 +6,7 @@ namespace ERS_NeoCare.Design
 {
     public partial class lista_analisis_bioquimico : UserControl
     {
-        // Establece la cadena de conexión a la base de datos.
+  
 
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         private string userDni;
@@ -14,7 +14,7 @@ namespace ERS_NeoCare.Design
         public event EventHandler<Tuple<string>> historiaPacienteClick;
 
         private menu MainForm { get; set; }
-        // Declara un evento personalizado para notificar clics en los botones
+
 
         public lista_analisis_bioquimico()
         {

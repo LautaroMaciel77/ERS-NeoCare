@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ERS_NeoCare.Design.administrativo;
+using ERS_NeoCare.Helper;
+using ERS_NeoCare.Logic;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -8,16 +11,20 @@ namespace ERS_NeoCare.Design
     {
         // Establece la cadena de conexión a la base de datos.
 
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+        private string connectionString = Configuracion.ConnectionString;
         private string userDni;
         //handler para cargar paciente
         public event EventHandler<Tuple<string>> historiaPacienteClick;
 
         private menu MainForm { get; set; }
-        // Declara un evento personalizado para notificar clics en los botones
+        public Model.PacienteService paciente;
+
+        private listaPacienteBio _presenter;
+        
 
         public lista_atenciones_enfermero()
-        {
+
+        { 
 
             InitializeComponent();
             CargarDatosPaciente();
@@ -33,10 +40,10 @@ namespace ERS_NeoCare.Design
                 {
                     connection.Open();
 
-                    // Define una consulta SQL para seleccionar todos los registros de la tabla paciente.
+                 
                     string query = "SELECT * FROM paciente";
 
-                    // Crea un adaptador de datos y un DataSet para almacenar los resultados.
+                
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     DataSet dataSet = new DataSet();
 
@@ -67,13 +74,27 @@ namespace ERS_NeoCare.Design
             {
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
-                    // Obtén el valor de la celda "dni" de la fila en la que se hizo clic
-                    this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells["dni"].Value.ToString();
+                    atencion atencion = new atencion();
+                    atencion.Dock = DockStyle.Fill;
 
-                    // Muestra el valor del dni (puedes hacer lo que desees con él)
-                    // Muestra el panel de opciones
-                    //panelAgregarPaciente.Visible = false;
-                    //panelMenuPaciente.Visible = true;
+                    // Accede al formulario 'menu' desde el control actual
+                    menu menuForm = this.ParentForm as menu;
+
+                    if (menuForm != null)
+                    {
+                        Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                        panelOpciones.Controls.Clear();
+
+
+                        panelOpciones.Controls.Add(atencion);
+
+
+
+
+                    }
 
                 }
             }

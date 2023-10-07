@@ -105,6 +105,11 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("El campo DNI no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (string.IsNullOrWhiteSpace(textBoxMatricula.Text))
+            {
+                MessageBox.Show("El campo matricula no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
 
             if (select == null || rangoHora == null)
@@ -112,12 +117,27 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("Asegúrate de seleccionar una fecha y un rango de hora antes de agregar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (select < DateTime.Now)
+            {
+                MessageBox.Show("Asegúrate de seleccionar una fecha correcta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
             dataGridViewHora.Rows[selectedRowIndex].Cells[1].Value = "NO";
         }
 
         private void iconBuscar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxMatricula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ namespace ERS_NeoCare.Design
         public event EventHandler<Tuple<string>> historiaPacienteClick;
         public Model.PacienteService paciente;
         private menu MainForm { get; set; }
-        // Declara un evento personalizado para notificar clics en los botones
+
 
         private ListaPacienteEnf _presenter;
         public lista_paciente_enfermero()
@@ -39,7 +39,7 @@ namespace ERS_NeoCare.Design
 
         public void MostrarMenu(Model.PacienteService paciente)
         {
-            panelAgregar.Visible = true;
+         
             MenuEnfermeroAtencion mp = new MenuEnfermeroAtencion();
             this.paciente = paciente;
             mp.closeclick += closeclick;
@@ -55,7 +55,7 @@ namespace ERS_NeoCare.Design
 
         private void verclick(object sender, EventArgs e)
         {
-            atencion pacienteControl = new atencion();
+            PacienteView pacienteControl = new PacienteView(paciente);
             pacienteControl.Dock = DockStyle.Fill;
 
             menu menuForm = this.ParentForm as menu;
@@ -79,14 +79,15 @@ namespace ERS_NeoCare.Design
         }
         private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-          if (e.RowIndex >= 0 && DGVAdministrativo.Rows.Count > 0)
+            if (e.RowIndex >= 0 && DGVAdministrativo.Rows.Count > 0)
             {
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
+                    panelAgregar.Visible = true;
                     int columnIndexDNI = 0;
                     this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
                     _presenter.cargarMenu();
-               
+                
                 }
             }
         }

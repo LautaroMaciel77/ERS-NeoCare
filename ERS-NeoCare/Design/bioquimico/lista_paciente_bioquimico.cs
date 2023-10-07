@@ -11,7 +11,7 @@ namespace ERS_NeoCare.Design
 {
     public partial class lista_paciente_bioquimico : UserControl
     {
-        // Establece la cadena de conexión a la base de datos.
+
 
 
         public string userDni;
@@ -20,7 +20,7 @@ namespace ERS_NeoCare.Design
 
 
         private menu MainForm { get; set; }
-        // Declara un evento personalizado para notificar clics en los botones
+    
         private listaPacienteBio _presenter;
         public lista_paciente_bioquimico()
         {

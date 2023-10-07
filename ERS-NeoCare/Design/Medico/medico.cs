@@ -7,7 +7,7 @@ namespace ERS_NeoCare.Design
     {
         private menu MainForm { get; set; }
 
-        // Declara un evento personalizado para notificar clics en los botones
+
         public event EventHandler PacienteButtonClick;
         public event EventHandler TurnoAdminButtonClick;
         public event EventHandler ListaTurnosButtonClick;

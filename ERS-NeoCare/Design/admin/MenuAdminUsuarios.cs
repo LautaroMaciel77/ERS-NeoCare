@@ -31,7 +31,7 @@ namespace ERS_NeoCare.Design.Medico
 
             if (menuForm != null)
             {
-                // Llama al método para agregar el control al panelOpciones
+ 
            
             }
         }
@@ -46,7 +46,7 @@ namespace ERS_NeoCare.Design.Medico
 
             if (menuForm != null)
             {
-                // Llama al método para agregar el control al panelOpciones
+            
            
             }
 

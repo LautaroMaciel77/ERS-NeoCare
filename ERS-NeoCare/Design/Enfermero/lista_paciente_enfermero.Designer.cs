@@ -42,7 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pacienteTableAdapter = new ERS_NeoCare.Database1DataSetTableAdapters.PacienteTableAdapter();
             this.panelAgregar = new System.Windows.Forms.Panel();
-            this.dni = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHoraPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,20 +59,19 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(30, 83);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(40, 102);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 18);
+            this.label7.Size = new System.Drawing.Size(68, 24);
             this.label7.TabIndex = 11;
             this.label7.Text = "Buscar";
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(92, 81);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Location = new System.Drawing.Point(123, 100);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 27);
+            this.textBox2.Size = new System.Drawing.Size(260, 32);
             this.textBox2.TabIndex = 13;
             // 
             // DGVAdministrativo
@@ -114,13 +113,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
-            this.DGVAdministrativo.Location = new System.Drawing.Point(34, 121);
-            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
+            this.DGVAdministrativo.Location = new System.Drawing.Point(45, 149);
+            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGVAdministrativo.Name = "DGVAdministrativo";
             this.DGVAdministrativo.RowHeadersVisible = false;
             this.DGVAdministrativo.RowHeadersWidth = 51;
             this.DGVAdministrativo.RowTemplate.Height = 40;
-            this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
+            this.DGVAdministrativo.Size = new System.Drawing.Size(1503, 750);
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
@@ -141,9 +140,9 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1196, 71);
+            this.panel2.Size = new System.Drawing.Size(1595, 87);
             this.panel2.TabIndex = 14;
             // 
             // iconPictureBox1
@@ -153,10 +152,11 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserInjured;
             this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 41;
-            this.iconPictureBox1.Location = new System.Drawing.Point(34, 17);
+            this.iconPictureBox1.IconSize = 50;
+            this.iconPictureBox1.Location = new System.Drawing.Point(45, 21);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(41, 41);
+            this.iconPictureBox1.Size = new System.Drawing.Size(55, 50);
             this.iconPictureBox1.TabIndex = 5;
             this.iconPictureBox1.TabStop = false;
             // 
@@ -165,10 +165,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
-            this.label1.Location = new System.Drawing.Point(79, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(105, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 20);
+            this.label1.Size = new System.Drawing.Size(107, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Pacientes";
             // 
@@ -182,30 +181,32 @@
             this.panelAgregar.AutoSize = true;
             this.panelAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.panelAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelAgregar.Location = new System.Drawing.Point(468, 309);
+            this.panelAgregar.Location = new System.Drawing.Point(624, 380);
+            this.panelAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelAgregar.Name = "panelAgregar";
-            this.panelAgregar.Size = new System.Drawing.Size(260, 150);
+            this.panelAgregar.Size = new System.Drawing.Size(347, 185);
             this.panelAgregar.TabIndex = 18;
             // 
             // dni
             // 
             this.dni.DataPropertyName = "dni";
             this.dni.HeaderText = "dni";
+            this.dni.MinimumWidth = 6;
             this.dni.Name = "dni";
             this.dni.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dni.Text = "Menu";
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             // 
             // apellidoDataGridViewTextBoxColumn
             // 
             this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
             this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
             // 
             // CHoraPedido
@@ -233,15 +234,16 @@
             // 
             // lista_paciente_enfermero
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelAgregar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.DGVAdministrativo);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "lista_paciente_enfermero";
-            this.Size = new System.Drawing.Size(1196, 768);
+            this.Size = new System.Drawing.Size(1595, 945);
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
@@ -264,7 +266,7 @@
         private Database1DataSet database1DataSet;
         private Database1DataSetTableAdapters.PacienteTableAdapter pacienteTableAdapter;
         private System.Windows.Forms.Panel panelAgregar;
-        private System.Windows.Forms.DataGridViewButtonColumn dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHoraPedido;

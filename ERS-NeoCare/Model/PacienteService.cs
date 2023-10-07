@@ -47,7 +47,7 @@ namespace ERS_NeoCare.Presenter
         }
         public Model.PacienteService Paciente(string dni)
         {
-          
+
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
@@ -68,7 +68,7 @@ namespace ERS_NeoCare.Presenter
                                 Apellido = reader["apellido"].ToString(),
                                 Domicilio = reader["Domicilio"].ToString(),
                                 Condicion = reader["Condicion"].ToString(),
-                            
+
 
                             };
 
@@ -82,27 +82,43 @@ namespace ERS_NeoCare.Presenter
 
         public bool InsertarPaciente(Model.PacienteService paciente)
         {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            try
             {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand("INSERT INTO Paciente (dni, nombre, apellido, domicilio, sexo, obra_social) " +
-                                                            "VALUES (@dni, @nombre, @apellido, @domicilio, @sexo, @obra_social)", connection))
+                using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    command.Parameters.AddWithValue("@dni", paciente.Dni);
-                    command.Parameters.AddWithValue("@nombre", paciente.Nombre);
-                    command.Parameters.AddWithValue("@apellido", paciente.Apellido);
-                    command.Parameters.AddWithValue("@domicilio", paciente.Domicilio);
-                    command.Parameters.AddWithValue("@sexo", paciente.Sexo);
-                    command.Parameters.AddWithValue("@obra_social", paciente.ObraSocial);
+                    connection.Open();
 
-                    int rowsAffected = command.ExecuteNonQuery();
+                    using (SqlCommand command = new SqlCommand("INSERT INTO Paciente (dni, nombre, apellido, domicilio, sexo, obra_social) " +
+                                                                "VALUES (@dni, @nombre, @apellido, @domicilio, @sexo, @obra_social)", connection))
+                    {
+                        command.Parameters.AddWithValue("@dni", paciente.Dni);
+                        command.Parameters.AddWithValue("@nombre", paciente.Nombre);
+                        command.Parameters.AddWithValue("@apellido", paciente.Apellido);
+                        command.Parameters.AddWithValue("@domicilio", paciente.Domicilio);
+                        command.Parameters.AddWithValue("@sexo", paciente.Sexo);
+                        command.Parameters.AddWithValue("@obra_social", paciente.ObraSocial);
 
-                    return rowsAffected > 0; 
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        return rowsAffected > 0;
+                    }
                 }
             }
+            catch (SqlException ex)
+            {
+                // Maneja la excepción de SQL Server aquí.
+              
+                Console.WriteLine("Error de SQL: " + ex.Message);
+                return false; // O maneja de otra manera apropiada
+            }
+            catch (Exception ex)
+            {
+                // Maneja otras excepciones generales aquí.
+                //  excepciones de conexión, null reference, etc.
+                Console.WriteLine("Error general: " + ex.Message);
+                return false; 
+            }
         }
-
     }
-}
 
+}
