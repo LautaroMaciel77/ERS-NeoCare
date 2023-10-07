@@ -99,7 +99,27 @@ namespace ERS_NeoCare.Design
 
         private void verclick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            PacienteView pacienteControl = new PacienteView(paciente);
+            pacienteControl.Dock = DockStyle.Fill;
+
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
+
+
+
+
+            }
         }
 
         private void verpacienteclick()
