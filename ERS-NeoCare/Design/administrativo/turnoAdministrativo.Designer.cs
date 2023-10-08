@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridViewHora = new System.Windows.Forms.DataGridView();
-            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.labelDni = new System.Windows.Forms.Label();
             this.textboxDni = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -43,14 +40,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxMatricula = new System.Windows.Forms.TextBox();
+            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHora)).BeginInit();
             this.SuspendLayout();
             // 
             // monthCalendar1
             // 
             this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(4, 3);
-            this.monthCalendar1.Location = new System.Drawing.Point(149, 90);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            this.monthCalendar1.Location = new System.Drawing.Point(112, 73);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged_1);
@@ -64,52 +63,27 @@
             this.hora,
             this.disponible,
             this.Eleguir});
-            this.dataGridViewHora.Location = new System.Drawing.Point(324, 702);
-            this.dataGridViewHora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewHora.Location = new System.Drawing.Point(112, 570);
             this.dataGridViewHora.Name = "dataGridViewHora";
             this.dataGridViewHora.RowHeadersWidth = 51;
-            this.dataGridViewHora.Size = new System.Drawing.Size(468, 185);
+            this.dataGridViewHora.Size = new System.Drawing.Size(429, 150);
             this.dataGridViewHora.TabIndex = 1;
             this.dataGridViewHora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHora_CellContentClick);
-            // 
-            // hora
-            // 
-            this.hora.HeaderText = "hora";
-            this.hora.MinimumWidth = 6;
-            this.hora.Name = "hora";
-            this.hora.ReadOnly = true;
-            this.hora.Width = 125;
-            // 
-            // disponible
-            // 
-            this.disponible.HeaderText = "disponible";
-            this.disponible.MinimumWidth = 6;
-            this.disponible.Name = "disponible";
-            this.disponible.Width = 125;
-            // 
-            // Eleguir
-            // 
-            this.Eleguir.HeaderText = "Eleguir Hora";
-            this.Eleguir.MinimumWidth = 6;
-            this.Eleguir.Name = "Eleguir";
-            this.Eleguir.Width = 125;
             // 
             // labelDni
             // 
             this.labelDni.AutoSize = true;
-            this.labelDni.Location = new System.Drawing.Point(859, 779);
-            this.labelDni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDni.Location = new System.Drawing.Point(644, 633);
             this.labelDni.Name = "labelDni";
-            this.labelDni.Size = new System.Drawing.Size(105, 16);
+            this.labelDni.Size = new System.Drawing.Size(85, 13);
             this.labelDni.TabIndex = 3;
             this.labelDni.Text = "Dni del Paciente";
             // 
             // textboxDni
             // 
-            this.textboxDni.Location = new System.Drawing.Point(980, 775);
-            this.textboxDni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textboxDni.Location = new System.Drawing.Point(735, 630);
             this.textboxDni.Name = "textboxDni";
-            this.textboxDni.Size = new System.Drawing.Size(132, 22);
+            this.textboxDni.Size = new System.Drawing.Size(100, 20);
             this.textboxDni.TabIndex = 4;
             this.textboxDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxDni_KeyPress);
             // 
@@ -124,10 +98,9 @@
             this.iconBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconBuscar.IconColor = System.Drawing.Color.Black;
             this.iconBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBuscar.Location = new System.Drawing.Point(905, 852);
-            this.iconBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconBuscar.Location = new System.Drawing.Point(679, 692);
             this.iconBuscar.Name = "iconBuscar";
-            this.iconBuscar.Size = new System.Drawing.Size(208, 28);
+            this.iconBuscar.Size = new System.Drawing.Size(156, 23);
             this.iconBuscar.TabIndex = 8;
             this.iconBuscar.Text = "Buscar Turno";
             this.iconBuscar.UseVisualStyleBackColor = true;
@@ -138,10 +111,9 @@
             this.iconAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconAgregar.IconColor = System.Drawing.Color.Black;
             this.iconAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconAgregar.Location = new System.Drawing.Point(905, 888);
-            this.iconAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconAgregar.Location = new System.Drawing.Point(679, 722);
             this.iconAgregar.Name = "iconAgregar";
-            this.iconAgregar.Size = new System.Drawing.Size(208, 28);
+            this.iconAgregar.Size = new System.Drawing.Size(156, 23);
             this.iconAgregar.TabIndex = 7;
             this.iconAgregar.Text = "Guardar Turno";
             this.iconAgregar.UseVisualStyleBackColor = true;
@@ -150,45 +122,63 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(859, 702);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(644, 570);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(859, 743);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(644, 604);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "label2";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(859, 811);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(644, 659);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 16);
+            this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Matricula Medico";
             // 
             // textBoxMatricula
             // 
-            this.textBoxMatricula.Location = new System.Drawing.Point(981, 808);
-            this.textBoxMatricula.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxMatricula.Location = new System.Drawing.Point(736, 656);
             this.textBoxMatricula.Name = "textBoxMatricula";
-            this.textBoxMatricula.Size = new System.Drawing.Size(132, 22);
+            this.textBoxMatricula.Size = new System.Drawing.Size(100, 20);
             this.textBoxMatricula.TabIndex = 10;
             this.textBoxMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMatricula_KeyPress);
             // 
+            // hora
+            // 
+            this.hora.HeaderText = "Hora";
+            this.hora.MinimumWidth = 6;
+            this.hora.Name = "hora";
+            this.hora.ReadOnly = true;
+            this.hora.Width = 125;
+            // 
+            // disponible
+            // 
+            this.disponible.HeaderText = "Disponible";
+            this.disponible.MinimumWidth = 6;
+            this.disponible.Name = "disponible";
+            this.disponible.Width = 125;
+            // 
+            // Eleguir
+            // 
+            this.Eleguir.HeaderText = "Elegir Hora";
+            this.Eleguir.MinimumWidth = 6;
+            this.Eleguir.Name = "Eleguir";
+            this.Eleguir.Width = 125;
+            // 
             // turnoAdministrativo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textBoxMatricula);
             this.Controls.Add(this.label3);
@@ -200,9 +190,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewHora);
             this.Controls.Add(this.monthCalendar1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "turnoAdministrativo";
-            this.Size = new System.Drawing.Size(1595, 945);
+            this.Size = new System.Drawing.Size(1196, 768);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHora)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,9 +202,6 @@
 
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridView dataGridViewHora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn disponible;
-        private System.Windows.Forms.DataGridViewButtonColumn Eleguir;
         private System.Windows.Forms.Label labelDni;
         private System.Windows.Forms.TextBox textboxDni;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -225,5 +211,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxMatricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn disponible;
+        private System.Windows.Forms.DataGridViewButtonColumn Eleguir;
     }
 }

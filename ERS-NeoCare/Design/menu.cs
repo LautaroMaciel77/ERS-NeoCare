@@ -62,5 +62,10 @@ namespace ERS_NeoCare.Design
         {
             this.Close(); 
         }
+
+        private void panelSubMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

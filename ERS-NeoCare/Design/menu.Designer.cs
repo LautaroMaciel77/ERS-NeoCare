@@ -62,6 +62,7 @@
             this.panelSubMenu.Name = "panelSubMenu";
             this.panelSubMenu.Size = new System.Drawing.Size(169, 194);
             this.panelSubMenu.TabIndex = 19;
+            this.panelSubMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSubMenu_Paint);
             // 
             // pictureBox1
             // 

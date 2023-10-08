@@ -36,7 +36,7 @@ namespace ERS_NeoCare.Logic
             int idProfesion = _usuario.ProfesionID;
             switch (idProfesion)
             {
-                case 0:
+                case 5:
                     admin admin = new admin();
                     _view.AgregarUserControl(admin);
                     admin.adminUsuariosButtonClick+= adminUsuariosButtonClick;
