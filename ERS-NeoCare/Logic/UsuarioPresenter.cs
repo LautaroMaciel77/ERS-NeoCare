@@ -41,7 +41,7 @@ namespace ERS_NeoCare.Logic
         public bool EditarUsuario(UsuarioModel usuario)
         {
         
-            return _model.CambiarEstadoBajaUsuario(usuario.Matricula);
+            return _model.EditarUsuario(usuario);
         }
         public UsuarioModel Buscar(string dni)
         {
@@ -52,6 +52,12 @@ namespace ERS_NeoCare.Logic
 
             DataTable data = _model.ObtenerDatosUsuario(valorBaja);
             _viewLista.MostrarDatosPaciente(data);
+        }
+        public void ObtenerUsuarioBaja(string valorBaja)
+        {
+
+            DataTable data = _model.ObtenerDatosUsuario(valorBaja);
+            _viewBaja.MostrarDatos(data);
         }
         public bool cambiarBaja(UsuarioModel usuario)
         {

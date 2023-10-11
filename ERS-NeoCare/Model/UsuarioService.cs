@@ -31,6 +31,7 @@ namespace ERS_NeoCare.Model
                         {
                             return new UsuarioModel
                             {
+                                id= Convert.ToInt32(reader["id"]),
                                 Matricula = Convert.ToInt32(reader["matricula"]),
                                 DNI = Convert.ToInt32(reader["dni"]),
                                 Nombre = reader["nombre"].ToString(),
@@ -61,6 +62,7 @@ namespace ERS_NeoCare.Model
                         {
                             return new UsuarioModel
                             {
+                                id = Convert.ToInt32(reader["id"]),
                                 Matricula = Convert.ToInt32(reader["matricula"]),
                                 DNI = Convert.ToInt32(reader["dni"]),
                                 Nombre = reader["nombre"].ToString(),
@@ -103,6 +105,52 @@ namespace ERS_NeoCare.Model
             {
                 // excepción de SQL Server aquí.
           
+                Console.WriteLine("Error de SQL: " + ex.Message);
+                return false; // O maneja de otra manera apropiada
+            }
+            catch (Exception ex)
+            {
+                //  excepciones generales aquí.
+                //  excepciones de conexión, null reference, etc.
+                Console.WriteLine("Error general: " + ex.Message);
+                return false; // O maneja de otra manera apropiada
+            }
+        }
+        public bool EditarUsuario(UsuarioModel usuario)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("UPDATE personal_salud " +
+                                                       "SET " +"dni = @dni, " + 
+                                                       "matricula = @matricula, " +
+                                                           "nombre = @nombre, " +
+                                                           "apellido = @apellido, " +
+                                                           "profesion_id = @profesion_id, " +
+                                                           "pass = @pass " +
+                                                       "WHERE id = @id", connection))
+                    {
+                        command.Parameters.AddWithValue("@id", usuario.id);
+                        command.Parameters.AddWithValue("@dni", usuario.DNI);
+                        command.Parameters.AddWithValue("@matricula", usuario.Matricula);
+                        command.Parameters.AddWithValue("@nombre", usuario.Nombre);
+                        command.Parameters.AddWithValue("@apellido", usuario.Apellido);
+                        command.Parameters.AddWithValue("@profesion_id", usuario.ProfesionID);
+                        command.Parameters.AddWithValue("@pass", usuario.Password);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                // excepción de SQL Server aquí.
+
                 Console.WriteLine("Error de SQL: " + ex.Message);
                 return false; // O maneja de otra manera apropiada
             }

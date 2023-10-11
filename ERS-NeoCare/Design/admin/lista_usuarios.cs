@@ -56,12 +56,7 @@ namespace ERS_NeoCare.Design
             panelAgregar.Visible = false;
         }
 
-        private void iconTurno_Click(object sender, EventArgs e)
-        {
-            TurnoPacienteClick?.Invoke(this, Tuple.Create(userDni));
-
-        }
-
+ 
         private void iconVer_Click(object sender, EventArgs e)
         {
             historiaPacienteClick?.Invoke(this, Tuple.Create(userDni));
@@ -75,8 +70,8 @@ namespace ERS_NeoCare.Design
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
                     DataGridViewRow row = DGVAdministrativo.Rows[e.RowIndex];
-       
-                   usuario =_presenter.Buscar( (string)row.Cells["dni"].Value);
+                    string dni = row.Cells["dni"].Value.ToString();
+                   usuario =_presenter.Buscar(dni );
                     cargarUserControl();
           
 
@@ -121,7 +116,8 @@ namespace ERS_NeoCare.Design
             if (_presenter.cambiarBaja(usuario))
             {
                 MessageBox.Show("Usuario editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    
+                CargarDatosPaciente();
+                panelAgregar.Visible = false;
             }
             else
             {

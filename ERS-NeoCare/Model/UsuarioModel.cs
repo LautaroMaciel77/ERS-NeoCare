@@ -2,6 +2,7 @@
 {
     public class UsuarioModel
     {
+        public int id { get; set; }
         public int Matricula { get; set; }
         public int DNI { get; set; }
         public string Nombre { get; set; }

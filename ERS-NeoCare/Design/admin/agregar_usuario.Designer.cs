@@ -51,7 +51,6 @@
             this.textBoxProfesion.Name = "textBoxProfesion";
             this.textBoxProfesion.Size = new System.Drawing.Size(236, 22);
             this.textBoxProfesion.TabIndex = 41;
-            this.textBoxProfesion.TextChanged += new System.EventHandler(this.textBoxProfesion_TextChanged);
             this.textBoxProfesion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textContraseña
@@ -61,7 +60,6 @@
             this.textContraseña.Name = "textContraseña";
             this.textContraseña.Size = new System.Drawing.Size(236, 22);
             this.textContraseña.TabIndex = 40;
-            this.textContraseña.TextChanged += new System.EventHandler(this.textContraseña_TextChanged);
             // 
             // labelContraseña
             // 
@@ -72,7 +70,6 @@
             this.labelContraseña.Size = new System.Drawing.Size(79, 16);
             this.labelContraseña.TabIndex = 38;
             this.labelContraseña.Text = "Contraseña:";
-            this.labelContraseña.Click += new System.EventHandler(this.labelContraseña_Click);
             // 
             // labelProfesion
             // 
@@ -83,7 +80,6 @@
             this.labelProfesion.Size = new System.Drawing.Size(64, 16);
             this.labelProfesion.TabIndex = 36;
             this.labelProfesion.Text = "Profesion";
-            this.labelProfesion.Click += new System.EventHandler(this.labelProfesion_Click);
             // 
             // label1
             // 
@@ -94,7 +90,6 @@
             this.label1.Size = new System.Drawing.Size(120, 18);
             this.label1.TabIndex = 33;
             this.label1.Text = "Nuevo Usuario";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnRegistrar
             // 
@@ -115,7 +110,6 @@
             this.textMatricula.Name = "textMatricula";
             this.textMatricula.Size = new System.Drawing.Size(236, 22);
             this.textMatricula.TabIndex = 27;
-            this.textMatricula.TextChanged += new System.EventHandler(this.textMatricula_TextChanged);
             this.textMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textObra_KeyPress);
             // 
             // textDni
@@ -125,7 +119,6 @@
             this.textDni.Name = "textDni";
             this.textDni.Size = new System.Drawing.Size(236, 22);
             this.textDni.TabIndex = 26;
-            this.textDni.TextChanged += new System.EventHandler(this.textDni_TextChanged);
             this.textDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textDni_KeyPress);
             // 
             // textNombre
@@ -135,7 +128,6 @@
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(236, 22);
             this.textNombre.TabIndex = 25;
-            this.textNombre.TextChanged += new System.EventHandler(this.textNombre_TextChanged);
             this.textNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNombre_KeyPress);
             // 
             // textApellido
@@ -145,7 +137,6 @@
             this.textApellido.Name = "textApellido";
             this.textApellido.Size = new System.Drawing.Size(236, 22);
             this.textApellido.TabIndex = 24;
-            this.textApellido.TextChanged += new System.EventHandler(this.textApellido_TextChanged);
             this.textApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textApellido_KeyPress);
             // 
             // labelMatricula
@@ -157,7 +148,6 @@
             this.labelMatricula.Size = new System.Drawing.Size(64, 16);
             this.labelMatricula.TabIndex = 20;
             this.labelMatricula.Text = "Matricula:";
-            this.labelMatricula.Click += new System.EventHandler(this.labelMatricula_Click);
             // 
             // labelDni
             // 
@@ -168,7 +158,6 @@
             this.labelDni.Size = new System.Drawing.Size(39, 16);
             this.labelDni.TabIndex = 18;
             this.labelDni.Text = "D.N.I:";
-            this.labelDni.Click += new System.EventHandler(this.labelDni_Click);
             // 
             // labelNombre
             // 
@@ -179,7 +168,6 @@
             this.labelNombre.Size = new System.Drawing.Size(59, 16);
             this.labelNombre.TabIndex = 17;
             this.labelNombre.Text = "Nombre:";
-            this.labelNombre.Click += new System.EventHandler(this.labelNombre_Click);
             // 
             // labelApellido
             // 
@@ -190,7 +178,6 @@
             this.labelApellido.Size = new System.Drawing.Size(60, 16);
             this.labelApellido.TabIndex = 16;
             this.labelApellido.Text = "Apellido:";
-            this.labelApellido.Click += new System.EventHandler(this.labelApellido_Click);
             // 
             // agregar_usuario
             // 
