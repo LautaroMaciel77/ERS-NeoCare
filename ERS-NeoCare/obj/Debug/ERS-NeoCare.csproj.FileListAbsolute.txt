@@ -146,3 +146,5 @@ C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.cs
 C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.csproj.CopyComplete
 C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.exe
 C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.pdb
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.editar_usuario.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.lista_baja_usuarios.resources

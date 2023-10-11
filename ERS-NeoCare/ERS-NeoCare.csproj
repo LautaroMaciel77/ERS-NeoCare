@@ -274,11 +274,23 @@
     <Compile Include="Design\admin\admin.Designer.cs">
       <DependentUpon>admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\admin\editar_usuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\admin\editar_usuario.Designer.cs">
+      <DependentUpon>editar_usuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\admin\agregar_usuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Design\admin\agregar_usuario.Designer.cs">
       <DependentUpon>agregar_usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\admin\lista_baja_usuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\admin\lista_baja_usuarios.Designer.cs">
+      <DependentUpon>lista_baja_usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\admin\lista_usuarios.cs">
       <SubType>UserControl</SubType>
@@ -366,7 +378,7 @@
     </Compile>
     <Compile Include="Helper\ReemplazoPanelEventArgs .cs" />
     <Compile Include="Logic\AgregarPacientePresenter.cs" />
-    <Compile Include="Logic\AgregarUsuarioPresenter.cs" />
+    <Compile Include="Logic\UsuarioPresenter.cs" />
     <Compile Include="Logic\ImenuPresenter.cs" />
     <Compile Include="Logic\ListaMedico.cs" />
     <Compile Include="Logic\ListaPacienteBio.cs" />
@@ -470,8 +482,14 @@
     <EmbeddedResource Include="Design\admin\admin.resx">
       <DependentUpon>admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\admin\editar_usuario.resx">
+      <DependentUpon>editar_usuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\admin\agregar_usuario.resx">
       <DependentUpon>agregar_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\admin\lista_baja_usuarios.resx">
+      <DependentUpon>lista_baja_usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\admin\lista_usuarios.resx">
       <DependentUpon>lista_usuarios.cs</DependentUpon>

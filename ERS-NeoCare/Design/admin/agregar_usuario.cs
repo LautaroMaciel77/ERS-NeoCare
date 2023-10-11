@@ -13,12 +13,12 @@ namespace ERS_NeoCare.Design.administrativo
         public event EventHandler UserControlClosed;
         private lista_paciente MainForm { get; set; }
    
-        private AgregarUsuarioPresenter _presenter;
+        private UsuarioPresenter _presenter;
         public event EventHandler actualizarTabla;
         public agregar_usuario()
         {
             InitializeComponent();
-            _presenter = new AgregarUsuarioPresenter(new UsuarioService(Configuracion.ConnectionString));
+            _presenter = new UsuarioPresenter(new UsuarioService(Configuracion.ConnectionString));
         }
 
         private void textDni_KeyPress(object sender, KeyPressEventArgs e)

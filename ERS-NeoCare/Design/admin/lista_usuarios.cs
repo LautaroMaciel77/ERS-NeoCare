@@ -1,5 +1,8 @@
 ﻿using ERS_NeoCare.Design.administrativo;
 using ERS_NeoCare.Design.Medico;
+using ERS_NeoCare.Helper;
+using ERS_NeoCare.Logic;
+using ERS_NeoCare.Model;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,7 +18,8 @@ namespace ERS_NeoCare.Design
         //handler para cargar paciente
         public event EventHandler<Tuple<string>> historiaPacienteClick;
         public event EventHandler<Tuple<string>> TurnoPacienteClick;
-
+        public UsuarioModel usuario = new UsuarioModel();
+        private UsuarioPresenter _presenter;
         private menu MainForm { get; set; }
 
 
@@ -23,53 +27,26 @@ namespace ERS_NeoCare.Design
         {
 
             InitializeComponent();
+            _presenter = new UsuarioPresenter(this, new UsuarioService(Configuracion.ConnectionString));
+
             CargarDatosPaciente();
             panelAgregar.Visible = false;
-         
-
-
-
+     
         }
 
         private void CargarDatosPaciente()
         {
             // Crea una conexión a la base de datos.
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    // Define una consulta SQL para seleccionar todos los registros de la tabla personal_Salud.
-                    string query = "SELECT * FROM personal_salud";
-
-                    // Crea un adaptador de datos y un DataSet para almacenar los resultados.
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    DataSet dataSet = new DataSet();
-
-                    // Llena el DataSet con los datos de la consulta.
-                    adapter.Fill(dataSet, "personal_salud");
-
-                    // Asigna el DataSet como origen de datos para el DataGridView.
-                    DGVAdministrativo.DataSource = dataSet.Tables["personal_salud"];
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar los datos de la tabla personal salud: " + ex.Message);
-                }
-            }
+            _presenter.ObtenerUsuario("n");
         }
 
-       
-
-    
-        private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void MostrarDatosPaciente(DataTable data)
         {
-
-         
-            
-
+            DGVAdministrativo.DataSource = data;
         }
+
+
+
 
 
 
@@ -97,17 +74,58 @@ namespace ERS_NeoCare.Design
             {
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
-                    int columnIndexDNI = 0;                   
-                    panelAgregar.Visible = true;
-                    MenuAdminUsuarios ma = new MenuAdminUsuarios();
-                    panelAgregar.Visible = true;
-                    ma.Dock = DockStyle.Fill;
-                    ma.closeclick += closeclick;
-                    panelAgregar.Controls.Clear();
-                    panelAgregar.Controls.Add(ma);
-                    ma.BringToFront();
+                    DataGridViewRow row = DGVAdministrativo.Rows[e.RowIndex];
+       
+                   usuario =_presenter.Buscar( (string)row.Cells["dni"].Value);
+                    cargarUserControl();
+          
 
                 }
+            }
+        }
+
+        private void cargarUserControl()
+        {
+            panelAgregar.Visible = true;
+            MenuAdminUsuarios ma = new MenuAdminUsuarios();
+            panelAgregar.Visible = true;
+            ma.Dock = DockStyle.Fill;
+            ma.closeclick += closeclick;
+            ma.bajaclick += bajaclick;
+            ma.editarclick += editarclick;
+            panelAgregar.Controls.Clear();
+            panelAgregar.Controls.Add(ma);
+            ma.BringToFront();
+        }
+
+        private void editarclick(object sender, EventArgs e)
+        {
+            editar_usuario ap = new editar_usuario(usuario);
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+                panelOpciones.Controls.Clear();
+                panelOpciones.Controls.Add(ap);
+
+
+            }
+        
+    }
+
+        private void bajaclick(object sender, EventArgs e)
+        {
+            if (_presenter.cambiarBaja(usuario))
+            {
+                MessageBox.Show("Usuario editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    
+            }
+            else
+            {
+                MessageBox.Show("Hubo un problema al editar el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -127,17 +145,13 @@ namespace ERS_NeoCare.Design
             {
                 Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
 
-
-
                 panelOpciones.Controls.Clear();
-
-
                 panelOpciones.Controls.Add(ap);
-
-
 
 
             }
         }
+
+
     }
 }
