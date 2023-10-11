@@ -33,9 +33,6 @@
             this.labelDni = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewHora = new System.Windows.Forms.DataGridView();
-            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.radioEnfermero = new System.Windows.Forms.RadioButton();
             this.radioBio = new System.Windows.Forms.RadioButton();
@@ -44,6 +41,9 @@
             this.iconAgregar = new FontAwesome.Sharp.IconButton();
             this.textBoxIndicaciones = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHora)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,22 +98,6 @@
             this.dataGridViewHora.Size = new System.Drawing.Size(351, 150);
             this.dataGridViewHora.TabIndex = 10;
             this.dataGridViewHora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHora_CellContentClick);
-            // 
-            // hora
-            // 
-            this.hora.HeaderText = "hora";
-            this.hora.Name = "hora";
-            this.hora.ReadOnly = true;
-            // 
-            // disponible
-            // 
-            this.disponible.HeaderText = "disponible";
-            this.disponible.Name = "disponible";
-            // 
-            // Eleguir
-            // 
-            this.Eleguir.HeaderText = "Eleguir Hora";
-            this.Eleguir.Name = "Eleguir";
             // 
             // monthCalendar1
             // 
@@ -199,6 +183,22 @@
             this.label3.TabIndex = 37;
             this.label3.Text = "Descripcion orden";
             // 
+            // hora
+            // 
+            this.hora.HeaderText = "Hora";
+            this.hora.Name = "hora";
+            this.hora.ReadOnly = true;
+            // 
+            // disponible
+            // 
+            this.disponible.HeaderText = "Disponible";
+            this.disponible.Name = "disponible";
+            // 
+            // Eleguir
+            // 
+            this.Eleguir.HeaderText = "Elegir Hora";
+            this.Eleguir.Name = "Eleguir";
+            // 
             // TurnosMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,14 +234,14 @@
         private System.Windows.Forms.Label labelDni;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewHora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn disponible;
-        private System.Windows.Forms.DataGridViewButtonColumn Eleguir;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.RadioButton radioEnfermero;
         private System.Windows.Forms.RadioButton radioBio;
         private System.Windows.Forms.Label labelEspecialista;
         private System.Windows.Forms.TextBox textBoxIndicaciones;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn disponible;
+        private System.Windows.Forms.DataGridViewButtonColumn Eleguir;
     }
 }
