@@ -70,7 +70,7 @@
             this.panelAgregar.Name = "panelAgregar";
             this.panelAgregar.Size = new System.Drawing.Size(260, 150);
             this.panelAgregar.TabIndex = 21;
-            // 
+       //
             // DGVAdministrativo
             // 
             this.DGVAdministrativo.AllowUserToAddRows = false;
@@ -110,7 +110,7 @@
             this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
             this.DGVAdministrativo.Location = new System.Drawing.Point(34, 137);
-            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
             this.DGVAdministrativo.Name = "DGVAdministrativo";
             this.DGVAdministrativo.ReadOnly = true;
             this.DGVAdministrativo.RowHeadersVisible = false;
@@ -186,7 +186,7 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(91, 100);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(196, 27);
             this.textBox2.TabIndex = 13;
@@ -198,7 +198,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1196, 78);
             this.panel2.TabIndex = 14;
@@ -242,7 +242,7 @@
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.Location = new System.Drawing.Point(1010, 93);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(151, 40);
             this.btnAgregar.TabIndex = 12;

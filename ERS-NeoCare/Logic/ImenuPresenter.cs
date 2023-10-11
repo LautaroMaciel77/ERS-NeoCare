@@ -77,7 +77,7 @@ namespace ERS_NeoCare.Logic
 
         private void BajasAdminButtonClick(object sender, EventArgs e)
         {
-            lista_usuarios lista = new lista_usuarios();
+            lista_baja_usuarios lista = new lista_baja_usuarios();
             _view.AgregarSubMenu(lista);
         }
 
