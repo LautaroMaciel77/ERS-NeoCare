@@ -19,14 +19,12 @@ namespace ERS_NeoCare.Design
         private SqlConnection connection;
         private ImenuPresenter _presenter; // Agrega un campo para el presentador
 
-        public menu(UsuarioModel usuario)
+        public menu( )
         {
             InitializeComponent();
 
             
-            _presenter = new ImenuPresenter(this, usuario, new ProfesionService(Configuracion.ConnectionString));
-
-            
+            _presenter = new ImenuPresenter(this, new ProfesionService(Configuracion.ConnectionString));           
             _presenter.CargarProfesion();
             _presenter.cargarUserControl();
             

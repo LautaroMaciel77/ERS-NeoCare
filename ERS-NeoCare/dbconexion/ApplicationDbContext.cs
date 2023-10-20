@@ -1,0 +1,22 @@
+﻿using ERS_NeoCare.Model;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ERS_NeoCare.dbconexion
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext() 
+        {
+            // Habilitar la carga diferida y la característica de navegación automática
+            this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.ProxyCreationEnabled = true;
+        }
+        public DbSet<UsuarioModel> Usuarios { get; set; }
+        public DbSet<Profesion> profesion { get; set; }
+    }
+}

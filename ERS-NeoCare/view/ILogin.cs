@@ -8,7 +8,7 @@ namespace ERS_NeoCare.Design
         string NombreUsuario { get; }
         string Contraseña { get; }
         void MostrarMensajeError(string mensaje);
-        void MostrarMenu(UsuarioModel usuario);
+        void MostrarMenu( );
 
     }
 }

@@ -2,8 +2,10 @@
 
 namespace ERS_NeoCare.Model
 {
+    using ERS_NeoCare.dbconexion;
     using System.Data;
     using System.Data.SqlClient;
+    using System.Linq;
 
     public class UsuarioService
     {
@@ -16,37 +18,17 @@ namespace ERS_NeoCare.Model
 
         public UsuarioModel Authenticate(string nombreUsuario, string contraseña)
         {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            int.TryParse(nombreUsuario, out int dni);
+            using (var context = DbContextManager.GetContext())
             {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand("SELECT * FROM personal_salud WHERE dni = @NombreUsuario AND pass = @Contraseña", connection))
-                {
-                    command.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
-                    command.Parameters.AddWithValue("@Contraseña", contraseña);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return new UsuarioModel
-                            {
-                                id= Convert.ToInt32(reader["id"]),
-                                Matricula = Convert.ToInt32(reader["matricula"]),
-                                DNI = Convert.ToInt32(reader["dni"]),
-                                Nombre = reader["nombre"].ToString(),
-                                Apellido = reader["apellido"].ToString(),
-                                ProfesionID = Convert.ToInt32(reader["profesion_id"]),
-                                Password = reader["pass"].ToString()
-                            };
-                        }
-                    }
-                }
+                // Buscar un usuario en la base de datos que coincida con el nombre de usuario y contraseña
+                var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && u.Password == contraseña);
+                context.Entry(usuario).Reference(u => u.Profesion).Load();
+                // Si se encuentra un usuario, lo retornamos; de lo contrario, retornamos null
+                return usuario;
             }
-
-            return null; // Si no se encuentra el usuario
         }
-        public UsuarioModel BuscarUsuario(string dni)
+            public UsuarioModel BuscarUsuario(string dni)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {

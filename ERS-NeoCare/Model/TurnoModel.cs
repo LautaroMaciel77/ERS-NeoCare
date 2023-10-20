@@ -1,56 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ERS_NeoCare.Model
 {
+    [Table("Turno")]
     public class TurnoModel
     {
-        public DateTime selectedDate { get; set; }
-        public string selectedTimeRange { get; set; }
-        public string dni { get; set; }
+        [Key]
+        [Column("id")]
+        public int Id { get; set; }
 
-        public TurnoModel(string dni)
-        {
-            this.dni = dni;
-        }
+        [Column("selectedDate")]
+        public DateTime? SelectedDate { get; set; }
 
-        public List<string> GetTimeRanges()
-        {
-            int intervaloEnMinutos = 30;
-            int totalHoras = 24;
-            int totalBloques = (totalHoras * 60) / intervaloEnMinutos;
+        [Column("selectedTimeRange")]
+        public TimeSpan SelectedTimeRange { get; set; }
 
-            List<string> bloquesDeHorario = new List<string>();
+        [Column("dni")]
+        public string Dni { get; set; }
 
-            for (int i = 0; i < totalBloques; i++)
-            {
-                TimeSpan bloqueInicio = TimeSpan.FromMinutes(i * intervaloEnMinutos);
-                TimeSpan bloqueFin = TimeSpan.FromMinutes((i + 1) * intervaloEnMinutos);
+        [Column("profesion_id")]
+        public int? ProfesionId { get; set; }
 
-                bloquesDeHorario.Add($"{bloqueInicio:hh\\:mm} - {bloqueFin:hh\\:mm}");
-            }
+        [Column("prioridad")]
+        public string Prioridad { get; set; }
 
-            return bloquesDeHorario;
-        }
+        [Column("estado")]
+        public string Estado { get; set; }
 
-        public void SetSelectedDate(DateTime date)
-        {
-            selectedDate = date;
-        }
+        [Column("notasComentarios")]
+        public string NotasComentarios { get; set; }
 
-        public void SetSelectedTimeRange(string timeRange)
-        {
-            selectedTimeRange = timeRange;
-        }
-
-        public void AddAppointment()
-        {
-          
-        }
+        // Propiedad de navegación para la relación con la tabla Profesion
+        public Profesion Profesion { get; set; }
     }
+
 }
-
-
