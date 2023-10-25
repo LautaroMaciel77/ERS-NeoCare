@@ -1,6 +1,7 @@
 ﻿using ERS_NeoCare.Design.administrativo;
 using ERS_NeoCare.Design.Paciente;
 using ERS_NeoCare.Model;
+using ERS_NeoCare.Presenter;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,14 +20,14 @@ namespace ERS_NeoCare.Design
         private string userDni;
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
           private menu MainForm { get; set; }
-        public delegate void AgregarUserControlEventHandler(object sender, PacienteService paciente);
-        public event AgregarUserControlEventHandler AgregarUserControlClicked;
-        public PacienteView(PacienteService paciente)
+       // public delegate void AgregarUserControlEventHandler(object sender, PacienteService paciente);
+       // public event AgregarUserControlEventHandler AgregarUserControlClicked;
+        public PacienteView()
         {
          
             // Establece la cadena de conexión a la base de datos.
             InitializeComponent();
-            CargarPaciente(paciente);
+          //  CargarPaciente();
          
         }
         private void CargarPaciente(PacienteService paciente)
@@ -35,12 +36,12 @@ namespace ERS_NeoCare.Design
 
         
                          
-                            labelDni.Text += paciente.Dni;
-                            labelNombre.Text += paciente.Nombre;
-                            labelApellido.Text += paciente.Apellido;
-                            labelDomicilio.Text += paciente.Domicilio;
-                            labelSexo.Text += paciente.Sexo;
-                            labelObra.Text += paciente.ObraSocial;
+                        //    labelDni.Text += paciente.Dni;
+                         //   labelNombre.Text += paciente.Nombre;
+                           // labelApellido.Text += paciente.Apellido;
+                            //labelDomicilio.Text += paciente.Domicilio;
+                            //labelSexo.Text += paciente.Sexo;
+                            //labelObra.Text += paciente.ObraSocial;
 
 
         }

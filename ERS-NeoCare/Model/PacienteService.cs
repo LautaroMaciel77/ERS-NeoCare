@@ -25,27 +25,57 @@ namespace ERS_NeoCare.Presenter
 
         public DataTable ObtenerDatosPaciente()
         {
-            DataTable data = new DataTable();
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            DataTable dataTable = new DataTable();
+
+            try
             {
-                try
-                {
-                    connection.Open();
-                    string query = "SELECT * FROM paciente";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                var context = DbContextManager.GetContext();
+                
+                    var pacientes = context.Pacientes.ToList(); // Obtener todos los pacientes de la base de datos
+
+                    // Definir las columnas en el DataTable
+                    dataTable.Columns.Add("id", typeof(int));
+                    dataTable.Columns.Add("dni", typeof(int));
+                    dataTable.Columns.Add("nombre", typeof(string));
+                    dataTable.Columns.Add("apellido", typeof(string));
+                    dataTable.Columns.Add("domicilio", typeof(string));
+                    dataTable.Columns.Add("fecha_nacimiento", typeof(DateTime));
+                    dataTable.Columns.Add("sexo", typeof(string));
+                    dataTable.Columns.Add("obra_social", typeof(string));
+                    dataTable.Columns.Add("historia_clinica_id", typeof(int));
+                    dataTable.Columns.Add("baja", typeof(string));
+                    dataTable.Columns.Add("condicion", typeof(string));
+
+                    // Agregar filas al DataTable
+                    foreach (var paciente in pacientes)
                     {
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        adapter.Fill(data);
+                        dataTable.Rows.Add(paciente.Id, paciente.Dni, paciente.Nombre, paciente.Apellido, paciente.Domicilio, paciente.FechaNacimiento, paciente.Sexo, paciente.ObraSocial, paciente.HistoriaClinicaId, paciente.Baja, paciente.Condicion);
                     }
-                }
-                catch (Exception ex)
-                {
-                    // Manejar excepciones
-                }
+                
             }
-            return data;
+            catch (Exception ex)
+            {
+                // Manejar excepciones
+            }
+
+            return dataTable;
         }
-        public Model.PacienteService Paciente(string dni)
+        public void BuscarPaciente(string dni)
+
+        {
+            int.TryParse(dni, out int dniInt);
+            var context = DbContextManager.GetContext();
+
+            var paciente = context.Pacientes.FirstOrDefault(u => u.Dni == dniInt);
+
+            if (paciente != null)
+            {
+       
+                PacienteSingleton.Instance.Autenticar(paciente);
+            }
+
+        }
+        public PacienteModel Paciente(string dni)
         {
 
             using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -61,7 +91,7 @@ namespace ERS_NeoCare.Presenter
                         if (reader.Read())
                         {
 
-                            return new Model.PacienteService
+                            return new PacienteModel
                             {
                                 Dni = Convert.ToInt32(reader["dni"]),
                                 Nombre = reader["nombre"].ToString(),
@@ -80,43 +110,26 @@ namespace ERS_NeoCare.Presenter
 
         }
 
-        public bool InsertarPaciente(Model.PacienteService paciente)
+        public bool InsertarPaciente(PacienteModel paciente)
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(_connectionString))
-                {
-                    connection.Open();
+            var context = DbContextManager.GetContext();
+               
+                    // Agregar el paciente al contexto
+                    context.Pacientes.Add(paciente);
 
-                    using (SqlCommand command = new SqlCommand("INSERT INTO Paciente (dni, nombre, apellido, domicilio, sexo, obra_social) " +
-                                                                "VALUES (@dni, @nombre, @apellido, @domicilio, @sexo, @obra_social)", connection))
-                    {
-                        command.Parameters.AddWithValue("@dni", paciente.Dni);
-                        command.Parameters.AddWithValue("@nombre", paciente.Nombre);
-                        command.Parameters.AddWithValue("@apellido", paciente.Apellido);
-                        command.Parameters.AddWithValue("@domicilio", paciente.Domicilio);
-                        command.Parameters.AddWithValue("@sexo", paciente.Sexo);
-                        command.Parameters.AddWithValue("@obra_social", paciente.ObraSocial);
+                    // Guardar los cambios en la base de datos
+                    int rowsAffected = context.SaveChanges();
 
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        return rowsAffected > 0;
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                // Maneja la excepción de SQL Server aquí.
-              
-                Console.WriteLine("Error de SQL: " + ex.Message);
-                return false; // O maneja de otra manera apropiada
+                    return rowsAffected > 0;
+                
             }
             catch (Exception ex)
             {
-                // Maneja otras excepciones generales aquí.
-                //  excepciones de conexión, null reference, etc.
+                // Maneja excepciones generales aquí.
                 Console.WriteLine("Error general: " + ex.Message);
-                return false; 
+                return false; // O maneja de otra manera apropiada
             }
         }
     }

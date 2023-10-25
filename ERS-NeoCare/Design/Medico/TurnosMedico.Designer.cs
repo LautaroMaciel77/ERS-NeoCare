@@ -33,6 +33,9 @@
             this.labelDni = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewHora = new System.Windows.Forms.DataGridView();
+            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.radioEnfermero = new System.Windows.Forms.RadioButton();
             this.radioBio = new System.Windows.Forms.RadioButton();
@@ -41,9 +44,6 @@
             this.iconAgregar = new FontAwesome.Sharp.IconButton();
             this.textBoxIndicaciones = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHora)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,11 +93,27 @@
             this.hora,
             this.disponible,
             this.Eleguir});
-            this.dataGridViewHora.Location = new System.Drawing.Point(93, 504);
+            this.dataGridViewHora.Location = new System.Drawing.Point(109, 511);
             this.dataGridViewHora.Name = "dataGridViewHora";
             this.dataGridViewHora.Size = new System.Drawing.Size(351, 150);
             this.dataGridViewHora.TabIndex = 10;
             this.dataGridViewHora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHora_CellContentClick);
+            // 
+            // hora
+            // 
+            this.hora.HeaderText = "Hora";
+            this.hora.Name = "hora";
+            this.hora.ReadOnly = true;
+            // 
+            // disponible
+            // 
+            this.disponible.HeaderText = "Disponible";
+            this.disponible.Name = "disponible";
+            // 
+            // Eleguir
+            // 
+            this.Eleguir.HeaderText = "Elegir Hora";
+            this.Eleguir.Name = "Eleguir";
             // 
             // monthCalendar1
             // 
@@ -145,7 +161,7 @@
             this.iconBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconBuscar.IconColor = System.Drawing.Color.Black;
             this.iconBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBuscar.Location = new System.Drawing.Point(680, 706);
+            this.iconBuscar.Location = new System.Drawing.Point(710, 706);
             this.iconBuscar.Name = "iconBuscar";
             this.iconBuscar.Size = new System.Drawing.Size(156, 23);
             this.iconBuscar.TabIndex = 16;
@@ -157,7 +173,7 @@
             this.iconAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconAgregar.IconColor = System.Drawing.Color.Black;
             this.iconAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconAgregar.Location = new System.Drawing.Point(842, 706);
+            this.iconAgregar.Location = new System.Drawing.Point(884, 706);
             this.iconAgregar.Name = "iconAgregar";
             this.iconAgregar.Size = new System.Drawing.Size(156, 23);
             this.iconAgregar.TabIndex = 15;
@@ -182,22 +198,6 @@
             this.label3.Size = new System.Drawing.Size(93, 13);
             this.label3.TabIndex = 37;
             this.label3.Text = "Descripcion orden";
-            // 
-            // hora
-            // 
-            this.hora.HeaderText = "Hora";
-            this.hora.Name = "hora";
-            this.hora.ReadOnly = true;
-            // 
-            // disponible
-            // 
-            this.disponible.HeaderText = "Disponible";
-            this.disponible.Name = "disponible";
-            // 
-            // Eleguir
-            // 
-            this.Eleguir.HeaderText = "Elegir Hora";
-            this.Eleguir.Name = "Eleguir";
             // 
             // TurnosMedico
             // 

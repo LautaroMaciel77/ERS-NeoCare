@@ -10,12 +10,12 @@ namespace ERS_NeoCare.Design.administrativo
     public partial class agregar_paciente : UserControl
     {
         public event EventHandler closeagregarclick;
-        private AgregarPacientePresenter _presenter;
+        private PacientePresenter _presenter;
         public event EventHandler actualizarTabla;
         public agregar_paciente()
         {
             InitializeComponent();
-            _presenter = new AgregarPacientePresenter(new Presenter.PacienteService(Configuracion.ConnectionString));
+            _presenter = new PacientePresenter( new Presenter.PacienteService(Configuracion.ConnectionString));
         }
 
         private void textDni_KeyPress(object sender, KeyPressEventArgs e)
@@ -85,7 +85,7 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("Seleccione una fecha de nacimiento.", "Fecha de nacimiento requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            Model.PacienteService paciente = new Model.PacienteService()
+            PacienteModel paciente = new PacienteModel
             {
                 Nombre = textNombre.Text,
                 Apellido = textApellido.Text,

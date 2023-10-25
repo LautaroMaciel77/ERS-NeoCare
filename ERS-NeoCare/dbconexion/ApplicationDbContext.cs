@@ -18,5 +18,7 @@ namespace ERS_NeoCare.dbconexion
         }
         public DbSet<UsuarioModel> Usuarios { get; set; }
         public DbSet<Profesion> profesion { get; set; }
+        public DbSet<TurnoModel> turnos { get; set; }
+        public DbSet<PacienteModel> Pacientes { get; set; }
     }
 }

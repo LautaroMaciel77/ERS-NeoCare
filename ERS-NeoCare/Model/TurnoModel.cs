@@ -25,7 +25,7 @@ namespace ERS_NeoCare.Model
         public string Dni { get; set; }
 
         [Column("profesion_id")]
-        public int? ProfesionId { get; set; }
+        public int ProfesionId { get; set; }
 
         [Column("prioridad")]
         public string Prioridad { get; set; }

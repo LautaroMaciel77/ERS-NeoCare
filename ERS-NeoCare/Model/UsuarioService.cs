@@ -3,9 +3,14 @@
 namespace ERS_NeoCare.Model
 {
     using ERS_NeoCare.dbconexion;
+    using System.Collections.Generic;
     using System.Data;
+    using System.Data.Entity;
     using System.Data.SqlClient;
     using System.Linq;
+    using System.Net;
+    using System.Threading.Tasks;
+    using System.Windows;
 
     public class UsuarioService
     {
@@ -19,150 +24,129 @@ namespace ERS_NeoCare.Model
         public UsuarioModel Authenticate(string nombreUsuario, string contraseña)
         {
             int.TryParse(nombreUsuario, out int dni);
-            using (var context = DbContextManager.GetContext())
-            {
-                // Buscar un usuario en la base de datos que coincida con el nombre de usuario y contraseña
-                var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && u.Password == contraseña);
-                context.Entry(usuario).Reference(u => u.Profesion).Load();
-                // Si se encuentra un usuario, lo retornamos; de lo contrario, retornamos null
-                return usuario;
-            }
+            // using (var context = DbContextManager.GetContext())
+            //{
+            // Buscar un usuario en la base de datos que coincida con el nombre de usuario y contraseña
+            //  var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && u.Password == contraseña);
+            //7context.Entry(usuario).Reference(u => u.Profesion).Load();
+            // Si se encuentra un usuario, lo retornamos; de lo contrario, retornamos null
+            //return usuario;
+            //}
+    
+            var context = DbContextManager.GetContext();
+            var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && u.Password == contraseña);
+            context.Entry(usuario).Reference(u => u.Profesion).Load();
+            return usuario;
         }
-            public UsuarioModel BuscarUsuario(string dni)
+
+        public void BuscarUsuario(string dni)
+
         {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
+            int.TryParse(dni, out int dniInt);
+            var context = DbContextManager.GetContext();
 
-                using (SqlCommand command = new SqlCommand("SELECT * FROM personal_salud WHERE dni = @dni", connection))
-                {
-                    command.Parameters.AddWithValue("@dni", dni);
-          
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return new UsuarioModel
-                            {
-                                id = Convert.ToInt32(reader["id"]),
-                                Matricula = Convert.ToInt32(reader["matricula"]),
-                                DNI = Convert.ToInt32(reader["dni"]),
-                                Nombre = reader["nombre"].ToString(),
-                                Apellido = reader["apellido"].ToString(),
-                                ProfesionID = Convert.ToInt32(reader["profesion_id"]),
-                                Password = reader["pass"].ToString()
-                            };
-                        }
-                    }
-                }
+            var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dniInt);
+
+            if (usuario != null)
+            {
+                context.Entry(usuario).Reference(u => u.Profesion).Load();
+                UsuarioSingleton.Instance.AutenticarUsuario(usuario);
             }
 
-            return null; // Si no se encuentra el usuario
+
         }
+
+
         public bool InsertarUsuario(UsuarioModel usuario)
         {
-            try
             {
-                using (SqlConnection connection = new SqlConnection(_connectionString))
+                try
                 {
-                    connection.Open();
+                    var context = DbContextManager.GetContext();
+                 
+                    var user = new UsuarioModel
+                        {
+                            DNI = usuario.DNI,
+                            Matricula = usuario.Matricula,
+                            Nombre = usuario.Nombre,
+                            Apellido = usuario.Apellido,
+                            ProfesionID = usuario.ProfesionID,
+                            Password = usuario.Password
+                        };
 
-                    using (SqlCommand command = new SqlCommand("INSERT INTO personal_salud (dni, matricula, nombre, apellido, profesion_id, pass) " +
-                                                                "VALUES (@dni, @matricula, @nombre, @apellido, @profesion_id, @pass)", connection))
-                    {
-                        command.Parameters.AddWithValue("@dni", usuario.DNI);
-                        command.Parameters.AddWithValue("@matricula", usuario.Matricula);
-                        command.Parameters.AddWithValue("@nombre", usuario.Nombre);
-                        command.Parameters.AddWithValue("@apellido", usuario.Apellido);
-                        command.Parameters.AddWithValue("@profesion_id", usuario.ProfesionID);
-                        command.Parameters.AddWithValue("@pass", usuario.Password);
+                        // Agrega el nuevo usuario al contexto
+                        context.Usuarios.Add(usuario);
 
-                        int rowsAffected = command.ExecuteNonQuery();
+                        // Guarda los cambios en la base de datos
+                        context.SaveChanges();
 
-                        return rowsAffected > 0;
-                    }
+                        return true;
+                    
                 }
-            }
-            catch (SqlException ex)
-            {
-                // excepción de SQL Server aquí.
-          
-                Console.WriteLine("Error de SQL: " + ex.Message);
-                return false; // O maneja de otra manera apropiada
-            }
-            catch (Exception ex)
-            {
-                //  excepciones generales aquí.
-                //  excepciones de conexión, null reference, etc.
-                Console.WriteLine("Error general: " + ex.Message);
-                return false; // O maneja de otra manera apropiada
+                catch (Exception ex)
+                {
+                    // Maneja excepciones aquí.
+                    Console.WriteLine("Error general: " + ex.Message);
+                    return false; // O maneja de otra manera apropiada
+                }
             }
         }
         public bool EditarUsuario(UsuarioModel usuario)
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(_connectionString))
-                {
-                    connection.Open();
+                var context = new ApplicationDbContext();
+              
+                    var user = context.Usuarios.FirstOrDefault(u => u.id == UsuarioSingleton.Instance.UsuarioAutenticado.id);
 
-                    using (SqlCommand command = new SqlCommand("UPDATE personal_salud " +
-                                                       "SET " +"dni = @dni, " + 
-                                                       "matricula = @matricula, " +
-                                                           "nombre = @nombre, " +
-                                                           "apellido = @apellido, " +
-                                                           "profesion_id = @profesion_id, " +
-                                                           "pass = @pass " +
-                                                       "WHERE id = @id", connection))
+                    if (user != null)
                     {
-                        command.Parameters.AddWithValue("@id", usuario.id);
-                        command.Parameters.AddWithValue("@dni", usuario.DNI);
-                        command.Parameters.AddWithValue("@matricula", usuario.Matricula);
-                        command.Parameters.AddWithValue("@nombre", usuario.Nombre);
-                        command.Parameters.AddWithValue("@apellido", usuario.Apellido);
-                        command.Parameters.AddWithValue("@profesion_id", usuario.ProfesionID);
-                        command.Parameters.AddWithValue("@pass", usuario.Password);
+                        // Actualiza los campos del usuario con los nuevos valores
+                        user.DNI = usuario.DNI;
+                        user.Matricula = usuario.Matricula;
+                        user.Nombre = usuario.Nombre;
+                        user.Apellido = usuario.Apellido;
+                        user.ProfesionID = usuario.ProfesionID;
+                        user.Password = usuario.Password;
 
-                        int rowsAffected = command.ExecuteNonQuery();
+                        // Guarda los cambios en la base de datos
+                        context.SaveChanges();
 
-                        return rowsAffected > 0;
-                    }
+                        return true;
+                    
+             
                 }
-            }
-            catch (SqlException ex)
-            {
-                // excepción de SQL Server aquí.
-
-                Console.WriteLine("Error de SQL: " + ex.Message);
-                return false; // O maneja de otra manera apropiada
+                return false; // Si no se encuentra el usuario
             }
             catch (Exception ex)
             {
-                //  excepciones generales aquí.
-                //  excepciones de conexión, null reference, etc.
+                // Maneja excepciones aquí.
                 Console.WriteLine("Error general: " + ex.Message);
                 return false; // O maneja de otra manera apropiada
             }
         }
-        public bool CambiarEstadoBajaUsuario(int matricula)
+        public bool CambiarEstadoBajaUsuario()
         {
+
+           int matricula= UsuarioSingleton.Instance.UsuarioAutenticado.Matricula;
             try
             {
-                using (SqlConnection connection = new SqlConnection(_connectionString))
+                var context = new ApplicationDbContext();
+
+                var user = context.Usuarios.FirstOrDefault(u => u.Matricula == matricula);
+
+                if (user != null)
                 {
-                    connection.Open();
+                    // Cambia el estado de baja del usuario
+                    user.Baja = (user.Baja == "n") ?"s" : "n";
 
-                    using (SqlCommand command = new SqlCommand("UPDATE personal_salud " +
-                                                              "SET baja = CASE WHEN baja = 'n' THEN 's' ELSE 'n' END " +
-                                                              "WHERE matricula = @matricula", connection))
-                    {
-                        command.Parameters.AddWithValue("@matricula", matricula);
+                    // Guarda los cambios en la base de datos
+                    context.SaveChanges();
 
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        return rowsAffected > 0;
-                    }
+                    return true;
                 }
+
+                return false;
             }
             catch (SqlException ex)
             {
@@ -179,31 +163,36 @@ namespace ERS_NeoCare.Model
                 return false; // O maneja de otra manera apropiada
             }
         }
-        public DataTable ObtenerDatosUsuario(string valorBaja)
+        public DataTable ObtenerDatosUsuarios(string valorBaja)
         {
-            DataTable data = new DataTable();
-            using (SqlConnection connection = new SqlConnection(_connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    string query = "SELECT * FROM personal_salud WHERE baja = @ValorBaja";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        // Agregar el parámetro @ValorBaja
-                        command.Parameters.AddWithValue("@ValorBaja", valorBaja);
+            DataTable dataTable = new DataTable();
 
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        adapter.Fill(data);
+
+            var context = DbContextManager.GetContext();
+         
+                var usuariosConBaja = context.Usuarios
+                    .Where(u => u.Baja == valorBaja)
+                    .ToList();
+
+                // Verificar que usuariosConBaja no sea nulo
+                if (usuariosConBaja != null)
+                {
+                    dataTable.Columns.Add("id", typeof(int));
+                    dataTable.Columns.Add("Matricula", typeof(int));
+                    dataTable.Columns.Add("DNI", typeof(int));
+                    dataTable.Columns.Add("Nombre", typeof(string));
+                    dataTable.Columns.Add("Apellido", typeof(string));
+                    dataTable.Columns.Add("ProfesionID", typeof(int));
+
+                    foreach (var usuario in usuariosConBaja)
+                    {
+                        dataTable.Rows.Add(usuario.id, usuario.Matricula, usuario.DNI, usuario.Nombre, usuario.Apellido, usuario.ProfesionID);
                     }
                 }
-                catch (Exception ex)
-                {
-                    // Manejar excepciones
-                }
-            }
-            return data;
+          
+
+            return dataTable;
         }
     }
-
 }
+    

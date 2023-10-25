@@ -38,30 +38,39 @@ namespace ERS_NeoCare.Logic
             // Llama al método de inserción del modelo y devuelve el resultado
             return _model.InsertarUsuario(usuario);
         }
+        public bool selecionarUsuario(string dni)
+        {
+
+          
+            return true ;
+            
+        }
         public bool EditarUsuario(UsuarioModel usuario)
         {
         
             return _model.EditarUsuario(usuario);
         }
-        public UsuarioModel Buscar(string dni)
+        public void Buscar(string dni)
         {
-            return _model.BuscarUsuario(dni);
+          _model.BuscarUsuario(dni);
+            
         }
-        public void ObtenerUsuario(string valorBaja)
+        public void ObtenerUsuarios(string valorBaja)
         {
 
-            DataTable data = _model.ObtenerDatosUsuario(valorBaja);
+            DataTable data = _model.ObtenerDatosUsuarios(valorBaja);
             _viewLista.MostrarDatosPaciente(data);
         }
         public void ObtenerUsuarioBaja(string valorBaja)
         {
 
-            DataTable data = _model.ObtenerDatosUsuario(valorBaja);
+            DataTable data = _model.ObtenerDatosUsuarios(valorBaja);
             _viewBaja.MostrarDatos(data);
         }
-        public bool cambiarBaja(UsuarioModel usuario)
+        public bool cambiarBaja()
         {
-           return _model.CambiarEstadoBajaUsuario(usuario.Matricula);
+
+           return _model.CambiarEstadoBajaUsuario();
         }
     }
 }

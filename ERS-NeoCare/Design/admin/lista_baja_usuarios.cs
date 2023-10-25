@@ -25,12 +25,12 @@ namespace ERS_NeoCare.Design
             InitializeComponent();
             _presenter = new UsuarioPresenter(this, new UsuarioService(Configuracion.ConnectionString));
 
-            CargarDatosPaciente();
+            CargarDatos();
             panelAgregar.Visible = false;
      
         }
 
-        private void CargarDatosPaciente()
+        private void CargarDatos()
         {
             // Crea una conexión a la base de datos.
             _presenter.ObtenerUsuarioBaja("s");
@@ -62,7 +62,7 @@ namespace ERS_NeoCare.Design
                 {
                     DataGridViewRow row = DGVAdministrativo.Rows[e.RowIndex];
                     string dni = row.Cells["dni"].Value.ToString();
-                    usuario = _presenter.Buscar(dni);
+                   _presenter.Buscar(dni);
                     cargarUserControl();
                  
 
@@ -103,10 +103,10 @@ namespace ERS_NeoCare.Design
 
         private void bajaclick(object sender, EventArgs e)
         {
-            if (_presenter.cambiarBaja(usuario))
+            if (_presenter.cambiarBaja())
             {
                 MessageBox.Show("Usuario editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarDatosPaciente();
+                CargarDatos();
                 panelAgregar.Visible = false;
             }
             else

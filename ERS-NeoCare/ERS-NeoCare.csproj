@@ -398,6 +398,7 @@
     <Compile Include="Logic\TurnoPresenter.cs" />
     <Compile Include="Model\PacienteModel.cs" />
     <Compile Include="Model\PacienteService.cs" />
+    <Compile Include="Model\PacienteSingleton.cs" />
     <Compile Include="Model\Profesion.cs" />
     <Compile Include="Model\ProfesionService.cs" />
     <Compile Include="Model\TurnoModel.cs" />

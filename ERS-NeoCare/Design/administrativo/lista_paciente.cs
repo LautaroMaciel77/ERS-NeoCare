@@ -20,15 +20,14 @@ namespace ERS_NeoCare.Design
 
         public string dni;
        
-        public Model.PacienteService paciente;
+        public PacienteModel paciente;
         private PacientePresenter _presenter;
         public lista_paciente()
         {
             InitializeComponent();
             panelAgregar.Visible = false;
             _presenter = new PacientePresenter(this, new Presenter.PacienteService(Configuracion.ConnectionString));
-
-            CargarDatosPaciente();
+            _presenter.CargarDatosPaciente();
         }
 
         public void MostrarDatosPaciente(DataTable data)
@@ -37,12 +36,6 @@ namespace ERS_NeoCare.Design
         }
 
 
-        private void CargarDatosPaciente()
-        {
-            Presenter.PacienteService modelo = new Presenter.PacienteService(Configuracion.ConnectionString);
-            DataTable data = modelo.ObtenerDatosPaciente();
-            MostrarDatosPaciente(data);
-        }
 
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -76,7 +69,7 @@ namespace ERS_NeoCare.Design
 
         private void Ap_actualizarTabla(object sender, EventArgs e)
         {
-            CargarDatosPaciente();
+            _presenter.CargarDatosPaciente();
         }
 
         private void closeagregarclick(object sender, EventArgs e)
@@ -87,7 +80,7 @@ namespace ERS_NeoCare.Design
 
     
 
-        public void MostrarMenu(Model.PacienteService paciente)
+        public void MostrarMenu(PacienteModel paciente)
         {
             panelAgregar.Visible = true;
             menuPaciente mp = new menuPaciente();
@@ -99,7 +92,7 @@ namespace ERS_NeoCare.Design
 
         private void verclick(object sender, EventArgs e)
         {
-            PacienteView pacienteControl = new PacienteView(paciente);
+            PacienteView pacienteControl = new PacienteView();
             pacienteControl.Dock = DockStyle.Fill;
 
             // Accede al formulario 'menu' desde el control actual
@@ -120,33 +113,6 @@ namespace ERS_NeoCare.Design
 
 
             }
-        }
-
-        private void verpacienteclick()
-        {
-
-            PacienteView pacienteControl = new PacienteView(paciente);
-            pacienteControl.Dock = DockStyle.Fill;
-
-            // Accede al formulario 'menu' desde el control actual
-            menu menuForm = this.ParentForm as menu;
-
-            if (menuForm != null)
-            {
-                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
-
-
-
-                panelOpciones.Controls.Clear();
-
-
-                panelOpciones.Controls.Add(pacienteControl);
-
-
-
-
-            }
-
         }
 
         private void closeclick(object sender, EventArgs e)
@@ -166,8 +132,10 @@ namespace ERS_NeoCare.Design
                 {
                     int columnIndexDNI = 0;
                     this.dni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
-                    _presenter.cargarMenu();
-               
+                    _presenter.cargarPaciente(dni);
+                    menuPaciente menuPaciente = new menuPaciente();
+                    cargarUserControl(menuPaciente);
+
                 }
             }
 
@@ -180,10 +148,6 @@ namespace ERS_NeoCare.Design
             panelAgregar.Controls.Add(user);
             user.BringToFront();
 
-        }
-        private void closeclick()
-        {
-            panelAgregar.Visible = false;
         }
 
         private void panelAgregar_Paint(object sender, PaintEventArgs e)

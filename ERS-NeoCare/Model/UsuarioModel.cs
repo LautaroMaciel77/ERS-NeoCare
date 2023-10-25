@@ -35,10 +35,11 @@ namespace ERS_NeoCare.Model
             [MaxLength(100)]
             public string Password { get; set; }
 
-            [Column("baja")]
-            public char? Baja { get; set; }
+        [Column("baja", TypeName = "varchar")]
+        [MaxLength(1)]
+        public string Baja { get; set; }
 
-      
+
         public virtual Profesion Profesion { get; set; }
 
     }
