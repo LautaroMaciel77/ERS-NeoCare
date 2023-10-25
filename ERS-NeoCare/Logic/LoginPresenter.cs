@@ -23,8 +23,11 @@ namespace ERS_NeoCare.Logic
             UsuarioModel usuario = _usuarioService.Authenticate(nombreUsuario, contraseña);
 
             if (usuario != null)
+
             {
-                _view.MostrarMenu(usuario);
+                UsuarioSingleton.Instance.DesautenticarUsuario();
+                UsuarioSingleton.Instance.AutenticarUsuario(usuario);
+                _view.MostrarMenu();
             }
             else
             {

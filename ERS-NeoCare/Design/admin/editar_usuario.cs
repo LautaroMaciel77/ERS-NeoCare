@@ -15,10 +15,10 @@ namespace ERS_NeoCare.Design.administrativo
    
         private UsuarioPresenter _presenter;
         public event EventHandler actualizarTabla;
-        public UsuarioModel user;
-        public editar_usuario(UsuarioModel usuario)
+
+        public editar_usuario( )
         {
-            this.user = usuario;
+       
             InitializeComponent();
             cargarCampos();
             _presenter = new UsuarioPresenter(new UsuarioService(Configuracion.ConnectionString));
@@ -26,11 +26,11 @@ namespace ERS_NeoCare.Design.administrativo
 
         private void cargarCampos()
         {
-            textNombre.Text = user.Nombre; ;
-            textApellido.Text = user.Apellido;
-            textMatricula.Text=user.Matricula.ToString();
-            textDni.Text=user.DNI.ToString();
-            textBoxProfesion.Text=user.ProfesionID.ToString();
+          //  textNombre.Text = user.Nombre; ;
+            //textApellido.Text = user.Apellido;
+            //textMatricula.Text=user.Matricula.ToString();
+            //textDni.Text=user.DNI.ToString();
+            //textBoxProfesion.Text=user.ProfesionID.ToString();
        
         }
 
@@ -142,6 +142,7 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+               UsuarioModel user = new UsuarioModel();
             if (radioPass.Checked && string.IsNullOrWhiteSpace(textContraseña.Text))
             {
 

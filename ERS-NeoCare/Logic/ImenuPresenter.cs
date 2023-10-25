@@ -16,25 +16,28 @@ namespace ERS_NeoCare.Logic
         private IMenuView _view; 
         private UsuarioModel _usuario;
         private ProfesionService _profesionService;
-        public ImenuPresenter(IMenuView view, UsuarioModel usuario,ProfesionService profesionService)
+        public ImenuPresenter(IMenuView view,ProfesionService profesionService)
         {
             _view = view;
-            _usuario = usuario;
+        
             _profesionService = profesionService;
 
 
         }
         public void CargarProfesion()
         {
-            int idProfesion = _usuario.ProfesionID;
-            
-            _view.MostrarDescripcionProfesion(_profesionService.ObtenerDescripcionProfesion(idProfesion));
+   
+
+            _view.MostrarDescripcionProfesion(_profesionService.ObtenerDescripcionProfesion());
 
         }
         public void cargarUserControl()
         {
-            int idProfesion = _usuario.ProfesionID;
-            switch (idProfesion)
+           
+            
+
+            switch (UsuarioSingleton.Instance.UsuarioAutenticado.ProfesionID)
+
             {
                 case 5:
                     admin admin = new admin();

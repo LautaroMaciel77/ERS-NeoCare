@@ -37,7 +37,7 @@ namespace ERS_NeoCare.Design
         private void CargarDatosPaciente()
         {
             // Crea una conexión a la base de datos.
-            _presenter.ObtenerUsuario("n");
+            _presenter.ObtenerUsuarios("n");
         }
 
         public void MostrarDatosPaciente(DataTable data)
@@ -71,10 +71,8 @@ namespace ERS_NeoCare.Design
                 {
                     DataGridViewRow row = DGVAdministrativo.Rows[e.RowIndex];
                     string dni = row.Cells["dni"].Value.ToString();
-                   usuario =_presenter.Buscar(dni );
+                   _presenter.Buscar(dni );
                     cargarUserControl();
-          
-
                 }
             }
         }
@@ -95,7 +93,7 @@ namespace ERS_NeoCare.Design
 
         private void editarclick(object sender, EventArgs e)
         {
-            editar_usuario ap = new editar_usuario(usuario);
+            editar_usuario ap = new editar_usuario();
             // Accede al formulario 'menu' desde el control actual
             menu menuForm = this.ParentForm as menu;
 
@@ -113,7 +111,7 @@ namespace ERS_NeoCare.Design
 
         private void bajaclick(object sender, EventArgs e)
         {
-            if (_presenter.cambiarBaja(usuario))
+            if (_presenter.cambiarBaja())
             {
                 MessageBox.Show("Usuario editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarDatosPaciente();

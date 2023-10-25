@@ -1,8 +1,10 @@
 ﻿using ERS_NeoCare.Design;
+using ERS_NeoCare.Helper;
 using ERS_NeoCare.Model;
 using ERS_NeoCare.Presenter;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,27 +22,32 @@ namespace ERS_NeoCare.Logic
             _view = view;
             _service = pacienteService;
         }
+        public PacientePresenter(Presenter.PacienteService pacienteService)
+        {
+       
+            _service = pacienteService;
+        }
 
         public void cargarMenu()
         {
-            string dni=_view.dni;
-
-            Model.PacienteService paciente = _service.Paciente(dni);
-
-            if (paciente != null)
-            {
-                _view.MostrarMenu(paciente);
-            }
-            else
-            {
-               
-            }
+         
 
         }
-        public void insertarPaciente()
+        public bool IngresarPaciente(PacienteModel paciente)
         {
-            
+            return _service.InsertarPaciente(paciente);
         }
 
+        public void CargarDatosPaciente()
+        {
+         
+            DataTable data = _service.ObtenerDatosPaciente();
+            _view.MostrarDatosPaciente(data);
+        }
+
+        internal void cargarPaciente(string dni)
+        {
+            _service.BuscarPaciente(dni);
+        }
     }
 }

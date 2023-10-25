@@ -24,11 +24,11 @@ namespace ERS_NeoCare.Design
             MessageBox.Show(mensaje);
         }
 
-        public void MostrarMenu(UsuarioModel usuario)
+        public void MostrarMenu( )
         {
             textBoxUser.Text = string.Empty;
             textBoxPass.Text = string.Empty;
-            menu homeForm = new menu(usuario);
+            menu homeForm = new menu();
             homeForm.Show();
         }
 

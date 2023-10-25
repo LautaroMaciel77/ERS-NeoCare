@@ -6441,7 +6441,7 @@ SELECT id, tipo_analisis, descripcion FROM analisis WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.DatabaseConnectionString;
+            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.ApplicationDbContext;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6842,7 +6842,7 @@ SELECT id, analisis_id, Fecha, resultados, adjunto, observaciones, paciente_dni,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.DatabaseConnectionString;
+            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.ApplicationDbContext;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7410,7 +7410,7 @@ SELECT id, fecha, fecha_hora, observaciones, Indicaciones_paciente, solicitud_at
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.DatabaseConnectionString;
+            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.ApplicationDbContext;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7807,7 +7807,7 @@ SELECT id, fecha, sintomas, observaciones, indicaciones, personal_salud_matricul
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.DatabaseConnectionString;
+            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.ApplicationDbContext;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8285,7 +8285,7 @@ SELECT id, fecha_inicio, antecedentes, medicamentos, tipo_de_sangre, evaluacion_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.DatabaseConnectionString;
+            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.ApplicationDbContext;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8845,7 +8845,7 @@ SELECT id, dni, nombre, apellido, domicilio, fecha_nacimiento, sexo, obra_social
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.DatabaseConnectionString;
+            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.ApplicationDbContext;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9431,7 +9431,7 @@ SELECT id, matricula, dni, nombre, apellido, profesion FROM personal_salud WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.DatabaseConnectionString;
+            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.ApplicationDbContext;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9830,7 +9830,7 @@ SELECT id, fecha, fecha_hora, paciente_dni, analisis_id, personal_salud_matricul
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.DatabaseConnectionString;
+            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.ApplicationDbContext;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10226,7 +10226,7 @@ SELECT id, fecha, fecha_hora, indicacion_personal, personal_salud_matricula, pac
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.DatabaseConnectionString;
+            this._connection.ConnectionString = global::ERS_NeoCare.Properties.Settings.Default.ApplicationDbContext;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

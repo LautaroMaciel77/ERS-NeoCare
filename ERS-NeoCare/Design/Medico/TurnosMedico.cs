@@ -105,6 +105,11 @@ namespace ERS_NeoCare.Design
                 MessageBox.Show("El campo DNI no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (string.IsNullOrWhiteSpace(textBoxIndicaciones.Text))
+            {
+                MessageBox.Show("El campo indicaciones no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
 
             if (select == null || rangoHora == null)
@@ -124,6 +129,9 @@ namespace ERS_NeoCare.Design
                 MessageBox.Show("Debes seleccionar al menos una opción (Enfermero o Bioquímico).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+          
+          
+           
 
         }
 
