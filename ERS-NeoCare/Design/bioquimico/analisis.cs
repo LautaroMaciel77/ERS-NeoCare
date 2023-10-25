@@ -33,7 +33,7 @@ namespace ERS_NeoCare.Design.administrativo
         {
 
             // Verificar si textNombre, textApellido y textDomicilio no están vacíos
-            if (string.IsNullOrWhiteSpace(textObservaciones.Text))
+            if (string.IsNullOrWhiteSpace(textBoxObservaciones.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

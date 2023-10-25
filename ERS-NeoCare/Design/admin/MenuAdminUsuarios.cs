@@ -36,5 +36,10 @@ namespace ERS_NeoCare.Design.Medico
         {
             editarclick?.Invoke(this, EventArgs.Empty);
         }
+
+        private void MenuAdminUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

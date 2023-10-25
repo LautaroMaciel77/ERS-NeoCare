@@ -32,7 +32,7 @@ namespace ERS_NeoCare.Design.administrativo
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
 
-            // Verificar si textNombre, textApellido y textDomicilio no están vacíos
+            // Verificar si textNombre, textObservaciones y textBoxIndicaciones no están vacíos
             if (string.IsNullOrWhiteSpace(textObservaciones.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);

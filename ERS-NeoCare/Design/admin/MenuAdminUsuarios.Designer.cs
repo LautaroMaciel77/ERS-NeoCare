@@ -106,6 +106,7 @@
             this.Controls.Add(this.iconVer);
             this.Name = "MenuAdminUsuarios";
             this.Size = new System.Drawing.Size(260, 150);
+            this.Load += new System.EventHandler(this.MenuAdminUsuarios_Load);
             this.ResumeLayout(false);
 
         }
