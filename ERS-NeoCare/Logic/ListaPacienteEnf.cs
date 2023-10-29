@@ -29,7 +29,13 @@ namespace ERS_NeoCare.Logic
         DataTable data = _model.ObtenerDatosPaciente();
         _view.MostrarDatosPaciente(data);
     }
-        public void cargarMenu()
+
+        public Presenter.PacienteService Get_model()
+        {
+            return _model;
+        }
+
+        public void cargarMenu(Presenter.PacienteService _model)
         {
             string dni = _view.userDni;
 

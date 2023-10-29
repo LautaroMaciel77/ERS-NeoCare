@@ -386,6 +386,7 @@
     <Compile Include="Design\administrativo\lista_paciente.Designer.cs">
       <DependentUpon>lista_paciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="ERS_NeoCare\Model\PacienteService.cs" />
     <Compile Include="Helper\ReemplazoPanelEventArgs .cs" />
     <Compile Include="Logic\AgregarPacientePresenter.cs" />
     <Compile Include="Logic\UsuarioPresenter.cs" />

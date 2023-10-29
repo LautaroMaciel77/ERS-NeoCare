@@ -15,7 +15,7 @@ namespace ERS_NeoCare.Design
 
 
         public string userDni;
-        public Model.PacienteService paciente;
+        public PacienteModel paciente;
         //handler para cargar paciente
 
 
@@ -37,7 +37,7 @@ namespace ERS_NeoCare.Design
             DGVAdministrativo.DataSource = data;
         }
 
-        public void MostrarMenu(Model.PacienteService paciente)
+        public void MostrarMenu(PacienteModel paciente)
         {
             panelAgregar.Visible = true;
             MenuBioquimicoAnalisis mp = new MenuBioquimicoAnalisis();

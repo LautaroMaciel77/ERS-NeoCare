@@ -16,7 +16,7 @@ namespace ERS_NeoCare.Design
         public string userDni;
         //handler para cargar paciente
         public event EventHandler<Tuple<string>> historiaPacienteClick;
-        public Model.PacienteService paciente;
+        public PacienteModel paciente;
         private menu MainForm { get; set; }
 
 
@@ -37,7 +37,7 @@ namespace ERS_NeoCare.Design
             DGVAdministrativo.DataSource = data;
         }
 
-        public void MostrarMenu(Model.PacienteService paciente)
+        public void MostrarMenu(PacienteModel paciente)
         {
          
             MenuEnfermeroAtencion mp = new MenuEnfermeroAtencion();
@@ -55,7 +55,7 @@ namespace ERS_NeoCare.Design
 
         private void verclick(object sender, EventArgs e)
         {
-            PacienteView pacienteControl = new PacienteView(paciente);
+            PacienteView pacienteControl = new PacienteView();
             pacienteControl.Dock = DockStyle.Fill;
 
             menu menuForm = this.ParentForm as menu;
@@ -86,7 +86,7 @@ namespace ERS_NeoCare.Design
                     panelAgregar.Visible = true;
                     int columnIndexDNI = 0;
                     this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
-                    _presenter.cargarMenu();
+                    _presenter.cargarMenu(                    _presenter.Get_model());
                 
                 }
             }

@@ -35,6 +35,8 @@
             this.LabelResultados = new System.Windows.Forms.Label();
             this.labelObservaciones = new System.Windows.Forms.Label();
             this.textBoxObservaciones = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // iconButtonCargar
@@ -48,7 +50,7 @@
             this.iconButtonCargar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonCargar.IconSize = 20;
             this.iconButtonCargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCargar.Location = new System.Drawing.Point(814, 412);
+            this.iconButtonCargar.Location = new System.Drawing.Point(699, 421);
             this.iconButtonCargar.Name = "iconButtonCargar";
             this.iconButtonCargar.Size = new System.Drawing.Size(75, 32);
             this.iconButtonCargar.TabIndex = 35;
@@ -59,9 +61,9 @@
             // listViewResultados
             // 
             this.listViewResultados.HideSelection = false;
-            this.listViewResultados.Location = new System.Drawing.Point(444, 302);
+            this.listViewResultados.Location = new System.Drawing.Point(329, 368);
             this.listViewResultados.Name = "listViewResultados";
-            this.listViewResultados.Size = new System.Drawing.Size(445, 104);
+            this.listViewResultados.Size = new System.Drawing.Size(445, 47);
             this.listViewResultados.TabIndex = 34;
             this.listViewResultados.UseCompatibleStateImageBehavior = false;
             this.listViewResultados.SelectedIndexChanged += new System.EventHandler(this.listViewResultados_SelectedIndexChanged);
@@ -70,7 +72,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(505, 81);
+            this.label1.Location = new System.Drawing.Point(504, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 18);
             this.label1.TabIndex = 33;
@@ -97,36 +99,56 @@
             // 
             this.LabelResultados.AutoSize = true;
             this.LabelResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelResultados.Location = new System.Drawing.Point(270, 302);
+            this.LabelResultados.Location = new System.Drawing.Point(326, 349);
             this.LabelResultados.Name = "LabelResultados";
-            this.LabelResultados.Size = new System.Drawing.Size(76, 16);
+            this.LabelResultados.Size = new System.Drawing.Size(69, 16);
             this.LabelResultados.TabIndex = 21;
-            this.LabelResultados.Text = "Resultados";
+            this.LabelResultados.Text = "Resultado";
             this.LabelResultados.Click += new System.EventHandler(this.LabelDomicilio_Click);
             // 
             // labelObservaciones
             // 
             this.labelObservaciones.AutoSize = true;
             this.labelObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelObservaciones.Location = new System.Drawing.Point(270, 134);
+            this.labelObservaciones.Location = new System.Drawing.Point(326, 141);
             this.labelObservaciones.Name = "labelObservaciones";
-            this.labelObservaciones.Size = new System.Drawing.Size(99, 16);
+            this.labelObservaciones.Size = new System.Drawing.Size(162, 16);
             this.labelObservaciones.TabIndex = 20;
-            this.labelObservaciones.Text = "Observaciones";
+            this.labelObservaciones.Text = "Observaciones (opcional)";
             // 
             // textBoxObservaciones
             // 
             this.textBoxObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxObservaciones.Location = new System.Drawing.Point(444, 134);
+            this.textBoxObservaciones.Location = new System.Drawing.Point(329, 160);
             this.textBoxObservaciones.Multiline = true;
             this.textBoxObservaciones.Name = "textBoxObservaciones";
             this.textBoxObservaciones.Size = new System.Drawing.Size(445, 104);
             this.textBoxObservaciones.TabIndex = 36;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(326, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 16);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Tipo de analisis";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(329, 71);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(445, 21);
+            this.comboBox1.TabIndex = 38;
+            // 
             // analisis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxObservaciones);
             this.Controls.Add(this.iconButtonCargar);
             this.Controls.Add(this.listViewResultados);
@@ -149,5 +171,7 @@
         private FontAwesome.Sharp.IconButton iconButtonCargar;
         private System.Windows.Forms.ListView listViewResultados;
         private System.Windows.Forms.TextBox textBoxObservaciones;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

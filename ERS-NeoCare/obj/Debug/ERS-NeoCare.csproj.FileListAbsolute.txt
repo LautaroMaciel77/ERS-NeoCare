@@ -152,3 +152,39 @@ E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ER
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.csproj.CopyComplete
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.exe
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS-NeoCare.pdb
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS-NeoCare.csproj.AssemblyReference.cache
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Administrativo.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.agregar_paciente.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.turnoAdministrativo.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.admin.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.editar_usuario.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.agregar_usuario.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.lista_baja_usuarios.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.lista_usuarios.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuAdminUsuarios.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.analisis.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Bioquimico.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.lista_analisis_bioquimico.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.lista_paciente_bioquimico.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.MenuBioquimicoAnalisis.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.atencion.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Enfermero.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.lista_atenciones_enfermero.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.lista_paciente_enfermero.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.MenuEnfermeroAtencion.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.historia_clinica.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.lista_paciente.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Login.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.medico.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuMedicoPacientes.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.ListaDeTurnos.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.PacientesMedico.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.TurnosMedico.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.menu.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.menuPaciente.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Paciente.HistoriaClinica.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.PacienteView.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Form1.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Properties.Resources.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS-NeoCare.csproj.GenerateResource.cache
+C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS-NeoCare.csproj.CoreCompileInputs.cache

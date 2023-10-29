@@ -14,7 +14,7 @@ namespace ERS_NeoCare.Design
 
     public partial class PacientesMedico : UserControl
     {
-        public Model.PacienteService paciente;
+        public PacienteModel  paciente;
         private menu MainForm { get; set; }
         public string userDni;
         public event EventHandler<Tuple<string>> TurnoMedicoClick;
@@ -62,7 +62,7 @@ namespace ERS_NeoCare.Design
                 }
             }
         }
-        public void MostrarMenu(Model.PacienteService paciente)
+        public void MostrarMenu(PacienteModel paciente)
         {
             panelPaciente.Visible = true;
             MenuMedicoPacientes mp = new MenuMedicoPacientes(paciente);
