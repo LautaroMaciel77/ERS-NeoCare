@@ -31,6 +31,7 @@
             this.iconTurno = new FontAwesome.Sharp.IconButton();
             this.iconVer = new FontAwesome.Sharp.IconButton();
             this.iconButtonClose = new FontAwesome.Sharp.IconButton();
+            this.iconEvaluacion = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // iconTurno
@@ -53,7 +54,7 @@
             this.iconTurno.Name = "iconTurno";
             this.iconTurno.Size = new System.Drawing.Size(216, 40);
             this.iconTurno.TabIndex = 22;
-            this.iconTurno.Text = "Agregar turno";
+            this.iconTurno.Text = "Generar Orden";
             this.iconTurno.UseVisualStyleBackColor = false;
             this.iconTurno.Click += new System.EventHandler(this.iconTurno_Click);
             // 
@@ -72,7 +73,7 @@
             this.iconVer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconVer.IconSize = 35;
             this.iconVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconVer.Location = new System.Drawing.Point(25, 72);
+            this.iconVer.Location = new System.Drawing.Point(25, 112);
             this.iconVer.Margin = new System.Windows.Forms.Padding(0);
             this.iconVer.Name = "iconVer";
             this.iconVer.Size = new System.Drawing.Size(216, 40);
@@ -98,11 +99,35 @@
             this.iconButtonClose.UseVisualStyleBackColor = false;
             this.iconButtonClose.Click += new System.EventHandler(this.iconButtonClose_Click);
             // 
+            // iconEvaluacion
+            // 
+            this.iconEvaluacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.iconEvaluacion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.iconEvaluacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.iconEvaluacion.FlatAppearance.BorderSize = 0;
+            this.iconEvaluacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
+            this.iconEvaluacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconEvaluacion.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconEvaluacion.ForeColor = System.Drawing.Color.Transparent;
+            this.iconEvaluacion.IconChar = FontAwesome.Sharp.IconChar.UserMd;
+            this.iconEvaluacion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
+            this.iconEvaluacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconEvaluacion.IconSize = 35;
+            this.iconEvaluacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconEvaluacion.Location = new System.Drawing.Point(25, 72);
+            this.iconEvaluacion.Margin = new System.Windows.Forms.Padding(0);
+            this.iconEvaluacion.Name = "iconEvaluacion";
+            this.iconEvaluacion.Size = new System.Drawing.Size(216, 40);
+            this.iconEvaluacion.TabIndex = 35;
+            this.iconEvaluacion.Text = "Evaluacion Medica";
+            this.iconEvaluacion.UseVisualStyleBackColor = false;
+            // 
             // MenuMedicoPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.Controls.Add(this.iconEvaluacion);
             this.Controls.Add(this.iconButtonClose);
             this.Controls.Add(this.iconTurno);
             this.Controls.Add(this.iconVer);
@@ -117,5 +142,6 @@
         private FontAwesome.Sharp.IconButton iconTurno;
         private FontAwesome.Sharp.IconButton iconVer;
         private FontAwesome.Sharp.IconButton iconButtonClose;
+        private FontAwesome.Sharp.IconButton iconEvaluacion;
     }
 }

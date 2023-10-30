@@ -53,9 +53,9 @@
             this.labelObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelObservaciones.Location = new System.Drawing.Point(342, 283);
             this.labelObservaciones.Name = "labelObservaciones";
-            this.labelObservaciones.Size = new System.Drawing.Size(99, 16);
+            this.labelObservaciones.Size = new System.Drawing.Size(220, 16);
             this.labelObservaciones.TabIndex = 20;
-            this.labelObservaciones.Text = "Observaciones";
+            this.labelObservaciones.Text = "Observaciones (atencion realizada)";
             // 
             // textBoxIndicaciones
             // 
@@ -73,9 +73,9 @@
             this.labelIndicaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIndicaciones.Location = new System.Drawing.Point(342, 135);
             this.labelIndicaciones.Name = "labelIndicaciones";
-            this.labelIndicaciones.Size = new System.Drawing.Size(83, 16);
+            this.labelIndicaciones.Size = new System.Drawing.Size(152, 16);
             this.labelIndicaciones.TabIndex = 34;
-            this.labelIndicaciones.Text = "Indicaciones";
+            this.labelIndicaciones.Text = "Indicaciones al paciente";
             // 
             // textObservaciones
             // 

@@ -86,7 +86,7 @@ namespace ERS_NeoCare.Design
 
         private void editarClick(object sender, EventArgs e)
         {
-            editar_usuario ap = new editar_usuario(usuario);
+            editar_usuario ap = new editar_usuario();
             // Accede al formulario 'menu' desde el control actual
             menu menuForm = this.ParentForm as menu;
 

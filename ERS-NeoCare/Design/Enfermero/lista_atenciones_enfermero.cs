@@ -1,6 +1,7 @@
 ﻿using ERS_NeoCare.Design.administrativo;
 using ERS_NeoCare.Helper;
 using ERS_NeoCare.Logic;
+using ERS_NeoCare.Model;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -17,7 +18,7 @@ namespace ERS_NeoCare.Design
         public event EventHandler<Tuple<string>> historiaPacienteClick;
 
         private menu MainForm { get; set; }
-        public Model.PacienteService paciente;
+        public PacienteModel paciente;
 
         private listaPacienteBio _presenter;
         

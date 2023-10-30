@@ -35,10 +35,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
+            this.paciente_dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultados = new System.Windows.Forms.DataGridViewButtonColumn();
             this.turnoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new ERS_NeoCare.Database1DataSet();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new ERS_NeoCare.DatabaseDataSet();
@@ -46,18 +48,20 @@
             this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.turnoTableAdapter = new ERS_NeoCare.Database1DataSetTableAdapters.turnoTableAdapter();
             this.databaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.paciente_dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resultados = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechahoraDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pacientedniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -105,6 +109,10 @@
             this.DGVAdministrativo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.paciente_dni,
             this.fecha,
+            this.idDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn,
+            this.fechahoraDataGridViewImageColumn,
+            this.pacientedniDataGridViewTextBoxColumn,
             this.resultados});
             this.DGVAdministrativo.DataSource = this.turnoBindingSource1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -125,6 +133,23 @@
             this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
+            // 
+            // paciente_dni
+            // 
+            this.paciente_dni.DataPropertyName = "paciente_dni";
+            this.paciente_dni.HeaderText = "paciente_dni";
+            this.paciente_dni.Name = "paciente_dni";
+            // 
+            // fecha
+            // 
+            this.fecha.DataPropertyName = "fecha";
+            this.fecha.HeaderText = "fecha";
+            this.fecha.Name = "fecha";
+            // 
+            // resultados
+            // 
+            this.resultados.HeaderText = "resultados";
+            this.resultados.Name = "resultados";
             // 
             // turnoBindingSource1
             // 
@@ -148,20 +173,6 @@
             this.panel2.Size = new System.Drawing.Size(1196, 71);
             this.panel2.TabIndex = 14;
             // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 41;
-            this.iconPictureBox1.Location = new System.Drawing.Point(34, 17);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(41, 41);
-            this.iconPictureBox1.TabIndex = 5;
-            this.iconPictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -170,9 +181,9 @@
             this.label1.Location = new System.Drawing.Point(79, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 20);
+            this.label1.Size = new System.Drawing.Size(158, 20);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Turnos de pacientes";
+            this.label1.Text = "Ordenes (Pedidos)";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pacienteBindingSource
@@ -203,22 +214,44 @@
             this.databaseDataSetBindingSource.DataSource = this.databaseDataSet;
             this.databaseDataSetBindingSource.Position = 0;
             // 
-            // paciente_dni
+            // idDataGridViewTextBoxColumn
             // 
-            this.paciente_dni.DataPropertyName = "paciente_dni";
-            this.paciente_dni.HeaderText = "paciente_dni";
-            this.paciente_dni.Name = "paciente_dni";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
-            // fecha
+            // fechaDataGridViewTextBoxColumn
             // 
-            this.fecha.DataPropertyName = "fecha";
-            this.fecha.HeaderText = "fecha";
-            this.fecha.Name = "fecha";
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             // 
-            // resultados
+            // fechahoraDataGridViewImageColumn
             // 
-            this.resultados.HeaderText = "resultados";
-            this.resultados.Name = "resultados";
+            this.fechahoraDataGridViewImageColumn.DataPropertyName = "fecha_hora";
+            this.fechahoraDataGridViewImageColumn.HeaderText = "fecha_hora";
+            this.fechahoraDataGridViewImageColumn.Name = "fechahoraDataGridViewImageColumn";
+            this.fechahoraDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // pacientedniDataGridViewTextBoxColumn
+            // 
+            this.pacientedniDataGridViewTextBoxColumn.DataPropertyName = "paciente_dni";
+            this.pacientedniDataGridViewTextBoxColumn.HeaderText = "paciente_dni";
+            this.pacientedniDataGridViewTextBoxColumn.Name = "pacientedniDataGridViewTextBoxColumn";
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 41;
+            this.iconPictureBox1.Location = new System.Drawing.Point(34, 17);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(41, 41);
+            this.iconPictureBox1.TabIndex = 5;
+            this.iconPictureBox1.TabStop = false;
             // 
             // ListaDeTurnos
             // 
@@ -235,11 +268,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +296,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn paciente_dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewButtonColumn resultados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn fechahoraDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pacientedniDataGridViewTextBoxColumn;
     }
 }

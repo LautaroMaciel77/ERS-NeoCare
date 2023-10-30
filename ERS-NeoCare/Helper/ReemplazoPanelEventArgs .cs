@@ -11,9 +11,9 @@ namespace ERS_NeoCare.Helper
     public class ReemplazoPanelEventArgs : EventArgs
     {
         public UserControl Control { get; }
-        public PacienteService Paciente { get; }
+        public PacienteModel Paciente { get; }
 
-        public ReemplazoPanelEventArgs(UserControl control, PacienteService paciente)
+        public ReemplazoPanelEventArgs(UserControl control, PacienteModel paciente)
         {
             Control = control;
             Paciente = paciente;

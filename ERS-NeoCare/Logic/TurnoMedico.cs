@@ -23,9 +23,9 @@ namespace ERS_NeoCare.Logic
                 _model = pacienteService;
 
             }
-        public Model.PacienteService buscarPaciente(string dni)
+        public PacienteModel buscarPaciente(string dni)
         {
-            Model.PacienteService paciente = _model.Paciente(dni);
+            PacienteModel  paciente = _model.Paciente(dni);
             return paciente;        }
             
     }
