@@ -88,5 +88,10 @@ namespace ERS_NeoCare.Design.administrativo
                 }
             }
         }
+
+        private void ListaTurnosAdministrativo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
