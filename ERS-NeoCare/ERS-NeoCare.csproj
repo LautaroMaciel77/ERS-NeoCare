@@ -408,6 +408,12 @@
     <Compile Include="Design\administrativo\lista_paciente.Designer.cs">
       <DependentUpon>lista_paciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Medico\evaluacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\evaluacion.Designer.cs">
+      <DependentUpon>evaluacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\convertidorListDatatable.cs" />
     <Compile Include="Helper\ReemplazoPanelEventArgs .cs" />
     <Compile Include="Logic\AgregarPacientePresenter.cs" />
@@ -427,6 +433,7 @@
     <Compile Include="Model\TurnoModel.cs" />
     <Compile Include="Model\TurnoService.cs" />
     <Compile Include="Logic\IListaPacientePresenter.cs" />
+    <Compile Include="Model\UsuarioBusqueda.cs" />
     <Compile Include="Model\UsuarioSingleton.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="view\IlistaPacienteViewAdmin.cs" />
@@ -505,7 +512,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="view\IViewListaPaciente.cs" />
-    <Compile Include="view\PacienteView.cs" />
     <EmbeddedResource Include="Design\administrativo\administrativo.resx">
       <DependentUpon>administrativo.cs</DependentUpon>
     </EmbeddedResource>
@@ -577,6 +583,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\evaluacion.resx">
+      <DependentUpon>evaluacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\medico.resx">
       <DependentUpon>medico.cs</DependentUpon>

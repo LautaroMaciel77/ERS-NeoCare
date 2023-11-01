@@ -1,4 +1,5 @@
 ﻿using ERS_NeoCare.Design.administrativo;
+using ERS_NeoCare.Design.Paciente;
 using ERS_NeoCare.Helper;
 using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
@@ -134,6 +135,8 @@ namespace ERS_NeoCare.Design
                     this.dni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
                     _presenter.cargarPaciente(dni);
                     menuPaciente menuPaciente = new menuPaciente();
+                    menuPaciente.closeclick += closeclick;
+                    menuPaciente.verclick += verclick;
                     cargarUserControl(menuPaciente);
 
                 }

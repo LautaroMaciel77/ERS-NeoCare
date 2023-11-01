@@ -93,6 +93,7 @@ namespace ERS_NeoCare.Design.administrativo
 
         private void dataGridViewHora_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex >= 0 && dataGridViewHora.Rows.Count > 0)
             {
                 if (dataGridViewHora.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
@@ -108,7 +109,7 @@ namespace ERS_NeoCare.Design.administrativo
         private void iconAgregar_Click(object sender, EventArgs e)
         {
 
-            if (UsuarioSingleton.Instance.UsuarioAutenticado == null || PacienteSingleton.Instance.pacienteAutenticado == null)
+            if (UsuarioBusqueda.Instance.UsuarioAutenticado == null || PacienteSingleton.Instance.pacienteAutenticado == null)
             {
                 MessageBox.Show("Asegúrate de seleccionar un medico y un paciente antes de agregar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -135,7 +136,7 @@ namespace ERS_NeoCare.Design.administrativo
                 SelectedDate = select,
                 SelectedTimeRange = TimeSpan.Parse(rangoHora),
                 Prioridad = prioridad,
-                Medico_Id = UsuarioSingleton.Instance.UsuarioAutenticado.id,
+                Medico_Id = UsuarioBusqueda.Instance.UsuarioAutenticado.id,
                 Paciente_Id = PacienteSingleton.Instance.pacienteAutenticado.Id
             };
 
@@ -178,22 +179,8 @@ namespace ERS_NeoCare.Design.administrativo
         {
 
             string seleccion = comboBox1.SelectedItem.ToString();
-
-            switch (seleccion)
-            {
-                case "Alta":
-                    prioridad = seleccion;
-                    break;
-                case "Normal":
-                    prioridad = seleccion;
-                    break;
-                case "Baja":
-                    prioridad = seleccion;
-                    break;
-                default:
-                    prioridad = null;
-                    break;
-            }
+            prioridad = seleccion;
+        
         }
 
         internal void Insertar(bool v)

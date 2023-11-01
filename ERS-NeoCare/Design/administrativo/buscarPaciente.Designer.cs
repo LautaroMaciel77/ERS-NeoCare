@@ -36,6 +36,11 @@
             this.textBoxBusqueda = new System.Windows.Forms.TextBox();
             this.btn_closePanel = new FontAwesome.Sharp.IconButton();
             this.DGVABusqueda = new System.Windows.Forms.DataGridView();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.personalsaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dBNeoCareDataSet = new ERS_NeoCare.DBNeoCareDataSet();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,11 +51,6 @@
             this.iconbtn_medico = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.personal_saludTableAdapter = new ERS_NeoCare.DBNeoCareDataSetTableAdapters.personal_saludTableAdapter();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVABusqueda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource)).BeginInit();
@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.textBoxBusqueda);
             this.panel1.Controls.Add(this.btn_closePanel);
             this.panel1.Controls.Add(this.DGVABusqueda);
-            this.panel1.Location = new System.Drawing.Point(108, 40);
+            this.panel1.Location = new System.Drawing.Point(108, 65);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(550, 253);
             this.panel1.TabIndex = 0;
@@ -137,6 +137,40 @@
             this.DGVABusqueda.TabIndex = 16;
             this.DGVABusqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVABusqueda_CellContentClick);
             // 
+            // dni
+            // 
+            this.dni.DataPropertyName = "dni";
+            this.dni.HeaderText = "dni";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Accion
+            // 
+            this.Accion.HeaderText = "Accion";
+            this.Accion.Name = "Accion";
+            this.Accion.ReadOnly = true;
+            // 
             // personalsaludBindingSource
             // 
             this.personalsaludBindingSource.DataMember = "personal_salud";
@@ -188,7 +222,7 @@
             this.iconbtn_paciente.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconbtn_paciente.IconColor = System.Drawing.Color.Black;
             this.iconbtn_paciente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconbtn_paciente.Location = new System.Drawing.Point(306, 104);
+            this.iconbtn_paciente.Location = new System.Drawing.Point(294, 169);
             this.iconbtn_paciente.Name = "iconbtn_paciente";
             this.iconbtn_paciente.Size = new System.Drawing.Size(75, 23);
             this.iconbtn_paciente.TabIndex = 5;
@@ -201,7 +235,7 @@
             this.iconbtn_medico.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconbtn_medico.IconColor = System.Drawing.Color.Black;
             this.iconbtn_medico.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconbtn_medico.Location = new System.Drawing.Point(306, 179);
+            this.iconbtn_medico.Location = new System.Drawing.Point(294, 107);
             this.iconbtn_medico.Name = "iconbtn_medico";
             this.iconbtn_medico.Size = new System.Drawing.Size(75, 23);
             this.iconbtn_medico.TabIndex = 6;
@@ -225,40 +259,6 @@
             // personal_saludTableAdapter
             // 
             this.personal_saludTableAdapter.ClearBeforeFill = true;
-            // 
-            // dni
-            // 
-            this.dni.DataPropertyName = "dni";
-            this.dni.HeaderText = "dni";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Accion
-            // 
-            this.Accion.HeaderText = "Accion";
-            this.Accion.Name = "Accion";
-            this.Accion.ReadOnly = true;
             // 
             // buscarPaciente
             // 

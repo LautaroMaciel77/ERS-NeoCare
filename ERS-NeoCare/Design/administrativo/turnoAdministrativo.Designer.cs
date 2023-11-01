@@ -38,9 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_buscarMedico = new System.Windows.Forms.Button();
             this.panelBuscar = new System.Windows.Forms.Panel();
-            this.iconBuscar = new FontAwesome.Sharp.IconButton();
-            this.iconAgregar = new FontAwesome.Sharp.IconButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.iconAgregar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHora)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,32 +137,6 @@
             this.panelBuscar.Size = new System.Drawing.Size(823, 401);
             this.panelBuscar.TabIndex = 22;
             // 
-            // iconBuscar
-            // 
-            this.iconBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconBuscar.IconColor = System.Drawing.Color.Black;
-            this.iconBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBuscar.Location = new System.Drawing.Point(647, 682);
-            this.iconBuscar.Name = "iconBuscar";
-            this.iconBuscar.Size = new System.Drawing.Size(156, 23);
-            this.iconBuscar.TabIndex = 8;
-            this.iconBuscar.Text = "Buscar Turno";
-            this.iconBuscar.UseVisualStyleBackColor = true;
-            this.iconBuscar.Click += new System.EventHandler(this.iconBuscar_Click);
-            // 
-            // iconAgregar
-            // 
-            this.iconAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconAgregar.IconColor = System.Drawing.Color.Black;
-            this.iconAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconAgregar.Location = new System.Drawing.Point(647, 711);
-            this.iconAgregar.Name = "iconAgregar";
-            this.iconAgregar.Size = new System.Drawing.Size(156, 23);
-            this.iconAgregar.TabIndex = 7;
-            this.iconAgregar.Text = "Guardar Turno";
-            this.iconAgregar.UseVisualStyleBackColor = true;
-            this.iconAgregar.Click += new System.EventHandler(this.iconAgregar_Click);
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -177,6 +150,19 @@
             this.comboBox1.TabIndex = 24;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // iconAgregar
+            // 
+            this.iconAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconAgregar.IconColor = System.Drawing.Color.Black;
+            this.iconAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAgregar.Location = new System.Drawing.Point(647, 682);
+            this.iconAgregar.Name = "iconAgregar";
+            this.iconAgregar.Size = new System.Drawing.Size(156, 23);
+            this.iconAgregar.TabIndex = 7;
+            this.iconAgregar.Text = "Guardar Turno";
+            this.iconAgregar.UseVisualStyleBackColor = true;
+            this.iconAgregar.Click += new System.EventHandler(this.iconAgregar_Click);
+            // 
             // turnoAdministrativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,7 +171,6 @@
             this.Controls.Add(this.panelBuscar);
             this.Controls.Add(this.btn_buscarMedico);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.iconBuscar);
             this.Controls.Add(this.iconAgregar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -204,7 +189,6 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridView dataGridViewHora;
         private FontAwesome.Sharp.IconButton iconAgregar;
-        private FontAwesome.Sharp.IconButton iconBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

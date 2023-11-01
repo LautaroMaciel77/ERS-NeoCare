@@ -27,22 +27,32 @@ namespace ERS_NeoCare.Design
          
             // Establece la cadena de conexión a la base de datos.
             InitializeComponent();
-          //  CargarPaciente();
+            verificarUsuario();
+            CargarPaciente();
          
         }
+
+        private void verificarUsuario()
+        {
+            btnAgregar.Visible = false;
+            if (UsuarioSingleton.Instance.UsuarioAutenticado.ProfesionID==4) {
+                btnAgregar.Visible = true;
+            }
+        }
+
         private void CargarPaciente( )
         {
 
+            labelDni.Text += PacienteSingleton.Instance.pacienteAutenticado.Dni;
 
-        
-                         
-                        //    labelDni.Text += paciente.Dni;
-                         //   labelNombre.Text += paciente.Nombre;
-                           // labelApellido.Text += paciente.Apellido;
-                            //labelDomicilio.Text += paciente.Domicilio;
-                            //labelSexo.Text += paciente.Sexo;
-                            //labelObra.Text += paciente.ObraSocial;
+            labelNombre.Text += PacienteSingleton.Instance.pacienteAutenticado.Nombre;
+            labelApellido.Text += PacienteSingleton.Instance.pacienteAutenticado.Apellido;
 
+            labelDomicilio.Text +=PacienteSingleton.Instance.pacienteAutenticado.Domicilio;
+            labelFecha.Text += PacienteSingleton.Instance.pacienteAutenticado.FechaNacimiento;
+            labelSexo.Text += PacienteSingleton.Instance.pacienteAutenticado.Sexo;
+            labelObra.Text += PacienteSingleton.Instance.pacienteAutenticado.ObraSocial;
+       
 
         }
 

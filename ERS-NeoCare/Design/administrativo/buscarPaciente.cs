@@ -24,7 +24,7 @@ namespace ERS_NeoCare.Design.administrativo
         {
             InitializeComponent();
             _presenterUsuario = new UsuarioPresenter(this, new UsuarioService(Configuracion.ConnectionString));
-            _presenterPaciente = new PacientePresenter(new PacienteService(Configuracion.ConnectionString));
+            _presenterPaciente = new PacientePresenter(this,new PacienteService(Configuracion.ConnectionString));
             panel1.Visible = false;
             labelMedicoResultado.Text = string.Empty;
             labelPacienteResultado.Text = string.Empty;
@@ -52,7 +52,7 @@ namespace ERS_NeoCare.Design.administrativo
             }
             else
             {
-
+                _presenterPaciente.ObtenerPacienteBusqueda(searchText);
             }
            
 
@@ -83,7 +83,7 @@ namespace ERS_NeoCare.Design.administrativo
                         labelMedicoResultado.Text = string.Empty;
               
                         _presenterUsuario.Buscar(dni);
-                        labelMedicoResultado.Text += UsuarioSingleton.Instance.UsuarioAutenticado.Nombre + "  " + UsuarioSingleton.Instance.UsuarioAutenticado.Apellido;
+                        labelMedicoResultado.Text += UsuarioBusqueda.Instance.UsuarioAutenticado.Nombre + "  " + UsuarioBusqueda.Instance.UsuarioAutenticado.Apellido;
                       
                     }
                     else

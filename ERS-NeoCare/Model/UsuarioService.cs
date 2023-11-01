@@ -54,7 +54,7 @@ namespace ERS_NeoCare.Model
             if (usuario != null)
             {
                 context.Entry(usuario).Reference(u => u.Profesion).Load();
-                UsuarioSingleton.Instance.AutenticarUsuario(usuario);
+                UsuarioBusqueda.Instance.AutenticarUsuario(usuario);
             }
 
 

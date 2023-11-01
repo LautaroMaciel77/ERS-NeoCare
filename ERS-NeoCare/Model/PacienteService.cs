@@ -26,21 +26,14 @@ namespace ERS_NeoCare.Presenter
         public List<PacienteModel> ObtenerDatosPaciente()
         {
           
-            try
-            {
+           
                 var context = DbContextManager.GetContext();
                 
                     var pacientes = context.Pacientes.ToList(); // Obtener todos los pacientes de la base de datos
 
                 return pacientes;
                 
-            }
-            catch (Exception ex)
-            {
-                // Manejar excepciones
-            }
-
-            return null;
+        
         }
         public void BuscarPaciente(string dni)
 
@@ -60,34 +53,7 @@ namespace ERS_NeoCare.Presenter
         public PacienteModel Paciente(string dni)
         {
 
-            using (SqlConnection connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
-                System.Windows.Forms.MessageBox.Show("El número de DNI es: " + dni, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                using (SqlCommand command = new SqlCommand("SELECT * FROM Paciente WHERE dni = @dni", connection))
-                {
-                    command.Parameters.AddWithValue("@dni", dni);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-
-                            return new PacienteModel
-                            {
-                                Dni = Convert.ToInt32(reader["dni"]),
-                                Nombre = reader["nombre"].ToString(),
-                                Apellido = reader["apellido"].ToString(),
-                                Domicilio = reader["Domicilio"].ToString(),
-                                Condicion = reader["Condicion"].ToString(),
-
-
-                            };
-
-                        }
-                    }
-                }
-            }
+       
             return null; // Si no se encuentra el usuario
 
         }

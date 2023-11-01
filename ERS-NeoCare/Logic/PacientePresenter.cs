@@ -32,7 +32,7 @@ namespace ERS_NeoCare.Logic
         }
         public PacientePresenter(buscarPaciente view, PacienteService pacienteService)
         {
-
+            _viewBuqueda = view;
             _service = pacienteService;
         }
 
@@ -79,20 +79,7 @@ namespace ERS_NeoCare.Logic
 
             _viewBuqueda.cargarLista(dataTable);
         }
-        public void ObtenerUsuariosBusqueda(string searchText)
-        {
-
-
-            List<PacienteModel> datos = _service.ObtenerDatosPaciente();
-
-            // Realiza la búsqueda en la lista.
-            List<PacienteModel> resultados = datos.Where(d =>
-             d.Nombre.Contains(searchText) || d.Apellido.Contains(searchText) ||
-             (d.Nombre + " " + d.Apellido).Contains(searchText)).ToList();
-            DataTable dataTable = ConvertidorListDatatable.ConvertirListaPaciente(resultados);
-         
-            _viewBuqueda.cargarLista(dataTable);
-        }
+     
 
         public DataTable convertirListaPaciente(List<PacienteModel> resultados)
         {
