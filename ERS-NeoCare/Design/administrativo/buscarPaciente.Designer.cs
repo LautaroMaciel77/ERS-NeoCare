@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.textBoxBusqueda);
             this.panel1.Controls.Add(this.btn_closePanel);
             this.panel1.Controls.Add(this.DGVABusqueda);
-            this.panel1.Location = new System.Drawing.Point(108, 65);
+            this.panel1.Location = new System.Drawing.Point(142, 59);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(550, 253);
             this.panel1.TabIndex = 0;
@@ -202,7 +202,7 @@
             // labelMedicoResultado
             // 
             this.labelMedicoResultado.AutoSize = true;
-            this.labelMedicoResultado.Location = new System.Drawing.Point(131, 179);
+            this.labelMedicoResultado.Location = new System.Drawing.Point(129, 117);
             this.labelMedicoResultado.Name = "labelMedicoResultado";
             this.labelMedicoResultado.Size = new System.Drawing.Size(35, 13);
             this.labelMedicoResultado.TabIndex = 3;
@@ -211,7 +211,7 @@
             // labelPacienteResultado
             // 
             this.labelPacienteResultado.AutoSize = true;
-            this.labelPacienteResultado.Location = new System.Drawing.Point(131, 117);
+            this.labelPacienteResultado.Location = new System.Drawing.Point(129, 179);
             this.labelPacienteResultado.Name = "labelPacienteResultado";
             this.labelPacienteResultado.Size = new System.Drawing.Size(35, 13);
             this.labelPacienteResultado.TabIndex = 4;
@@ -222,7 +222,7 @@
             this.iconbtn_paciente.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconbtn_paciente.IconColor = System.Drawing.Color.Black;
             this.iconbtn_paciente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconbtn_paciente.Location = new System.Drawing.Point(294, 169);
+            this.iconbtn_paciente.Location = new System.Drawing.Point(276, 169);
             this.iconbtn_paciente.Name = "iconbtn_paciente";
             this.iconbtn_paciente.Size = new System.Drawing.Size(75, 23);
             this.iconbtn_paciente.TabIndex = 5;
@@ -235,7 +235,7 @@
             this.iconbtn_medico.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconbtn_medico.IconColor = System.Drawing.Color.Black;
             this.iconbtn_medico.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconbtn_medico.Location = new System.Drawing.Point(294, 107);
+            this.iconbtn_medico.Location = new System.Drawing.Point(276, 107);
             this.iconbtn_medico.Name = "iconbtn_medico";
             this.iconbtn_medico.Size = new System.Drawing.Size(75, 23);
             this.iconbtn_medico.TabIndex = 6;

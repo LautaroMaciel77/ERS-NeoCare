@@ -15,11 +15,12 @@ namespace ERS_NeoCare.Design.administrativo
         private int selectedRowIndex = -1;
         private string prioridad;
         private TurnoPresenter _presenter;
+        
         public turnoAdministrativo(string dni)
         {
             this.dni = dni;
             InitializeComponent();
-            _presenter = new TurnoPresenter(new TurnoService(Configuracion.ConnectionString));
+            _presenter = new TurnoPresenter(this, new TurnoService(Configuracion.ConnectionString));
             PacienteSingleton.Instance.Desautenticar();
             cargarHora();
             panelBuscar.Visible = false;
@@ -66,8 +67,9 @@ namespace ERS_NeoCare.Design.administrativo
             {
                 dataGridViewHora.Rows.Add(bloque);
             }
-                   
+
             select = monthCalendar1.SelectionStart;
+            CargarDatosEnDataGridView();
         }
 
 
@@ -76,20 +78,41 @@ namespace ERS_NeoCare.Design.administrativo
             select = monthCalendar1.SelectionStart;
             DateTime fechaSeleccionada = monthCalendar1.SelectionStart;
 
- 
+
             label1.Text = fechaSeleccionada.ToString("dd/MM/yyyy");
+            cargarFecha();
         }
 
-    
-
-        private void textboxDni_KeyPress(object sender, KeyPressEventArgs e)
+        private void CargarDatosEnDataGridView()
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
+            // ista de turnos desde el presenter
+            List<Turno> listaTurnos = _presenter.RecopilarTurnos();
 
+            // Verifica si hay turnos para la fecha y el rangoHora seleccionados
+            if (listaTurnos != null)
+            {
+                foreach (Turno turno in listaTurnos)
+                {
+                    // Verifica si la fecha y el rangoHora coinciden
+                    if (turno.SelectedDate == select && turno.SelectedTimeRange != null)
+                    {
+                        string rangoHoraTurno = turno.SelectedTimeRange.Value.ToString("hh\\:mm");
+
+                        // Encuentra la fila en el DataGridView que coincide con el rangoHora
+                        foreach (DataGridViewRow row in dataGridViewHora.Rows)
+                        {
+                            if (row.Cells[0].Value != null && row.Cells[0].Value.ToString().StartsWith(rangoHoraTurno))
+                            {
+                                // Marca la celda como "NO" si el turno ya está seleccionado
+                                row.Cells[1].Value = "NO";
+                                break;
+                            }
+                        }
+                    }
+                }
             }
         }
+
 
         private void dataGridViewHora_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -106,6 +129,14 @@ namespace ERS_NeoCare.Design.administrativo
 
         }
 
+        private void textboxDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
+        }
         private void iconAgregar_Click(object sender, EventArgs e)
         {
 
@@ -131,17 +162,30 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("Asegúrate de seleccionar una prioridad de turno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (selectedRowIndex >= 0 && selectedRowIndex < dataGridViewHora.Rows.Count)
+            {
+                if (dataGridViewHora.Rows[selectedRowIndex].Cells[1].Value != null && dataGridViewHora.Rows[selectedRowIndex].Cells[1].Value.ToString() == "NO")
+                {
+                    MessageBox.Show("El turno seleccionado no está disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            string[] partes = rangoHora.Split('-');
+
+            TimeSpan horaInicio = TimeSpan.Parse(partes[0].Trim());
+  
             Turno turno = new Turno
             {
                 SelectedDate = select,
-                SelectedTimeRange = TimeSpan.Parse(rangoHora),
+                SelectedTimeRange = horaInicio,
                 Prioridad = prioridad,
+                Estado="s",
                 Medico_Id = UsuarioBusqueda.Instance.UsuarioAutenticado.id,
                 Paciente_Id = PacienteSingleton.Instance.pacienteAutenticado.Id
             };
 
-            _presenter.insertarTurno(turno);    
-            dataGridViewHora.Rows[selectedRowIndex].Cells[1].Value = "NO";
+            _presenter.insertarTurno(turno);
+            cargarFecha();
         }
 
         private void iconBuscar_Click(object sender, EventArgs e)
@@ -187,11 +231,12 @@ namespace ERS_NeoCare.Design.administrativo
         {
             if (v)
             {
-                MessageBox.Show("Turno insertado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Turno insertado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Turno insertado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Turno no insertado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
             }
         }

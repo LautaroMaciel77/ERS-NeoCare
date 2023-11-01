@@ -71,13 +71,24 @@ namespace ERS_NeoCare.Logic
 
             List<PacienteModel> datos = _service.ObtenerDatosPaciente();
 
-            // Realiza la búsqueda en la lista.
-            List<PacienteModel> resultados = datos.Where(d =>
-             d.Nombre.Contains(searchText) || d.Apellido.Contains(searchText) ||
-             (d.Nombre + " " + d.Apellido).Contains(searchText)).ToList();
-            DataTable dataTable = convertirListaPaciente(resultados);
+            if (int.TryParse(searchText, out int dni))
+            {
+                // Realiza la búsqueda por DNI
+                List<PacienteModel> resultadosPorDNI = datos.Where(d => d.Dni == dni).ToList();
+                DataTable dataTablePorDNI = convertirListaPaciente(resultadosPorDNI);
 
-            _viewBuqueda.cargarLista(dataTable);
+                _viewBuqueda.cargarLista(dataTablePorDNI);
+            }
+            else
+            {
+                // Realiza la búsqueda por nombre, apellido o nombre completo
+                List<PacienteModel> resultados = datos.Where(d =>
+                     d.Nombre.Contains(searchText) || d.Apellido.Contains(searchText) ||
+                     (d.Nombre + " " + d.Apellido).Contains(searchText)).ToList();
+                DataTable dataTable = convertirListaPaciente(resultados);
+
+                _viewBuqueda.cargarLista(dataTable);
+            }
         }
      
 

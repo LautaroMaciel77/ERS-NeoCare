@@ -234,3 +234,5 @@ C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS-NeoCare.c
 C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS-NeoCare.exe
 C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS-NeoCare.pdb
 C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.evaluacion.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.ListaTurnosAdministrativo.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.evaluacion.resources

@@ -15,13 +15,18 @@ namespace ERS_NeoCare.Logic
 
         public TurnoService _service;
         public turnoAdministrativo _viewAdministrativo;
-
-        public TurnoPresenter(TurnoService service, turnoAdministrativo viewAdministrativo)
+        public ListaTurnosAdministrativo _viewlista;
+        public TurnoPresenter(turnoAdministrativo view, TurnoService service)
         {
             _service = service;
-            _viewAdministrativo = viewAdministrativo;
+            _viewAdministrativo = view;
         }
 
+        public TurnoPresenter(ListaTurnosAdministrativo view, TurnoService service)
+        {
+            _service = service;
+            _viewlista = view;
+        }
         public TurnoPresenter(TurnoService service)
         {
             _service = service;
@@ -32,16 +37,21 @@ namespace ERS_NeoCare.Logic
           
 
         }
-        public void RecopilarTurnos()
+        public List<Turno> RecopilarTurnos()
         {
-
+            return _service.ObtenerDatos();
         }
 
-        public DataTable ListaTurnos()
+        public void ListaTurnos()
         {
             DataTable data = ConvertidorListDatatable.ConvertirListaTurno(_service.ObtenerDatos());
-            return data;
+            _viewlista.cargarDatos(data);
         }
-     
+
+        internal void ObtenerTurnoEstado(string v)
+        {
+            DataTable data = ConvertidorListDatatable.ConvertirListaTurno(_service.ObtenerTurnoEstado(v));
+            _viewlista.cargarDatos(data);
+        }
     }
 }

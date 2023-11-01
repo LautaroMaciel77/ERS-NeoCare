@@ -31,6 +31,7 @@ namespace ERS_NeoCare.Model
                 SelectedDate = turnoModel.SelectedDate ,
                 SelectedTimeRange = turnoModel.SelectedTimeRange,
                 Prioridad = turnoModel.Prioridad,
+                Estado = turnoModel.Estado ,
                 Medico_Id = turnoModel.Medico_Id ,
                 Paciente_Id = turnoModel .Paciente_Id ,
             };
@@ -54,12 +55,24 @@ namespace ERS_NeoCare.Model
                 }
             }
 
-        internal List<Turno> ObtenerDatos()
+        public List<Turno> ObtenerDatos()
         {
 
             var context = DbContextManager.GetContext();
 
             var turnos = context.turnos.ToList();
+            return turnos;
+        }
+
+        public List<Turno> ObtenerTurnoEstado(string v)
+        {
+            var context = DbContextManager.GetContext();
+
+          
+            var turnos = context.turnos
+                .Where(t => t.Estado == v)
+                .ToList();
+      
             return turnos;
         }
     }

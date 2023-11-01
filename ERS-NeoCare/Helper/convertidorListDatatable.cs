@@ -60,6 +60,7 @@ namespace ERS_NeoCare.Helper
             dataTable.Columns.Add("SelectedDate", typeof(DateTime));
             dataTable.Columns.Add("SelectedTimeRange", typeof(TimeSpan));
             dataTable.Columns.Add("Prioridad", typeof(string));
+            dataTable.Columns.Add("Estado", typeof(string));
             dataTable.Columns.Add("MedicoId", typeof(int));
             dataTable.Columns.Add("PacienteId", typeof(int));
 
@@ -70,6 +71,7 @@ namespace ERS_NeoCare.Helper
                     turno.SelectedDate,
                     turno.SelectedTimeRange,
                     turno.Prioridad,
+                    turno.Estado,
                     turno.Medico_Id,
                     turno.Paciente_Id
                 );
