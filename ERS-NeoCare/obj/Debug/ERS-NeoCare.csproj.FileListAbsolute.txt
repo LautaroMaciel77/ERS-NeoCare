@@ -188,3 +188,4 @@ C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.F
 C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Properties.Resources.resources
 C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS-NeoCare.csproj.GenerateResource.cache
 C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS-NeoCare.csproj.CoreCompileInputs.cache
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.buscarPaciente.resources

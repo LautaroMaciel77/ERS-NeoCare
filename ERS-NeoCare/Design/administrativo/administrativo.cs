@@ -10,7 +10,7 @@ namespace ERS_NeoCare.Design
         // Declara un evento personalizado para notificar clics en los botones
         public event EventHandler OpcionesButtonClick;
         public event EventHandler TurnoAdminButtonClick;
-
+        public event EventHandler ReporteAdminButtonClick;
         public Administrativo()
         {
             InitializeComponent();
@@ -29,6 +29,11 @@ namespace ERS_NeoCare.Design
         private void iconButton1_Click(object sender, EventArgs e)
         {
             TurnoAdminButtonClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            ReporteAdminButtonClick?.Invoke(this, EventArgs.Empty);
         }
     }
 }

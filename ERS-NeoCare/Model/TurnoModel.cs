@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace ERS_NeoCare.Model
 {
     [Table("Turno")]
-    public class TurnoModel
+ 
+    public class Turno
     {
         [Key]
         [Column("id")]
@@ -19,25 +20,28 @@ namespace ERS_NeoCare.Model
         public DateTime? SelectedDate { get; set; }
 
         [Column("selectedTimeRange")]
-        public TimeSpan SelectedTimeRange { get; set; }
-
-        [Column("dni")]
-        public string Dni { get; set; }
-
-        [Column("profesion_id")]
-        public int ProfesionId { get; set; }
+        public TimeSpan? SelectedTimeRange { get; set; }
 
         [Column("prioridad")]
+        [MaxLength(10)]
         public string Prioridad { get; set; }
 
         [Column("estado")]
+        [MaxLength(50)]
         public string Estado { get; set; }
 
         [Column("notasComentarios")]
         public string NotasComentarios { get; set; }
 
-        // Propiedad de navegación para la relación con la tabla Profesion
-        public Profesion Profesion { get; set; }
+        [Column("medico_id")]
+        [ForeignKey("Medico")]
+        public int Medico_Id { get; set; }
+        public virtual UsuarioModel Medico { get; set; }
+
+        [Column("paciente_id")]
+        [ForeignKey("Paciente")]
+        public int Paciente_Id { get; set; }
+        public virtual PacienteModel Paciente { get; set; }
     }
 
 }

@@ -30,7 +30,7 @@ namespace ERS_NeoCare.Design
           //  CargarPaciente();
          
         }
-        private void CargarPaciente(PacienteService paciente)
+        private void CargarPaciente( )
         {
 
 

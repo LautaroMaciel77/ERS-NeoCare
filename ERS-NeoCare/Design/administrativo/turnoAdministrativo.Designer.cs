@@ -28,21 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridViewHora = new System.Windows.Forms.DataGridView();
-            this.labelDni = new System.Windows.Forms.Label();
-            this.textboxDni = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.iconBuscar = new FontAwesome.Sharp.IconButton();
-            this.iconAgregar = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxMatricula = new System.Windows.Forms.TextBox();
             this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_buscarMedico = new System.Windows.Forms.Button();
+            this.panelBuscar = new System.Windows.Forms.Panel();
+            this.iconBuscar = new FontAwesome.Sharp.IconButton();
+            this.iconAgregar = new FontAwesome.Sharp.IconButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHora)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,90 +68,6 @@
             this.dataGridViewHora.TabIndex = 1;
             this.dataGridViewHora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHora_CellContentClick);
             // 
-            // labelDni
-            // 
-            this.labelDni.AutoSize = true;
-            this.labelDni.Location = new System.Drawing.Point(644, 633);
-            this.labelDni.Name = "labelDni";
-            this.labelDni.Size = new System.Drawing.Size(85, 13);
-            this.labelDni.TabIndex = 3;
-            this.labelDni.Text = "Dni del Paciente";
-            // 
-            // textboxDni
-            // 
-            this.textboxDni.Location = new System.Drawing.Point(735, 630);
-            this.textboxDni.Name = "textboxDni";
-            this.textboxDni.Size = new System.Drawing.Size(100, 20);
-            this.textboxDni.TabIndex = 4;
-            this.textboxDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxDni_KeyPress);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // iconBuscar
-            // 
-            this.iconBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconBuscar.IconColor = System.Drawing.Color.Black;
-            this.iconBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBuscar.Location = new System.Drawing.Point(679, 692);
-            this.iconBuscar.Name = "iconBuscar";
-            this.iconBuscar.Size = new System.Drawing.Size(156, 23);
-            this.iconBuscar.TabIndex = 8;
-            this.iconBuscar.Text = "Buscar Turno";
-            this.iconBuscar.UseVisualStyleBackColor = true;
-            this.iconBuscar.Click += new System.EventHandler(this.iconBuscar_Click);
-            // 
-            // iconAgregar
-            // 
-            this.iconAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconAgregar.IconColor = System.Drawing.Color.Black;
-            this.iconAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconAgregar.Location = new System.Drawing.Point(679, 722);
-            this.iconAgregar.Name = "iconAgregar";
-            this.iconAgregar.Size = new System.Drawing.Size(156, 23);
-            this.iconAgregar.TabIndex = 7;
-            this.iconAgregar.Text = "Guardar Turno";
-            this.iconAgregar.UseVisualStyleBackColor = true;
-            this.iconAgregar.Click += new System.EventHandler(this.iconAgregar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(644, 570);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(644, 604);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(644, 659);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Matricula Medico";
-            // 
-            // textBoxMatricula
-            // 
-            this.textBoxMatricula.Location = new System.Drawing.Point(736, 656);
-            this.textBoxMatricula.Name = "textBoxMatricula";
-            this.textBoxMatricula.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMatricula.TabIndex = 10;
-            this.textBoxMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMatricula_KeyPress);
-            // 
             // hora
             // 
             this.hora.HeaderText = "Hora";
@@ -176,17 +90,104 @@
             this.Eleguir.Name = "Eleguir";
             this.Eleguir.Width = 125;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(644, 570);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(644, 604);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(644, 631);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Cargar medico y paciente";
+            // 
+            // btn_buscarMedico
+            // 
+            this.btn_buscarMedico.Location = new System.Drawing.Point(777, 626);
+            this.btn_buscarMedico.Name = "btn_buscarMedico";
+            this.btn_buscarMedico.Size = new System.Drawing.Size(75, 23);
+            this.btn_buscarMedico.TabIndex = 12;
+            this.btn_buscarMedico.Text = "button2";
+            this.btn_buscarMedico.UseVisualStyleBackColor = true;
+            this.btn_buscarMedico.Click += new System.EventHandler(this.btn_buscarMedico_Click);
+            // 
+            // panelBuscar
+            // 
+            this.panelBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelBuscar.AutoSize = true;
+            this.panelBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.panelBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelBuscar.Location = new System.Drawing.Point(184, 73);
+            this.panelBuscar.Name = "panelBuscar";
+            this.panelBuscar.Size = new System.Drawing.Size(823, 401);
+            this.panelBuscar.TabIndex = 22;
+            // 
+            // iconBuscar
+            // 
+            this.iconBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconBuscar.IconColor = System.Drawing.Color.Black;
+            this.iconBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconBuscar.Location = new System.Drawing.Point(647, 682);
+            this.iconBuscar.Name = "iconBuscar";
+            this.iconBuscar.Size = new System.Drawing.Size(156, 23);
+            this.iconBuscar.TabIndex = 8;
+            this.iconBuscar.Text = "Buscar Turno";
+            this.iconBuscar.UseVisualStyleBackColor = true;
+            this.iconBuscar.Click += new System.EventHandler(this.iconBuscar_Click);
+            // 
+            // iconAgregar
+            // 
+            this.iconAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconAgregar.IconColor = System.Drawing.Color.Black;
+            this.iconAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAgregar.Location = new System.Drawing.Point(647, 711);
+            this.iconAgregar.Name = "iconAgregar";
+            this.iconAgregar.Size = new System.Drawing.Size(156, 23);
+            this.iconAgregar.TabIndex = 7;
+            this.iconAgregar.Text = "Guardar Turno";
+            this.iconAgregar.UseVisualStyleBackColor = true;
+            this.iconAgregar.Click += new System.EventHandler(this.iconAgregar_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Alta",
+            "Normal",
+            "Baja"});
+            this.comboBox1.Location = new System.Drawing.Point(647, 655);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(283, 21);
+            this.comboBox1.TabIndex = 24;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // turnoAdministrativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBoxMatricula);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.panelBuscar);
+            this.Controls.Add(this.btn_buscarMedico);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.iconBuscar);
             this.Controls.Add(this.iconAgregar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textboxDni);
-            this.Controls.Add(this.labelDni);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewHora);
             this.Controls.Add(this.monthCalendar1);
@@ -202,17 +203,16 @@
 
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridView dataGridViewHora;
-        private System.Windows.Forms.Label labelDni;
-        private System.Windows.Forms.TextBox textboxDni;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private FontAwesome.Sharp.IconButton iconAgregar;
         private FontAwesome.Sharp.IconButton iconBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxMatricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn disponible;
         private System.Windows.Forms.DataGridViewButtonColumn Eleguir;
+        private System.Windows.Forms.Button btn_buscarMedico;
+        private System.Windows.Forms.Panel panelBuscar;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

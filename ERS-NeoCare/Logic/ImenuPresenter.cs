@@ -50,6 +50,7 @@ namespace ERS_NeoCare.Logic
                     Administrativo ad = new Administrativo();
                     ad.OpcionesButtonClick += Administrativo_OpcionesButtonClick;
                     ad.TurnoAdminButtonClick += AdmnistrativoTurnoAdminButtonClick;
+                    ad.ReporteAdminButtonClick += ReporteAdminButtonClick;
                     _view.AgregarUserControl(ad);
                     break;
                 case 2:
@@ -76,6 +77,12 @@ namespace ERS_NeoCare.Logic
                     // Manejar caso por defecto si es necesario.
                     break;
             }
+        }
+
+        private void ReporteAdminButtonClick(object sender, EventArgs e)
+        {
+            ListaTurnosAdministrativo lista = new ListaTurnosAdministrativo();
+            _view.AgregarSubMenu(lista);
         }
 
         private void BajasAdminButtonClick(object sender, EventArgs e)

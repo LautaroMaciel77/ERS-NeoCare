@@ -1,5 +1,4 @@
-﻿using ERS_NeoCare.Model;
-using ERS_NeoCare.Presenter;
+﻿
 using System;
 using System.Windows.Forms;
 namespace ERS_NeoCare.Design.Medico
@@ -8,13 +7,13 @@ namespace ERS_NeoCare.Design.Medico
     {
         private menu MainForm { get; set; }
         private string userDni;
-        private PacienteService paciente;
+ 
         public event EventHandler closeclick;
         public event EventHandler bajaclick;
         public event EventHandler editarclick;
         public MenuAdminUsuarios( )
         {
-            ;
+            
 
             InitializeComponent();
         }

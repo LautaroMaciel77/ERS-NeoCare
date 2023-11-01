@@ -23,34 +23,16 @@ namespace ERS_NeoCare.Presenter
         }
 
 
-        public DataTable ObtenerDatosPaciente()
+        public List<PacienteModel> ObtenerDatosPaciente()
         {
-            DataTable dataTable = new DataTable();
-
+          
             try
             {
                 var context = DbContextManager.GetContext();
                 
                     var pacientes = context.Pacientes.ToList(); // Obtener todos los pacientes de la base de datos
 
-                    // Definir las columnas en el DataTable
-                    dataTable.Columns.Add("id", typeof(int));
-                    dataTable.Columns.Add("dni", typeof(int));
-                    dataTable.Columns.Add("nombre", typeof(string));
-                    dataTable.Columns.Add("apellido", typeof(string));
-                    dataTable.Columns.Add("domicilio", typeof(string));
-                    dataTable.Columns.Add("fecha_nacimiento", typeof(DateTime));
-                    dataTable.Columns.Add("sexo", typeof(string));
-                    dataTable.Columns.Add("obra_social", typeof(string));
-                    dataTable.Columns.Add("historia_clinica_id", typeof(int));
-                    dataTable.Columns.Add("baja", typeof(string));
-                    dataTable.Columns.Add("condicion", typeof(string));
-
-                    // Agregar filas al DataTable
-                    foreach (var paciente in pacientes)
-                    {
-                        dataTable.Rows.Add(paciente.Id, paciente.Dni, paciente.Nombre, paciente.Apellido, paciente.Domicilio, paciente.FechaNacimiento, paciente.Sexo, paciente.ObraSocial, paciente.HistoriaClinicaId, paciente.Baja, paciente.Condicion);
-                    }
+                return pacientes;
                 
             }
             catch (Exception ex)
@@ -58,7 +40,7 @@ namespace ERS_NeoCare.Presenter
                 // Manejar excepciones
             }
 
-            return dataTable;
+            return null;
         }
         public void BuscarPaciente(string dni)
 
@@ -132,6 +114,7 @@ namespace ERS_NeoCare.Presenter
                 return false; // O maneja de otra manera apropiada
             }
         }
+
     }
 
 }

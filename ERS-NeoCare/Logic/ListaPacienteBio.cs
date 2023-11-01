@@ -26,14 +26,14 @@ namespace ERS_NeoCare.Logic
 
         public void CargarDatosPaciente()
         {
-            DataTable data = _model.ObtenerDatosPaciente();
+            DataTable data = ConvertidorListDatatable.ConvertirListaPaciente(_model.ObtenerDatosPaciente());
             _view.MostrarDatosPaciente(data);
         }
         public void cargarMenu()
         {
             string dni = _view.userDni;
 
-            Model.PacienteService paciente = _model.Paciente(dni);
+            PacienteModel paciente = _model.Paciente(dni);
 
             if (paciente != null)
             {

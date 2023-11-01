@@ -1,5 +1,4 @@
-﻿using ERS_NeoCare.Model;
-using ERS_NeoCare.Presenter;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -11,7 +10,7 @@ namespace ERS_NeoCare.Design
         private DateTime select;
         private string dni;
         private string rangoHora;
-        private PacienteService paciente;
+  
         public TurnosMedico(object value)
         {
             InitializeComponent();
@@ -26,23 +25,14 @@ namespace ERS_NeoCare.Design
 
         private void iconAgregar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textboxDni.Text))
-            {
-                MessageBox.Show("El campo DNI no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            
             if (string.IsNullOrWhiteSpace(textBoxIndicaciones.Text))
             {
                 MessageBox.Show("El campo indicaciones no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!radioBio.Checked && !radioEnfermero.Checked)
-            {
-                MessageBox.Show("Debes seleccionar al menos una opción (Enfermero o Bioquímico).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-          
+       
           
            
 
@@ -59,20 +49,12 @@ namespace ERS_NeoCare.Design
 
         private void radioBio_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioEnfermero.Checked)
-            {
-
-                radioEnfermero.Checked = false;
-            }
+        
         }
 
         private void radioEnfermero_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioBio.Checked)
-            {
-
-                radioBio.Checked = false;
-            }
+        
 
         }
 

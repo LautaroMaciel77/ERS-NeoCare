@@ -24,19 +24,23 @@ namespace ERS_NeoCare.Model
         public UsuarioModel Authenticate(string nombreUsuario, string contraseña)
         {
             int.TryParse(nombreUsuario, out int dni);
-            // using (var context = DbContextManager.GetContext())
-            //{
-            // Buscar un usuario en la base de datos que coincida con el nombre de usuario y contraseña
-            //  var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && u.Password == contraseña);
-            //7context.Entry(usuario).Reference(u => u.Profesion).Load();
-            // Si se encuentra un usuario, lo retornamos; de lo contrario, retornamos null
-            //return usuario;
-            //}
-    
-            var context = DbContextManager.GetContext();
-            var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && u.Password == contraseña);
-            context.Entry(usuario).Reference(u => u.Profesion).Load();
-            return usuario;
+
+            using (var context = new ApplicationDbContext())
+            {
+                var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && u.Password == contraseña);
+
+                if (usuario != null)
+                {
+                    context.Entry(usuario).Reference(u => u.Profesion).Load();
+                    return usuario;
+                }
+                else
+                {
+                    // No se encontró un usuario que coincida con el nombre de usuario y contraseña.
+                    // Puedes manejarlo de alguna manera, por ejemplo, retornar null o lanzar una excepción personalizada.
+                    return null; // O podrías lanzar una excepción aquí si lo prefieres.
+                }
+            }
         }
 
         public void BuscarUsuario(string dni)
@@ -163,35 +167,19 @@ namespace ERS_NeoCare.Model
                 return false; // O maneja de otra manera apropiada
             }
         }
-        public DataTable ObtenerDatosUsuarios(string valorBaja)
+        public List<UsuarioModel> ObtenerDatosUsuarios(string valorBaja)
         {
-            DataTable dataTable = new DataTable();
+                     
 
-
-            var context = DbContextManager.GetContext();
+          var context = DbContextManager.GetContext();
          
                 var usuariosConBaja = context.Usuarios
                     .Where(u => u.Baja == valorBaja)
                     .ToList();
 
-                // Verificar que usuariosConBaja no sea nulo
-                if (usuariosConBaja != null)
-                {
-                    dataTable.Columns.Add("id", typeof(int));
-                    dataTable.Columns.Add("Matricula", typeof(int));
-                    dataTable.Columns.Add("DNI", typeof(int));
-                    dataTable.Columns.Add("Nombre", typeof(string));
-                    dataTable.Columns.Add("Apellido", typeof(string));
-                    dataTable.Columns.Add("ProfesionID", typeof(int));
+                     
 
-                    foreach (var usuario in usuariosConBaja)
-                    {
-                        dataTable.Rows.Add(usuario.id, usuario.Matricula, usuario.DNI, usuario.Nombre, usuario.Apellido, usuario.ProfesionID);
-                    }
-                }
-          
-
-            return dataTable;
+            return usuariosConBaja;
         }
     }
 }

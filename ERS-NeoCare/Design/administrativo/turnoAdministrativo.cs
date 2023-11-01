@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ERS_NeoCare.Helper;
+using ERS_NeoCare.Logic;
+using ERS_NeoCare.Model;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -10,12 +13,16 @@ namespace ERS_NeoCare.Design.administrativo
         private string rangoHora;
         private string dni;
         private int selectedRowIndex = -1;
+        private string prioridad;
+        private TurnoPresenter _presenter;
         public turnoAdministrativo(string dni)
         {
             this.dni = dni;
             InitializeComponent();
-
+            _presenter = new TurnoPresenter(new TurnoService(Configuracion.ConnectionString));
+            PacienteSingleton.Instance.Desautenticar();
             cargarHora();
+            panelBuscar.Visible = false;
         }
 
         private void cargarHora()
@@ -24,7 +31,7 @@ namespace ERS_NeoCare.Design.administrativo
             int totalHoras = 24;
             int totalColumnas = (totalHoras * 60) / intervaloEnMinutos;
             label2.Text = "horario seleccionada: ";
-            textboxDni.Text = dni;
+         
             for (int i = 0; i < totalColumnas; i++)
             {                
                 dataGridViewHora.Rows.Add();
@@ -100,17 +107,12 @@ namespace ERS_NeoCare.Design.administrativo
 
         private void iconAgregar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textboxDni.Text))
-            {
-                MessageBox.Show("El campo DNI no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(textBoxMatricula.Text))
-            {
-                MessageBox.Show("El campo matricula no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
+            if (UsuarioSingleton.Instance.UsuarioAutenticado == null || PacienteSingleton.Instance.pacienteAutenticado == null)
+            {
+                MessageBox.Show("Asegúrate de seleccionar un medico y un paciente antes de agregar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (select == null || rangoHora == null)
             {
@@ -123,6 +125,21 @@ namespace ERS_NeoCare.Design.administrativo
                 return;
 
             }
+            if (prioridad == null)
+            {
+                MessageBox.Show("Asegúrate de seleccionar una prioridad de turno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            Turno turno = new Turno
+            {
+                SelectedDate = select,
+                SelectedTimeRange = TimeSpan.Parse(rangoHora),
+                Prioridad = prioridad,
+                Medico_Id = UsuarioSingleton.Instance.UsuarioAutenticado.id,
+                Paciente_Id = PacienteSingleton.Instance.pacienteAutenticado.Id
+            };
+
+            _presenter.insertarTurno(turno);    
             dataGridViewHora.Rows[selectedRowIndex].Cells[1].Value = "NO";
         }
 
@@ -136,6 +153,58 @@ namespace ERS_NeoCare.Design.administrativo
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+
+            }
+        }
+
+        private void btn_buscarMedico_Click(object sender, EventArgs e)
+        {
+            panelBuscar.Visible = true;
+            buscarPaciente buscarPaciente = new buscarPaciente();
+            buscarPaciente.Dock = DockStyle.Fill;
+            buscarPaciente.CloseClick += Closeclick;
+
+            panelBuscar.Controls.Clear();
+            panelBuscar.Controls.Add(buscarPaciente);
+            buscarPaciente.BringToFront();
+        }
+
+        private void Closeclick(object sender, EventArgs e)
+        {
+            panelBuscar.Visible = false;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            string seleccion = comboBox1.SelectedItem.ToString();
+
+            switch (seleccion)
+            {
+                case "Alta":
+                    prioridad = seleccion;
+                    break;
+                case "Normal":
+                    prioridad = seleccion;
+                    break;
+                case "Baja":
+                    prioridad = seleccion;
+                    break;
+                default:
+                    prioridad = null;
+                    break;
+            }
+        }
+
+        internal void Insertar(bool v)
+        {
+            if (v)
+            {
+                MessageBox.Show("Turno insertado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Turno insertado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }

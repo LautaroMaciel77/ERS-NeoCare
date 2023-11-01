@@ -24,7 +24,7 @@ namespace ERS_NeoCare.Presenter
 
         public void CargarDatosPaciente()
         {
-            DataTable data = _model.ObtenerDatosPaciente();
+            DataTable data = ConvertidorListDatatable.ConvertirListaPaciente(_model.ObtenerDatosPaciente());
             _view.MostrarDatosPaciente(data);
         }
 

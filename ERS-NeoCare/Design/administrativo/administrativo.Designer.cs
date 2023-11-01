@@ -97,6 +97,7 @@
             this.iconButton2.TabIndex = 19;
             this.iconButton2.Text = "Reportes";
             this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // Administrativo
             // 
