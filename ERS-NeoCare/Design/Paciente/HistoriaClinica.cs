@@ -337,6 +337,8 @@ namespace ERS_NeoCare.Design.Paciente
                                 // Aquí llamamos a la función de inserción en lugar de agregar el archivo a la lista
                                 ArchivoEstudio archivo = new ArchivoEstudio { NombreArchivo = nombreArchivo, Ubicacion = rutaArchivoDestino };
                                 _presenterArchivo.insertar(archivo);
+                                ListViewItem item = new ListViewItem(nombreArchivo);
+                                listViewArchivos.Items.Add(item);
 
                             }
                             catch (Exception ex)
@@ -356,7 +358,7 @@ namespace ERS_NeoCare.Design.Paciente
                     MessageBox.Show("El archivo ya existe en la lista.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            cargarArchivos();
+            
         }
 
 
@@ -367,46 +369,53 @@ namespace ERS_NeoCare.Design.Paciente
             string nombrePaciente = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " " + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
             string carpetaPaciente = Path.Combine("recursos", nombrePaciente);
 
+
             if (listViewArchivos.SelectedItems.Count > 0)
             {
-                foreach (ListViewItem item in listViewArchivos.SelectedItems)
+                // Mostrar un mensaje de confirmación
+                DialogResult result = MessageBox.Show("¿Está seguro de eliminar los archivos seleccionados?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    string nombreArchivo = item.Text; // Obtiene el nombre del archivo seleccionado en el ListView
-
-                    // Combina la carpeta del paciente con el nombre del archivo para obtener la ruta completa
-                    string rutaArchivo = Path.Combine(carpetaPaciente, nombreArchivo);
-
-                    if (File.Exists(rutaArchivo))
+                    foreach (ListViewItem item in listViewArchivos.SelectedItems)
                     {
-                        try
+                        string nombreArchivo = item.Text; // Obtiene el nombre del archivo seleccionado en el ListView
+
+                        // Combina la carpeta del paciente con el nombre del archivo para obtener la ruta completa
+                        string rutaArchivo = Path.Combine(carpetaPaciente, nombreArchivo);
+
+                        if (File.Exists(rutaArchivo))
                         {
-                            File.Delete(rutaArchivo); // Intenta eliminar el archivo
-
-                            // Elimina el elemento del ListView
-                            listViewArchivos.Items.Remove(item);
-
-                            // Busca el archivo correspondiente en la lista "archivos" y agrégalo a "archivosEliminar"
-                            ArchivoEstudio archivoAEliminar = archivos.FirstOrDefault(a => a.NombreArchivo == nombreArchivo);
-                            if (archivoAEliminar != null)
+                            try
                             {
-                                archivosEliminar.Add(archivoAEliminar);
+                                File.Delete(rutaArchivo); // Intenta eliminar el archivo
 
-                                archivos.Remove(archivoAEliminar); // Elimina de la lista principal "archivos"
+                                // Elimina el elemento del ListView
+                                listViewArchivos.Items.Remove(item);
+
+                                // Busca el archivo correspondiente en la lista "archivos" y agrégalo a "archivosEliminar"
+                                ArchivoEstudio archivoAEliminar = archivos.FirstOrDefault(a => a.NombreArchivo == nombreArchivo);
+                                if (archivoAEliminar != null)
+                                {
+                                    archivosEliminar.Add(archivoAEliminar);
+
+                                    archivos.Remove(archivoAEliminar); // Elimina de la lista principal "archivos"
+                                }
+                            }
+                            catch (IOException ex)
+                            {
+                                // Maneja la excepción si ocurre un error al eliminar el archivo
+                                MessageBox.Show("Error al eliminar el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        catch (IOException ex)
+                        else
                         {
-                            // Maneja la excepción si ocurre un error al eliminar el archivo
-                            MessageBox.Show("Error al eliminar el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            // El archivo no existe, muestra un mensaje de error
+                            MessageBox.Show("El archivo no existe: " + nombreArchivo, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    else
-                    {
-                        // El archivo no existe, muestra un mensaje de error
-                        MessageBox.Show("El archivo no existe: " + nombreArchivo, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    _presenterArchivo.Borrar(archivosEliminar);
                 }
-                _presenterArchivo.Borrar(archivosEliminar);
             }
             else
             {
