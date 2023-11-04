@@ -417,6 +417,8 @@
     <Compile Include="Helper\convertidorListDatatable.cs" />
     <Compile Include="Helper\ReemplazoPanelEventArgs .cs" />
     <Compile Include="Logic\AgregarPacientePresenter.cs" />
+    <Compile Include="Logic\ArchivoEstudioPresenter.cs" />
+    <Compile Include="Logic\HistoriaClinicaPresenter.cs" />
     <Compile Include="Logic\UsuarioPresenter.cs" />
     <Compile Include="Logic\ImenuPresenter.cs" />
     <Compile Include="Logic\ListaMedico.cs" />
@@ -425,6 +427,12 @@
     <Compile Include="Logic\PacientePresenter.cs" />
     <Compile Include="Logic\TurnoMedico.cs" />
     <Compile Include="Logic\TurnoPresenter.cs" />
+    <Compile Include="Model\ArchivoEstudio.cs" />
+    <Compile Include="Model\ArchivoEstudioService.cs" />
+    <Compile Include="Model\ArchivoEstudiosSingleton.cs" />
+    <Compile Include="Model\HistoriaClinicaModel.cs" />
+    <Compile Include="Model\HistoriaClinicaSingleton.cs" />
+    <Compile Include="Model\HistoriaClinicaService.cs" />
     <Compile Include="Model\PacienteModel.cs" />
     <Compile Include="Model\PacienteService.cs" />
     <Compile Include="Model\PacienteSingleton.cs" />
@@ -715,6 +723,7 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="ERS_NeoCare\" />
+    <Folder Include="recursos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

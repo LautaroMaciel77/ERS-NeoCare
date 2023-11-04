@@ -104,14 +104,14 @@ namespace ERS_NeoCare.Logic
             dataTable.Columns.Add("fecha_nacimiento", typeof(DateTime));
             dataTable.Columns.Add("sexo", typeof(string));
             dataTable.Columns.Add("obra_social", typeof(string));
-            dataTable.Columns.Add("historia_clinica_id", typeof(int));
+        
             dataTable.Columns.Add("baja", typeof(string));
             dataTable.Columns.Add("condicion", typeof(string));
 
             // Agregar filas al DataTable
             foreach (var paciente in resultados)
             {
-                dataTable.Rows.Add(paciente.Id, paciente.Dni, paciente.Nombre, paciente.Apellido, paciente.Domicilio, paciente.FechaNacimiento, paciente.Sexo, paciente.ObraSocial, paciente.HistoriaClinicaId, paciente.Baja, paciente.Condicion);
+                dataTable.Rows.Add(paciente.Id, paciente.Dni, paciente.Nombre, paciente.Apellido, paciente.Domicilio, paciente.FechaNacimiento, paciente.Sexo, paciente.ObraSocial, paciente.Baja, paciente.Condicion);
             }
             return dataTable;
         }

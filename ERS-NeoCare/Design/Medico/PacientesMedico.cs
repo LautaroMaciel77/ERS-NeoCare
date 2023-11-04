@@ -6,6 +6,7 @@ using ERS_NeoCare.Presenter;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net;
 using System.Windows.Forms;
 
 
@@ -57,7 +58,11 @@ namespace ERS_NeoCare.Design
                 {
                     int columnIndexDNI = 0;
                     this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
-                    _presenter.cargarMenu();
+                    _presenter.cargarPaciente(userDni);
+                    menuPaciente menuPaciente = new menuPaciente();
+                    menuPaciente.closeclick += closeclick;
+                    menuPaciente.verclick += verclick;
+                    cargarUserControl(menuPaciente);
 
                 }
             }
@@ -73,7 +78,27 @@ namespace ERS_NeoCare.Design
 
         private void verclick(object sender, EventArgs e)
         {
-          
+            PacienteView pacienteControl = new PacienteView();
+            pacienteControl.Dock = DockStyle.Fill;
+
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
+
+
+
+
+            }
         }
 
         private void closeclick(object sender, EventArgs e)

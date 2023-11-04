@@ -45,8 +45,7 @@ namespace ERS_NeoCare.Model
         [Column("obra_social")]
         public string ObraSocial { get; set; }
 
-        [Column("historia_clinica_id")]
-        public int? HistoriaClinicaId { get; set; }
+
 
         [MaxLength(1)]
         [Column("baja")]
