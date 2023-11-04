@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -336,7 +337,7 @@ namespace ERS_NeoCare.Design.Paciente
                                 // Aquí llamamos a la función de inserción en lugar de agregar el archivo a la lista
                                 ArchivoEstudio archivo = new ArchivoEstudio { NombreArchivo = nombreArchivo, Ubicacion = rutaArchivoDestino };
                                 _presenterArchivo.insertar(archivo);
-                                cargarArchivos();
+
                             }
                             catch (Exception ex)
                             {
@@ -355,6 +356,7 @@ namespace ERS_NeoCare.Design.Paciente
                     MessageBox.Show("El archivo ya existe en la lista.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            cargarArchivos();
         }
 
 
@@ -432,10 +434,65 @@ namespace ERS_NeoCare.Design.Paciente
             }
 
         }
+        private string ObtenerRutaDelArchivo(string nombreArchivo)
+        {
+        
+            
+            ArchivoEstudio archivo = archivos.FirstOrDefault(a => a.NombreArchivo == nombreArchivo);
+            if (archivo != null)
+            {
+                return archivo.Ubicacion;
+            }
+            else
+            {
+                return null;
+            }
+        }
         private bool EsArchivoPDF(string rutaArchivo)
         {
             string extension = Path.GetExtension(rutaArchivo);
             return extension.Equals(".pdf", StringComparison.OrdinalIgnoreCase);
+        }
+ 
+        private void MostrarPDF(string rutaPDF)
+        {
+ 
+            try
+            {
+                Process.Start(rutaPDF); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir el PDF: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            if (listViewArchivos.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listViewArchivos.SelectedItems[0];
+                string nombreArchivo = selectedItem.Text;
+                string rutaArchivo = ObtenerRutaDelArchivo(nombreArchivo);
+
+                if (!string.IsNullOrEmpty(rutaArchivo))
+                {
+                    // Verifica si el archivo es un PDF
+                    if (EsArchivoPDF(rutaArchivo))
+                    {
+                        // Abre el PDF usando Pdfium o el visor de PDF predeterminado
+                        MostrarPDF(rutaArchivo);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este no es un archivo PDF.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un archivo para abrir.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 

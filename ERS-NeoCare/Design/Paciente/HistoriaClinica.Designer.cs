@@ -61,6 +61,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnCargarArchivo = new FontAwesome.Sharp.IconButton();
             this.btnBorrarArchivo = new FontAwesome.Sharp.IconButton();
+            this.btnVer = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -458,10 +459,29 @@
             this.btnBorrarArchivo.IconSize = 12;
             this.btnBorrarArchivo.Location = new System.Drawing.Point(331, 591);
             this.btnBorrarArchivo.Name = "btnBorrarArchivo";
-            this.btnBorrarArchivo.Size = new System.Drawing.Size(32, 27);
+            this.btnBorrarArchivo.Size = new System.Drawing.Size(52, 27);
             this.btnBorrarArchivo.TabIndex = 44;
+            this.btnBorrarArchivo.Text = "Borrar";
             this.btnBorrarArchivo.UseVisualStyleBackColor = false;
             this.btnBorrarArchivo.Click += new System.EventHandler(this.btnBorrarArchivo_Click);
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(158)))));
+            this.btnVer.FlatAppearance.BorderSize = 0;
+            this.btnVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(149)))));
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVer.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnVer.IconColor = System.Drawing.Color.White;
+            this.btnVer.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVer.IconSize = 12;
+            this.btnVer.Location = new System.Drawing.Point(389, 591);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(61, 27);
+            this.btnVer.TabIndex = 45;
+            this.btnVer.Text = "Abrir";
+            this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // HistoriaClinica
             // 
@@ -469,6 +489,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
+            this.Controls.Add(this.btnVer);
             this.Controls.Add(this.btnBorrarArchivo);
             this.Controls.Add(this.btnCargarArchivo);
             this.Controls.Add(this.comboBox1);
@@ -537,5 +558,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private FontAwesome.Sharp.IconButton btnCargarArchivo;
         private FontAwesome.Sharp.IconButton btnBorrarArchivo;
+        private FontAwesome.Sharp.IconButton btnVer;
     }
 }
