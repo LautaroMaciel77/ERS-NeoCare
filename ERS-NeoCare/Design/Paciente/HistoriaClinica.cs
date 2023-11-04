@@ -136,7 +136,7 @@ namespace ERS_NeoCare.Design.Paciente
                 {
                     MessageBox.Show("problema al editar vuelva a intentar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-              
+
                 return;
 
             }
@@ -298,7 +298,8 @@ namespace ERS_NeoCare.Design.Paciente
 
         private void btnCargarArchivo_Click(object sender, EventArgs e)
         {
-            if (HistoriaClinicaSingleton.Instance.historiaAutenticado == null) {
+            if (HistoriaClinicaSingleton.Instance.historiaAutenticado == null)
+            {
 
                 MessageBox.Show("Error: Debe crear una historia de usuario primero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -320,25 +321,33 @@ namespace ERS_NeoCare.Design.Paciente
                 // Verifica si el archivo ya existe en la lista
                 if (!archivos.Any(a => a.NombreArchivo == nombreArchivo))
                 {
-                    // Preguntar al usuario si está seguro de insertar el archivo
-                    DialogResult result = MessageBox.Show("¿Está seguro de insertar el archivo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (result == DialogResult.Yes)
+                    // Verifica si el archivo es un PDF
+                    if (EsArchivoPDF(rutaArchivoOrigen))
                     {
-                        try
-                        {
-                            File.Copy(rutaArchivoOrigen, rutaArchivoDestino, true);
+                        // Preguntar al usuario si está seguro de insertar el archivo
+                        DialogResult result = MessageBox.Show("¿Está seguro de insertar el archivo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                            // Aquí llamamos a la función de inserción en lugar de agregar el archivo a la lista
-                            ArchivoEstudio archivo = new ArchivoEstudio { NombreArchivo = nombreArchivo, Ubicacion = rutaArchivoDestino };
-                            _presenterArchivo.insertar(archivo);
-                            cargarArchivos();
-                        }
-                        catch (Exception ex)
+                        if (result == DialogResult.Yes)
                         {
-                            // Agregar mensaje de depuración para mostrar cualquier error
-                            MessageBox.Show("Error al copiar el archivo: " + ex.Message);
+                            try
+                            {
+                                File.Copy(rutaArchivoOrigen, rutaArchivoDestino, true);
+
+                                // Aquí llamamos a la función de inserción en lugar de agregar el archivo a la lista
+                                ArchivoEstudio archivo = new ArchivoEstudio { NombreArchivo = nombreArchivo, Ubicacion = rutaArchivoDestino };
+                                _presenterArchivo.insertar(archivo);
+                                cargarArchivos();
+                            }
+                            catch (Exception ex)
+                            {
+                                // Agregar mensaje de depuración para mostrar cualquier error
+                                MessageBox.Show("Error al copiar el archivo: " + ex.Message);
+                            }
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El archivo seleccionado no es un archivo PDF.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -347,11 +356,11 @@ namespace ERS_NeoCare.Design.Paciente
                 }
             }
         }
-    
+
 
         private void btnBorrarArchivo_Click(object sender, EventArgs e)
         {
-      
+
 
             string nombrePaciente = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " " + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
             string carpetaPaciente = Path.Combine("recursos", nombrePaciente);
@@ -379,7 +388,7 @@ namespace ERS_NeoCare.Design.Paciente
                             if (archivoAEliminar != null)
                             {
                                 archivosEliminar.Add(archivoAEliminar);
-                           
+
                                 archivos.Remove(archivoAEliminar); // Elimina de la lista principal "archivos"
                             }
                         }
@@ -402,9 +411,9 @@ namespace ERS_NeoCare.Design.Paciente
                 MessageBox.Show("Selecciona un archivo para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        
 
-     
+
+
         internal void mensaje(string v)
         {
             MessageBox.Show(v, " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -423,5 +432,11 @@ namespace ERS_NeoCare.Design.Paciente
             }
 
         }
+        private bool EsArchivoPDF(string rutaArchivo)
+        {
+            string extension = Path.GetExtension(rutaArchivo);
+            return extension.Equals(".pdf", StringComparison.OrdinalIgnoreCase);
+        }
     }
+
 }
