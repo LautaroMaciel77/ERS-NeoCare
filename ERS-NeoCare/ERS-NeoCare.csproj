@@ -270,6 +270,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBNeoCareDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBNeoCareDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBNeoCareDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBNeoCareDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBNeoCareDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBNeoCareDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBNeoCareDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBNeoCareDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBNeoCareDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Design\administrativo\administrativo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -408,6 +428,12 @@
     <Compile Include="Design\administrativo\lista_paciente.Designer.cs">
       <DependentUpon>lista_paciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Medico\EstadoOrden.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\EstadoOrden.Designer.cs">
+      <DependentUpon>EstadoOrden.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\Medico\evaluacion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -418,7 +444,10 @@
     <Compile Include="Helper\ReemplazoPanelEventArgs .cs" />
     <Compile Include="Logic\AgregarPacientePresenter.cs" />
     <Compile Include="Logic\ArchivoEstudioPresenter.cs" />
+    <Compile Include="Logic\AtencionPresenter.cs" />
+    <Compile Include="Logic\EvaluacionPresenter.cs" />
     <Compile Include="Logic\HistoriaClinicaPresenter.cs" />
+    <Compile Include="Logic\OrdenPresenter.cs" />
     <Compile Include="Logic\UsuarioPresenter.cs" />
     <Compile Include="Logic\ImenuPresenter.cs" />
     <Compile Include="Logic\ListaMedico.cs" />
@@ -430,9 +459,15 @@
     <Compile Include="Model\ArchivoEstudio.cs" />
     <Compile Include="Model\ArchivoEstudioService.cs" />
     <Compile Include="Model\ArchivoEstudiosSingleton.cs" />
+    <Compile Include="Model\AtencionEnfermeriaModel.cs" />
+    <Compile Include="Model\AtencionService.cs" />
+    <Compile Include="Model\EvaluacionModel.cs" />
+    <Compile Include="Model\EvaluacionService.cs" />
     <Compile Include="Model\HistoriaClinicaModel.cs" />
     <Compile Include="Model\HistoriaClinicaSingleton.cs" />
     <Compile Include="Model\HistoriaClinicaService.cs" />
+    <Compile Include="Model\OrdenModel.cs" />
+    <Compile Include="Model\OrdenService.cs" />
     <Compile Include="Model\PacienteModel.cs" />
     <Compile Include="Model\PacienteService.cs" />
     <Compile Include="Model\PacienteSingleton.cs" />
@@ -500,11 +535,11 @@
     <Compile Include="Design\Paciente\pacienteview.Designer.cs">
       <DependentUpon>pacienteview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\Medico\TurnosMedico.cs">
+    <Compile Include="Design\Medico\OrdenMedico.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\Medico\TurnosMedico.Designer.cs">
-      <DependentUpon>TurnosMedico.cs</DependentUpon>
+    <Compile Include="Design\Medico\OrdenMedico.Designer.cs">
+      <DependentUpon>OrdenMedico.cs</DependentUpon>
     </Compile>
     <Compile Include="view\IMenuView.cs" />
     <Compile Include="Form1.cs">
@@ -592,6 +627,9 @@
     <EmbeddedResource Include="Design\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\EstadoOrden.resx">
+      <DependentUpon>EstadoOrden.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\evaluacion.resx">
       <DependentUpon>evaluacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -607,8 +645,8 @@
     <EmbeddedResource Include="Design\Medico\PacientesMedico.resx">
       <DependentUpon>PacientesMedico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Medico\TurnosMedico.resx">
-      <DependentUpon>TurnosMedico.cs</DependentUpon>
+    <EmbeddedResource Include="Design\Medico\OrdenMedico.resx">
+      <DependentUpon>OrdenMedico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\menu.resx">
       <DependentUpon>menu.cs</DependentUpon>
@@ -679,6 +717,50 @@
     <None Include="DBNeoCareDataSet1.xss">
       <DependentUpon>DBNeoCareDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="DBNeoCareDataSet2.xsc">
+      <DependentUpon>DBNeoCareDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DBNeoCareDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBNeoCareDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBNeoCareDataSet2.xss">
+      <DependentUpon>DBNeoCareDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DBNeoCareDataSet3.xsc">
+      <DependentUpon>DBNeoCareDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DBNeoCareDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBNeoCareDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBNeoCareDataSet3.xss">
+      <DependentUpon>DBNeoCareDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DBNeoCareDataSet4.xsc">
+      <DependentUpon>DBNeoCareDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DBNeoCareDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBNeoCareDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBNeoCareDataSet4.xss">
+      <DependentUpon>DBNeoCareDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DBNeoCareDataSet5.xsc">
+      <DependentUpon>DBNeoCareDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DBNeoCareDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBNeoCareDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBNeoCareDataSet5.xss">
+      <DependentUpon>DBNeoCareDataSet5.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -701,6 +783,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\check_box_FILL.png" />
+    <None Include="Resources\check_box_blank.png" />
     <None Include="Resources\user background icon.png" />
     <None Include="Resources\logo-NeoCare3.png" />
     <None Include="Resources\logo-NeoCare2.png" />

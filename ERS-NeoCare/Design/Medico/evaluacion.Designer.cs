@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.labelObservaciones = new System.Windows.Forms.Label();
-            this.textBoxIndicaciones = new System.Windows.Forms.TextBox();
+            this.textBoxSintomas = new System.Windows.Forms.TextBox();
             this.labelSintomas = new System.Windows.Forms.Label();
             this.textObservaciones = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
@@ -47,7 +47,6 @@
             this.label1.Size = new System.Drawing.Size(149, 18);
             this.label1.TabIndex = 33;
             this.label1.Text = "Evaluacion Medica";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelObservaciones
             // 
@@ -59,15 +58,14 @@
             this.labelObservaciones.TabIndex = 20;
             this.labelObservaciones.Text = "Observaciones";
             // 
-            // textBoxIndicaciones
+            // textBoxSintomas
             // 
-            this.textBoxIndicaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIndicaciones.Location = new System.Drawing.Point(345, 77);
-            this.textBoxIndicaciones.Multiline = true;
-            this.textBoxIndicaciones.Name = "textBoxIndicaciones";
-            this.textBoxIndicaciones.Size = new System.Drawing.Size(445, 104);
-            this.textBoxIndicaciones.TabIndex = 35;
-            this.textBoxIndicaciones.TextChanged += new System.EventHandler(this.textBoxIndicaciones_TextChanged);
+            this.textBoxSintomas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSintomas.Location = new System.Drawing.Point(345, 77);
+            this.textBoxSintomas.Multiline = true;
+            this.textBoxSintomas.Name = "textBoxSintomas";
+            this.textBoxSintomas.Size = new System.Drawing.Size(445, 104);
+            this.textBoxSintomas.TabIndex = 35;
             // 
             // labelSintomas
             // 
@@ -130,7 +128,7 @@
             this.Controls.Add(this.textBoxIndicacionesPaciente);
             this.Controls.Add(this.labelIndicaciones);
             this.Controls.Add(this.textObservaciones);
-            this.Controls.Add(this.textBoxIndicaciones);
+            this.Controls.Add(this.textBoxSintomas);
             this.Controls.Add(this.labelSintomas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelObservaciones);
@@ -145,7 +143,7 @@
         #endregion
         private System.Windows.Forms.Label labelObservaciones;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxIndicaciones;
+        private System.Windows.Forms.TextBox textBoxSintomas;
         private System.Windows.Forms.Label labelSintomas;
         private System.Windows.Forms.TextBox textObservaciones;
         private System.Windows.Forms.Button btnRegistrar;

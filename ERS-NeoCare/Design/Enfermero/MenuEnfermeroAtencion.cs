@@ -8,6 +8,8 @@ namespace ERS_NeoCare.Design
     {
         public event EventHandler closeclick;
         public event EventHandler verclick;
+        public event EventHandler atender;
+
         public MenuEnfermeroAtencion()
         {
             InitializeComponent();
@@ -26,6 +28,11 @@ namespace ERS_NeoCare.Design
         private void iconButtonClose_Click(object sender, EventArgs e)
         {
             closeclick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btn_atender_Click(object sender, EventArgs e)
+        {
+            atender?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -63,6 +63,26 @@ namespace ERS_NeoCare.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap check_box_blank {
+            get {
+                object obj = ResourceManager.GetObject("check_box_blank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check_box_FILL {
+            get {
+                object obj = ResourceManager.GetObject("check_box_FILL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icons_Land_Medical_People_Patient_Male_256 {
             get {
                 object obj = ResourceManager.GetObject("Icons-Land-Medical-People-Patient-Male.256", resourceCulture);

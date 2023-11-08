@@ -101,7 +101,6 @@ E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ER
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuMedicoPacientes.resources
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.ListaDeTurnos.resources
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.PacientesMedico.resources
-E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.TurnosMedico.resources
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.menu.resources
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.menuPaciente.resources
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Paciente.HistoriaClinica.resources
@@ -236,3 +235,5 @@ C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS-NeoCare.p
 C:\Users\farid\Documents\GitHub\ERS-NeoCare2\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.evaluacion.resources
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.ListaTurnosAdministrativo.resources
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.evaluacion.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.EstadoOrden.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.OrdenMedico.resources

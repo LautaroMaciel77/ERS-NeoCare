@@ -32,6 +32,7 @@
             this.iconVer = new FontAwesome.Sharp.IconButton();
             this.iconButtonClose = new FontAwesome.Sharp.IconButton();
             this.iconEvaluacion = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // iconTurno
@@ -49,7 +50,7 @@
             this.iconTurno.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconTurno.IconSize = 35;
             this.iconTurno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconTurno.Location = new System.Drawing.Point(25, 32);
+            this.iconTurno.Location = new System.Drawing.Point(25, 30);
             this.iconTurno.Margin = new System.Windows.Forms.Padding(0);
             this.iconTurno.Name = "iconTurno";
             this.iconTurno.Size = new System.Drawing.Size(216, 40);
@@ -73,7 +74,7 @@
             this.iconVer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconVer.IconSize = 35;
             this.iconVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconVer.Location = new System.Drawing.Point(25, 112);
+            this.iconVer.Location = new System.Drawing.Point(25, 110);
             this.iconVer.Margin = new System.Windows.Forms.Padding(0);
             this.iconVer.Name = "iconVer";
             this.iconVer.Size = new System.Drawing.Size(216, 40);
@@ -114,25 +115,51 @@
             this.iconEvaluacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconEvaluacion.IconSize = 35;
             this.iconEvaluacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconEvaluacion.Location = new System.Drawing.Point(25, 72);
+            this.iconEvaluacion.Location = new System.Drawing.Point(25, 150);
             this.iconEvaluacion.Margin = new System.Windows.Forms.Padding(0);
             this.iconEvaluacion.Name = "iconEvaluacion";
             this.iconEvaluacion.Size = new System.Drawing.Size(216, 40);
             this.iconEvaluacion.TabIndex = 35;
             this.iconEvaluacion.Text = "Evaluacion Medica";
             this.iconEvaluacion.UseVisualStyleBackColor = false;
+            this.iconEvaluacion.Click += new System.EventHandler(this.iconEvaluacion_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.iconButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.Transparent;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserInjured;
+            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 35;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(25, 70);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(216, 40);
+            this.iconButton1.TabIndex = 36;
+            this.iconButton1.Text = "Paciente Atendido";
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
             // MenuMedicoPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.iconEvaluacion);
             this.Controls.Add(this.iconButtonClose);
             this.Controls.Add(this.iconTurno);
             this.Controls.Add(this.iconVer);
             this.Name = "MenuMedicoPacientes";
-            this.Size = new System.Drawing.Size(260, 150);
+            this.Size = new System.Drawing.Size(260, 190);
             this.ResumeLayout(false);
 
         }
@@ -143,5 +170,6 @@
         private FontAwesome.Sharp.IconButton iconVer;
         private FontAwesome.Sharp.IconButton iconButtonClose;
         private FontAwesome.Sharp.IconButton iconEvaluacion;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

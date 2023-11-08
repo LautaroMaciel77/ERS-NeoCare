@@ -77,13 +77,13 @@ namespace ERS_NeoCare.Design.administrativo
 
                     if (estado == "s")
                     {
-                        // Establece la imagen "activo" cuando el estado es "s"
-                        //e.Value = Properties.Resources.ActivoImage; // Reemplaza con tu imagen activa
+                   
+                        e.Value = Properties.Resources.check_box_FILL; 
                     }
                     else if (estado == "n")
                     {
-                        // Establece la imagen "inactivo" cuando el estado es "n"
-                       // e.Value = Properties.Resources.InactivoImage; // Reemplaza con tu imagen inactiva
+                    
+                       e.Value = Properties.Resources.check_box_blank; 
                     }
                 }
             }

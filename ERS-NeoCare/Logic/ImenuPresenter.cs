@@ -1,5 +1,6 @@
 ﻿using ERS_NeoCare.Design;
 using ERS_NeoCare.Design.administrativo;
+using ERS_NeoCare.Design.Medico;
 using ERS_NeoCare.Design.view.ERS_NeoCare.View;
 using ERS_NeoCare.Model;
 using ERS_NeoCare.Presenter;
@@ -129,7 +130,7 @@ namespace ERS_NeoCare.Logic
         private void TurnoMedButtonClick(object sender, EventArgs e)
 
         {
-            TurnosMedico turno = new TurnosMedico(null);
+            EstadoOrden turno = new EstadoOrden();
             _view.AgregarSubMenu(turno);
         }
 

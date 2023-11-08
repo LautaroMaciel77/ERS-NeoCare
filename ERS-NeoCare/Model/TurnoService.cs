@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERS_NeoCare.dbconexion;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -74,6 +75,34 @@ namespace ERS_NeoCare.Model
                 .ToList();
       
             return turnos;
+        }
+
+        internal void CambiarEstado(int turnoId)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var turno = context.turnos.SingleOrDefault(t => t.Paciente.Id == turnoId);
+
+                if (turno != null)
+                {
+                    // Cambiar el estado de "s" a "n" o de "n" a "s"
+                    turno.Estado = (turno.Estado == "s") ? "n" : "s";
+
+                    context.SaveChanges();
+                }
+            }
+        }
+        public List<PacienteModel> ObtenerPacientesPorEstado(string estado)
+        {
+            var context = DbContextManager.GetContext();
+
+            var pacientes = context.turnos
+                .Where(t => t.Estado == estado)
+                .Select(t => t.Paciente)
+                .Distinct()
+                .ToList();
+
+            return pacientes;
         }
     }
 }

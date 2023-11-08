@@ -2,6 +2,7 @@
 using ERS_NeoCare.Helper;
 using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
+using ERS_NeoCare.Presenter;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -18,9 +19,8 @@ namespace ERS_NeoCare.Design
         public event EventHandler<Tuple<string>> historiaPacienteClick;
 
         private menu MainForm { get; set; }
-        public PacienteModel paciente;
 
-        private listaPacienteBio _presenter;
+        private AtencionPresenter _presenter;
         
 
         public lista_atenciones_enfermero()
@@ -28,89 +28,38 @@ namespace ERS_NeoCare.Design
         { 
 
             InitializeComponent();
-            CargarDatosPaciente();
+          _presenter =  new AtencionPresenter(this, new AtencionService());
             //panelMenuPaciente.Visible = false;
         }
 
-        private void CargarDatosPaciente()
+        internal void CargarDatosPaciente(DataTable data)
         {
-            // Crea una conexión a la base de datos.
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                 
-                    string query = "SELECT * FROM paciente";
-
-                
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    DataSet dataSet = new DataSet();
-
-                    // Llena el DataSet con los datos de la consulta.
-                    adapter.Fill(dataSet, "Paciente");
-
-                    // Asigna el DataSet como origen de datos para el DataGridView.
-                    DGVAdministrativo.DataSource = dataSet.Tables["Paciente"];
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar los datos de la tabla paciente: " + ex.Message);
-                }
-            }
+      DGVAdministrativo.DataSource = data;
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            //panelMenuPaciente.Visible = false;
-            //panelAgregarPaciente.Visible = true;
 
-
-        }
+        
 
         private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && DGVAdministrativo.Rows.Count > 0)
             {
-                if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
-                {
-                    atencion atencion = new atencion();
-                    atencion.Dock = DockStyle.Fill;
-
-                    // Accede al formulario 'menu' desde el control actual
-                    menu menuForm = this.ParentForm as menu;
-
-                    if (menuForm != null)
-                    {
-                        Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
-
-
-
-                        panelOpciones.Controls.Clear();
-
-
-                        panelOpciones.Controls.Add(atencion);
-
-
-
-
-                    }
-
-                }
             }
         }
 
 
-        private void iconButton2_Click_1(object sender, EventArgs e)
-        {
-            //panelMenuPaciente.Visible = false;
-        }
+
 
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
             historiaPacienteClick?.Invoke(this, Tuple.Create(userDni));
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBox2.Text;
+            _presenter.buscarTexto(searchText);
         }
     }
 }

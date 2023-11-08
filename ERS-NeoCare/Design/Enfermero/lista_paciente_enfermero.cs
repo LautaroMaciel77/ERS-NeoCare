@@ -6,17 +6,20 @@ using ERS_NeoCare.Presenter;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Services.Description;
 using System.Windows.Forms;
 namespace ERS_NeoCare.Design
 {
     public partial class lista_paciente_enfermero : UserControl
     {
         // Establece la cadena de conexión a la base de datos.
-   
+
         public string userDni;
         //handler para cargar paciente
         public event EventHandler<Tuple<string>> historiaPacienteClick;
         public PacienteModel paciente;
+        private PacienteService _service;
+        private UsuarioPresenter _serviceMedico;
         private menu MainForm { get; set; }
 
 
@@ -26,7 +29,7 @@ namespace ERS_NeoCare.Design
 
             InitializeComponent();
             // panelAgregar.Visible = false;
-            _presenter = new ListaPacienteEnf(this, new Presenter.PacienteService(Configuracion.ConnectionString));
+            _presenter = new ListaPacienteEnf(this, new OrdenService());
             _presenter.CargarDatosPaciente();
             panelAgregar.Visible = false;
 
@@ -39,7 +42,7 @@ namespace ERS_NeoCare.Design
 
         public void MostrarMenu(PacienteModel paciente)
         {
-         
+
             MenuEnfermeroAtencion mp = new MenuEnfermeroAtencion();
             this.paciente = paciente;
             mp.closeclick += closeclick;
@@ -83,25 +86,38 @@ namespace ERS_NeoCare.Design
             {
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
-                    panelAgregar.Visible = true;
-                    int columnIndexDNI = 0;
-                    this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
-                    _presenter.cargarMenu(                    _presenter.Get_model());
-                
+                    if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                    {
+                        string dniPaciente = DGVAdministrativo.Rows[e.RowIndex].Cells["dni_paciente"].Value.ToString();
+                        string medico = DGVAdministrativo.Rows[e.RowIndex].Cells["dni_medico"].ToString();
+
+                        _service.BuscarPaciente(dniPaciente);
+                        _serviceMedico.Buscar(medico);
+                        atencion atencion = new atencion();
+                        atencion.Dock = DockStyle.Fill;
+
+
+                        menu menuForm = this.ParentForm as menu;
+
+                        if (menuForm != null)
+                        {
+                            Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                            panelOpciones.Controls.Clear();
+
+
+                            panelOpciones.Controls.Add(atencion);
+
+                        }
+
+                    }
                 }
+
             }
-        }
-
-
-        private void iconButton2_Click_1(object sender, EventArgs e)
-        {
-            //panelMenuPaciente.Visible = false;
-        }
-
-
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-          
         }
     }
 }
+
+

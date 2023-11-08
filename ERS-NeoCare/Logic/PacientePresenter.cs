@@ -17,6 +17,7 @@ namespace ERS_NeoCare.Logic
     {
         private lista_paciente _view;
         private buscarPaciente _viewBuqueda;
+        private PacientesMedico _viewMedico;
         private Presenter.PacienteService _service;
 
         public PacientePresenter(lista_paciente view, Presenter.PacienteService pacienteService)
@@ -35,12 +36,14 @@ namespace ERS_NeoCare.Logic
             _viewBuqueda = view;
             _service = pacienteService;
         }
-
-        public void buscarGeneral()
+        public PacientePresenter(PacientesMedico view, PacienteService pacienteService)
         {
-
-
+            _viewMedico = view;
+            _service = pacienteService;
         }
+
+      
+
 
         public bool IngresarPaciente(PacienteModel paciente)
         {
@@ -90,7 +93,32 @@ namespace ERS_NeoCare.Logic
                 _viewBuqueda.cargarLista(dataTable);
             }
         }
-     
+        public DataTable ObtenerPacienteBusquedaGeneral(string searchText)
+        {
+
+
+            List<PacienteModel> datos = _service.ObtenerDatosPaciente();
+
+            if (int.TryParse(searchText, out int dni))
+            {
+                // Realiza la búsqueda por DNI
+                List<PacienteModel> resultadosPorDNI = datos.Where(d => d.Dni == dni).ToList();
+                DataTable dataTablePorDNI = convertirListaPaciente(resultadosPorDNI);
+
+
+                return   dataTablePorDNI;
+            }
+            else
+            {
+                // Realiza la búsqueda por nombre, apellido o nombre completo
+                List<PacienteModel> resultados = datos.Where(d =>
+                     d.Nombre.Contains(searchText) || d.Apellido.Contains(searchText) ||
+                     (d.Nombre + " " + d.Apellido).Contains(searchText)).ToList();
+                DataTable dataTable = convertirListaPaciente(resultados);
+
+                return dataTable;
+            }
+        }
 
         public DataTable convertirListaPaciente(List<PacienteModel> resultados)
         {

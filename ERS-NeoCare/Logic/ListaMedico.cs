@@ -32,25 +32,10 @@ namespace ERS_NeoCare.Logic
                 DataTable data = ConvertidorListDatatable.ConvertirListaPaciente(_model.ObtenerDatosPaciente());
                 _view.MostrarDatosPaciente(data);
             }
-            public void cargarMenu()
-            {
-                string dni = _view.userDni;
-
-            PacienteModel paciente = _model.Paciente(dni);
-
-                if (paciente != null)
-                {
-                    _view.MostrarMenu(paciente);
-                }
-                else
-                {
-
-                }
-
-
-
-
-            }
+            
+           
+          
+            
 
         internal void cargarPaciente(string userDni)
         {

@@ -15,18 +15,20 @@ namespace ERS_NeoCare.Design
 
     public partial class PacientesMedico : UserControl
     {
-        public PacienteModel  paciente;
+        public PacienteModel paciente;
         private menu MainForm { get; set; }
         public string userDni;
         public event EventHandler<Tuple<string>> TurnoMedicoClick;
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
 
-        private ListaMedico _presenter;
+        private TurnoPresenter _presenter;
+        private PacientePresenter _pacientePresenter;
         public PacientesMedico()
         {
             InitializeComponent();
-            _presenter = new ListaMedico(this, new Presenter.PacienteService(Configuracion.ConnectionString));
-            _presenter.CargarDatosPaciente();
+            _presenter = new TurnoPresenter(this, new TurnoService(Configuracion.ConnectionString));
+            _pacientePresenter = new PacientePresenter(new Presenter.PacienteService(Configuracion.ConnectionString));
+            _presenter.CargarPacientePorTurno();
             panelPaciente.Visible = false;
 
         }
@@ -45,10 +47,7 @@ namespace ERS_NeoCare.Design
         }
 
 
-        private void panelOpciones_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -58,22 +57,19 @@ namespace ERS_NeoCare.Design
                 {
                     int columnIndexDNI = 0;
                     this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
-                    _presenter.cargarPaciente(userDni);
-                    menuPaciente menuPaciente = new menuPaciente();
+                    _pacientePresenter.cargarPaciente(userDni);
+                    MenuMedicoPacientes menuPaciente = new MenuMedicoPacientes();
                     menuPaciente.closeclick += closeclick;
-                    menuPaciente.verclick += verclick;
+                    menuPaciente.cambiarEstado += cambiarEstado;
                     cargarUserControl(menuPaciente);
 
                 }
             }
         }
-        public void MostrarMenu(PacienteModel paciente)
+
+        private void cambiarEstado(object sender, EventArgs e)
         {
-            panelPaciente.Visible = true;
-            MenuMedicoPacientes mp = new MenuMedicoPacientes(paciente);
-            mp.closeclick += closeclick;
-            this.paciente = paciente;
-            cargarUserControl(mp);
+            _presenter.cambiarEstado(PacienteSingleton.Instance.pacienteAutenticado.Id);
         }
 
         private void verclick(object sender, EventArgs e)
@@ -105,6 +101,38 @@ namespace ERS_NeoCare.Design
         {
             panelPaciente.Visible = false;
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBox2.Text;
+
+            _presenter.BuscarPacienteMedico(searchText);
+
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string seleccion = comboBox1.SelectedItem.ToString();
+
+            // Utiliza un switch para tomar diferentes acciones según el valor seleccionado
+            switch (seleccion)
+            {
+                case "Atendido":
+                    _presenter.CargarFiltro("s");
+                    break;
+                case "No Atendido":
+                    _presenter.CargarFiltro("n");
+                    break;
+
+            }
+        }
+
+        internal void mensaje(string v)
+        {
+            MessageBox.Show(v, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
 }
 

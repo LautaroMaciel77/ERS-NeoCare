@@ -16,25 +16,26 @@ namespace ERS_NeoCare.Logic
     internal class ListaPacienteEnf
     {
         private lista_paciente_enfermero _view;
-        private Presenter.PacienteService _model;
+        private OrdenService _model;
 
-             public ListaPacienteEnf(lista_paciente_enfermero view, Presenter.PacienteService pacienteService)
-             {
-                _view = view;
-                _model = pacienteService;
+        public ListaPacienteEnf(lista_paciente_enfermero view, OrdenService pacienteService)
+        {
+            _view = view;
+            _model = pacienteService;
 
-             }
+        }
 
-    public void CargarDatosPaciente()
-    {
-        DataTable data = ConvertidorListDatatable.ConvertirListaPaciente(_model.ObtenerDatosPaciente());
+
+        public void CargarDatosPaciente()
+        {
+            List<OrdenModel> ordenes = _model.traerOrdenes();
+       
+            List<OrdenModel> ordenesEnf = ordenes.Where(o => o.TipoOrden == "Atencion").ToList();
+            DataTable data = ConvertidorListDatatable.ConvertirOrdenes(ordenes);
             _view.MostrarDatosPaciente(data);
     }
 
-        public Presenter.PacienteService Get_model()
-        {
-            return _model;
-        }
+ 
 
         public void cargarMenu(Presenter.PacienteService _model)
         {

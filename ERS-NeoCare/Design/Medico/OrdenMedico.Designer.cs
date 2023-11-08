@@ -1,6 +1,6 @@
 ﻿namespace ERS_NeoCare.Design
 {
-    partial class TurnosMedico
+    partial class OrdenMedico
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -67,6 +67,7 @@
             this.radioButtonSi.TabStop = true;
             this.radioButtonSi.Text = "Si";
             this.radioButtonSi.UseVisualStyleBackColor = true;
+            this.radioButtonSi.CheckedChanged += new System.EventHandler(this.radioButtonSi_CheckedChanged);
             // 
             // radioButtonNo
             // 
@@ -78,6 +79,7 @@
             this.radioButtonNo.TabStop = true;
             this.radioButtonNo.Text = "No";
             this.radioButtonNo.UseVisualStyleBackColor = true;
+            this.radioButtonNo.CheckedChanged += new System.EventHandler(this.radioButtonNo_CheckedChanged);
             // 
             // textBoxIndicaciones
             // 
@@ -96,15 +98,18 @@
             this.labelTipoOrden.Size = new System.Drawing.Size(73, 13);
             this.labelTipoOrden.TabIndex = 37;
             this.labelTipoOrden.Text = "Tipo de orden";
-            this.labelTipoOrden.Click += new System.EventHandler(this.labelTipoOrden_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Analisis",
+            "Atencion"});
             this.comboBox1.Location = new System.Drawing.Point(325, 131);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(445, 21);
             this.comboBox1.TabIndex = 38;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnRegistrarOrden
             // 
@@ -113,13 +118,14 @@
             this.btnRegistrarOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarOrden.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarOrden.Location = new System.Drawing.Point(510, 539);
+            this.btnRegistrarOrden.Location = new System.Drawing.Point(479, 433);
             this.btnRegistrarOrden.Name = "btnRegistrarOrden";
             this.btnRegistrarOrden.Size = new System.Drawing.Size(151, 40);
             this.btnRegistrarOrden.TabIndex = 39;
             this.btnRegistrarOrden.Text = "Registrar";
             this.btnRegistrarOrden.UseCompatibleTextRendering = true;
             this.btnRegistrarOrden.UseVisualStyleBackColor = false;
+            this.btnRegistrarOrden.Click += new System.EventHandler(this.btnRegistrarOrden_Click);
             // 
             // labelOrden
             // 
@@ -131,7 +137,7 @@
             this.labelOrden.TabIndex = 40;
             this.labelOrden.Text = "Orden (Pedido)";
             // 
-            // TurnosMedico
+            // OrdenMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,9 +150,8 @@
             this.Controls.Add(this.radioButtonSi);
             this.Controls.Add(this.labelUrgencia);
             this.Controls.Add(this.labelIndicaciones);
-            this.Name = "TurnosMedico";
+            this.Name = "OrdenMedico";
             this.Size = new System.Drawing.Size(1196, 768);
-            this.Load += new System.EventHandler(this.TurnosMedico_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

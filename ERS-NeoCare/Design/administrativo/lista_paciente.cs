@@ -157,5 +157,13 @@ namespace ERS_NeoCare.Design
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBox2.Text;
+      
+               MostrarDatosPaciente(_presenter.ObtenerPacienteBusquedaGeneral(searchText));
+         
+        }
     }
 }

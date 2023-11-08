@@ -66,20 +66,22 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(41, 103);
+            this.label7.Location = new System.Drawing.Point(31, 84);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 20);
+            this.label7.Size = new System.Drawing.Size(56, 17);
             this.label7.TabIndex = 11;
             this.label7.Text = "Buscar";
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(121, 98);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Location = new System.Drawing.Point(91, 80);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(260, 32);
+            this.textBox2.Size = new System.Drawing.Size(196, 27);
             this.textBox2.TabIndex = 13;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // DGVAdministrativo
             // 
@@ -121,14 +123,14 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
-            this.DGVAdministrativo.Location = new System.Drawing.Point(45, 156);
-            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DGVAdministrativo.Location = new System.Drawing.Point(34, 127);
+            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
             this.DGVAdministrativo.Name = "DGVAdministrativo";
             this.DGVAdministrativo.ReadOnly = true;
             this.DGVAdministrativo.RowHeadersVisible = false;
             this.DGVAdministrativo.RowHeadersWidth = 51;
             this.DGVAdministrativo.RowTemplate.Height = 40;
-            this.DGVAdministrativo.Size = new System.Drawing.Size(1503, 750);
+            this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
@@ -159,9 +161,9 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1595, 87);
+            this.panel2.Size = new System.Drawing.Size(1196, 71);
             this.panel2.TabIndex = 14;
             // 
             // iconPictureBox1
@@ -171,11 +173,10 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserInjured;
             this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 50;
-            this.iconPictureBox1.Location = new System.Drawing.Point(45, 21);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBox1.IconSize = 41;
+            this.iconPictureBox1.Location = new System.Drawing.Point(34, 17);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(55, 50);
+            this.iconPictureBox1.Size = new System.Drawing.Size(41, 41);
             this.iconPictureBox1.TabIndex = 5;
             this.iconPictureBox1.TabStop = false;
             // 
@@ -184,9 +185,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
-            this.label1.Location = new System.Drawing.Point(105, 33);
+            this.label1.Location = new System.Drawing.Point(79, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 25);
+            this.label1.Size = new System.Drawing.Size(93, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "Pacientes";
             // 
@@ -202,10 +204,10 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(1351, 98);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregar.Location = new System.Drawing.Point(1013, 80);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(201, 49);
+            this.btnAgregar.Size = new System.Drawing.Size(151, 40);
             this.btnAgregar.TabIndex = 12;
             this.btnAgregar.Text = "Nuevo Paciente";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -222,10 +224,9 @@
             this.panelAgregar.AutoSize = true;
             this.panelAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.panelAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelAgregar.Location = new System.Drawing.Point(624, 380);
-            this.panelAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelAgregar.Location = new System.Drawing.Point(468, 309);
             this.panelAgregar.Name = "panelAgregar";
-            this.panelAgregar.Size = new System.Drawing.Size(347, 185);
+            this.panelAgregar.Size = new System.Drawing.Size(260, 150);
             this.panelAgregar.TabIndex = 20;
             // 
             // pacienteTableAdapter1
@@ -263,6 +264,7 @@
             this.domicilioDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.domicilioDataGridViewTextBoxColumn.Name = "domicilioDataGridViewTextBoxColumn";
             this.domicilioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.domicilioDataGridViewTextBoxColumn.Visible = false;
             // 
             // fechanacimientoDataGridViewTextBoxColumn
             // 
@@ -271,6 +273,7 @@
             this.fechanacimientoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.fechanacimientoDataGridViewTextBoxColumn.Name = "fechanacimientoDataGridViewTextBoxColumn";
             this.fechanacimientoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechanacimientoDataGridViewTextBoxColumn.Visible = false;
             // 
             // sexoDataGridViewTextBoxColumn
             // 
@@ -291,7 +294,7 @@
             // 
             // lista_paciente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelAgregar);
             this.Controls.Add(this.label7);
@@ -299,9 +302,8 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.DGVAdministrativo);
             this.Controls.Add(this.btnAgregar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "lista_paciente";
-            this.Size = new System.Drawing.Size(1595, 945);
+            this.Size = new System.Drawing.Size(1196, 768);
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();

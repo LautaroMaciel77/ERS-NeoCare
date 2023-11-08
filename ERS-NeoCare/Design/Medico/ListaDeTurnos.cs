@@ -1,10 +1,13 @@
 ﻿using ERS_NeoCare.Design.Medico;
 using ERS_NeoCare.Helper;
 using ERS_NeoCare.Logic;
+using ERS_NeoCare.Model;
 using ERS_NeoCare.Presenter;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -16,50 +19,43 @@ namespace ERS_NeoCare.Design
         private string userDni;
         public event EventHandler<Tuple<string>> TurnoMedicoClick;
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
-        private TurnoMedico _presenter;
+        // private TurnoMedico _presenter;
+        private TurnoPresenter _presenter;
         public ListaDeTurnos()
         {
             InitializeComponent();
-            cargarDatosPaciente();
-            _presenter = new TurnoMedico(new PacienteService(Configuracion.ConnectionString));
-           
+            _presenter = new TurnoPresenter(this, new TurnoService(Configuracion.ConnectionString));
+            _presenter.ListaTurnoMedicos();
+            //_presenter = new TurnoPresenter(this, new TurnoService(Configuracion.ConnectionString));
+
+
         }
 
-        private void cargarDatosPaciente()
+        internal void cargarDatosPaciente(List<Turno> data)
 
         {
 
-            // Crea  conexión  base de datos.
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
+            DGVAdministrativo.DataSource = data;
 
-                    // Define una consulta SQL para seleccionar todos los registros de la tabla paciente.
-                    string query = "SELECT * FROM paciente";
 
-                    // Crea un adaptador de datos y un DataSet para almacenar los resultados.
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    DataSet dataSet = new DataSet();
+           // buttonColumn.UseColumnTextForButtonValue = true; // Esto muestra el texto en lugar del botón por defecto
 
-                    // Llena el DataSet con los datos de la consulta.
-                    adapter.Fill(dataSet, "Paciente");
+            // Agregar la columna de botón al DataGridView
 
-                    // Asigna el DataSet como origen de datos para el DataGridView.
-                    DGVAdministrativo.DataSource = dataSet.Tables["Paciente"];
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar los datos de la tabla paciente: " + ex.Message);
-                }
-            }
+
         }
 
-        private void panelOpciones_Paint(object sender, PaintEventArgs e)
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            string searchText = textBox2.Text;
+            _presenter.BuscarTurnoListaTurnoMedico(searchText);
         }
+
+
+
+        //}
 
         private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -67,34 +63,33 @@ namespace ERS_NeoCare.Design
             {
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
-                  //  int columnIndexDNI = 0; // Reemplaza 'n' con el índice real de la columna DNI
-                    //userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
-                   
+                    int columnIndexID = 0;
+                    int turnoId = (int)DGVAdministrativo.Rows[e.RowIndex].Cells[1].Value;
 
-                    //MenuMedicoPacientes tm = new MenuMedicoPacientes(_presenter.buscarPaciente(userDni));
+                    _presenter.cambiarEstado(turnoId);
 
+                    // Obtener la celda de estado
+                    DataGridViewCell estadoCell = DGVAdministrativo.Rows[e.RowIndex].Cells["estado"];
 
-                    // if (panelPaciente.Controls.Count > 0)
-                    //  {
-                    // Obtén el UserControl actual dentro del panelOpciones
-                    //  agregar_paciente ap = (agregar_paciente)panelPaciente.Controls[0];
-                    //
-                    //
-                    //   panelPaciente.Controls.Remove(ap);
-                    //
-                    //    ap.Dispose();
-                    // }
+                    // Obtener la imagen actual
+                    Image estadoImage = estadoCell.Value as Image;
 
+                    // Invertir la imagen en función del estado actual
+                    if (estadoImage == Properties.Resources.check_box_FILL)
+                    {
+                        estadoImage = Properties.Resources.check_box_blank;
+                    }
+                    else
+                    {
+                        estadoImage = Properties.Resources.check_box_FILL;
+                    }
 
+                    // Refrescar la celda para asegurarte de que se muestre la nueva imagen
+                    DGVAdministrativo.InvalidateCell(estadoCell);
 
                 }
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
-
+   

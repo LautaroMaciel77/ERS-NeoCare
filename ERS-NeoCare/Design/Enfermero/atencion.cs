@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERS_NeoCare.Model;
+using System;
 using System.Windows.Forms;
 
 namespace ERS_NeoCare.Design.administrativo
@@ -45,6 +46,20 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            AtencionEnfermeriaModel atencion = new AtencionEnfermeriaModel()
+            {
+                Fecha = DateTime.Now,
+                Observaciones = textObservaciones.Text,
+                Indicaciones = textBoxIndicaciones.Text,
+                Estado = false,
+                IdUsuario = UsuarioSingleton.Instance.UsuarioAutenticado.id,
+                IdMedico =  UsuarioBusqueda.Instance.UsuarioAutenticado.id,
+                IdPaciente = PacienteSingleton.Instance.pacienteAutenticado.Id,
+
+
+            };
+
+            
 
 
 
@@ -101,6 +116,11 @@ namespace ERS_NeoCare.Design.administrativo
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        internal void mensaje(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

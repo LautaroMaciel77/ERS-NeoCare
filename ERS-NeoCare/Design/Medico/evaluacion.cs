@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ERS_NeoCare.Logic;
+using ERS_NeoCare.Model;
+using System;
 using System.Windows.Forms;
 
 namespace ERS_NeoCare.Design.administrativo
@@ -7,10 +9,15 @@ namespace ERS_NeoCare.Design.administrativo
     {
         public event EventHandler UserControlClosed;
         private lista_paciente MainForm { get; set; }
+        private EvaluacionPresenter _presenter;
         public evaluacion()
         {
             InitializeComponent();
+            _presenter = new EvaluacionPresenter(this, new EvaluacionService());
+
         }
+
+
 
         private void textDni_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -35,16 +42,22 @@ namespace ERS_NeoCare.Design.administrativo
             // Verificar si textNombre, textObservaciones y textBoxIndicaciones no están vacíos
             if (string.IsNullOrWhiteSpace(textObservaciones.Text))
             {
-                MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, complete Observaciones.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-
-            if (string.IsNullOrWhiteSpace(textBoxIndicaciones.Text))
+            EvaluacionModel evaluacionModel = new EvaluacionModel()
             {
-                MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                FechaCreacion=DateTime.Now,
+                Sintomas=textBoxSintomas.Text,
+                Observaciones=textObservaciones.Text,
+                Indicaciones=textBoxIndicacionesPaciente.Text,
+                IdMedico=UsuarioSingleton.Instance.UsuarioAutenticado.id,
+                IdPaciente=PacienteSingleton.Instance.pacienteAutenticado.Id
+            };
+            _presenter.insertar(evaluacionModel);
+
+
+        
 
 
 
@@ -64,43 +77,9 @@ namespace ERS_NeoCare.Design.administrativo
             UserControlClosed?.Invoke(this, EventArgs.Empty);
         }
 
-        private void labelSexo_Click(object sender, EventArgs e)
+        internal void mostrarMensaje(string v)
         {
-
-        }
-
-        private void textObra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelAgregarPaciente_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textDni_TextChanged(object sender, EventArgs e)
-        {
-                    }
-
-        private void LabelDomicilio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxIndicaciones_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
+            MessageBox.Show(v, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
