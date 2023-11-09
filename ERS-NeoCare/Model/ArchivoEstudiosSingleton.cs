@@ -11,7 +11,7 @@ namespace ERS_NeoCare.Model
 
         private static Model.ArchivoEstudiosSingleton instance;
         public List<ArchivoEstudio> archivosEstudio { get; private set; }
-
+        public ArchivoEstudio archivoEstudio { get; private set; }
         private ArchivoEstudiosSingleton()
         {
        
@@ -32,6 +32,10 @@ namespace ERS_NeoCare.Model
         public void AutenticarArchivos(List<ArchivoEstudio> archivos)
         {
             archivosEstudio = archivos;
+        }
+        public void AutenticarArchivo(ArchivoEstudio archivos)
+        {
+            archivoEstudio = archivos;
         }
     }
 }

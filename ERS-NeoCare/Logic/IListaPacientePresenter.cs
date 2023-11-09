@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Services.Description;
 
 namespace ERS_NeoCare.Presenter
 {
@@ -27,10 +28,13 @@ namespace ERS_NeoCare.Presenter
             DataTable data = ConvertidorListDatatable.ConvertirListaPaciente(_model.ObtenerDatosPaciente());
             _view.MostrarDatosPaciente(data);
         }
+        public void Buscar(string id)
+        {
+           
+        }
 
-    
 
-      
+
     }
 }
 

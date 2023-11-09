@@ -50,6 +50,7 @@ namespace ERS_NeoCare.Model
                         context.archivosEstudios.Add(archivo);
                         context.SaveChanges();
                         actualizacionArchivosExitosa = true;
+                        ArchivoEstudiosSingleton.Instance.AutenticarArchivo(archivo);
                     }
                 }
                 catch (Exception ex)

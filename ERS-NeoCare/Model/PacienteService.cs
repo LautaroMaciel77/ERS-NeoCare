@@ -38,6 +38,7 @@ namespace ERS_NeoCare.Presenter
         public void BuscarPaciente(string dni)
 
         {
+      
             int.TryParse(dni, out int dniInt);
             var context = DbContextManager.GetContext();
 

@@ -503,6 +503,8 @@ namespace ERS_NeoCare.Design.Paciente
                 MessageBox.Show("Seleccione un archivo para abrir.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+   
     }
 
 }

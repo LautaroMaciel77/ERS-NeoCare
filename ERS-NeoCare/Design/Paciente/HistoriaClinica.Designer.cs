@@ -300,6 +300,7 @@
             this.listViewArchivos.Size = new System.Drawing.Size(629, 111);
             this.listViewArchivos.TabIndex = 28;
             this.listViewArchivos.UseCompatibleStateImageBehavior = false;
+          
             // 
             // btnGuardar
             // 
@@ -517,7 +518,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LHistoriaClinica);
             this.Name = "HistoriaClinica";
-            this.Size = new System.Drawing.Size(458, 231);
+            this.Size = new System.Drawing.Size(441, 214);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

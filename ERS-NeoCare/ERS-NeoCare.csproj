@@ -443,6 +443,7 @@
     <Compile Include="Helper\convertidorListDatatable.cs" />
     <Compile Include="Helper\ReemplazoPanelEventArgs .cs" />
     <Compile Include="Logic\AgregarPacientePresenter.cs" />
+    <Compile Include="Logic\AnalisisPresenter.cs" />
     <Compile Include="Logic\ArchivoEstudioPresenter.cs" />
     <Compile Include="Logic\AtencionPresenter.cs" />
     <Compile Include="Logic\EvaluacionPresenter.cs" />
@@ -456,6 +457,8 @@
     <Compile Include="Logic\PacientePresenter.cs" />
     <Compile Include="Logic\TurnoMedico.cs" />
     <Compile Include="Logic\TurnoPresenter.cs" />
+    <Compile Include="Model\AnalisisModel.cs" />
+    <Compile Include="Model\AnalisisService.cs" />
     <Compile Include="Model\ArchivoEstudio.cs" />
     <Compile Include="Model\ArchivoEstudioService.cs" />
     <Compile Include="Model\ArchivoEstudiosSingleton.cs" />
@@ -468,6 +471,7 @@
     <Compile Include="Model\HistoriaClinicaService.cs" />
     <Compile Include="Model\OrdenModel.cs" />
     <Compile Include="Model\OrdenService.cs" />
+    <Compile Include="Model\OrdenSingleton.cs" />
     <Compile Include="Model\PacienteModel.cs" />
     <Compile Include="Model\PacienteService.cs" />
     <Compile Include="Model\PacienteSingleton.cs" />
@@ -572,6 +576,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\admin\admin.resx">
       <DependentUpon>admin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\admin\editar_usuario.resx">
       <DependentUpon>editar_usuario.cs</DependentUpon>

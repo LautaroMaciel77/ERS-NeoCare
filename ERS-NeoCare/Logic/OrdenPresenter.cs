@@ -41,10 +41,11 @@ namespace ERS_NeoCare.Logic
         }
         public void traerOrdenes()
         {
-   
 
-            DataTable data = ConvertidorListDatatable.ConvertirListaOrden(_service.traerOrdenes());
+
+            DataTable data = ConvertidorListDatatable.ConvertirOrdenes(_service.traerOrdenes());
             _viewEstados.cargarOrdenes(data);
         }
+    
     }
 }

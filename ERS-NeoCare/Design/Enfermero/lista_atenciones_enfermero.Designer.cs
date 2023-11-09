@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,29 +35,19 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
-            this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet = new ERS_NeoCare.Database1DataSet();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pacienteTableAdapter = new ERS_NeoCare.Database1DataSetTableAdapters.PacienteTableAdapter();
-            this.dBNeoCareDataSet5 = new ERS_NeoCare.DBNeoCareDataSet5();
-            this.atencionenfermeriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.atencion_enfermeriaTableAdapter = new ERS_NeoCare.DBNeoCareDataSet5TableAdapters.atencion_enfermeriaTableAdapter();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni_medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.atencion_enfermeriaTableAdapter = new ERS_NeoCare.DBNeoCareDataSet5TableAdapters.atencion_enfermeriaTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.atencionenfermeriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -68,7 +57,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1196, 71);
             this.panel2.TabIndex = 14;
@@ -107,7 +96,6 @@
             this.DGVAdministrativo.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.DGVAdministrativo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DGVAdministrativo.AutoGenerateColumns = false;
             this.DGVAdministrativo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVAdministrativo.BackgroundColor = System.Drawing.Color.White;
             this.DGVAdministrativo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -123,14 +111,12 @@
             this.DGVAdministrativo.ColumnHeadersHeight = 40;
             this.DGVAdministrativo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.fecha,
-            this.estado,
+            this.fecha_creacion,
             this.Medico,
             this.Paciente,
             this.dni_paciente,
             this.dni_medico,
             this.CAcciones});
-            this.DGVAdministrativo.DataSource = this.atencionenfermeriaBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,7 +127,7 @@
             this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
             this.DGVAdministrativo.Location = new System.Drawing.Point(34, 124);
-            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
             this.DGVAdministrativo.Name = "DGVAdministrativo";
             this.DGVAdministrativo.RowHeadersVisible = false;
             this.DGVAdministrativo.RowHeadersWidth = 51;
@@ -150,73 +136,17 @@
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
-            // pacienteBindingSource
-            // 
-            this.pacienteBindingSource.DataMember = "Paciente";
-            this.pacienteBindingSource.DataSource = this.database1DataSet;
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(92, 84);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 27);
-            this.textBox2.TabIndex = 13;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(30, 86);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 18);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Buscar";
-            // 
-            // pacienteTableAdapter
-            // 
-            this.pacienteTableAdapter.ClearBeforeFill = true;
-            // 
-            // dBNeoCareDataSet5
-            // 
-            this.dBNeoCareDataSet5.DataSetName = "DBNeoCareDataSet5";
-            this.dBNeoCareDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // atencionenfermeriaBindingSource
-            // 
-            this.atencionenfermeriaBindingSource.DataMember = "atencion_enfermeria";
-            this.atencionenfermeriaBindingSource.DataSource = this.dBNeoCareDataSet5;
-            // 
-            // atencion_enfermeriaTableAdapter
-            // 
-            this.atencion_enfermeriaTableAdapter.ClearBeforeFill = true;
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "id_atencion";
+            this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
             // 
-            // fecha
+            // fecha_creacion
             // 
-            this.fecha.DataPropertyName = "fecha";
-            this.fecha.HeaderText = "fecha";
-            this.fecha.Name = "fecha";
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "estado";
-            this.estado.Name = "estado";
+            this.fecha_creacion.DataPropertyName = "fecha";
+            this.fecha_creacion.HeaderText = "Fecha";
+            this.fecha_creacion.Name = "fecha_creacion";
             // 
             // Medico
             // 
@@ -252,6 +182,31 @@
             this.CAcciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.CAcciones.Text = "Menu ";
             // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(92, 84);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(196, 27);
+            this.textBox2.TabIndex = 13;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(30, 86);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 18);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Buscar";
+            // 
+            // atencion_enfermeriaTableAdapter
+            // 
+            this.atencion_enfermeriaTableAdapter.ClearBeforeFill = true;
+            // 
             // lista_atenciones_enfermero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,10 +221,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.atencionenfermeriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,15 +234,9 @@
         private System.Windows.Forms.DataGridView DGVAdministrativo;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.BindingSource pacienteBindingSource;
-        private Database1DataSet database1DataSet;
-        private Database1DataSetTableAdapters.PacienteTableAdapter pacienteTableAdapter;
-        private System.Windows.Forms.BindingSource atencionenfermeriaBindingSource;
-        private DBNeoCareDataSet5 dBNeoCareDataSet5;
         private DBNeoCareDataSet5TableAdapters.atencion_enfermeriaTableAdapter atencion_enfermeriaTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_creacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Medico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Paciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni_paciente;

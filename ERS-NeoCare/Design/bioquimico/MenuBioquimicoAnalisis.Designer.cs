@@ -30,6 +30,7 @@
         {
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButtonClose = new FontAwesome.Sharp.IconButton();
+            this.btnVerPaciente = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // iconButton3
@@ -46,12 +47,12 @@
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 35;
             this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(27, 57);
+            this.iconButton3.Location = new System.Drawing.Point(20, 89);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(216, 40);
             this.iconButton3.TabIndex = 17;
-            this.iconButton3.Text = "Ver orden";
+            this.iconButton3.Text = "Crear analisis";
             this.iconButton3.UseVisualStyleBackColor = false;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
@@ -72,11 +73,35 @@
             this.iconButtonClose.UseVisualStyleBackColor = false;
             this.iconButtonClose.Click += new System.EventHandler(this.iconButtonClose_Click);
             // 
+            // btnVerPaciente
+            // 
+            this.btnVerPaciente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnVerPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.btnVerPaciente.FlatAppearance.BorderSize = 0;
+            this.btnVerPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
+            this.btnVerPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerPaciente.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerPaciente.ForeColor = System.Drawing.Color.Transparent;
+            this.btnVerPaciente.IconChar = FontAwesome.Sharp.IconChar.Microscope;
+            this.btnVerPaciente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
+            this.btnVerPaciente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVerPaciente.IconSize = 35;
+            this.btnVerPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerPaciente.Location = new System.Drawing.Point(20, 49);
+            this.btnVerPaciente.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVerPaciente.Name = "btnVerPaciente";
+            this.btnVerPaciente.Size = new System.Drawing.Size(216, 40);
+            this.btnVerPaciente.TabIndex = 35;
+            this.btnVerPaciente.Text = "Ver paciente";
+            this.btnVerPaciente.UseVisualStyleBackColor = false;
+            this.btnVerPaciente.Click += new System.EventHandler(this.btnVerPaciente_Click);
+            // 
             // MenuBioquimicoAnalisis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.Controls.Add(this.btnVerPaciente);
             this.Controls.Add(this.iconButtonClose);
             this.Controls.Add(this.iconButton3);
             this.Name = "MenuBioquimicoAnalisis";
@@ -90,5 +115,6 @@
 
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButtonClose;
+        private FontAwesome.Sharp.IconButton btnVerPaciente;
     }
 }

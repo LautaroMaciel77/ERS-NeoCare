@@ -45,7 +45,7 @@
             this.label1.Size = new System.Drawing.Size(172, 18);
             this.label1.TabIndex = 33;
             this.label1.Text = "Resumen de Atencion";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // labelObservaciones
             // 
@@ -65,7 +65,7 @@
             this.textBoxIndicaciones.Name = "textBoxIndicaciones";
             this.textBoxIndicaciones.Size = new System.Drawing.Size(445, 104);
             this.textBoxIndicaciones.TabIndex = 35;
-            this.textBoxIndicaciones.TextChanged += new System.EventHandler(this.textBoxIndicaciones_TextChanged);
+          
             // 
             // labelIndicaciones
             // 
