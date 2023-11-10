@@ -28,7 +28,7 @@ namespace ERS_NeoCare.Design
             InitializeComponent();
             _presenter = new TurnoPresenter(this, new TurnoService(Configuracion.ConnectionString));
             _pacientePresenter = new PacientePresenter(new Presenter.PacienteService(Configuracion.ConnectionString));
-            _presenter.CargarPacientePorTurno();
+            _presenter.CargarPacienteMedico();
             panelPaciente.Visible = false;
 
         }

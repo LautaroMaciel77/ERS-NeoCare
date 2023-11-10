@@ -107,7 +107,7 @@ namespace ERS_NeoCare.Design
                         _presenterPaciente.cargarPaciente(dniPaciente);
                         _presenterMedico.Buscar(medico);
                         _presenter.Buscar(idOrden);
-
+                        
                         MostrarMenu();
 
 

@@ -78,10 +78,7 @@ namespace ERS_NeoCare.Design.administrativo
         {
             _presenter.Buscar();
             //mover esto a medico
-            if (HistoriaClinicaSingleton.Instance.historiaAutenticado == null)
-            {
-                MessageBox.Show("Error: Debe existir una historia de usuario primero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
             string nombrePaciente = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " " + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
             string carpetaPaciente = Path.Combine("recursos", nombrePaciente);
 

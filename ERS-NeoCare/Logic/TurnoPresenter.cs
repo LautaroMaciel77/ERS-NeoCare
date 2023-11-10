@@ -62,9 +62,19 @@ namespace ERS_NeoCare.Logic
             DataTable data = ConvertidorListDatatable.ConvertirListaPaciente(listaPacientes);
             _viewMedico.MostrarDatosPaciente(data);
         }
-        public void BuscarPacienteMedico(string searchText)
+        public void CargarPacienteMedico()
         {
             List<Turno> listaTurnos = _service.ObtenerDatos();
+            int a = UsuarioSingleton.Instance.UsuarioAutenticado.id;
+            List<Turno> turnosMedico = listaTurnos.Where(t => t.Medico_Id == UsuarioSingleton.Instance.UsuarioAutenticado.id).ToList();
+            List<PacienteModel> listaPacientes = turnosMedico.Select(t => t.Paciente).ToList();
+            DataTable data = ConvertidorListDatatable.ConvertirListaPaciente(listaPacientes);
+            _viewMedico.MostrarDatosPaciente(data);
+        }
+        public void BuscarPacienteMedico(string searchText)
+        {
+            List<Turno> listGeneral = _service.ObtenerDatos();
+             List<Turno> listaTurnos = listGeneral.Where(t => t.Medico.DNI == UsuarioSingleton.Instance.UsuarioAutenticado.DNI).ToList();
             List<PacienteModel> listaPacientes = listaTurnos.Select(t => t.Paciente).ToList();
             if (int.TryParse(searchText, out int dni))
             {
@@ -92,24 +102,25 @@ namespace ERS_NeoCare.Logic
         }
         public List<Turno> BuscarTurno(string searchText)
         {
-            List<Turno> listaTurnos = _service.ObtenerDatos();
+            List<Turno> listGeneral = _service.ObtenerDatos();
+           
             if (int.TryParse(searchText, out int dni))
             {
                 // Realiza la búsqueda por DNI en turnos
-                listaTurnos.Where(t => t.Paciente.Dni == dni).ToList();
+                listGeneral.Where(t => t.Paciente.Dni == dni).ToList();
 
             }
             else
             {
                 // Realiza la búsqueda por nombre, apellido o nombre completo en turnos
-                listaTurnos.Where(t =>
+                listGeneral.Where(t =>
                    t.Paciente.Nombre.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
                    t.Paciente.Apellido.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
                    (t.Paciente.Nombre + " " + t.Paciente.Apellido).IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
 
             }
-            DataTable data = ConvertidorListDatatable.ConvertirListaTurno(listaTurnos);
-            return listaTurnos;
+            DataTable data = ConvertidorListDatatable.ConvertirListaTurno(listGeneral);
+            return listGeneral;
         }
         public List<Turno> RecopilarTurnos()
         {

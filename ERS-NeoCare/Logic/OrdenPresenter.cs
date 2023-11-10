@@ -35,6 +35,7 @@ namespace ERS_NeoCare.Logic
             if (_service.Insertar(orden))
             {
                 _view.mensaje("orden guardada");
+                return;
             }
             _view.mensaje("error al guardar orden");
 

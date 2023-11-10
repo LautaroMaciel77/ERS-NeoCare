@@ -32,7 +32,7 @@ namespace ERS_NeoCare.Logic
             if (_model.insertar(HC))
             {
                 _view.mensaje("Exito");
-
+                return;
 
             }
 

@@ -16,11 +16,16 @@ namespace ERS_NeoCare.Design
         private string rangoHora;
         private bool urgencia;
         private OrdenPresenter presenter;
+        private HistoriaClinicaPresenter historiaClinicaPresenter;
         public OrdenMedico()
         {
             InitializeComponent();
 
             presenter = new OrdenPresenter(this, new OrdenService());
+            historiaClinicaPresenter = new HistoriaClinicaPresenter(new HistoriaClinicaService(Configuracion.ConnectionString));
+
+
+
         }
 
 
@@ -71,6 +76,13 @@ namespace ERS_NeoCare.Design
 
         private void btnRegistrarOrden_Click(object sender, EventArgs e)
         {
+            historiaClinicaPresenter.Buscar();
+            if (HistoriaClinicaSingleton.Instance.historiaAutenticado == null)
+
+            {
+                MessageBox.Show("Error: Debe existir una historia de usuario primero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Validar que se haya seleccionado un tipo de orden
             if (comboBox1.SelectedItem == null)
             {

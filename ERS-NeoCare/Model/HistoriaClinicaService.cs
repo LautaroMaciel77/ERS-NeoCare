@@ -17,8 +17,8 @@ namespace ERS_NeoCare.Model
         }
         internal bool insertar(HistoriaClinicaModel historiaPaciente)
         {
+            try
             {
-                bool insercionHistoriaClinicaExitosa = false;
                
                 var context = DbContextManager.GetContext();
                 
@@ -35,15 +35,15 @@ namespace ERS_NeoCare.Model
                     };
 
                     context.HistoriaClinica.Add(hc);
-                    context.SaveChanges();
+                int rowsAffected = context.SaveChanges();
 
-                    // Verificar si la inserción de Historia Clínica fue exitosa
-                 
-                
-
-                // Devolver verdadero solo si la inserción de Historia Clínica fue exitosa
-                // y si la inserción de archivos fue exitosa o si no se proporcionaron archivos
-                return insercionHistoriaClinicaExitosa ;
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones generales aquí.
+                Console.WriteLine("Error general: " + ex.Message);
+                return false; // O manejar de otra manera apropiada
             }
         }
         internal bool Actualizar(HistoriaClinicaModel historiaPaciente)

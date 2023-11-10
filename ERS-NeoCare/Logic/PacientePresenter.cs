@@ -86,8 +86,8 @@ namespace ERS_NeoCare.Logic
             {
                 // Realiza la búsqueda por nombre, apellido o nombre completo
                 List<PacienteModel> resultados = datos.Where(d =>
-                     d.Nombre.Contains(searchText) || d.Apellido.Contains(searchText) ||
-                     (d.Nombre + " " + d.Apellido).Contains(searchText)).ToList();
+                     d.Nombre.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 || d.Apellido.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                     (d.Nombre+ " " + d.Apellido).IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
                 DataTable dataTable = convertirListaPaciente(resultados);
 
                 _viewBuqueda.cargarLista(dataTable);

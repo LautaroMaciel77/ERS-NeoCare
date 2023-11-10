@@ -179,7 +179,7 @@ namespace ERS_NeoCare.Design.administrativo
                 SelectedDate = select,
                 SelectedTimeRange = horaInicio,
                 Prioridad = prioridad,
-                Estado="s",
+                Estado="n",
                 Medico_Id = UsuarioBusqueda.Instance.UsuarioAutenticado.id,
                 Paciente_Id = PacienteSingleton.Instance.pacienteAutenticado.Id
             };
