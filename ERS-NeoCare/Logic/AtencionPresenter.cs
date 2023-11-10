@@ -38,7 +38,7 @@ namespace ERS_NeoCare.Logic
             _view.mensaje("error al insertar");
 
         }
-        public void ObtenerAtenciones(AtencionEnfermeriaModel model)
+        public void ObtenerAtenciones()
         {
 
 

@@ -13,10 +13,10 @@ namespace ERS_NeoCare.Design
     {
         // Establece la cadena de conexión a la base de datos.
 
-        private string connectionString = Configuracion.ConnectionString;
+  
         private string userDni;
         //handler para cargar paciente
-        public event EventHandler<Tuple<string>> historiaPacienteClick;
+
 
         private menu MainForm { get; set; }
 
@@ -28,7 +28,8 @@ namespace ERS_NeoCare.Design
         { 
 
             InitializeComponent();
-          _presenter =  new AtencionPresenter(this, new AtencionService());
+            _presenter = new AtencionPresenter(this, new AtencionService());
+            _presenter.ObtenerAtenciones();
             //panelMenuPaciente.Visible = false;
         }
 
@@ -51,12 +52,10 @@ namespace ERS_NeoCare.Design
 
 
 
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-            historiaPacienteClick?.Invoke(this, Tuple.Create(userDni));
-        }
+        
+ 
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
             string searchText = textBox2.Text;
             _presenter.buscarTexto(searchText);

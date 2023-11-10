@@ -14,20 +14,18 @@ namespace ERS_NeoCare.Design
 
 
 
-        public string userDni;
-        public PacienteModel paciente;
-        //handler para cargar paciente
 
-
-        private menu MainForm { get; set; }
-    
+        private PacientePresenter _presenterPaciente;
+        private UsuarioPresenter _presenterMedico;
         private listaPacienteBio _presenter;
         public lista_paciente_bioquimico()
         {
 
             InitializeComponent();
             panelAgregar.Visible = false;
-            _presenter = new listaPacienteBio(this, new Presenter.PacienteService(Configuracion.ConnectionString));
+            _presenter = new listaPacienteBio(this, new OrdenService());
+            _presenterPaciente = new PacientePresenter(new PacienteService(Configuracion.ConnectionString));
+            _presenterMedico = new UsuarioPresenter(new UsuarioService(Configuracion.ConnectionString));
             _presenter.CargarDatosPaciente();
           
         }
@@ -37,14 +35,30 @@ namespace ERS_NeoCare.Design
             DGVAdministrativo.DataSource = data;
         }
 
-        public void MostrarMenu(PacienteModel paciente)
+        public void MostrarMenu( )
         {
             panelAgregar.Visible = true;
             MenuBioquimicoAnalisis mp = new MenuBioquimicoAnalisis();
-            this.paciente = paciente;
+       
             mp.closeclick += closeclick;
-            mp.verclick += verclick;
+            mp.crearClick += crearClick;
+            mp.verPacienteclick += verPacienteclick;
             cargarUserControl(mp);
+        }
+
+        private void verPacienteclick(object sender, EventArgs e)
+        {
+            PacienteView pacienteControl = new PacienteView();
+            pacienteControl.Dock = DockStyle.Fill;
+
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+                panelOpciones.Controls.Clear();
+                panelOpciones.Controls.Add(pacienteControl);
+            }
         }
 
         private void closeclick(object sender, EventArgs e)
@@ -52,7 +66,7 @@ namespace ERS_NeoCare.Design
             panelAgregar.Visible = false;
         }
 
-        private void verclick(object sender, EventArgs e)
+        private void crearClick(object sender, EventArgs e)
         {
             analisis pacienteControl = new analisis();
             pacienteControl.Dock = DockStyle.Fill;
@@ -77,28 +91,36 @@ namespace ERS_NeoCare.Design
 
         }
 
-        private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    
+
+        private void DGVAdministrativo_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && DGVAdministrativo.Rows.Count > 0)
             {
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
-                    // Obtén el valor de la celda "dni" de la fila en la que se hizo clic
-                    this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells["dni"].Value.ToString();
+                    if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                    {
+                        string dniPaciente = DGVAdministrativo.Rows[e.RowIndex].Cells["dni_paciente"].Value.ToString();
+                        string medico = DGVAdministrativo.Rows[e.RowIndex].Cells["dni_medico"].Value.ToString();
+                        string idOrden = DGVAdministrativo.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                        _presenterPaciente.cargarPaciente(dniPaciente);
+                        _presenterMedico.Buscar(medico);
+                        _presenter.Buscar(idOrden);
 
-                    int columnIndexDNI = 0;
-                    this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
-                    _presenter.cargarMenu();
+                        MostrarMenu();
 
+
+
+                    }
                 }
 
             }
         }
 
-        
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
 
-  
-
-
+        }
     }
 }

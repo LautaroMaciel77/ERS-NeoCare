@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,6 +47,21 @@ namespace ERS_NeoCare.Model
                 // Maneja excepciones generales aquí.
                 Console.WriteLine("Error al traer órdenes: " + ex.Message);
                 return new List<OrdenModel>(); // Retorna una lista vacía o maneja de otra manera apropiada
+            }
+        }
+        internal void Buscar(string id)
+        {
+
+   
+            int.TryParse(id, out int idInt);
+            var context = DbContextManager.GetContext();
+
+            var orden = context.orden.FirstOrDefault(u => u.Id == idInt);
+
+            if (orden != null)
+            {
+
+                OrdenSingleton.Instance.Autenticar(orden);
             }
         }
     }

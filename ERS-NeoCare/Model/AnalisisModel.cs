@@ -8,24 +8,18 @@ using System.Threading.Tasks;
 
 namespace ERS_NeoCare.Model
 {
-    [Table("atencion_enfermeria")]
-    public class AtencionEnfermeriaModel
+    [Table("analisis")]
+    public class AnalisisModel
     {
         [Key]
-        [Column("id_atencion")]
-        public int IdAtencion { get; set; }
+        [Column("id_analisis")]
+        public int IdAnalisis { get; set; }
 
         [Column("fecha")]
         public DateTime Fecha { get; set; }
 
         [Column("observaciones", TypeName = "TEXT")]
         public string Observaciones { get; set; }
-
-        [Column("indicaciones", TypeName = "TEXT")]
-        public string Indicaciones { get; set; }
-
-        [Column("estado")]
-        public bool Estado { get; set; }
 
         [Column("id_orden")]
         public int IdOrden { get; set; }
@@ -39,16 +33,14 @@ namespace ERS_NeoCare.Model
         [ForeignKey("IdUsuario")]
         public UsuarioModel Usuario { get; set; }
 
-        [Column("id_medico")]
-        public int IdMedico { get; set; }
+        [Column("tipo_analisis")]
+        public string TipoAnalisis { get; set; }
 
-        [ForeignKey("IdMedico")]
-        public UsuarioModel Medico { get; set; }
+        [Column("id_archivo")]
+        public int IdArchivo { get; set; }
 
-        [Column("id_paciente")]
-        public int IdPaciente { get; set; }
-        [ForeignKey("IdPaciente")]
-        public PacienteModel Paciente { get; set; }
+        [ForeignKey("IdArchivo")]
+        public ArchivoEstudio ArchivoEstudio { get; set; }
 
     }
 }

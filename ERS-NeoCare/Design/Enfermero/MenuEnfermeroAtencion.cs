@@ -8,7 +8,7 @@ namespace ERS_NeoCare.Design
     {
         public event EventHandler closeclick;
         public event EventHandler verclick;
-        public event EventHandler atender;
+        public event EventHandler atenderClick;
 
         public MenuEnfermeroAtencion()
         {
@@ -32,7 +32,7 @@ namespace ERS_NeoCare.Design
 
         private void btn_atender_Click(object sender, EventArgs e)
         {
-            atender?.Invoke(this, EventArgs.Empty);
+            atenderClick?.Invoke(this, EventArgs.Empty);
         }
     }
 }

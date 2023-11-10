@@ -87,7 +87,7 @@ namespace ERS_NeoCare.Model
             HistoriaClinicaSingleton.Instance.Desautenticarhistoria();
 
             var context = DbContextManager.GetContext();
-
+            int id = PacienteSingleton.Instance.pacienteAutenticado.Id;
             var hc = context.HistoriaClinica.FirstOrDefault(h => h.IdPaciente == PacienteSingleton.Instance.pacienteAutenticado.Id);
 
             if (hc != null)

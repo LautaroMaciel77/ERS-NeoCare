@@ -18,8 +18,8 @@ namespace ERS_NeoCare.Design
         //handler para cargar paciente
         public event EventHandler<Tuple<string>> historiaPacienteClick;
         public PacienteModel paciente;
-        private PacienteService _service;
-        private UsuarioPresenter _serviceMedico;
+        private PacientePresenter _presenterPaciente;
+        private UsuarioPresenter _presenterMedico;
         private menu MainForm { get; set; }
 
 
@@ -30,6 +30,9 @@ namespace ERS_NeoCare.Design
             InitializeComponent();
             // panelAgregar.Visible = false;
             _presenter = new ListaPacienteEnf(this, new OrdenService());
+            _presenterPaciente = new PacientePresenter(new PacienteService(Configuracion.ConnectionString));
+            _presenterMedico = new UsuarioPresenter(new UsuarioService(Configuracion.ConnectionString));
+
             _presenter.CargarDatosPaciente();
             panelAgregar.Visible = false;
 
@@ -40,15 +43,41 @@ namespace ERS_NeoCare.Design
             DGVAdministrativo.DataSource = data;
         }
 
-        public void MostrarMenu(PacienteModel paciente)
+        public void MostrarMenu( )
         {
 
             MenuEnfermeroAtencion mp = new MenuEnfermeroAtencion();
-            this.paciente = paciente;
+         
             mp.closeclick += closeclick;
             mp.verclick += verclick;
+            mp.atenderClick+= atenderclick;
+         
+
             cargarUserControl(mp);
         }
+
+        private void atenderclick(object sender, EventArgs e)
+        {
+            atencion atencion = new atencion();
+            atencion.Dock = DockStyle.Fill;
+
+
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(atencion);
+
+            }
+        }
+
 
 
         private void closeclick(object sender, EventArgs e)
@@ -68,6 +97,8 @@ namespace ERS_NeoCare.Design
                 Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
                 panelOpciones.Controls.Clear();
                 panelOpciones.Controls.Add(pacienteControl);
+
+
             }
         }
 
@@ -89,33 +120,24 @@ namespace ERS_NeoCare.Design
                     if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                     {
                         string dniPaciente = DGVAdministrativo.Rows[e.RowIndex].Cells["dni_paciente"].Value.ToString();
-                        string medico = DGVAdministrativo.Rows[e.RowIndex].Cells["dni_medico"].ToString();
+                        string medico = DGVAdministrativo.Rows[e.RowIndex].Cells["dni_medico"].Value.ToString();
+                        string idOrden = DGVAdministrativo.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                        _presenterPaciente.cargarPaciente(dniPaciente);
+                        _presenterMedico.Buscar(medico);
+                        _presenter.Buscar(idOrden);
+                        MostrarMenu();
 
-                        _service.BuscarPaciente(dniPaciente);
-                        _serviceMedico.Buscar(medico);
-                        atencion atencion = new atencion();
-                        atencion.Dock = DockStyle.Fill;
-
-
-                        menu menuForm = this.ParentForm as menu;
-
-                        if (menuForm != null)
-                        {
-                            Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
-
-
-
-                            panelOpciones.Controls.Clear();
-
-
-                            panelOpciones.Controls.Add(atencion);
-
-                        }
 
                     }
                 }
 
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBox2.Text;
+            _presenter.buscarTexto(searchText);
         }
     }
 }

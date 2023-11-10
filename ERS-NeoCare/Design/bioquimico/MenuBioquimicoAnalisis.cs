@@ -6,7 +6,8 @@ namespace ERS_NeoCare.Design
     public partial class MenuBioquimicoAnalisis : UserControl
     {
         public event EventHandler closeclick;
-        public event EventHandler verclick;
+        public event EventHandler crearClick;
+        public event EventHandler verPacienteclick;
         public MenuBioquimicoAnalisis()
         {
             InitializeComponent();
@@ -24,7 +25,13 @@ namespace ERS_NeoCare.Design
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            verclick?.Invoke(this, EventArgs.Empty);
+            crearClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnVerPaciente_Click(object sender, EventArgs e)
+        {
+            verPacienteclick?.Invoke(this, EventArgs.Empty);
+
         }
     }
 }

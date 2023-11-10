@@ -1,4 +1,5 @@
-﻿using ERS_NeoCare.Design.Paciente;
+﻿using ERS_NeoCare.Design.administrativo;
+using ERS_NeoCare.Design.Paciente;
 using ERS_NeoCare.Model;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace ERS_NeoCare.Logic
     internal class ArchivoEstudioPresenter
     {
         private HistoriaClinica _view;
+        private analisis _viewAnalisis;
         private ArchivoEstudioService _model;
 
         public ArchivoEstudioPresenter(ArchivoEstudioService model)
@@ -21,6 +23,11 @@ namespace ERS_NeoCare.Logic
         public ArchivoEstudioPresenter(HistoriaClinica view, ArchivoEstudioService model)
         {
             _view = view;
+            _model = model;
+        }
+        public ArchivoEstudioPresenter(analisis view, ArchivoEstudioService model)
+        {
+            _viewAnalisis = view;
             _model = model;
         }
 
@@ -41,6 +48,13 @@ namespace ERS_NeoCare.Logic
                 return;
             }
             _view.mensaje("error al guardar archivo");
+
+        }
+        internal bool insertarGeneral(ArchivoEstudio archivo)
+        {
+            return (_model.insertar(archivo));
+            
+           
 
         }
         internal void Borrar(List<ArchivoEstudio> archivosAEliminar)

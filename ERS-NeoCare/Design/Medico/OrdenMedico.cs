@@ -109,12 +109,14 @@ namespace ERS_NeoCare.Design
 
         internal void cargarOrdenes(DataTable data)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+      
     }
 }

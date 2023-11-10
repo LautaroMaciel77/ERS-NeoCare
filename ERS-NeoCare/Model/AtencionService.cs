@@ -11,7 +11,10 @@ namespace ERS_NeoCare.Model
     {
 
 
-
+        internal AtencionService( )
+        {
+           
+        }
 
 
         internal bool Insertar(AtencionEnfermeriaModel atencion)
@@ -42,9 +45,15 @@ namespace ERS_NeoCare.Model
                 var context = DbContextManager.GetContext();
 
                 // Consultar la tabla de análisis y traer todos los registros
-                List<AtencionEnfermeriaModel> analisis = context.atencion.ToList();
+                List<AtencionEnfermeriaModel> Atenciones = context.atencion.ToList();
+                foreach (var atencion in Atenciones)
+                {
+                    context.Entry(atencion).Reference(a => a.Medico).Load();
+                    context.Entry(atencion).Reference(a => a.Paciente).Load();
+                    context.Entry(atencion).Reference(a => a.Orden).Load();
 
-                return analisis;
+                }
+                return Atenciones;
             }
             catch (Exception ex)
             {

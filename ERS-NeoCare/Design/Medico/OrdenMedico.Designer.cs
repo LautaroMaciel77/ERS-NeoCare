@@ -89,6 +89,7 @@
             this.textBoxIndicaciones.Name = "textBoxIndicaciones";
             this.textBoxIndicaciones.Size = new System.Drawing.Size(445, 163);
             this.textBoxIndicaciones.TabIndex = 36;
+       
             // 
             // labelTipoOrden
             // 
