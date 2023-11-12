@@ -181,6 +181,8 @@ namespace ERS_NeoCare.Model
 
             return usuariosConBaja;
         }
+
+        
     }
 }
-    
+

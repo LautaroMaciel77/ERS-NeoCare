@@ -41,57 +41,6 @@ namespace ERS_NeoCare.Design.administrativo
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
 
-            // Verificar que los text no están vacíos
-            if (string.IsNullOrWhiteSpace(textNombre.Text) || string.IsNullOrWhiteSpace(textApellido.Text)
-                || string.IsNullOrWhiteSpace(textDni.Text) || string.IsNullOrWhiteSpace(textBoxProfesion.Text)
-                || string.IsNullOrWhiteSpace(textMatricula.Text) || string.IsNullOrWhiteSpace(textContraseña.Text)
-                )
-            {
-                MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Verificar si textDni contiene solo números y tiene un máximo de 8 caracteres
-            if (!int.TryParse(textDni.Text, out int dni) || textDni.Text.Length > 8)
-            {
-                MessageBox.Show("El campo DNI debe contener solo números y tener un máximo de 8 caracteres.", "Formato de DNI incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (!int.TryParse(textBoxProfesion.Text, out int profesion) || textDni.Text.Length > 8)
-            {
-                MessageBox.Show("El campo profesion debe contener solo números y tener un máximo de 8 caracteres.", "Formato de profesion incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (textMatricula.Text.Length > 12)
-            {
-                MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-           
-           UsuarioModel usuario = new UsuarioModel()
-            {
-               Nombre = textNombre.Text,
-               Apellido = textApellido.Text,
-               Matricula=int.Parse(textMatricula.Text),
-               DNI= int.Parse(textDni.Text),
-               ProfesionID = int.Parse(textBoxProfesion.Text),
-               Password = textContraseña.Text,
-
-                
-            };
-            bool insercionExitosa = _presenter.IngresarUsuario(usuario);
-            if (insercionExitosa)
-            {
-                MessageBox.Show("Usuario insertado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarCampos();
-            }
-            else
-            {
-                MessageBox.Show("Hubo un problema al insertar el paciente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            actualizarTabla?.Invoke(this, EventArgs.Empty);
-
-
         }
         private void LimpiarCampos()
         {
@@ -152,6 +101,63 @@ namespace ERS_NeoCare.Design.administrativo
             }
         }
 
-  
+        private void btnRegistrarUsuario_Click(object sender, EventArgs e)
+        {
+
+            // Verificar que los text no están vacíos
+            if (string.IsNullOrWhiteSpace(textNombre.Text) || string.IsNullOrWhiteSpace(textApellido.Text)
+                || string.IsNullOrWhiteSpace(textDni.Text) || string.IsNullOrWhiteSpace(textBoxProfesion.Text)
+                || string.IsNullOrWhiteSpace(textMatricula.Text) || string.IsNullOrWhiteSpace(textContraseña.Text)
+                )
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Verificar si textDni contiene solo números y tiene un máximo de 8 caracteres
+            if (!int.TryParse(textDni.Text, out int dni) || textDni.Text.Length > 8)
+            {
+                MessageBox.Show("El campo DNI debe contener solo números y tener un máximo de 8 caracteres.", "Formato de DNI incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!int.TryParse(textBoxProfesion.Text, out int profesion) || textDni.Text.Length > 8)
+            {
+                MessageBox.Show("El campo profesion debe contener solo números y tener un máximo de 8 caracteres.", "Formato de profesion incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (textMatricula.Text.Length > 12)
+            {
+                MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            UsuarioModel usuario = new UsuarioModel()
+            {
+                Nombre = textNombre.Text,
+                Apellido = textApellido.Text,
+                Matricula = int.Parse(textMatricula.Text),
+                DNI = int.Parse(textDni.Text),
+                ProfesionID = int.Parse(textBoxProfesion.Text),
+                Password = textContraseña.Text,
+
+
+            };
+            bool insercionExitosa = _presenter.IngresarUsuario(usuario);
+            if (insercionExitosa)
+            {
+                MessageBox.Show("Usuario insertado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("Hubo un problema al insertar el paciente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            actualizarTabla?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void textBoxProfesion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

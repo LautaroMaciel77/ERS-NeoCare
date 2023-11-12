@@ -1,4 +1,5 @@
 ﻿
+using FontAwesome.Sharp;
 using System;
 using System.Windows.Forms;
 namespace ERS_NeoCare.Design.Medico
@@ -18,9 +19,9 @@ namespace ERS_NeoCare.Design.Medico
             InitializeComponent();
         }
 
-  
+        public IconButton Botonestado => iconVer;
 
-   
+        
         private void iconVer_Click(object sender, EventArgs e)
         {
             bajaclick?.Invoke(this, EventArgs.Empty);
@@ -39,7 +40,7 @@ namespace ERS_NeoCare.Design.Medico
 
         private void MenuAdminUsuarios_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

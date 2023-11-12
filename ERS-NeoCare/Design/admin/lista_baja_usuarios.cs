@@ -82,6 +82,8 @@ namespace ERS_NeoCare.Design
             panelAgregar.Controls.Clear();
             panelAgregar.Controls.Add(ma);
             ma.BringToFront();
+            ma.Botonestado.Text = "Dar de alta";
+            ma.Botonestado.IconChar = FontAwesome.Sharp.IconChar.UserCheck;
         }
 
         private void editarClick(object sender, EventArgs e)

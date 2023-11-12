@@ -33,6 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matriculaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Acciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.personalsaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new ERS_NeoCare.Database1DataSet();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,11 +50,6 @@
             this.pacienteTableAdapter = new ERS_NeoCare.DatabaseDataSetTableAdapters.PacienteTableAdapter();
             this.personal_saludTableAdapter = new ERS_NeoCare.Database1DataSetTableAdapters.personal_saludTableAdapter();
             this.panelAgregar = new System.Windows.Forms.Panel();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matriculaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Acciones = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -108,6 +108,47 @@
             this.DGVAdministrativo.TabIndex = 15;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick_1);
             // 
+            // dni
+            // 
+            this.dni.DataPropertyName = "dni";
+            this.dni.HeaderText = "dni";
+            this.dni.MinimumWidth = 6;
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            // 
+            // matriculaDataGridViewTextBoxColumn
+            // 
+            this.matriculaDataGridViewTextBoxColumn.DataPropertyName = "matricula";
+            this.matriculaDataGridViewTextBoxColumn.HeaderText = "matricula";
+            this.matriculaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.matriculaDataGridViewTextBoxColumn.Name = "matriculaDataGridViewTextBoxColumn";
+            this.matriculaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Acciones
+            // 
+            this.Acciones.DataPropertyName = "Acciones";
+            this.Acciones.HeaderText = "Acciones";
+            this.Acciones.MinimumWidth = 6;
+            this.Acciones.Name = "Acciones";
+            this.Acciones.ReadOnly = true;
+            this.Acciones.Text = "Acciones";
+            // 
             // personalsaludBindingSource
             // 
             this.personalsaludBindingSource.DataMember = "personal_salud";
@@ -154,7 +195,7 @@
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.White;
             this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserAltSlash;
             this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 41;
@@ -167,14 +208,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.label1.Location = new System.Drawing.Point(79, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 20);
+            this.label1.Size = new System.Drawing.Size(339, 23);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Usuarios del sistema";
+            this.label1.Text = "Usuarios del sistema dados de baja";
             // 
             // pacienteBindingSource
             // 
@@ -204,47 +245,6 @@
             this.panelAgregar.Name = "panelAgregar";
             this.panelAgregar.Size = new System.Drawing.Size(260, 150);
             this.panelAgregar.TabIndex = 21;
-            // 
-            // dni
-            // 
-            this.dni.DataPropertyName = "dni";
-            this.dni.HeaderText = "dni";
-            this.dni.MinimumWidth = 6;
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            // 
-            // matriculaDataGridViewTextBoxColumn
-            // 
-            this.matriculaDataGridViewTextBoxColumn.DataPropertyName = "matricula";
-            this.matriculaDataGridViewTextBoxColumn.HeaderText = "matricula";
-            this.matriculaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.matriculaDataGridViewTextBoxColumn.Name = "matriculaDataGridViewTextBoxColumn";
-            this.matriculaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Acciones
-            // 
-            this.Acciones.DataPropertyName = "Acciones";
-            this.Acciones.HeaderText = "Acciones";
-            this.Acciones.MinimumWidth = 6;
-            this.Acciones.Name = "Acciones";
-            this.Acciones.ReadOnly = true;
-            this.Acciones.Text = "Acciones";
             // 
             // lista_baja_usuarios
             // 

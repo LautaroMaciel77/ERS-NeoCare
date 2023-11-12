@@ -17,6 +17,7 @@ namespace ERS_NeoCare.Logic
         private IMenuView _view; 
         private UsuarioModel _usuario;
         private ProfesionService _profesionService;
+        private UsuarioService _usuarioService;
         public ImenuPresenter(IMenuView view,ProfesionService profesionService)
         {
             _view = view;
@@ -27,11 +28,10 @@ namespace ERS_NeoCare.Logic
         }
         public void CargarProfesion()
         {
-   
-
             _view.MostrarDescripcionProfesion(_profesionService.ObtenerDescripcionProfesion());
 
         }
+
         public void cargarUserControl()
         {
            

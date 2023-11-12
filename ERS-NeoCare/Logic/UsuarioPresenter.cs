@@ -59,6 +59,7 @@ namespace ERS_NeoCare.Logic
         public DataTable ObtenerUsuariosGeneral()
         {
             DataTable data = convertirListaUsuario(_model.ObtenerDatosUsuarios("n"));
+            //aca falta filtrar solo medico
             return data;
         }
         public void ObtenerUsuariosBusqueda(string searchText)

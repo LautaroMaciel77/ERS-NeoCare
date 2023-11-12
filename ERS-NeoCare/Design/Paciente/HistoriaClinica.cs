@@ -1,6 +1,7 @@
 ﻿using ERS_NeoCare.Helper;
 using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
+using ImprmirPdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Services.Description;
 using System.Windows.Forms;
+using static ImprmirPdf.ContenidoHTML;
 
 namespace ERS_NeoCare.Design.Paciente
 {
@@ -504,7 +506,95 @@ namespace ERS_NeoCare.Design.Paciente
             }
         }
 
-   
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconButtonClose_Click_1(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void iconButtonEditar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tipoEditar) && listViews.ContainsKey(tipoEditar))
+            {
+                ListView listView = listViews[tipoEditar];
+
+                // Verifica si hay elementos seleccionados en el ListView
+                if (listView.SelectedItems.Count == 1)
+                {
+                    // Obtiene el elemento seleccionado
+                    ListViewItem selectedItem = listView.SelectedItems[0];
+
+                    // Muestra el contenido seleccionado en el TextBox para edición
+                    textBoxContenido.Text = selectedItem.Text;
+                    MessageBox.Show("Para guardar la edicion aprete el boton guardar.");
+                    editarflag = true;
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecciona un único elemento para editar.");
+                }
+            }
+        }
+
+        private void iconButtonBorrar_Click(object sender, EventArgs e)
+        {
+
+            if (!string.IsNullOrEmpty(tipoEditar) && listViews.ContainsKey(tipoEditar))
+            {
+                ListView listView = listViews[tipoEditar];
+
+                // Verifica si hay elementos seleccionados en el ListView
+                if (listView.SelectedItems.Count > 0)
+                {
+                    if (MessageBox.Show("¿Seguro que deseas eliminar el elemento seleccionado?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        // Elimina el elemento seleccionado
+                        foreach (ListViewItem item in listView.SelectedItems)
+                        {
+                            listView.Items.Remove(item);
+                        }
+                        MessageBox.Show("Borrado exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona un elemento para eliminar en " + tipoEditar);
+                }
+            }
+            panel1.Visible = false;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconButtonImprimir_Click(object sender, EventArgs e)
+        {
+            // Genera el contenido HTML y CSS
+            string contenidoHTML = ContenidoHTML.ObtenerContenidoHTML();
+            string estilosCSS = EstilosCSS.ObtenerEstilosCSS();
+
+            try
+            {
+                // Crea un archivo temporal con extensión .html y escribe el contenido HTML
+                string tempFilePath = Path.Combine(Path.GetTempPath(), "Factura-Cliente.html");
+                File.WriteAllText(tempFilePath, contenidoHTML);
+                File.WriteAllText(Path.Combine(Path.GetTempPath(), "estilos.css"), estilosCSS);
+
+                // Abre el archivo HTML en el navegador web predeterminado
+                Process.Start(new ProcessStartInfo(tempFilePath) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al abrir el contenido HTML en el navegador: " + ex.Message);
+            }
+        }
     }
 
 }

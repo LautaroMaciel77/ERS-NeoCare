@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxProfesion = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
             this.textContraseña = new System.Windows.Forms.TextBox();
             this.labelContraseña = new System.Windows.Forms.Label();
             this.labelProfesion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             this.textMatricula = new System.Windows.Forms.TextBox();
             this.textDni = new System.Windows.Forms.TextBox();
             this.textNombre = new System.Windows.Forms.TextBox();
@@ -42,147 +41,206 @@
             this.labelDni = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelApellido = new System.Windows.Forms.Label();
+            this.btnRegistrarUsuario = new FontAwesome.Sharp.IconButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dBNeoCareDataSet = new ERS_NeoCare.DBNeoCareDataSet();
+            this.dBNeoCareDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personalsaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personal_saludTableAdapter = new ERS_NeoCare.DBNeoCareDataSetTableAdapters.personal_saludTableAdapter();
+            this.personalsaludBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxProfesion = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBoxProfesion
-            // 
-            this.textBoxProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProfesion.Location = new System.Drawing.Point(517, 299);
-            this.textBoxProfesion.Name = "textBoxProfesion";
-            this.textBoxProfesion.Size = new System.Drawing.Size(236, 22);
-            this.textBoxProfesion.TabIndex = 41;
-            this.textBoxProfesion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textContraseña
             // 
-            this.textContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textContraseña.Location = new System.Drawing.Point(517, 382);
             this.textContraseña.Name = "textContraseña";
-            this.textContraseña.Size = new System.Drawing.Size(236, 22);
+            this.textContraseña.Size = new System.Drawing.Size(236, 26);
             this.textContraseña.TabIndex = 40;
             // 
             // labelContraseña
             // 
             this.labelContraseña.AutoSize = true;
-            this.labelContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelContraseña.Location = new System.Drawing.Point(358, 385);
             this.labelContraseña.Name = "labelContraseña";
-            this.labelContraseña.Size = new System.Drawing.Size(79, 16);
+            this.labelContraseña.Size = new System.Drawing.Size(96, 20);
             this.labelContraseña.TabIndex = 38;
             this.labelContraseña.Text = "Contraseña:";
             // 
             // labelProfesion
             // 
             this.labelProfesion.AutoSize = true;
-            this.labelProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProfesion.Location = new System.Drawing.Point(362, 299);
+            this.labelProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProfesion.Location = new System.Drawing.Point(358, 299);
             this.labelProfesion.Name = "labelProfesion";
-            this.labelProfesion.Size = new System.Drawing.Size(64, 16);
+            this.labelProfesion.Size = new System.Drawing.Size(76, 20);
             this.labelProfesion.TabIndex = 36;
             this.labelProfesion.Text = "Profesion";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(484, 91);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(472, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 18);
+            this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 33;
             this.label1.Text = "Nuevo Usuario";
             // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(487, 435);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(125, 23);
-            this.btnRegistrar.TabIndex = 30;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRegistrar.UseCompatibleTextRendering = true;
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
             // textMatricula
             // 
-            this.textMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMatricula.Location = new System.Drawing.Point(517, 335);
+            this.textMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textMatricula.Location = new System.Drawing.Point(517, 338);
             this.textMatricula.Name = "textMatricula";
-            this.textMatricula.Size = new System.Drawing.Size(236, 22);
+            this.textMatricula.Size = new System.Drawing.Size(236, 26);
             this.textMatricula.TabIndex = 27;
             this.textMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textObra_KeyPress);
             // 
             // textDni
             // 
-            this.textDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDni.Location = new System.Drawing.Point(517, 218);
+            this.textDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDni.Location = new System.Drawing.Point(517, 215);
             this.textDni.Name = "textDni";
-            this.textDni.Size = new System.Drawing.Size(236, 22);
+            this.textDni.Size = new System.Drawing.Size(236, 26);
             this.textDni.TabIndex = 26;
             this.textDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textDni_KeyPress);
             // 
             // textNombre
             // 
-            this.textNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNombre.Location = new System.Drawing.Point(517, 172);
+            this.textNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombre.Location = new System.Drawing.Point(517, 175);
             this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(236, 22);
+            this.textNombre.Size = new System.Drawing.Size(236, 26);
             this.textNombre.TabIndex = 25;
             this.textNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNombre_KeyPress);
             // 
             // textApellido
             // 
-            this.textApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textApellido.Location = new System.Drawing.Point(517, 261);
+            this.textApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textApellido.Location = new System.Drawing.Point(517, 258);
             this.textApellido.Name = "textApellido";
-            this.textApellido.Size = new System.Drawing.Size(236, 22);
+            this.textApellido.Size = new System.Drawing.Size(236, 26);
             this.textApellido.TabIndex = 24;
             this.textApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textApellido_KeyPress);
             // 
             // labelMatricula
             // 
             this.labelMatricula.AutoSize = true;
-            this.labelMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMatricula.Location = new System.Drawing.Point(362, 341);
+            this.labelMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMatricula.Location = new System.Drawing.Point(358, 341);
             this.labelMatricula.Name = "labelMatricula";
-            this.labelMatricula.Size = new System.Drawing.Size(64, 16);
+            this.labelMatricula.Size = new System.Drawing.Size(77, 20);
             this.labelMatricula.TabIndex = 20;
             this.labelMatricula.Text = "Matricula:";
             // 
             // labelDni
             // 
             this.labelDni.AutoSize = true;
-            this.labelDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDni.Location = new System.Drawing.Point(358, 218);
             this.labelDni.Name = "labelDni";
-            this.labelDni.Size = new System.Drawing.Size(39, 16);
+            this.labelDni.Size = new System.Drawing.Size(49, 20);
             this.labelDni.TabIndex = 18;
             this.labelDni.Text = "D.N.I:";
             // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.Location = new System.Drawing.Point(358, 178);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(59, 16);
+            this.labelNombre.Size = new System.Drawing.Size(69, 20);
             this.labelNombre.TabIndex = 17;
             this.labelNombre.Text = "Nombre:";
             // 
             // labelApellido
             // 
             this.labelApellido.AutoSize = true;
-            this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelApellido.Location = new System.Drawing.Point(362, 261);
+            this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApellido.Location = new System.Drawing.Point(358, 261);
             this.labelApellido.Name = "labelApellido";
-            this.labelApellido.Size = new System.Drawing.Size(60, 16);
+            this.labelApellido.Size = new System.Drawing.Size(69, 20);
             this.labelApellido.TabIndex = 16;
             this.labelApellido.Text = "Apellido:";
+            // 
+            // btnRegistrarUsuario
+            // 
+            this.btnRegistrarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(158)))));
+            this.btnRegistrarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarUsuario.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnRegistrarUsuario.IconColor = System.Drawing.Color.Black;
+            this.btnRegistrarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegistrarUsuario.IconSize = 24;
+            this.btnRegistrarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistrarUsuario.Location = new System.Drawing.Point(477, 473);
+            this.btnRegistrarUsuario.Name = "btnRegistrarUsuario";
+            this.btnRegistrarUsuario.Size = new System.Drawing.Size(167, 42);
+            this.btnRegistrarUsuario.TabIndex = 42;
+            this.btnRegistrarUsuario.Text = "Registrar usuario";
+            this.btnRegistrarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrarUsuario.UseVisualStyleBackColor = false;
+            this.btnRegistrarUsuario.Click += new System.EventHandler(this.btnRegistrarUsuario_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.dBNeoCareDataSet;
+            this.comboBox1.DisplayMember = "personal_salud.profesion_id";
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(771, 296);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(236, 28);
+            this.comboBox1.TabIndex = 43;
+            this.comboBox1.ValueMember = "personal_salud.profesion_id";
+            // 
+            // dBNeoCareDataSet
+            // 
+            this.dBNeoCareDataSet.DataSetName = "DBNeoCareDataSet";
+            this.dBNeoCareDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dBNeoCareDataSetBindingSource
+            // 
+            this.dBNeoCareDataSetBindingSource.DataSource = this.dBNeoCareDataSet;
+            this.dBNeoCareDataSetBindingSource.Position = 0;
+            // 
+            // personalsaludBindingSource
+            // 
+            this.personalsaludBindingSource.DataMember = "personal_salud";
+            this.personalsaludBindingSource.DataSource = this.dBNeoCareDataSetBindingSource;
+            // 
+            // personal_saludTableAdapter
+            // 
+            this.personal_saludTableAdapter.ClearBeforeFill = true;
+            // 
+            // personalsaludBindingSource1
+            // 
+            this.personalsaludBindingSource1.DataMember = "personal_salud";
+            this.personalsaludBindingSource1.DataSource = this.dBNeoCareDataSetBindingSource;
+            // 
+            // textBoxProfesion
+            // 
+            this.textBoxProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProfesion.Location = new System.Drawing.Point(517, 296);
+            this.textBoxProfesion.Name = "textBoxProfesion";
+            this.textBoxProfesion.Size = new System.Drawing.Size(236, 26);
+            this.textBoxProfesion.TabIndex = 41;
+            this.textBoxProfesion.TextChanged += new System.EventHandler(this.textBoxProfesion_TextChanged);
+            this.textBoxProfesion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // agregar_usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnRegistrarUsuario);
             this.Controls.Add(this.textBoxProfesion);
             this.Controls.Add(this.textContraseña);
             this.Controls.Add(this.label1);
@@ -191,7 +249,6 @@
             this.Controls.Add(this.labelProfesion);
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.labelDni);
-            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.labelMatricula);
             this.Controls.Add(this.textMatricula);
             this.Controls.Add(this.textApellido);
@@ -199,13 +256,16 @@
             this.Controls.Add(this.textNombre);
             this.Name = "agregar_usuario";
             this.Size = new System.Drawing.Size(1127, 609);
+            ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox textDni;
         private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.TextBox textApellido;
@@ -218,6 +278,13 @@
         private System.Windows.Forms.Label labelProfesion;
         private System.Windows.Forms.TextBox textContraseña;
         private System.Windows.Forms.Label labelContraseña;
+        private FontAwesome.Sharp.IconButton btnRegistrarUsuario;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private DBNeoCareDataSet dBNeoCareDataSet;
+        private System.Windows.Forms.BindingSource dBNeoCareDataSetBindingSource;
+        private System.Windows.Forms.BindingSource personalsaludBindingSource;
+        private DBNeoCareDataSetTableAdapters.personal_saludTableAdapter personal_saludTableAdapter;
+        private System.Windows.Forms.BindingSource personalsaludBindingSource1;
         private System.Windows.Forms.TextBox textBoxProfesion;
     }
 }

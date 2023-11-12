@@ -117,10 +117,27 @@ namespace ERS_NeoCare.Design.administrativo
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void radioPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioPass.Checked)
+            {
+                textContraseña.Enabled = true; 
+            }
+            else
+            {
+                textContraseña.Enabled = false; 
+            }
+        }
+
+        private void btnEditarUsuario_Click(object sender, EventArgs e)
+        {
             if (string.IsNullOrWhiteSpace(textNombre.Text) || string.IsNullOrWhiteSpace(textApellido.Text)
-             || string.IsNullOrWhiteSpace(textDni.Text) || string.IsNullOrWhiteSpace(textBoxProfesion.Text)
-             || string.IsNullOrWhiteSpace(textMatricula.Text) || string.IsNullOrWhiteSpace(textContraseña.Text)
-             )
+            || string.IsNullOrWhiteSpace(textDni.Text) || string.IsNullOrWhiteSpace(textBoxProfesion.Text)
+            || string.IsNullOrWhiteSpace(textMatricula.Text) || string.IsNullOrWhiteSpace(textContraseña.Text)
+            )
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -142,7 +159,7 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-               UsuarioModel user = new UsuarioModel();
+            UsuarioModel user = new UsuarioModel();
             if (radioPass.Checked && string.IsNullOrWhiteSpace(textContraseña.Text))
             {
 
@@ -162,18 +179,6 @@ namespace ERS_NeoCare.Design.administrativo
             else
             {
                 MessageBox.Show("Hubo un problema al editado el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void radioPass_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioPass.Checked)
-            {
-                textContraseña.Enabled = true; 
-            }
-            else
-            {
-                textContraseña.Enabled = false; 
             }
         }
     }

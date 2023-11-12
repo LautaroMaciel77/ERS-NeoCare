@@ -45,12 +45,6 @@ namespace ERS_NeoCare.Design
             DGVAdministrativo.DataSource = data;
         }
 
-
-
-
-
-
-
         private void iconClose_Click_1(object sender, EventArgs e)
         {
             panelAgregar.Visible = false;
@@ -89,6 +83,8 @@ namespace ERS_NeoCare.Design
             panelAgregar.Controls.Clear();
             panelAgregar.Controls.Add(ma);
             ma.BringToFront();
+            ma.Botonestado.Text = "Dar de baja";
+            ma.Botonestado.IconChar = FontAwesome.Sharp.IconChar.UserAltSlash;
         }
 
         private void editarclick(object sender, EventArgs e)
@@ -145,7 +141,6 @@ namespace ERS_NeoCare.Design
 
             }
         }
-
 
     }
 }
