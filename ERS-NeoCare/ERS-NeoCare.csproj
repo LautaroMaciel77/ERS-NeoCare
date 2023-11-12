@@ -790,8 +790,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\logo-NeoCare22.png" />
-    <None Include="Resources\logo-NeoCare21.png" />
+    <Content Include="Design\Paciente\logo_hospital_eloisa_torrent.jpg" />
+    <None Include="Resources\logo_hospital_eloisa_torrent.jpg" />
     <None Include="Resources\logoFondoNeoCare.png" />
     <None Include="Resources\user background icon.png" />
     <None Include="Resources\logo-NeoCare3.png" />

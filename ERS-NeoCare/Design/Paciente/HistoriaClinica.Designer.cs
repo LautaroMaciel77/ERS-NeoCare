@@ -229,7 +229,7 @@
             // 
             this.labelDatoNombre.AutoSize = true;
             this.labelDatoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDatoNombre.Location = new System.Drawing.Point(215, 102);
+            this.labelDatoNombre.Location = new System.Drawing.Point(210, 102);
             this.labelDatoNombre.Name = "labelDatoNombre";
             this.labelDatoNombre.Size = new System.Drawing.Size(220, 20);
             this.labelDatoNombre.TabIndex = 29;
@@ -238,10 +238,10 @@
             // labelDatoMatricula
             // 
             this.labelDatoMatricula.AutoSize = true;
-            this.labelDatoMatricula.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDatoMatricula.Location = new System.Drawing.Point(229, 133);
+            this.labelDatoMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDatoMatricula.Location = new System.Drawing.Point(223, 130);
             this.labelDatoMatricula.Name = "labelDatoMatricula";
-            this.labelDatoMatricula.Size = new System.Drawing.Size(82, 18);
+            this.labelDatoMatricula.Size = new System.Drawing.Size(73, 20);
             this.labelDatoMatricula.TabIndex = 30;
             this.labelDatoMatricula.Text = "Matricula";
             // 
@@ -562,7 +562,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 1366);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(815, 247);
+            this.panel3.Size = new System.Drawing.Size(798, 247);
             this.panel3.TabIndex = 47;
             // 
             // label9
@@ -572,7 +572,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(250, 15);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(304, 18);
+            this.label9.Size = new System.Drawing.Size(287, 18);
             this.label9.TabIndex = 1;
             this.label9.Text = "Historial actuaciones medicas";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -591,7 +591,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(765, 171);
+            this.dataGridView1.Size = new System.Drawing.Size(748, 171);
             this.dataGridView1.TabIndex = 0;
             // 
             // CEvento
@@ -673,7 +673,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LHistoriaClinica);
             this.Name = "HistoriaClinica";
-            this.Size = new System.Drawing.Size(815, 768);
+            this.Size = new System.Drawing.Size(798, 768);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

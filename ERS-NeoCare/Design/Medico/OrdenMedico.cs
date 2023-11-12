@@ -24,7 +24,8 @@ namespace ERS_NeoCare.Design
             presenter = new OrdenPresenter(this, new OrdenService());
             historiaClinicaPresenter = new HistoriaClinicaPresenter(new HistoriaClinicaService(Configuracion.ConnectionString));
 
-
+            labelFechaEvaluacion.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            labelPacienteEvaluacion.Text = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " " + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
 
         }
 
@@ -53,11 +54,6 @@ namespace ERS_NeoCare.Design
 
             }
         }
-
-
-
-   
-        
 
         internal void mensaje(string v)
         {

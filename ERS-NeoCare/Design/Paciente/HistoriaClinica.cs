@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -50,7 +51,7 @@ namespace ERS_NeoCare.Design.Paciente
             {
                 labelDatoMatricula.Text = UsuarioSingleton.Instance.UsuarioAutenticado.Matricula.ToString();
                 labelDatoFechaInicio.Text = DateTime.Now.ToString("dd/MM/yy");
-                labelDatoNombre.Text = UsuarioSingleton.Instance.UsuarioAutenticado.Nombre;
+                labelDatoNombre.Text = UsuarioSingleton.Instance.UsuarioAutenticado.Nombre + " " + UsuarioSingleton.Instance.UsuarioAutenticado.Apellido;
 
                 return;
             }
@@ -70,7 +71,7 @@ namespace ERS_NeoCare.Design.Paciente
 
             labelDatoMatricula.Text = HistoriaClinicaSingleton.Instance.historiaAutenticado.Usuario.Matricula.ToString();
             labelDatoFechaInicio.Text = HistoriaClinicaSingleton.Instance.historiaAutenticado.FechaInicio.ToString("dd/MM/yy");
-            labelDatoNombre.Text = HistoriaClinicaSingleton.Instance.historiaAutenticado.Usuario.Nombre;
+            labelDatoNombre.Text = HistoriaClinicaSingleton.Instance.historiaAutenticado.Usuario.Nombre + " " + UsuarioSingleton.Instance.UsuarioAutenticado.Apellido;
             comboBox1.SelectedItem = HistoriaClinicaSingleton.Instance.historiaAutenticado.TipoSangre;
             //comboBox1.SelectedValue = HistoriaClinicaSingleton.Instance.historiaAutenticado.TipoSangre;
             //usar presenter aca
@@ -583,18 +584,56 @@ namespace ERS_NeoCare.Design.Paciente
             try
             {
                 // Crea un archivo temporal con extensión .html y escribe el contenido HTML
-                string tempFilePath = Path.Combine(Path.GetTempPath(), "Factura-Cliente.html");
+                string tempFilePath = Path.Combine(Path.GetTempPath(), "Historia-Clinica.html");
+                string estilosFilePath = Path.Combine(Path.GetTempPath(), "estilos.css");
+                string imagenTemporalPath = Path.Combine(Path.GetTempPath(), "logo_hospital_eloisa_torrent.jpg");
+
+                // Guarda la imagen temporal directamente
+                GuardarImagenTemporal(imagenTemporalPath);
+
                 File.WriteAllText(tempFilePath, contenidoHTML);
-                File.WriteAllText(Path.Combine(Path.GetTempPath(), "estilos.css"), estilosCSS);
+                File.WriteAllText(estilosFilePath, estilosCSS);
 
                 // Abre el archivo HTML en el navegador web predeterminado
                 Process.Start(new ProcessStartInfo(tempFilePath) { UseShellExecute = true });
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrió un error al abrir el contenido HTML en el navegador: " + ex.Message);
+                MessageBox.Show("Ocurrió un error al abrir la Historia Clinica en el navegador: " + ex.Message);
             }
         }
+
+        private static void GuardarImagenTemporal(string rutaImagenTemporal)
+        {
+            // Reemplaza la siguiente línea con la lógica para obtener la imagen desde tus datos
+            Bitmap imagen = ObtenerImagenDesdeDatos();
+
+            // Guarda la imagen en el archivo temporal
+            imagen.Save(rutaImagenTemporal, ImageFormat.Jpeg);
+        }
+
+        private static Bitmap ObtenerImagenDesdeDatos()
+        {
+            try
+            {
+                // El nombre del archivo de la imagen
+                string nombreArchivoImagen = "logo_hospital_eloisa_torrent.jpg";
+
+                // Combina el nombre del archivo con la ruta del directorio actual
+                string rutaCompleta = Path.Combine(Directory.GetCurrentDirectory(), nombreArchivoImagen);
+
+                // Carga la imagen desde el archivo
+                return new Bitmap(rutaCompleta);
+            }
+            catch (Exception ex)
+            {
+                // Manejar errores, como archivo no encontrado
+                Console.WriteLine($"Error al cargar la imagen: {ex.Message}");
+                return new Bitmap(100, 100); // Devuelve una imagen en blanco en caso de error
+            }
+        }
+
+
     }
 
 }

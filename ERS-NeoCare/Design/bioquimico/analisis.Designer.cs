@@ -38,14 +38,18 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listViewArchivos = new System.Windows.Forms.ListView();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxIndicaciones = new System.Windows.Forms.TextBox();
+            this.textBoxOrdenIndicaciones = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.labelFechaOrden = new System.Windows.Forms.Label();
-            this.labelPacienteOrden = new System.Windows.Forms.Label();
-            this.labelMedicoOrden = new System.Windows.Forms.Label();
+            this.labelPacienteDniOrden = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelMedicoMatriculaOrden = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelMedicoNombreOrden = new System.Windows.Forms.Label();
+            this.labelPacienteNombreOrden = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // iconButtonCargar
@@ -169,15 +173,15 @@
             this.label3.TabIndex = 41;
             this.label3.Text = "Orden de analisis";
             // 
-            // textBoxIndicaciones
+            // textBoxOrdenIndicaciones
             // 
-            this.textBoxIndicaciones.Enabled = false;
-            this.textBoxIndicaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIndicaciones.Location = new System.Drawing.Point(51, 226);
-            this.textBoxIndicaciones.Multiline = true;
-            this.textBoxIndicaciones.Name = "textBoxIndicaciones";
-            this.textBoxIndicaciones.Size = new System.Drawing.Size(445, 163);
-            this.textBoxIndicaciones.TabIndex = 42;
+            this.textBoxOrdenIndicaciones.Enabled = false;
+            this.textBoxOrdenIndicaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxOrdenIndicaciones.Location = new System.Drawing.Point(51, 243);
+            this.textBoxOrdenIndicaciones.Multiline = true;
+            this.textBoxOrdenIndicaciones.Name = "textBoxOrdenIndicaciones";
+            this.textBoxOrdenIndicaciones.Size = new System.Drawing.Size(445, 146);
+            this.textBoxOrdenIndicaciones.TabIndex = 42;
             // 
             // label4
             // 
@@ -189,31 +193,11 @@
             this.label4.TabIndex = 43;
             this.label4.Text = "Fecha:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(47, 143);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 20);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "Medico:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(47, 110);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 20);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Paciente:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(47, 203);
+            this.label7.Location = new System.Drawing.Point(47, 220);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 20);
             this.label7.TabIndex = 46;
@@ -229,38 +213,102 @@
             this.labelFechaOrden.TabIndex = 47;
             this.labelFechaOrden.Text = "label8";
             // 
-            // labelPacienteOrden
+            // labelPacienteDniOrden
             // 
-            this.labelPacienteOrden.AutoSize = true;
-            this.labelPacienteOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPacienteOrden.Location = new System.Drawing.Point(128, 110);
-            this.labelPacienteOrden.Name = "labelPacienteOrden";
-            this.labelPacienteOrden.Size = new System.Drawing.Size(57, 20);
-            this.labelPacienteOrden.TabIndex = 48;
-            this.labelPacienteOrden.Text = "label8";
+            this.labelPacienteDniOrden.AutoSize = true;
+            this.labelPacienteDniOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPacienteDniOrden.Location = new System.Drawing.Point(88, 132);
+            this.labelPacienteDniOrden.Name = "labelPacienteDniOrden";
+            this.labelPacienteDniOrden.Size = new System.Drawing.Size(57, 20);
+            this.labelPacienteDniOrden.TabIndex = 70;
+            this.labelPacienteDniOrden.Text = "label8";
             // 
-            // labelMedicoOrden
+            // label8
             // 
-            this.labelMedicoOrden.AutoSize = true;
-            this.labelMedicoOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMedicoOrden.Location = new System.Drawing.Point(117, 143);
-            this.labelMedicoOrden.Name = "labelMedicoOrden";
-            this.labelMedicoOrden.Size = new System.Drawing.Size(57, 20);
-            this.labelMedicoOrden.TabIndex = 49;
-            this.labelMedicoOrden.Text = "label8";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(47, 132);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 20);
+            this.label8.TabIndex = 69;
+            this.label8.Text = "DNI:";
+            // 
+            // labelMedicoMatriculaOrden
+            // 
+            this.labelMedicoMatriculaOrden.AutoSize = true;
+            this.labelMedicoMatriculaOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedicoMatriculaOrden.Location = new System.Drawing.Point(89, 182);
+            this.labelMedicoMatriculaOrden.Name = "labelMedicoMatriculaOrden";
+            this.labelMedicoMatriculaOrden.Size = new System.Drawing.Size(57, 20);
+            this.labelMedicoMatriculaOrden.TabIndex = 68;
+            this.labelMedicoMatriculaOrden.Text = "label8";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(47, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 20);
+            this.label5.TabIndex = 67;
+            this.label5.Text = "MP:";
+            // 
+            // labelMedicoNombreOrden
+            // 
+            this.labelMedicoNombreOrden.AutoSize = true;
+            this.labelMedicoNombreOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedicoNombreOrden.Location = new System.Drawing.Point(117, 162);
+            this.labelMedicoNombreOrden.Name = "labelMedicoNombreOrden";
+            this.labelMedicoNombreOrden.Size = new System.Drawing.Size(57, 20);
+            this.labelMedicoNombreOrden.TabIndex = 66;
+            this.labelMedicoNombreOrden.Text = "label8";
+            // 
+            // labelPacienteNombreOrden
+            // 
+            this.labelPacienteNombreOrden.AutoSize = true;
+            this.labelPacienteNombreOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPacienteNombreOrden.Location = new System.Drawing.Point(117, 112);
+            this.labelPacienteNombreOrden.Name = "labelPacienteNombreOrden";
+            this.labelPacienteNombreOrden.Size = new System.Drawing.Size(57, 20);
+            this.labelPacienteNombreOrden.TabIndex = 65;
+            this.labelPacienteNombreOrden.Text = "label8";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(47, 112);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 20);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "Paciente:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(47, 162);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 20);
+            this.label9.TabIndex = 63;
+            this.label9.Text = "Medico:";
             // 
             // analisis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.labelMedicoOrden);
-            this.Controls.Add(this.labelPacienteOrden);
+            this.Controls.Add(this.labelPacienteDniOrden);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.labelMedicoMatriculaOrden);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labelMedicoNombreOrden);
+            this.Controls.Add(this.labelPacienteNombreOrden);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.labelFechaOrden);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxIndicaciones);
+            this.Controls.Add(this.textBoxOrdenIndicaciones);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listViewArchivos);
             this.Controls.Add(this.comboBox1);
@@ -272,7 +320,7 @@
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.LabelResultados);
             this.Name = "analisis";
-            this.Size = new System.Drawing.Size(1127, 609);
+            this.Size = new System.Drawing.Size(1196, 768);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,13 +337,17 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ListView listViewArchivos;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxIndicaciones;
+        private System.Windows.Forms.TextBox textBoxOrdenIndicaciones;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labelFechaOrden;
-        private System.Windows.Forms.Label labelPacienteOrden;
-        private System.Windows.Forms.Label labelMedicoOrden;
+        private System.Windows.Forms.Label labelPacienteDniOrden;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelMedicoMatriculaOrden;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelMedicoNombreOrden;
+        private System.Windows.Forms.Label labelPacienteNombreOrden;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
     }
 }

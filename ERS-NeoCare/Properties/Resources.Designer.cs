@@ -93,6 +93,16 @@ namespace ERS_NeoCare.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_hospital_eloisa_torrent {
+            get {
+                object obj = ResourceManager.GetObject("logo_hospital_eloisa_torrent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_NeoCare {
             get {
                 object obj = ResourceManager.GetObject("logo-NeoCare", resourceCulture);

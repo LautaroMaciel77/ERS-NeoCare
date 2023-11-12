@@ -15,6 +15,9 @@ namespace ERS_NeoCare.Design.administrativo
             InitializeComponent();
             _presenter = new EvaluacionPresenter(this, new EvaluacionService());
 
+            labelFechaEvaluacion.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            labelPacienteEvaluacion.Text = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " " + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
+
         }
 
 
