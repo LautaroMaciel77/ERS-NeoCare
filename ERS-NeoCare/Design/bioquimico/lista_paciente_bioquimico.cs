@@ -70,7 +70,7 @@ namespace ERS_NeoCare.Design
         {
             analisis pacienteControl = new analisis();
             pacienteControl.Dock = DockStyle.Fill;
-
+            pacienteControl.recargar+=recargar;
             menu menuForm = this.ParentForm as menu;
 
             if (menuForm != null)
@@ -79,6 +79,12 @@ namespace ERS_NeoCare.Design
                 panelOpciones.Controls.Clear();
                 panelOpciones.Controls.Add(pacienteControl);
             }
+        }
+
+        private void recargar(object sender, EventArgs e)
+        {
+            DGVAdministrativo.Invalidate();
+            DGVAdministrativo.Refresh();
         }
 
         private void cargarUserControl(UserControl user)
@@ -119,6 +125,36 @@ namespace ERS_NeoCare.Design
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string seleccion = comboBox2.SelectedItem.ToString();
+
+            // Utiliza un switch para tomar diferentes acciones según el valor seleccionado
+
+            switch (seleccion)
+            {
+                case "Urgente":
+                    _presenter.FiltroUrgencia(true);
+                    break;
+
+
+                case "No Urgente":
+                    _presenter.FiltroUrgencia(false);
+                    break;
+                case "Todos":
+                    _presenter.CargarDatosPaciente();
+                    break;
+                default:
+                    _presenter.CargarDatosPaciente();
+                    break;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

@@ -306,6 +306,7 @@ namespace ERS_NeoCare.Design.Paciente
             {
 
                 MessageBox.Show("Error: Debe crear una historia de usuario primero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             string nombrePaciente = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " " + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
             string carpetaPaciente = Path.Combine("recursos", nombrePaciente);

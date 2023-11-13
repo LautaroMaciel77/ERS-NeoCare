@@ -16,6 +16,23 @@ namespace ERS_NeoCare.Model
            
         }
 
+        internal void buscar(string id)
+        {
+         
+
+                int.TryParse(id, out int idInt);
+                var context = DbContextManager.GetContext();
+
+                var orden = context.atencion.FirstOrDefault(u => u.IdAtencion == idInt);
+
+                if (orden != null)
+                {
+
+                    AtencionSingleton.Instance.Autenticar(orden);
+                }
+            
+
+        }
 
         internal bool Insertar(AtencionEnfermeriaModel atencion)
         {
@@ -38,6 +55,7 @@ namespace ERS_NeoCare.Model
                 return false; // O maneja de otra manera apropiada
             }
         }
+
         internal List<AtencionEnfermeriaModel> ObtenerAtenciones()
         {
             try

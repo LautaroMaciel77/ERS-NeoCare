@@ -64,5 +64,22 @@ namespace ERS_NeoCare.Model
                 OrdenSingleton.Instance.Autenticar(orden);
             }
         }
+
+        internal void CambiarEstado(int id)
+        {
+            var context = DbContextManager.GetContext();
+
+            var turno = context.orden.SingleOrDefault(t => t.Id == id);
+
+            if (turno != null)
+            {
+                // Cambiar el estado de "s" a "n" o de "n" a "s"
+                turno.Estado = !turno.Estado;
+
+                context.SaveChanges();
+            }
+
+
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace ERS_NeoCare.Model
                 Paciente_Id = turnoModel .Paciente_Id ,
             };
                 
-
+                    context.Entry(turno).Reload();
                         // Agrega el nuevo usuario al contexto
                         context.turnos.Add(turno);
 
@@ -65,7 +65,7 @@ namespace ERS_NeoCare.Model
             return turnos;
         }
 
-        public List<Turno> ObtenerTurnoEstado(string v)
+        public List<Turno> ObtenerTurnoEstado(bool v)
         {
             var context = DbContextManager.GetContext();
 
@@ -79,20 +79,20 @@ namespace ERS_NeoCare.Model
 
         internal void CambiarEstado(int turnoId)
         {
-            using (var context = new ApplicationDbContext())
-            {
-                var turno = context.turnos.SingleOrDefault(t => t.Paciente.Id == turnoId);
+          var context = DbContextManager.GetContext();
+
+            var turno = context.turnos.SingleOrDefault(t => t.Id == turnoId);
 
                 if (turno != null)
                 {
                     // Cambiar el estado de "s" a "n" o de "n" a "s"
-                    turno.Estado = (turno.Estado == "s") ? "n" : "s";
+                  turno.Estado = !turno.Estado;
 
                     context.SaveChanges();
                 }
-            }
+            
         }
-        public List<PacienteModel> ObtenerPacientesPorEstado(string estado)
+        public List<PacienteModel> ObtenerPacientesPorEstado(bool estado)
         {
             var context = DbContextManager.GetContext();
 

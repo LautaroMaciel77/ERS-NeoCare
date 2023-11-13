@@ -29,6 +29,7 @@ namespace ERS_NeoCare.Design.administrativo
         private List<AnalisisModel> listaAnalisis;
 
         private List<OrdenModel> listaOrden;
+        private  bool TurnoFlag;
         public Reporte()
         {
             InitializeComponent();
@@ -89,45 +90,7 @@ namespace ERS_NeoCare.Design.administrativo
             // Configurar el tipo de gráfico (puedes ajustarlo según tus necesidades)
             chart1.Series["Cantidad de Pacientes por Género"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
         }
-        private void CargarUsuariosEnComboBox()
-        {
-
-
-            // Verifica si comboBox1 está seleccionado
-            if (comboBox1.SelectedItem != null)
-            {
-                // Obtiene el valor seleccionado
-                string filtro = comboBox1.SelectedItem.ToString();
-
-                // Filtra la lista de usuarios según el valor seleccionado
-                if (filtro == "Analisis")
-                {
-                    usuarios = usuarios.Where(u => u.ProfesionID == 4).ToList();
-                }
-                else
-                {
-                    usuarios = usuarios.Where(u => u.ProfesionID == 2).ToList();
-                }
-
-                // Configura el ComboBox
-                comboBoxUsuarios.DisplayMember = "Nombre"; // Propiedad del modelo que se mostrará en el ComboBox
-                comboBoxUsuarios.ValueMember = "id"; // Propiedad del modelo que se utilizará como valor seleccionado
-                comboBoxUsuarios.DataSource = usuarios;
-
-                // Deselecciona comboBox1
-                comboBox1.SelectedItem = null;
-            }
-            else
-            {
-                // Si comboBox1 no está seleccionado, filtra por ProfesionID == 3
-                usuarios = usuarios.Where(u => u.ProfesionID == 3).ToList();
-
-                // Configura el ComboBox
-                comboBoxUsuarios.DisplayMember = "Nombre"; // Propiedad del modelo que se mostrará en el ComboBox
-                comboBoxUsuarios.ValueMember = "id"; // Propiedad del modelo que se utilizará como valor seleccionado
-                comboBoxUsuarios.DataSource = usuarios;
-            }
-        }
+      
         private void buttonGenerarGrafico_Click_1(object sender, EventArgs e)
         {
             chartTurnos.Visible = true;
@@ -148,11 +111,53 @@ namespace ERS_NeoCare.Design.administrativo
         private void button1_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
-            comboBox1.SelectedItem = null;
+            comboBox1.SelectedIndex = 0;
+            TurnoFlag = false;
             CargarUsuariosEnComboBox();
 
         }
+        private void CargarUsuariosEnComboBox()
+        {
+            List<UsuarioModel> usuariosFiltrados;
+            // Concatena nombre y apellido en una nueva propiedad llamada "NombreCompleto"
 
+
+
+            // Verifica si comboBox1 está seleccionado
+            if (TurnoFlag)
+            {
+                // Obtiene el valor seleccionado
+                string filtro = comboBox1.SelectedItem.ToString();
+
+                // Filtra la lista de usuarios según el valor seleccionado
+                if (filtro == "Analisis")
+                {
+                    usuariosFiltrados = usuarios.Where(u => u.ProfesionID == 4).ToList();
+                }
+                else
+                {
+                    usuariosFiltrados = usuarios.Where(u => u.ProfesionID == 2).ToList();
+                }
+
+                // Configura el ComboBox
+         
+                // Deselecciona comboBox1
+                comboBox1.SelectedIndex = 0;
+            }
+            else
+            {
+                // Si comboBox1 no está seleccionado, filtra por ProfesionID == 3
+                usuariosFiltrados = usuarios.Where(u => u.ProfesionID == 3).ToList();
+
+            }
+  
+
+
+
+            comboBoxUsuarios.DisplayMember = "NombreApellido"; // Propiedad del modelo que se mostrará en el ComboBox
+            comboBoxUsuarios.ValueMember = "id"; // Propiedad del modelo que se utilizará como valor seleccionado
+            comboBoxUsuarios.DataSource = usuariosFiltrados;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
@@ -232,7 +237,7 @@ namespace ERS_NeoCare.Design.administrativo
                 string periodo = comboBoxFiltro.SelectedItem.ToString();
                 int cantidadPacientes = 1; // Puedes ajustar esto según tus necesidades
 
-                if (turno.Estado == "s")
+                if (turno.Estado == true)
                 {
                     if (datosGraficoAtendidos.ContainsKey(periodo))
                     {
@@ -351,6 +356,7 @@ namespace ERS_NeoCare.Design.administrativo
         private void button3_Click_1(object sender, EventArgs e)
         {
             panel1.Visible = true;
+            TurnoFlag = true;
             CargarUsuariosEnComboBox();
         }
 

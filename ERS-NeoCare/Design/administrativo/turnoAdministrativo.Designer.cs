@@ -30,6 +30,9 @@
         {
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridViewHora = new System.Windows.Forms.DataGridView();
+            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.labelFecha = new System.Windows.Forms.Label();
             this.labelHora = new System.Windows.Forms.Label();
             this.panelBuscar = new System.Windows.Forms.Panel();
@@ -47,9 +50,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button_buscar_medico_paciente = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eleguir = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHora)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,26 @@
             this.dataGridViewHora.TabIndex = 1;
             this.dataGridViewHora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHora_CellContentClick);
             // 
+            // hora
+            // 
+            this.hora.HeaderText = "Hora";
+            this.hora.MinimumWidth = 6;
+            this.hora.Name = "hora";
+            this.hora.ReadOnly = true;
+            // 
+            // disponible
+            // 
+            this.disponible.HeaderText = "Disponible";
+            this.disponible.MinimumWidth = 6;
+            this.disponible.Name = "disponible";
+            // 
+            // Eleguir
+            // 
+            this.Eleguir.HeaderText = "Elegir Hora";
+            this.Eleguir.MinimumWidth = 6;
+            this.Eleguir.Name = "Eleguir";
+            this.Eleguir.Text = "Seleccionar";
+            // 
             // labelFecha
             // 
             this.labelFecha.AutoSize = true;
@@ -111,13 +131,14 @@
             this.panelBuscar.AutoSize = true;
             this.panelBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.panelBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelBuscar.Location = new System.Drawing.Point(187, 150);
+            this.panelBuscar.Location = new System.Drawing.Point(281, 232);
             this.panelBuscar.Name = "panelBuscar";
             this.panelBuscar.Size = new System.Drawing.Size(823, 401);
             this.panelBuscar.TabIndex = 22;
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -133,30 +154,30 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(109, 91);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(331, 25);
+            this.label4.Size = new System.Drawing.Size(334, 25);
             this.label4.TabIndex = 25;
             this.label4.Text = "Seleccionar medico y paciente";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(109, 172);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(268, 25);
+            this.label5.Size = new System.Drawing.Size(274, 25);
             this.label5.TabIndex = 26;
             this.label5.Text = "Seleccionar fecha y hora";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(185, 1);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 25);
+            this.label6.Size = new System.Drawing.Size(73, 25);
             this.label6.TabIndex = 27;
             this.label6.Text = "Turno";
             // 
@@ -200,50 +221,50 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(42, 192);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 21);
+            this.label8.Size = new System.Drawing.Size(48, 20);
             this.label8.TabIndex = 34;
             this.label8.Text = "Hora:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(42, 151);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 21);
+            this.label10.Size = new System.Drawing.Size(58, 20);
             this.label10.TabIndex = 33;
             this.label10.Text = "Fecha:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(42, 102);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 21);
+            this.label11.Size = new System.Drawing.Size(75, 20);
             this.label11.TabIndex = 35;
             this.label11.Text = "Paciente:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(42, 59);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 21);
+            this.label9.Size = new System.Drawing.Size(64, 20);
             this.label9.TabIndex = 32;
             this.label9.Text = "Medico:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(109, 570);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 25);
+            this.label7.Size = new System.Drawing.Size(107, 25);
             this.label7.TabIndex = 29;
             this.label7.Text = "Prioridad";
             // 
@@ -268,7 +289,7 @@
             this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(158)))));
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -282,26 +303,6 @@
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // hora
-            // 
-            this.hora.HeaderText = "Hora";
-            this.hora.MinimumWidth = 6;
-            this.hora.Name = "hora";
-            this.hora.ReadOnly = true;
-            // 
-            // disponible
-            // 
-            this.disponible.HeaderText = "Disponible";
-            this.disponible.MinimumWidth = 6;
-            this.disponible.Name = "disponible";
-            // 
-            // Eleguir
-            // 
-            this.Eleguir.HeaderText = "Elegir Hora";
-            this.Eleguir.MinimumWidth = 6;
-            this.Eleguir.Name = "Eleguir";
-            this.Eleguir.Text = "Seleccionar";
             // 
             // turnoAdministrativo
             // 

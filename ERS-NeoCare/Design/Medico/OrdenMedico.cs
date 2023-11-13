@@ -102,6 +102,14 @@ namespace ERS_NeoCare.Design
                 FechaCreacion = DateTime.Now,
             };
             presenter.Insertar(orden);
+            limnpiarCampos();
+        }
+        private void limnpiarCampos()
+        {
+            textBoxIndicaciones.Text = null;
+            urgencia = false;
+            radioButtonSi.Checked = false;
+            radioButtonNo.Checked = true;
 
         }
 

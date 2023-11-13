@@ -70,7 +70,7 @@ namespace ERS_NeoCare.Logic
                 case 4:
                     Bioquimico b = new Bioquimico();
                     b.ListaAnalisisButtonClick+= ListaAnalisisButtonClick;
-                    b.ListaPacienteButtonClick += ListaPacienteButtonClick;
+                    b.ListaAnalisisHechoClick += ListaAnalisisHechoClick;
                    
                     _view.AgregarUserControl(b);
                     break;
@@ -78,6 +78,12 @@ namespace ERS_NeoCare.Logic
                     // Manejar caso por defecto si es necesario.
                     break;
             }
+        }
+
+        private void ListaAnalisisHechoClick(object sender, EventArgs e)
+        {
+            lista_analisis_bioquimico lista = new lista_analisis_bioquimico();
+            _view.AgregarSubMenu(lista);
         }
 
         private void ReporteAdminButtonClick(object sender, EventArgs e)
@@ -112,7 +118,7 @@ namespace ERS_NeoCare.Logic
 
         private void ListaAnalisisButtonClick(object sender, EventArgs e)
         {
-            lista_analisis_bioquimico lista = new lista_analisis_bioquimico();
+            lista_paciente_bioquimico lista = new lista_paciente_bioquimico();
             _view.AgregarSubMenu(lista);
         }
         private void ListaPacienteButtonClick(object sender, EventArgs e)

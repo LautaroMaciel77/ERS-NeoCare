@@ -17,6 +17,7 @@ namespace ERS_NeoCare.Logic
         private analisis _view;
         private lista_analisis_bioquimico _viewLista;
         private AnalisisService _service;
+
         public AnalisisPresenter(analisis view, AnalisisService service)
         {
             _view = view;
@@ -34,9 +35,15 @@ namespace ERS_NeoCare.Logic
         }
         public void Insertar(AnalisisModel analisis)
         {
-            _service.Insertar(analisis);
+            if (_service.Insertar(analisis))
+            {
+                _view.mensaje("Exito al insertar");
+                return;
+            }
+            _view.mensaje("error al insertar");
 
         }
+
         public List<AnalisisModel> listaAnalisis()
         {
             List<AnalisisModel> analisis = _service.ObtenerAnalisis();
@@ -51,14 +58,15 @@ namespace ERS_NeoCare.Logic
         }
         internal void buscarTexto(string searchText)
         {
-            List<AnalisisModel> analisis = _service.ObtenerAnalisis();
-            List<AnalisisModel> datos = analisis.Where(o => o.IdUsuario == UsuarioSingleton.Instance.UsuarioAutenticado.id).ToList();
+            List<AnalisisModel> datos = _service.ObtenerAnalisis();
+ 
             if (int.TryParse(searchText, out int dni))
             {
                 // Realiza  por DNI del paciente
                 List<AnalisisModel> resultadosPorDNI = datos
-                    .Where(d => d.Orden.Paciente.Dni == dni || d.Orden.Medico.DNI == dni)
+                    .Where(d => d.Orden.Paciente.Dni.ToString().StartsWith(searchText) || d.Orden.Medico.DNI.ToString().StartsWith(searchText))
                     .ToList();
+
                 DataTable dataTablePorDNI = ConvertidorListDatatable.ConvertirAnalisis(resultadosPorDNI);
 
                 _viewLista.MostrarDatosPaciente(dataTablePorDNI);
@@ -80,5 +88,6 @@ namespace ERS_NeoCare.Logic
                 _viewLista.MostrarDatosPaciente(dataTable);
             }
         }
+
     }
 }

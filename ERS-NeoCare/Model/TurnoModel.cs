@@ -27,8 +27,8 @@ namespace ERS_NeoCare.Model
         public string Prioridad { get; set; }
 
         [Column("estado")]
-        [MaxLength(1)]
-        public string Estado { get; set; }
+  
+        public bool Estado { get; set; }
 
         [Column("notasComentarios")]
         public string NotasComentarios { get; set; }

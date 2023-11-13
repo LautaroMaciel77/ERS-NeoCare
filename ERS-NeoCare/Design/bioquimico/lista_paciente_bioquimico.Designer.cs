@@ -53,6 +53,8 @@
             this.urgencia = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Acciones = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource1)).BeginInit();
@@ -127,12 +129,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.label1.Location = new System.Drawing.Point(79, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 23);
+            this.label1.Size = new System.Drawing.Size(196, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Ordenes de analisis";
             // 
@@ -216,7 +218,7 @@
             // fecha_creacion
             // 
             this.fecha_creacion.DataPropertyName = "fecha_creacion";
-            this.fecha_creacion.HeaderText = "fecha_creacion";
+            this.fecha_creacion.HeaderText = "fecha creacion";
             this.fecha_creacion.Name = "fecha_creacion";
             // 
             // Medico
@@ -234,13 +236,13 @@
             // dni_paciente
             // 
             this.dni_paciente.DataPropertyName = "dni_paciente";
-            this.dni_paciente.HeaderText = "dni_paciente";
+            this.dni_paciente.HeaderText = "dni paciente";
             this.dni_paciente.Name = "dni_paciente";
             // 
             // dni_medico
             // 
             this.dni_medico.DataPropertyName = "dni_medico";
-            this.dni_medico.HeaderText = "dni_medico";
+            this.dni_medico.HeaderText = "dni medico";
             this.dni_medico.Name = "dni_medico";
             // 
             // urgencia
@@ -254,16 +256,46 @@
             this.estado.DataPropertyName = "estado";
             this.estado.HeaderText = "estado";
             this.estado.Name = "estado";
+            this.estado.Visible = false;
             // 
             // Acciones
             // 
             this.Acciones.HeaderText = "Acciones";
             this.Acciones.Name = "Acciones";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(318, 85);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 18);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Tipo Urgencia";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Urgente",
+            "No Urgente",
+            "Todos"});
+            this.comboBox2.Location = new System.Drawing.Point(423, 81);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(284, 28);
+            this.comboBox2.TabIndex = 25;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
             // lista_paciente_bioquimico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.panelAgregar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox2);
@@ -306,5 +338,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn urgencia;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estado;
         private System.Windows.Forms.DataGridViewButtonColumn Acciones;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

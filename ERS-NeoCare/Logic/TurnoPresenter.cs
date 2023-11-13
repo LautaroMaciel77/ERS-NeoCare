@@ -18,7 +18,7 @@ namespace ERS_NeoCare.Logic
         private PacientesMedico _viewMedico;
         public turnoAdministrativo _viewAdministrativo;
         public ListaTurnosAdministrativo _viewlista;
-        private ListaDeTurnos _viewListaTurnoMedico;
+    
       
 
         public TurnoPresenter(turnoAdministrativo view, TurnoService service)
@@ -43,11 +43,7 @@ namespace ERS_NeoCare.Logic
 
         }
 
-        public TurnoPresenter(ListaDeTurnos listaDeTurnos, TurnoService service)
-        {
-            _viewListaTurnoMedico = listaDeTurnos;
-           _service = service;
-        }
+
 
         public void insertarTurno(Turno turnoModel)
         {
@@ -65,45 +61,70 @@ namespace ERS_NeoCare.Logic
         public void CargarPacienteMedico()
         {
             List<Turno> listaTurnos = _service.ObtenerDatos();
-            int a = UsuarioSingleton.Instance.UsuarioAutenticado.id;
+           
             List<Turno> turnosMedico = listaTurnos.Where(t => t.Medico_Id == UsuarioSingleton.Instance.UsuarioAutenticado.id).ToList();
-            List<PacienteModel> listaPacientes = turnosMedico.Select(t => t.Paciente).ToList();
-            DataTable data = ConvertidorListDatatable.ConvertirListaPaciente(listaPacientes);
+         
+            DataTable data = ConvertidorListDatatable.ConvertirListaTurnoMedico(turnosMedico);
             _viewMedico.MostrarDatosPaciente(data);
         }
         public void BuscarPacienteMedico(string searchText)
         {
-            List<Turno> listGeneral = _service.ObtenerDatos();
-             List<Turno> listaTurnos = listGeneral.Where(t => t.Medico.DNI == UsuarioSingleton.Instance.UsuarioAutenticado.DNI).ToList();
-            List<PacienteModel> listaPacientes = listaTurnos.Select(t => t.Paciente).ToList();
+            List<Turno> listGeneral = _service.ObtenerDatos().Where(t => t.Medico_Id == UsuarioSingleton.Instance.UsuarioAutenticado.id).ToList();
+
+            List<Turno> listfiltrada;
             if (int.TryParse(searchText, out int dni))
             {
-                // Realiza la búsqueda por DNI
-                listaPacientes = listaPacientes.Where(p => p.Dni == dni).ToList();
+                string dniStr = dni.ToString();
+                listfiltrada = listGeneral
+                    .Where(p => p.Paciente.Dni.ToString().Contains(dniStr))
+                    .ToList();
             }
             else
             {
                 // Realiza la búsqueda por nombre, apellido o nombre completo
-                listaPacientes = listaPacientes.Where(p =>
-                    p.Nombre.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    p.Apellido.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    (p.Nombre + " " + p.Apellido).IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+                listfiltrada = listGeneral.Where(p =>
+                    p.Paciente.Nombre.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    p.Paciente.Apellido.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    (p.Paciente.Nombre + " " + p.Paciente.Apellido).IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
             }
 
 
-            DataTable data = ConvertidorListDatatable.ConvertirListaPaciente(listaPacientes);
+            DataTable data = ConvertidorListDatatable.ConvertirListaTurnoMedico(listfiltrada);
             _viewMedico.MostrarDatosPaciente(data);
         }
-        public void BuscarTurnoListaTurnoMedico(string searchText)
+
+        public void BuscarTurnoListaTurnoAdm(string searchText)
         {
 
-            _viewListaTurnoMedico.cargarDatosPaciente(BuscarTurno(searchText));
+            List<Turno> listGeneral = _service.ObtenerDatos();
+
+            List<Turno> listfiltrada;
+            if (int.TryParse(searchText, out int dni))
+            {
+                // Realiza la búsqueda por DNI
+                string dniStr = dni.ToString();
+                listfiltrada = listGeneral
+                    .Where(p => p.Paciente.Dni.ToString().Contains(dniStr))
+                    .ToList();
+            }
+            else
+            {
+                // Realiza la búsqueda por nombre, apellido o nombre completo
+                listfiltrada = listGeneral.Where(p =>
+                    p.Paciente.Nombre.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    p.Paciente.Apellido.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    (p.Paciente.Nombre + " " + p.Paciente.Apellido).IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            }
+
+
+            DataTable data = ConvertidorListDatatable.ConvertirListaTurno(listfiltrada);
+            _viewlista.cargarDatos(data);
 
         }
         public List<Turno> BuscarTurno(string searchText)
         {
             List<Turno> listGeneral = _service.ObtenerDatos();
-           
+
             if (int.TryParse(searchText, out int dni))
             {
                 // Realiza la búsqueda por DNI en turnos
@@ -122,6 +143,7 @@ namespace ERS_NeoCare.Logic
             DataTable data = ConvertidorListDatatable.ConvertirListaTurno(listGeneral);
             return listGeneral;
         }
+
         public List<Turno> RecopilarTurnos()
         {
             return _service.ObtenerDatos();
@@ -131,11 +153,7 @@ namespace ERS_NeoCare.Logic
             DataTable data = ConvertidorListDatatable.ConvertirListaTurno(_service.ObtenerDatos());
             _viewlista.cargarDatos(data);
         }
-        public void ListaTurnoMedicos()
-        {
-            DataTable data = ConvertidorListDatatable.ConvertirListaTurno(_service.ObtenerDatos());
-            _viewListaTurnoMedico.cargarDatosPaciente(_service.ObtenerDatos());
-        }
+  
 
         public DataTable ListaTurnosGeneral()
         {
@@ -143,7 +161,7 @@ namespace ERS_NeoCare.Logic
             return data;
         }
 
-        internal void ObtenerTurnoEstado(string v)
+        internal void ObtenerTurnoEstado(bool v)
         {
             DataTable data = ConvertidorListDatatable.ConvertirListaTurno(_service.ObtenerTurnoEstado(v));
             _viewlista.cargarDatos(data);
@@ -154,10 +172,12 @@ namespace ERS_NeoCare.Logic
             _service.CambiarEstado(id);
             _viewMedico.mensaje("estado cambiado");
         }
-        internal void CargarFiltro(string v)
+        internal void CargarFiltro(bool v)
         {
-           
-            DataTable data = ConvertidorListDatatable.ConvertirListaPaciente(_service.ObtenerPacientesPorEstado(v));
+
+            List<Turno> turnos = _service.ObtenerTurnoEstado(v).Where(t => t.Medico_Id == UsuarioSingleton.Instance.UsuarioAutenticado.id).ToList();
+            
+            DataTable data = ConvertidorListDatatable.ConvertirListaTurnoMedico(turnos);
 
             _viewMedico.MostrarDatosPaciente(data);
         }

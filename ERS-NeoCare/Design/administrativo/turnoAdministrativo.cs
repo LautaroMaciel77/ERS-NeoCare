@@ -24,7 +24,9 @@ namespace ERS_NeoCare.Design.administrativo
             PacienteSingleton.Instance.Desautenticar();
             cargarHora();
             panelBuscar.Visible = false;
-            
+            comboBox1.SelectedIndex = 0;
+            labelMedico.Text = " ";
+            labelPaciente.Text = " ";
         }
 
         private void cargarHora()
@@ -201,7 +203,7 @@ namespace ERS_NeoCare.Design.administrativo
                 SelectedDate = select,
                 SelectedTimeRange = horaInicio,
                 Prioridad = prioridad,
-                Estado="n",
+                Estado=false,
                 Medico_Id = UsuarioBusqueda.Instance.UsuarioAutenticado.id,
                 Paciente_Id = PacienteSingleton.Instance.pacienteAutenticado.Id
             };
@@ -224,17 +226,23 @@ namespace ERS_NeoCare.Design.administrativo
             }
         }
 
-        private void btn_buscarMedico_Click(object sender, EventArgs e)
-        {
-            panelBuscar.Visible = true;
-            buscarPaciente buscarPaciente = new buscarPaciente();
-            buscarPaciente.Dock = DockStyle.Fill;
-            buscarPaciente.CloseClick += Closeclick;
 
-            panelBuscar.Controls.Clear();
-            panelBuscar.Controls.Add(buscarPaciente);
-            buscarPaciente.BringToFront();
+        private void AceptarClick(object sender, EventArgs e)
+        {
+            panelBuscar.Visible = false;
+            if (UsuarioBusqueda.Instance.UsuarioAutenticado != null)
+            {
+                labelMedico.Text = UsuarioBusqueda.Instance.UsuarioAutenticado.Nombre + " " + UsuarioBusqueda.Instance.UsuarioAutenticado.Apellido;
+            }
+            if (PacienteSingleton.Instance.pacienteAutenticado != null)
+            {
+                labelPaciente.Text = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " " + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
+            }
+          
+
         }
+
+
 
         private void Closeclick(object sender, EventArgs e)
         {
@@ -269,7 +277,8 @@ namespace ERS_NeoCare.Design.administrativo
             buscarPaciente buscarPaciente = new buscarPaciente();
             buscarPaciente.Dock = DockStyle.Fill;
             buscarPaciente.CloseClick += Closeclick;
-
+            buscarPaciente.AceptarClick += AceptarClick;
+   ;
             panelBuscar.Controls.Clear();
             panelBuscar.Controls.Add(buscarPaciente);
             buscarPaciente.BringToFront();
@@ -317,13 +326,29 @@ namespace ERS_NeoCare.Design.administrativo
                 SelectedDate = select,
                 SelectedTimeRange = horaInicio,
                 Prioridad = prioridad,
-                Estado = "n",
+                Estado = false,
                 Medico_Id = UsuarioBusqueda.Instance.UsuarioAutenticado.id,
                 Paciente_Id = PacienteSingleton.Instance.pacienteAutenticado.Id
             };
 
             _presenter.insertarTurno(turno);
+            LimpiarCampos();
             cargarFecha();
+        }
+        private void LimpiarCampos()
+        {
+           labelMedico.Text = " ";
+            labelPaciente.Text = " ";
+            labelHora.Text = " ";   
+            labelFecha.Text = " ";
+            UsuarioBusqueda.Instance.DesautenticarUsuario();
+           PacienteSingleton.Instance.Desautenticar();
+            rangoHora = null; 
+            selectedRowIndex = 0;
+            select = monthCalendar1.SelectionStart;
+
+            comboBox1.SelectedIndex = 0; 
+
         }
     }
 }

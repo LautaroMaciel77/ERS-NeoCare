@@ -22,6 +22,8 @@ namespace ERS_NeoCare.Design.administrativo
             InitializeComponent();
             cargarCampos();
             _presenter = new UsuarioPresenter(new UsuarioService(Configuracion.ConnectionString));
+            ComboxProfesion.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboxProfesion.SelectedIndex = 0;
         }
 
         private void cargarCampos()
@@ -61,8 +63,8 @@ namespace ERS_NeoCare.Design.administrativo
            textApellido.Clear();
             textMatricula.Clear();
            textDni.Clear();
-            textBoxProfesion.Clear();
-           textContraseña.Clear();
+            ComboxProfesion.SelectedIndex = 0;
+            textContraseña.Clear();
 
 
         }
@@ -108,10 +110,7 @@ namespace ERS_NeoCare.Design.administrativo
                 e.Handled = true;
 
             }
-            if (textBoxProfesion.Text.Length >= 1)
-            {
-                e.Handled = true;
-            }
+     
         }
 
 
@@ -135,7 +134,7 @@ namespace ERS_NeoCare.Design.administrativo
         private void btnEditarUsuario_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textNombre.Text) || string.IsNullOrWhiteSpace(textApellido.Text)
-            || string.IsNullOrWhiteSpace(textDni.Text) || string.IsNullOrWhiteSpace(textBoxProfesion.Text)
+            || string.IsNullOrWhiteSpace(textDni.Text) 
             || string.IsNullOrWhiteSpace(textMatricula.Text) || string.IsNullOrWhiteSpace(textContraseña.Text)
             )
             {
@@ -149,11 +148,7 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("El campo DNI debe contener solo números y tener un máximo de 8 caracteres.", "Formato de DNI incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (!int.TryParse(textBoxProfesion.Text, out int profesion) || textDni.Text.Length > 8)
-            {
-                MessageBox.Show("El campo profesion debe contener solo números y tener un máximo de 8 caracteres.", "Formato de profesion incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+        
             if (textMatricula.Text.Length > 12)
             {
                 MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -169,7 +164,7 @@ namespace ERS_NeoCare.Design.administrativo
             user.Apellido = textApellido.Text;
             user.Matricula = int.Parse(textMatricula.Text);
             user.DNI = int.Parse(textDni.Text);
-            user.ProfesionID = int.Parse(textBoxProfesion.Text);
+            user.ProfesionID = ObtenerProfesionID(ComboxProfesion.SelectedItem.ToString());
             bool editarUser = _presenter.EditarUsuario(user);
             if (editarUser)
             {
@@ -181,5 +176,31 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("Hubo un problema al editado el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private int ObtenerProfesionID(string tipoUsuario)
+        {
+            switch (tipoUsuario.ToLower())
+            {
+                case "administrativo":
+                    return 1;
+
+                case "enfermero":
+                    return 2;
+
+                case "medico":
+                    return 3;
+
+                case "bioquimico":
+                    return 4;
+
+                case "admin":
+                    return 5;
+
+                default:
+                    // Manejar un caso por defecto o mostrar un mensaje de error, según sea necesario
+                    return 1; // Otra opción podría ser lanzar una excepción
+            }
+        }
+
     }
 }

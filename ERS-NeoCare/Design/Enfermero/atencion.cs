@@ -10,9 +10,12 @@ namespace ERS_NeoCare.Design.administrativo
         public event EventHandler UserControlClosed;
         private lista_paciente MainForm { get; set; }
         private AtencionPresenter _presenter;
+        private OrdenPresenter _presenterorden;
+        public event EventHandler recargar;
         public atencion()
         {
             _presenter = new AtencionPresenter(this, new AtencionService());
+            _presenterorden = new OrdenPresenter(new OrdenService());
             InitializeComponent();
 
             labelFechaOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.FechaCreacion.ToString("dd/MM/yyyy");
@@ -74,8 +77,8 @@ namespace ERS_NeoCare.Design.administrativo
 
             };
             _presenter.insertar(atencion);
-
-
+            _presenterorden.cambiarEstado(OrdenSingleton.Instance.OrdenAutenticada.Id);
+    
 
 
 
@@ -88,6 +91,33 @@ namespace ERS_NeoCare.Design.administrativo
         internal void mensaje(string v)
         {
             MessageBox.Show(v, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            volver();
+        }
+
+        private void volver()
+        {
+            lista_paciente_enfermero pacienteControl = new lista_paciente_enfermero();
+            pacienteControl.Dock = DockStyle.Fill;
+
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
+
+
+
+
+            }
+            recargar?.Invoke(this, EventArgs.Empty);
         }
     }
 }

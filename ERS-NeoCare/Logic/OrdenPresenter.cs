@@ -58,6 +58,56 @@ namespace ERS_NeoCare.Logic
             DataTable data = ConvertidorListDatatable.ConvertirOrdenes(_service.traerOrdenes());
             _viewEstados.cargarOrdenes(data);
         }
-    
+        public void BuscarMedico(string searchText)
+        {
+            List<OrdenModel> listGeneral = _service.traerOrdenes().Where(t => t.Medico.id == UsuarioSingleton.Instance.UsuarioAutenticado.id).ToList();
+
+            List<OrdenModel> listfiltrada;
+            if (int.TryParse(searchText, out int dni))
+            {
+                string dniStr = dni.ToString();
+                listfiltrada = listGeneral
+                    .Where(p => p.Paciente.Dni.ToString().Contains(dniStr))
+                    .ToList();
+            }
+            else
+            {
+                // Realiza la búsqueda por nombre, apellido o nombre completo
+                listfiltrada = listGeneral.Where(p =>
+                    p.Paciente.Nombre.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    p.Paciente.Apellido.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    (p.Paciente.Nombre + " " + p.Paciente.Apellido).IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            }
+
+
+            DataTable data = ConvertidorListDatatable.ConvertirOrdenes(listfiltrada);
+            _viewEstados.cargarOrdenes(data);
+        }
+
+        internal void cambiarEstado(int id)
+        {
+            _service.CambiarEstado(id);
+        
+        }
+        internal void CargarFiltro(bool v)
+        {
+
+            List<OrdenModel> ordenes = _service.traerOrdenes().Where(t => t.Medico.id == UsuarioSingleton.Instance.UsuarioAutenticado.id && t.Estado==v).ToList();
+
+            DataTable data = ConvertidorListDatatable.ConvertirOrdenes(ordenes);
+
+            _viewEstados.cargarOrdenes(data);
+        }
+
+        internal void FiltroUrgencia(bool v)
+        {
+            List<OrdenModel> ordenes = _service.traerOrdenes().Where(t => t.Medico.id == UsuarioSingleton.Instance.UsuarioAutenticado.id && t.Urgencia == v).ToList();
+
+            DataTable data = ConvertidorListDatatable.ConvertirOrdenes(ordenes);
+
+            _viewEstados.cargarOrdenes(data);
+        }
+
+
     }
 }

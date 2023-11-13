@@ -58,14 +58,21 @@ namespace ERS_NeoCare.Design.administrativo
                 IdPaciente=PacienteSingleton.Instance.pacienteAutenticado.Id
             };
             _presenter.insertar(evaluacionModel);
+            limpiarCampos();
 
 
-        
+
 
 
 
         }
+        private void limpiarCampos()
+        {
+            textObservaciones.Text = null;
+            textBoxSintomas.Text = null;
+            textBoxIndicacionesPaciente.Text = null;
 
+        }
         private void textObra_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))

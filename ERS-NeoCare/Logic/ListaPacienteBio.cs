@@ -27,7 +27,7 @@ namespace ERS_NeoCare.Logic
         {
             List<OrdenModel> ordenes = _model.traerOrdenes();
 
-            List<OrdenModel> ordenesEnf = ordenes.Where(o => o.TipoOrden == "Analisis").ToList();
+            List<OrdenModel> ordenesEnf = ordenes.Where(o => o.TipoOrden == "Analisis" && o.Estado != true).ToList();
             DataTable data = ConvertidorListDatatable.ConvertirOrdenes(ordenesEnf);
             _view.MostrarDatosPaciente(data);
         }
@@ -40,13 +40,12 @@ namespace ERS_NeoCare.Logic
         internal void buscarTexto(string searchText)
         {
             List<OrdenModel> ordenes = _model.traerOrdenes();
-            List<OrdenModel> datos = ordenes.Where(o => o.TipoOrden == "Analisis").ToList();
+            List<OrdenModel> datos = ordenes.Where(o => o.TipoOrden == "Analisis" && o.Estado != true).ToList();
             if (int.TryParse(searchText, out int dni))
             {
-                // Realiza  por DNI del paciente
                 List<OrdenModel> resultadosPorDNI = datos
-                    .Where(d => d.Paciente.Dni == dni || d.Medico.DNI == dni)
-                    .ToList();
+             .Where(d => d.Paciente.Dni.ToString().StartsWith(searchText) || d.Medico.DNI.ToString().StartsWith(searchText))
+             .ToList();
                 DataTable dataTablePorDNI = ConvertidorListDatatable.ConvertirOrdenes(resultadosPorDNI);
 
                 _view.MostrarDatosPaciente(dataTablePorDNI);
@@ -69,5 +68,14 @@ namespace ERS_NeoCare.Logic
             }
         }
 
+        internal void FiltroUrgencia(bool v)
+        {
+            List<OrdenModel> ordenes = _model.traerOrdenes();
+            List<OrdenModel> datos = ordenes.Where(o => o.TipoOrden == "Atencion" && o.Estado != true && o.Urgencia == v).ToList();
+
+            DataTable data = ConvertidorListDatatable.ConvertirOrdenes(datos);
+
+            _view.MostrarDatosPaciente(data);
+        }
     }
 }

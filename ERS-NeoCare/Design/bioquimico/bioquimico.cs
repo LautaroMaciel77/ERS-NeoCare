@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERS_NeoCare.Design.administrativo;
+using System;
 using System.Windows.Forms;
 
 namespace ERS_NeoCare.Design
@@ -9,7 +10,7 @@ namespace ERS_NeoCare.Design
 
         // Declara un evento personalizado para notificar clics en los botones
         public event EventHandler ListaAnalisisButtonClick;
-        public event EventHandler ListaPacienteButtonClick;
+        public event EventHandler ListaAnalisisHechoClick;
 
         public Bioquimico()
         {
@@ -21,12 +22,16 @@ namespace ERS_NeoCare.Design
             MainForm = mainForm;
         }
 
-        private void iconButton3_Click_1(object sender, EventArgs e)
+
+
+
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
         {
-            ListaPacienteButtonClick?.Invoke(this, EventArgs.Empty);
+            ListaAnalisisHechoClick?.Invoke(this, EventArgs.Empty);
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void iconButton3_Click(object sender, EventArgs e)
         {
             ListaAnalisisButtonClick?.Invoke(this, EventArgs.Empty);
         }

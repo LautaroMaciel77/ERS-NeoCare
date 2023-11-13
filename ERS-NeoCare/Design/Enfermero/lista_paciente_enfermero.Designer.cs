@@ -54,6 +54,8 @@
             this.dBNeoCareDataSet4 = new ERS_NeoCare.DBNeoCareDataSet4();
             this.ordenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordenTableAdapter = new ERS_NeoCare.DBNeoCareDataSet4TableAdapters.ordenTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -182,6 +184,7 @@
             this.estado.DataPropertyName = "estado";
             this.estado.HeaderText = "estado";
             this.estado.Name = "estado";
+            this.estado.Visible = false;
             // 
             // Acciones
             // 
@@ -227,12 +230,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.label1.Location = new System.Drawing.Point(79, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.Size = new System.Drawing.Size(101, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Pacientes";
             // 
@@ -246,7 +249,7 @@
             this.panelAgregar.AutoSize = true;
             this.panelAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.panelAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelAgregar.Location = new System.Drawing.Point(468, 309);
+            this.panelAgregar.Location = new System.Drawing.Point(508, 334);
             this.panelAgregar.Name = "panelAgregar";
             this.panelAgregar.Size = new System.Drawing.Size(260, 150);
             this.panelAgregar.TabIndex = 18;
@@ -265,10 +268,39 @@
             // 
             this.ordenTableAdapter.ClearBeforeFill = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(305, 83);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 18);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Tipo Urgencia";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Urgente",
+            "No Urgente",
+            "Todos"});
+            this.comboBox2.Location = new System.Drawing.Point(410, 79);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(284, 28);
+            this.comboBox2.TabIndex = 23;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
             // lista_paciente_enfermero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.panelAgregar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox2);
@@ -312,5 +344,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn urgencia;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estado;
         private System.Windows.Forms.DataGridViewButtonColumn Acciones;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

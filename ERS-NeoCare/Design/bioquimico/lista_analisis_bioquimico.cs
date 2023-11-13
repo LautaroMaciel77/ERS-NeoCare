@@ -8,13 +8,13 @@ namespace ERS_NeoCare.Design
 {
     public partial class lista_analisis_bioquimico : UserControl
     {
-  
 
-      
-       
+
+
+
 
         private AnalisisPresenter presenter;
-     
+
 
         public lista_analisis_bioquimico()
         {
@@ -22,7 +22,7 @@ namespace ERS_NeoCare.Design
             InitializeComponent();
             presenter = new AnalisisPresenter(this, new AnalisisService());
             presenter.TraerAnalisis();
-          
+
         }
         public void MostrarDatosPaciente(DataTable data)
         {
@@ -35,20 +35,20 @@ namespace ERS_NeoCare.Design
         {
             if (e.ColumnIndex == DGVAdministrativo.Columns["acciones"].Index)
             {
-        
-          
-         
+
+
+
 
             }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            {
+                string searchText = textBox2.Text;
+                presenter.buscarTexto(searchText);
+            }
 
-        }
-
-        private void DGVAdministrativo_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
     }

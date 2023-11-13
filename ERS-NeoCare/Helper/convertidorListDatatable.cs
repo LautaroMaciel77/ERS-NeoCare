@@ -64,35 +64,69 @@ namespace ERS_NeoCare.Helper
                 dataTable.Columns.Add("SelectedDate", typeof(DateTime));
                 dataTable.Columns.Add("SelectedTimeRange", typeof(TimeSpan));
                 dataTable.Columns.Add("Prioridad", typeof(string));
-                dataTable.Columns.Add("Estado", typeof(Image)); // Cambiar tipo de columna a Image
+                dataTable.Columns.Add("Estado", typeof(bool)); // Cambiar tipo de columna a Image
                 dataTable.Columns.Add("MedicoId", typeof(int));
                 dataTable.Columns.Add("PacienteId", typeof(int));
                 dataTable.Columns.Add("NombrePaciente", typeof(string));
+                dataTable.Columns.Add("NombreMedico", typeof(string));
 
 
             foreach (var turno in turnos)
                 {
 
 
-                Image estadoImage = (turno.Estado == "s") ? Properties.Resources.check_box_FILL : Properties.Resources.check_box_blank;
-
+          
                     dataTable.Rows.Add(
                         turno.Id,
                         turno.SelectedDate,
                         turno.SelectedTimeRange,
                         turno.Prioridad,
-                        estadoImage, // Almacenar la imagen en lugar de "s" o "n"
+                        turno.Estado, // Almacenar la imagen en lugar de "s" o "n"
                         turno.Medico_Id,
                         turno.Paciente_Id,
-                        turno.Paciente.Nombre
-        
+                        turno.Paciente.Nombre+" "+turno.Paciente.Apellido,
+                        turno.Medico.Nombre + " " + turno.Medico.Apellido
+
                     );
                 }
 
                 return dataTable;
             }
-        
-  
+        public static DataTable ConvertirListaTurnoMedico(List<Turno> turnos)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Id", typeof(int));
+            dataTable.Columns.Add("PacienteDni", typeof(int));
+            dataTable.Columns.Add("SelectedDate", typeof(DateTime));
+            dataTable.Columns.Add("SelectedTimeRange", typeof(TimeSpan));
+            dataTable.Columns.Add("Prioridad", typeof(string));
+            dataTable.Columns.Add("Estado", typeof(bool));  // Cambiar tipo de columna a Image
+            dataTable.Columns.Add("NombrePaciente", typeof(string));
+            dataTable.Columns.Add("ObraSocial", typeof(string));
+
+
+
+            foreach (var turno in turnos)
+            {
+
+             
+                dataTable.Rows.Add(
+                    turno.Id,
+                    turno.Paciente.Dni,
+                    turno.SelectedDate,
+                    turno.SelectedTimeRange,
+                    turno.Prioridad,
+                    turno.Estado, // Almacenar la imagen en lugar de "s" o "n"
+                    turno.Paciente.Nombre + " " + turno.Paciente.Apellido,
+                    turno.Paciente.ObraSocial + " " + turno.Paciente.ObraSocial
+
+
+                );
+            }
+
+            return dataTable;
+        }
+
 
         internal static DataTable ConvertirOrdenes(List<OrdenModel> ordenes)
         {

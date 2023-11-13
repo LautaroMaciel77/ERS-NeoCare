@@ -60,7 +60,7 @@ namespace ERS_NeoCare.Design
         {
             atencion atencion = new atencion();
             atencion.Dock = DockStyle.Fill;
-
+            atencion.recargar += recargar;
 
             menu menuForm = this.ParentForm as menu;
 
@@ -78,7 +78,11 @@ namespace ERS_NeoCare.Design
             }
         }
 
-
+        private void recargar(object sender, EventArgs e)
+        {
+            DGVAdministrativo.Invalidate();
+            DGVAdministrativo.Refresh();
+        }
 
         private void closeclick(object sender, EventArgs e)
         {
@@ -138,6 +142,36 @@ namespace ERS_NeoCare.Design
         {
             string searchText = textBox2.Text;
             _presenter.buscarTexto(searchText);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string seleccion = comboBox2.SelectedItem.ToString();
+
+            // Utiliza un switch para tomar diferentes acciones según el valor seleccionado
+
+            switch (seleccion)
+            {
+                case "Urgente":
+                    _presenter.FiltroUrgencia(true);
+                    break;
+
+
+                case "No Urgente":
+                    _presenter.FiltroUrgencia(false);
+                    break;
+                case "Todos":
+                    _presenter.CargarDatosPaciente();
+                    break;
+                default:
+                    _presenter.CargarDatosPaciente();
+                    break;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

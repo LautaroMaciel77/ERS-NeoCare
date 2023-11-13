@@ -11,6 +11,7 @@ namespace ERS_NeoCare.Model
     using System.Net;
     using System.Threading.Tasks;
     using System.Windows;
+    using System.Windows.Forms;
 
     public class UsuarioService
     {
@@ -75,7 +76,8 @@ namespace ERS_NeoCare.Model
                             Nombre = usuario.Nombre,
                             Apellido = usuario.Apellido,
                             ProfesionID = usuario.ProfesionID,
-                            Password = usuario.Password
+                            Password = usuario.Password,
+                            Baja = usuario.Baja
                         };
 
                         // Agrega el nuevo usuario al contexto
@@ -90,6 +92,9 @@ namespace ERS_NeoCare.Model
                 catch (Exception ex)
                 {
                     // Maneja excepciones aquí.
+                    // Muestra un MessageBox con el mensaje de la excepción
+                    System.Windows.Forms.MessageBox.Show("Error al insertar usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                     Console.WriteLine("Error general: " + ex.Message);
                     return false; // O maneja de otra manera apropiada
                 }

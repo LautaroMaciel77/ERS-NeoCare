@@ -41,6 +41,7 @@ namespace ERS_NeoCare.Model
 
 
         public virtual Profesion Profesion { get; set; }
+        public string NombreApellido => $"{Nombre} {Apellido}";
 
     }
 

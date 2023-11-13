@@ -46,17 +46,22 @@ namespace ERS_NeoCare.Logic
             _viewLista.CargarDatosPaciente(data);
         }
 
+        internal void buscar(string id)
+        {
+            _model.buscar(id);
+        }
+
         internal void buscarTexto(string searchText)
         {
                 List<AtencionEnfermeriaModel> datos = _model.ObtenerAtenciones();
 
                 if (int.TryParse(searchText, out int dni))
-                {
-                    // Realiza  por DNI del paciente
-                    List<AtencionEnfermeriaModel> resultadosPorDNI = datos
-                        .Where(d => d.Paciente.Dni == dni || d.Medico.DNI == dni)
-                        .ToList();
-                    DataTable dataTablePorDNI = ConvertidorListDatatable.ConvertirAtenciones(resultadosPorDNI);
+                {      
+                List<AtencionEnfermeriaModel> resultadosPorDNI = datos
+                    .Where(d => d.Paciente.Dni.ToString().StartsWith(searchText) || d.Medico.DNI.ToString().StartsWith(searchText))
+                    .ToList();
+             
+                DataTable dataTablePorDNI = ConvertidorListDatatable.ConvertirAtenciones(resultadosPorDNI);
 
                     _viewLista.CargarDatosPaciente(dataTablePorDNI);
                 }

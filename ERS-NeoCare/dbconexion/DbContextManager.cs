@@ -24,6 +24,16 @@ internal class DbContextManager
         }
         return dbContext;
     }
+
+
+    public static void DisposeContext()
+    {
+        if (dbContext != null)
+        {
+            dbContext.Dispose();
+            dbContext = null;
+        }
+    }
 }
 
 

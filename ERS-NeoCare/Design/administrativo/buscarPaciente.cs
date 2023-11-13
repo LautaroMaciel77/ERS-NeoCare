@@ -20,6 +20,8 @@ namespace ERS_NeoCare.Design.administrativo
         private UsuarioPresenter _presenterUsuario;
         private PacientePresenter _presenterPaciente;
         public event EventHandler CloseClick;
+        public event EventHandler AceptarClick;
+        public event EventHandler AgregarClick;
         public string tipoModelo;
         public buscarPaciente()
         {
@@ -49,7 +51,7 @@ namespace ERS_NeoCare.Design.administrativo
 
             string searchText = textBoxBusqueda.Text;
             if(tipoModelo == "m") {
-                _presenterUsuario.ObtenerUsuariosBusqueda(searchText);
+                _presenterUsuario.ObtenerMedicosBusqueda(searchText);
             }
             else
             {
@@ -114,7 +116,7 @@ namespace ERS_NeoCare.Design.administrativo
 
         private void iconbtn_medico_Click(object sender, EventArgs e)
         {
-            IniciarDatagriew(_presenterUsuario.ObtenerUsuariosGeneral());
+            IniciarDatagriew(_presenterUsuario.ObtenerUsuariosMedicos());
             panel1.Visible = true;
             tipoModelo = "m";
     
@@ -137,8 +139,9 @@ namespace ERS_NeoCare.Design.administrativo
 
         private void iconAgregar_Click(object sender, EventArgs e)
         {
-            CloseClick?.Invoke(this, EventArgs.Empty);
-           
+
+
+            AceptarClick?.Invoke(this, EventArgs.Empty);
         }
     }
 }

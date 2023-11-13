@@ -48,11 +48,15 @@
             this.personalsaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personal_saludTableAdapter = new ERS_NeoCare.DBNeoCareDataSetTableAdapters.personal_saludTableAdapter();
             this.personalsaludBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxProfesion = new System.Windows.Forms.TextBox();
+            this.dBNeoCareDataSet6 = new ERS_NeoCare.DBNeoCareDataSet6();
+            this.profesionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.profesionTableAdapter = new ERS_NeoCare.DBNeoCareDataSet6TableAdapters.profesionTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textContraseña
@@ -191,15 +195,18 @@
             // 
             // ComboxProfesion
             // 
-            this.ComboxProfesion.DataSource = this.dBNeoCareDataSet;
-            this.ComboxProfesion.DisplayMember = "personal_salud.profesion_id";
             this.ComboxProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboxProfesion.FormattingEnabled = true;
-            this.ComboxProfesion.Location = new System.Drawing.Point(771, 296);
+            this.ComboxProfesion.Items.AddRange(new object[] {
+            "administrativo",
+            "enfermero",
+            "medico",
+            "bioquimico",
+            "admin"});
+            this.ComboxProfesion.Location = new System.Drawing.Point(517, 296);
             this.ComboxProfesion.Name = "ComboxProfesion";
             this.ComboxProfesion.Size = new System.Drawing.Size(236, 28);
             this.ComboxProfesion.TabIndex = 43;
-            this.ComboxProfesion.ValueMember = "personal_salud.profesion_id";
             // 
             // dBNeoCareDataSet
             // 
@@ -225,15 +232,19 @@
             this.personalsaludBindingSource1.DataMember = "personal_salud";
             this.personalsaludBindingSource1.DataSource = this.dBNeoCareDataSetBindingSource;
             // 
-            // textBoxProfesion
+            // dBNeoCareDataSet6
             // 
-            this.textBoxProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProfesion.Location = new System.Drawing.Point(517, 296);
-            this.textBoxProfesion.Name = "textBoxProfesion";
-            this.textBoxProfesion.Size = new System.Drawing.Size(236, 26);
-            this.textBoxProfesion.TabIndex = 41;
-            this.textBoxProfesion.TextChanged += new System.EventHandler(this.textBoxProfesion_TextChanged);
-            this.textBoxProfesion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.dBNeoCareDataSet6.DataSetName = "DBNeoCareDataSet6";
+            this.dBNeoCareDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // profesionBindingSource
+            // 
+            this.profesionBindingSource.DataMember = "profesion";
+            this.profesionBindingSource.DataSource = this.dBNeoCareDataSet6;
+            // 
+            // profesionTableAdapter
+            // 
+            this.profesionTableAdapter.ClearBeforeFill = true;
             // 
             // agregar_usuario
             // 
@@ -241,7 +252,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ComboxProfesion);
             this.Controls.Add(this.btnRegistrarUsuario);
-            this.Controls.Add(this.textBoxProfesion);
             this.Controls.Add(this.textContraseña);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelContraseña);
@@ -260,6 +270,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalsaludBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,6 +297,8 @@
         private System.Windows.Forms.BindingSource personalsaludBindingSource;
         private DBNeoCareDataSetTableAdapters.personal_saludTableAdapter personal_saludTableAdapter;
         private System.Windows.Forms.BindingSource personalsaludBindingSource1;
-        private System.Windows.Forms.TextBox textBoxProfesion;
+        private System.Windows.Forms.BindingSource profesionBindingSource;
+        private DBNeoCareDataSet6 dBNeoCareDataSet6;
+        private DBNeoCareDataSet6TableAdapters.profesionTableAdapter profesionTableAdapter;
     }
 }

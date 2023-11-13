@@ -26,7 +26,7 @@ namespace ERS_NeoCare.Design
             _presenter = new ImenuPresenter(this, new ProfesionService(Configuracion.ConnectionString));           
             _presenter.CargarProfesion();
             _presenter.cargarUserControl();
-           
+            labelNombre.Text = UsuarioSingleton.Instance.UsuarioAutenticado.Nombre + " " + UsuarioSingleton.Instance.UsuarioAutenticado.Apellido;
         }
 
             public void MostrarDescripcionProfesion(string descripcion)

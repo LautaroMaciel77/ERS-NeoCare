@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxProfesion = new System.Windows.Forms.TextBox();
             this.textContraseña = new System.Windows.Forms.TextBox();
             this.labelContraseña = new System.Windows.Forms.Label();
             this.labelProfesion = new System.Windows.Forms.Label();
@@ -43,16 +42,8 @@
             this.labelApellido = new System.Windows.Forms.Label();
             this.radioPass = new System.Windows.Forms.RadioButton();
             this.btnEditarUsuario = new FontAwesome.Sharp.IconButton();
+            this.ComboxProfesion = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // textBoxProfesion
-            // 
-            this.textBoxProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProfesion.Location = new System.Drawing.Point(517, 296);
-            this.textBoxProfesion.Name = "textBoxProfesion";
-            this.textBoxProfesion.Size = new System.Drawing.Size(236, 26);
-            this.textBoxProfesion.TabIndex = 41;
-            this.textBoxProfesion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textContraseña
             // 
@@ -85,10 +76,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(484, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 25);
+            this.label1.Size = new System.Drawing.Size(162, 25);
             this.label1.TabIndex = 33;
             this.label1.Text = "Editar Usuario";
             // 
@@ -186,7 +177,7 @@
             this.btnEditarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(158)))));
             this.btnEditarUsuario.FlatAppearance.BorderSize = 0;
             this.btnEditarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarUsuario.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.btnEditarUsuario.IconColor = System.Drawing.Color.Black;
             this.btnEditarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -201,13 +192,28 @@
             this.btnEditarUsuario.UseVisualStyleBackColor = false;
             this.btnEditarUsuario.Click += new System.EventHandler(this.btnEditarUsuario_Click);
             // 
+            // ComboxProfesion
+            // 
+            this.ComboxProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboxProfesion.FormattingEnabled = true;
+            this.ComboxProfesion.Items.AddRange(new object[] {
+            "administrativo",
+            "enfermero",
+            "medico",
+            "bioquimico",
+            "admin"});
+            this.ComboxProfesion.Location = new System.Drawing.Point(517, 296);
+            this.ComboxProfesion.Name = "ComboxProfesion";
+            this.ComboxProfesion.Size = new System.Drawing.Size(236, 28);
+            this.ComboxProfesion.TabIndex = 44;
+            // 
             // editar_usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ComboxProfesion);
             this.Controls.Add(this.btnEditarUsuario);
             this.Controls.Add(this.radioPass);
-            this.Controls.Add(this.textBoxProfesion);
             this.Controls.Add(this.textContraseña);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelContraseña);
@@ -240,8 +246,8 @@
         private System.Windows.Forms.Label labelProfesion;
         private System.Windows.Forms.TextBox textContraseña;
         private System.Windows.Forms.Label labelContraseña;
-        private System.Windows.Forms.TextBox textBoxProfesion;
         private System.Windows.Forms.RadioButton radioPass;
         private FontAwesome.Sharp.IconButton btnEditarUsuario;
+        private System.Windows.Forms.ComboBox ComboxProfesion;
     }
 }

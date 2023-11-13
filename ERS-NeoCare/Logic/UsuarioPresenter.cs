@@ -8,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace ERS_NeoCare.Logic
 {
@@ -59,7 +60,7 @@ namespace ERS_NeoCare.Logic
         //funcion para obtener los usuarios sin cargar un view
         public DataTable ObtenerUsuariosGeneral()
         {
-            DataTable data = convertirListaUsuario(_model.ObtenerDatosUsuarios("n"));
+            DataTable data = ConvertidorListDatatable.ConvertirListaUsuario(_model.ObtenerDatosUsuarios("n"));
             //aca falta filtrar solo medico
             return data;
         }
@@ -68,28 +69,28 @@ namespace ERS_NeoCare.Logic
           return _model.ObtenerTodosLosUsuarios();
 
         }
-        public void ObtenerUsuariosBusqueda(string searchText)
+        public void ObtenerMedicosBusqueda(string searchText)
         {
 
 
             List<UsuarioModel> datos = _model.ObtenerDatosUsuarios("n");
-
+            List<UsuarioModel> medicosFiltrados = datos.Where(u => u.ProfesionID == 3).ToList();
 
             if (int.TryParse(searchText, out int dni))
             {
                 // Realiza la búsqueda por DNI
-                List<UsuarioModel> resultadosPorDNI = datos.Where(d => d.DNI == dni).ToList();
-                DataTable dataTablePorDNI = convertirListaUsuario(resultadosPorDNI);
+                List<UsuarioModel> resultadosPorDNI = medicosFiltrados.Where(d => d.DNI == dni).ToList();
+                DataTable dataTablePorDNI = ConvertidorListDatatable.ConvertirListaUsuario(resultadosPorDNI);
 
                 _viewBuqueda.cargarLista(dataTablePorDNI);
             }
             else
             {
                 // Realiza la búsqueda por nombre, apellido o nombre completo
-                List<UsuarioModel> resultados = datos.Where(d =>
+                List<UsuarioModel> resultados = medicosFiltrados.Where(d =>
                     d.Nombre.Contains(searchText) || d.Apellido.Contains(searchText) ||
                     (d.Nombre + " " + d.Apellido).Contains(searchText)).ToList();
-                DataTable dataTable = convertirListaUsuario(resultados);
+                DataTable dataTable = ConvertidorListDatatable.ConvertirListaUsuario(resultados);
 
                 _viewBuqueda.cargarLista(dataTable);
             }
@@ -126,13 +127,13 @@ namespace ERS_NeoCare.Logic
         public void ObtenerUsuarios(string valorBaja)
         {
 
-            DataTable data = convertirListaUsuario(_model.ObtenerDatosUsuarios(valorBaja));
+            DataTable data = ConvertidorListDatatable.ConvertirListaUsuario((_model.ObtenerDatosUsuarios(valorBaja)));
             _viewLista.MostrarDatosPaciente(data);
         }
         public void ObtenerUsuarioBaja(string valorBaja)
         {
 
-            DataTable data = convertirListaUsuario(_model.ObtenerDatosUsuarios(valorBaja));
+            DataTable data = ConvertidorListDatatable.ConvertirListaUsuario(_model.ObtenerDatosUsuarios(valorBaja));
             _viewBaja.MostrarDatos(data);
         }
         public bool cambiarBaja()
@@ -140,26 +141,17 @@ namespace ERS_NeoCare.Logic
 
            return _model.CambiarEstadoBajaUsuario();
         }
-        public DataTable convertirListaUsuario(List<UsuarioModel> usuariosConBaja)
+     
+
+        internal DataTable ObtenerUsuariosMedicos()
         {
-            DataTable dataTable = new DataTable();
-            if (usuariosConBaja != null)
-            {
-                dataTable.Columns.Add("id", typeof(int));
-                dataTable.Columns.Add("Matricula", typeof(int));
-                dataTable.Columns.Add("DNI", typeof(int));
-                dataTable.Columns.Add("Nombre", typeof(string));
-                dataTable.Columns.Add("Apellido", typeof(string));
-                dataTable.Columns.Add("ProfesionID", typeof(int));
+            List<UsuarioModel> medicos = _model.ObtenerDatosUsuarios("n");
+             List<UsuarioModel> medicosFiltrados = medicos.Where(u => u.ProfesionID == 3).ToList();
 
-                foreach (var usuario in usuariosConBaja)
-                {
-                    dataTable.Rows.Add(usuario.id, usuario.Matricula, usuario.DNI, usuario.Nombre, usuario.Apellido, usuario.ProfesionID);
-                }
-                
-            }
-            return dataTable;
+            // Convertir la lista filtrada a DataTable
+            DataTable data = ConvertidorListDatatable.ConvertirListaUsuario(medicosFiltrados);
 
+            return data;
         }
     }
 }

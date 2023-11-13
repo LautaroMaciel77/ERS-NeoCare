@@ -110,6 +110,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -126,7 +127,7 @@
             this.btnRegistrarOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(158)))));
             this.btnRegistrarOrden.FlatAppearance.BorderSize = 0;
             this.btnRegistrarOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarOrden.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarOrden.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarOrden.Location = new System.Drawing.Point(531, 585);
             this.btnRegistrarOrden.Name = "btnRegistrarOrden";
@@ -140,10 +141,10 @@
             // labelOrden
             // 
             this.labelOrden.AutoSize = true;
-            this.labelOrden.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOrden.Location = new System.Drawing.Point(526, 34);
             this.labelOrden.Name = "labelOrden";
-            this.labelOrden.Size = new System.Drawing.Size(170, 25);
+            this.labelOrden.Size = new System.Drawing.Size(172, 25);
             this.labelOrden.TabIndex = 40;
             this.labelOrden.Text = "Orden (Pedido)";
             // 

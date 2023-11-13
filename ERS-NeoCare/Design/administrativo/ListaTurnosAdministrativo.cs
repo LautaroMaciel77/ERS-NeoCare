@@ -20,7 +20,7 @@ namespace ERS_NeoCare.Design.administrativo
         public ListaTurnosAdministrativo()
         {
             InitializeComponent();
-            _presenter = new TurnoPresenter(this,new TurnoService(Configuracion.ConnectionString));
+            _presenter = new TurnoPresenter(this, new TurnoService(Configuracion.ConnectionString));
             _presenter.ListaTurnos();
 
         }
@@ -29,14 +29,7 @@ namespace ERS_NeoCare.Design.administrativo
         {
             DGVAdministrativo.DataSource = data;
         }
-        
 
-   
-  
-        private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -45,12 +38,12 @@ namespace ERS_NeoCare.Design.administrativo
             switch (seleccion)
             {
                 case "Atendido":
-                    _presenter.ObtenerTurnoEstado("s");
+                    _presenter.ObtenerTurnoEstado(true);
                     break;
 
-       
+
                 case "No Atendido":
-                    _presenter.ObtenerTurnoEstado("n");
+                    _presenter.ObtenerTurnoEstado(false);
                     break;
                 case "Todos":
                     _presenter.ListaTurnos();
@@ -60,38 +53,18 @@ namespace ERS_NeoCare.Design.administrativo
                     break;
             }
 
-           
+
         }
 
-        private void DGVAdministrativo_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+      
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            // Verifica si la columna actual corresponde a la columna de imagen "EstadoTurnoColumn" por su nombre
-            if (DGVAdministrativo.Columns[e.ColumnIndex].Name == "EstadoTurnoColumn" && e.RowIndex >= 0)
-            {
-                // Accede al valor de la columna "Estado" en la misma fila
-                var estadoCellValue = DGVAdministrativo.Rows[e.RowIndex].Cells["Estado"].Value;
-
-                if (estadoCellValue != null)
-                {
-                    string estado = estadoCellValue.ToString();
-
-                    if (estado == "s")
-                    {
-                   
-                        e.Value = Properties.Resources.check_box_FILL; 
-                    }
-                    else if (estado == "n")
-                    {
-                    
-                       e.Value = Properties.Resources.check_box_blank; 
-                    }
-                }
-            }
+            string searchText = textBox2.Text;
+            _presenter.BuscarTurnoListaTurnoAdm(searchText);
         }
 
-        private void ListaTurnosAdministrativo_Load(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }

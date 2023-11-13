@@ -50,14 +50,14 @@
             this.turnoTableAdapter1 = new ERS_NeoCare.DBNeoCareDataSet2TableAdapters.TurnoTableAdapter();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pacienteidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicoidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notasComentariosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prioridadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.selectedTimeRangeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.selectedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectedTimeRangeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prioridadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notasComentariosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicoidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pacienteidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource1)).BeginInit();
@@ -90,7 +90,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(196, 27);
             this.textBox2.TabIndex = 13;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+
             // 
             // turnoBindingSource2
             // 
@@ -242,49 +242,14 @@
             this.DGVAdministrativo.RowTemplate.Height = 40;
             this.DGVAdministrativo.Size = new System.Drawing.Size(967, 387);
             this.DGVAdministrativo.TabIndex = 15;
-            this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
+  
             // 
-            // estadoDataGridViewTextBoxColumn
+            // idDataGridViewTextBoxColumn
             // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pacienteidDataGridViewTextBoxColumn
-            // 
-            this.pacienteidDataGridViewTextBoxColumn.DataPropertyName = "paciente_id";
-            this.pacienteidDataGridViewTextBoxColumn.HeaderText = "paciente_id";
-            this.pacienteidDataGridViewTextBoxColumn.Name = "pacienteidDataGridViewTextBoxColumn";
-            this.pacienteidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // medicoidDataGridViewTextBoxColumn
-            // 
-            this.medicoidDataGridViewTextBoxColumn.DataPropertyName = "medico_id";
-            this.medicoidDataGridViewTextBoxColumn.HeaderText = "medico_id";
-            this.medicoidDataGridViewTextBoxColumn.Name = "medicoidDataGridViewTextBoxColumn";
-            this.medicoidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // notasComentariosDataGridViewTextBoxColumn
-            // 
-            this.notasComentariosDataGridViewTextBoxColumn.DataPropertyName = "notasComentarios";
-            this.notasComentariosDataGridViewTextBoxColumn.HeaderText = "notasComentarios";
-            this.notasComentariosDataGridViewTextBoxColumn.Name = "notasComentariosDataGridViewTextBoxColumn";
-            this.notasComentariosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prioridadDataGridViewTextBoxColumn
-            // 
-            this.prioridadDataGridViewTextBoxColumn.DataPropertyName = "prioridad";
-            this.prioridadDataGridViewTextBoxColumn.HeaderText = "prioridad";
-            this.prioridadDataGridViewTextBoxColumn.Name = "prioridadDataGridViewTextBoxColumn";
-            this.prioridadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // selectedTimeRangeDataGridViewTextBoxColumn
-            // 
-            this.selectedTimeRangeDataGridViewTextBoxColumn.DataPropertyName = "selectedTimeRange";
-            this.selectedTimeRangeDataGridViewTextBoxColumn.HeaderText = "selectedTimeRange";
-            this.selectedTimeRangeDataGridViewTextBoxColumn.Name = "selectedTimeRangeDataGridViewTextBoxColumn";
-            this.selectedTimeRangeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // selectedDateDataGridViewTextBoxColumn
             // 
@@ -293,12 +258,50 @@
             this.selectedDateDataGridViewTextBoxColumn.Name = "selectedDateDataGridViewTextBoxColumn";
             this.selectedDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // idDataGridViewTextBoxColumn
+            // selectedTimeRangeDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.selectedTimeRangeDataGridViewTextBoxColumn.DataPropertyName = "selectedTimeRange";
+            this.selectedTimeRangeDataGridViewTextBoxColumn.HeaderText = "selectedTimeRange";
+            this.selectedTimeRangeDataGridViewTextBoxColumn.Name = "selectedTimeRangeDataGridViewTextBoxColumn";
+            this.selectedTimeRangeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prioridadDataGridViewTextBoxColumn
+            // 
+            this.prioridadDataGridViewTextBoxColumn.DataPropertyName = "prioridad";
+            this.prioridadDataGridViewTextBoxColumn.HeaderText = "prioridad";
+            this.prioridadDataGridViewTextBoxColumn.Name = "prioridadDataGridViewTextBoxColumn";
+            this.prioridadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // notasComentariosDataGridViewTextBoxColumn
+            // 
+            this.notasComentariosDataGridViewTextBoxColumn.DataPropertyName = "notasComentarios";
+            this.notasComentariosDataGridViewTextBoxColumn.HeaderText = "notasComentarios";
+            this.notasComentariosDataGridViewTextBoxColumn.Name = "notasComentariosDataGridViewTextBoxColumn";
+            this.notasComentariosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.notasComentariosDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // medicoidDataGridViewTextBoxColumn
+            // 
+            this.medicoidDataGridViewTextBoxColumn.DataPropertyName = "medico_id";
+            this.medicoidDataGridViewTextBoxColumn.HeaderText = "medico_id";
+            this.medicoidDataGridViewTextBoxColumn.Name = "medicoidDataGridViewTextBoxColumn";
+            this.medicoidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.medicoidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // pacienteidDataGridViewTextBoxColumn
+            // 
+            this.pacienteidDataGridViewTextBoxColumn.DataPropertyName = "paciente_id";
+            this.pacienteidDataGridViewTextBoxColumn.HeaderText = "paciente_id";
+            this.pacienteidDataGridViewTextBoxColumn.Name = "pacienteidDataGridViewTextBoxColumn";
+            this.pacienteidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pacienteidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ListaDeTurnos
             // 

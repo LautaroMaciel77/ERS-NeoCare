@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.iconButtonClose2 = new FontAwesome.Sharp.IconButton();
             this.textBoxBusqueda = new System.Windows.Forms.TextBox();
             this.DGVABusqueda = new System.Windows.Forms.DataGridView();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +52,7 @@
             this.iconbtn_medico = new FontAwesome.Sharp.IconButton();
             this.personal_saludTableAdapter = new ERS_NeoCare.DBNeoCareDataSetTableAdapters.personal_saludTableAdapter();
             this.iconButtonClose = new FontAwesome.Sharp.IconButton();
-            this.iconButtonClose2 = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.iconAgregar = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -74,6 +74,33 @@
             this.panel1.Size = new System.Drawing.Size(550, 261);
             this.panel1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(43, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 16);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Buscar:";
+            // 
+            // iconButtonClose2
+            // 
+            this.iconButtonClose2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(67)))), ((int)(((byte)(44)))));
+            this.iconButtonClose2.FlatAppearance.BorderSize = 0;
+            this.iconButtonClose2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(149)))));
+            this.iconButtonClose2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonClose2.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.iconButtonClose2.IconColor = System.Drawing.Color.White;
+            this.iconButtonClose2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonClose2.IconSize = 12;
+            this.iconButtonClose2.Location = new System.Drawing.Point(515, 3);
+            this.iconButtonClose2.Name = "iconButtonClose2";
+            this.iconButtonClose2.Size = new System.Drawing.Size(32, 23);
+            this.iconButtonClose2.TabIndex = 37;
+            this.iconButtonClose2.UseVisualStyleBackColor = false;
+            this.iconButtonClose2.Click += new System.EventHandler(this.iconButtonClose2_Click);
+            // 
             // textBoxBusqueda
             // 
             this.textBoxBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,21 +116,21 @@
             this.DGVABusqueda.AllowUserToDeleteRows = false;
             this.DGVABusqueda.AllowUserToResizeColumns = false;
             this.DGVABusqueda.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.DGVABusqueda.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DGVABusqueda.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVABusqueda.AutoGenerateColumns = false;
             this.DGVABusqueda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVABusqueda.BackgroundColor = System.Drawing.Color.White;
             this.DGVABusqueda.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGVABusqueda.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(219)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVABusqueda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(219)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVABusqueda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVABusqueda.ColumnHeadersHeight = 40;
             this.DGVABusqueda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dni,
@@ -112,14 +139,14 @@
             this.apellidoDataGridViewTextBoxColumn,
             this.Accion});
             this.DGVABusqueda.DataSource = this.personalsaludBindingSource;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVABusqueda.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVABusqueda.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVABusqueda.EnableHeadersVisualStyles = false;
             this.DGVABusqueda.Location = new System.Drawing.Point(37, 42);
             this.DGVABusqueda.Margin = new System.Windows.Forms.Padding(2);
@@ -180,10 +207,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(202, 119);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 21);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Medico:";
             // 
@@ -191,10 +218,10 @@
             // 
             this.labelPaciente.AutoSize = true;
             this.labelPaciente.BackColor = System.Drawing.SystemColors.Control;
-            this.labelPaciente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPaciente.Location = new System.Drawing.Point(191, 171);
             this.labelPaciente.Name = "labelPaciente";
-            this.labelPaciente.Size = new System.Drawing.Size(84, 21);
+            this.labelPaciente.Size = new System.Drawing.Size(75, 20);
             this.labelPaciente.TabIndex = 2;
             this.labelPaciente.Text = "Paciente:";
             // 
@@ -267,23 +294,6 @@
             this.iconButtonClose.UseVisualStyleBackColor = false;
             this.iconButtonClose.Click += new System.EventHandler(this.iconButtonClose_Click);
             // 
-            // iconButtonClose2
-            // 
-            this.iconButtonClose2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(67)))), ((int)(((byte)(44)))));
-            this.iconButtonClose2.FlatAppearance.BorderSize = 0;
-            this.iconButtonClose2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(149)))));
-            this.iconButtonClose2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonClose2.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.iconButtonClose2.IconColor = System.Drawing.Color.White;
-            this.iconButtonClose2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonClose2.IconSize = 12;
-            this.iconButtonClose2.Location = new System.Drawing.Point(515, 3);
-            this.iconButtonClose2.Name = "iconButtonClose2";
-            this.iconButtonClose2.Size = new System.Drawing.Size(32, 23);
-            this.iconButtonClose2.TabIndex = 37;
-            this.iconButtonClose2.UseVisualStyleBackColor = false;
-            this.iconButtonClose2.Click += new System.EventHandler(this.iconButtonClose2_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
@@ -300,16 +310,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(817, 368);
             this.panel2.TabIndex = 37;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 16);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Buscar:";
             // 
             // iconAgregar
             // 
@@ -332,10 +332,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Control;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(267, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(255, 23);
+            this.label3.Size = new System.Drawing.Size(250, 24);
             this.label3.TabIndex = 10;
             this.label3.Text = "Cargar Medico y Paciente";
             // 

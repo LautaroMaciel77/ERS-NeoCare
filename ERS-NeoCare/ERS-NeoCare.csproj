@@ -291,6 +291,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBNeoCareDataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBNeoCareDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBNeoCareDataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Design\administrativo\administrativo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -474,11 +479,13 @@
     <Compile Include="Logic\TurnoPresenter.cs" />
     <Compile Include="Model\AnalisisModel.cs" />
     <Compile Include="Model\AnalisisService.cs" />
+    <Compile Include="Model\AnalisisSingleton.cs" />
     <Compile Include="Model\ArchivoEstudio.cs" />
     <Compile Include="Model\ArchivoEstudioService.cs" />
     <Compile Include="Model\ArchivoEstudiosSingleton.cs" />
     <Compile Include="Model\AtencionEnfermeriaModel.cs" />
     <Compile Include="Model\AtencionService.cs" />
+    <Compile Include="Model\AtencionSingleton.cs" />
     <Compile Include="Model\EvaluacionModel.cs" />
     <Compile Include="Model\EvaluacionService.cs" />
     <Compile Include="Model\HistoriaClinicaModel.cs" />
@@ -786,6 +793,17 @@
     </None>
     <None Include="DBNeoCareDataSet5.xss">
       <DependentUpon>DBNeoCareDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DBNeoCareDataSet6.xsc">
+      <DependentUpon>DBNeoCareDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="DBNeoCareDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBNeoCareDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBNeoCareDataSet6.xss">
+      <DependentUpon>DBNeoCareDataSet6.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

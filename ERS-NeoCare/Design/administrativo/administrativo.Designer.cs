@@ -131,7 +131,7 @@
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.iconButton3);
             this.Name = "Administrativo";
-            this.Size = new System.Drawing.Size(172, 162);
+            this.Size = new System.Drawing.Size(172, 158);
             this.ResumeLayout(false);
 
         }

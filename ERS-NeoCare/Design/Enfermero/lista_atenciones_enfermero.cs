@@ -21,7 +21,8 @@ namespace ERS_NeoCare.Design
         private menu MainForm { get; set; }
 
         private AtencionPresenter _presenter;
-        
+        private PacientePresenter _presenterPaciente;
+
 
         public lista_atenciones_enfermero()
 
@@ -29,6 +30,7 @@ namespace ERS_NeoCare.Design
 
             InitializeComponent();
             _presenter = new AtencionPresenter(this, new AtencionService());
+            _presenterPaciente = new PacientePresenter(new PacienteService(Configuracion.ConnectionString));
             _presenter.ObtenerAtenciones();
             //panelMenuPaciente.Visible = false;
         }
@@ -45,15 +47,44 @@ namespace ERS_NeoCare.Design
         {
             if (e.RowIndex >= 0 && DGVAdministrativo.Rows.Count > 0)
             {
+                if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+                    if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                    {
+                        string id = DGVAdministrativo.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                        _presenter.buscar(id);
+                        cargarMenu();
+
+                    }
+                }
+
             }
         }
 
+        private void cargarMenu()
+        {
+            PacienteView pacienteControl = new PacienteView();
+            pacienteControl.Dock = DockStyle.Fill;
+
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
 
 
 
 
-        
- 
+            }
+        }
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {

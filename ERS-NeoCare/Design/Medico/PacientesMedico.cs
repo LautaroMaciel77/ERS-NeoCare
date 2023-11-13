@@ -16,13 +16,14 @@ namespace ERS_NeoCare.Design
     public partial class PacientesMedico : UserControl
     {
         public PacienteModel paciente;
-        private menu MainForm { get; set; }
+      
         public string userDni;
         public event EventHandler<Tuple<string>> TurnoMedicoClick;
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
 
+        private int idTurno;
         private TurnoPresenter _presenter;
         private PacientePresenter _pacientePresenter;
+
         public PacientesMedico()
         {
             InitializeComponent();
@@ -55,9 +56,9 @@ namespace ERS_NeoCare.Design
             {
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
-                    int columnIndexDNI = 0;
-                    this.userDni = DGVAdministrativo.Rows[e.RowIndex].Cells[columnIndexDNI].Value.ToString();
-                    _pacientePresenter.cargarPaciente(userDni);
+                    string dniPaciente = DGVAdministrativo.Rows[e.RowIndex].Cells["PacienteDni"].Value.ToString();
+                    idTurno = (int)DGVAdministrativo.Rows[e.RowIndex].Cells["Id"].Value;
+                    _pacientePresenter.cargarPaciente(dniPaciente);
                     MenuMedicoPacientes menuPaciente = new MenuMedicoPacientes();
                     menuPaciente.closeclick += closeclick;
                     menuPaciente.cambiarEstado += cambiarEstado;
@@ -69,7 +70,13 @@ namespace ERS_NeoCare.Design
 
         private void cambiarEstado(object sender, EventArgs e)
         {
-            _presenter.cambiarEstado(PacienteSingleton.Instance.pacienteAutenticado.Id);
+            _presenter.cambiarEstado(idTurno);
+          
+           
+                DGVAdministrativo.Invalidate();
+            DGVAdministrativo.Refresh();
+        
+
         }
 
         private void verclick(object sender, EventArgs e)
@@ -116,15 +123,23 @@ namespace ERS_NeoCare.Design
             string seleccion = comboBox1.SelectedItem.ToString();
 
             // Utiliza un switch para tomar diferentes acciones según el valor seleccionado
+
             switch (seleccion)
             {
                 case "Atendido":
-                    _presenter.CargarFiltro("s");
-                    break;
-                case "No Atendido":
-                    _presenter.CargarFiltro("n");
+                    _presenter.CargarFiltro(true);
                     break;
 
+
+                case "No Atendido":
+                    _presenter.CargarFiltro(false);
+                    break;
+                case "Todos":
+                    _presenter.CargarPacienteMedico();
+                    break;
+                default:
+                    _presenter.CargarPacienteMedico();
+                    break;
             }
         }
 
@@ -133,6 +148,10 @@ namespace ERS_NeoCare.Design
             MessageBox.Show(v, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
