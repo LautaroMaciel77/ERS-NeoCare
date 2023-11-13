@@ -42,7 +42,7 @@
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelApellido = new System.Windows.Forms.Label();
             this.btnRegistrarUsuario = new FontAwesome.Sharp.IconButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ComboxProfesion = new System.Windows.Forms.ComboBox();
             this.dBNeoCareDataSet = new ERS_NeoCare.DBNeoCareDataSet();
             this.dBNeoCareDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personalsaludBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -86,10 +86,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(472, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 25);
+            this.label1.Size = new System.Drawing.Size(167, 25);
             this.label1.TabIndex = 33;
             this.label1.Text = "Nuevo Usuario";
             // 
@@ -174,7 +174,7 @@
             this.btnRegistrarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(158)))));
             this.btnRegistrarUsuario.FlatAppearance.BorderSize = 0;
             this.btnRegistrarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarUsuario.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.btnRegistrarUsuario.IconColor = System.Drawing.Color.Black;
             this.btnRegistrarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -189,17 +189,17 @@
             this.btnRegistrarUsuario.UseVisualStyleBackColor = false;
             this.btnRegistrarUsuario.Click += new System.EventHandler(this.btnRegistrarUsuario_Click);
             // 
-            // comboBox1
+            // ComboxProfesion
             // 
-            this.comboBox1.DataSource = this.dBNeoCareDataSet;
-            this.comboBox1.DisplayMember = "personal_salud.profesion_id";
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(771, 296);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(236, 28);
-            this.comboBox1.TabIndex = 43;
-            this.comboBox1.ValueMember = "personal_salud.profesion_id";
+            this.ComboxProfesion.DataSource = this.dBNeoCareDataSet;
+            this.ComboxProfesion.DisplayMember = "personal_salud.profesion_id";
+            this.ComboxProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboxProfesion.FormattingEnabled = true;
+            this.ComboxProfesion.Location = new System.Drawing.Point(771, 296);
+            this.ComboxProfesion.Name = "ComboxProfesion";
+            this.ComboxProfesion.Size = new System.Drawing.Size(236, 28);
+            this.ComboxProfesion.TabIndex = 43;
+            this.ComboxProfesion.ValueMember = "personal_salud.profesion_id";
             // 
             // dBNeoCareDataSet
             // 
@@ -239,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ComboxProfesion);
             this.Controls.Add(this.btnRegistrarUsuario);
             this.Controls.Add(this.textBoxProfesion);
             this.Controls.Add(this.textContraseña);
@@ -279,7 +279,7 @@
         private System.Windows.Forms.TextBox textContraseña;
         private System.Windows.Forms.Label labelContraseña;
         private FontAwesome.Sharp.IconButton btnRegistrarUsuario;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ComboxProfesion;
         private DBNeoCareDataSet dBNeoCareDataSet;
         private System.Windows.Forms.BindingSource dBNeoCareDataSetBindingSource;
         private System.Windows.Forms.BindingSource personalsaludBindingSource;

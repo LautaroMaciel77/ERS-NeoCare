@@ -1,5 +1,6 @@
 ﻿using ERS_NeoCare.Design;
 using ERS_NeoCare.Design.administrativo;
+using ERS_NeoCare.Helper;
 using ERS_NeoCare.Model;
 using System;
 using System.Collections.Generic;
@@ -65,15 +66,15 @@ namespace ERS_NeoCare.Logic
         public List<UsuarioModel> ListaUsuarios()
         {
           return _model.ObtenerTodosLosUsuarios();
-           
+
         }
         public void ObtenerUsuariosBusqueda(string searchText)
         {
-          
-        
+
+
             List<UsuarioModel> datos = _model.ObtenerDatosUsuarios("n");
 
-          
+
             if (int.TryParse(searchText, out int dni))
             {
                 // Realiza la búsqueda por DNI
@@ -91,6 +92,34 @@ namespace ERS_NeoCare.Logic
                 DataTable dataTable = convertirListaUsuario(resultados);
 
                 _viewBuqueda.cargarLista(dataTable);
+            }
+        }
+        public DataTable ObtenerUsuariosBusquedaGeneral(string searchText)
+        {
+
+
+            List<UsuarioModel> datos = _model.ObtenerDatosUsuarios("n");
+
+
+            if (int.TryParse(searchText, out int dni))
+            {
+                // Realiza la búsqueda por DNI
+                List<UsuarioModel> resultadosPorDNI = datos.Where(d => d.DNI.ToString().StartsWith(searchText)).ToList();
+                DataTable dataTable = ConvertidorListDatatable.ConvertirListaUsuario(resultadosPorDNI);
+     
+                return dataTable;
+            }
+            else
+            {
+                // Realiza la búsqueda por nombre, apellido o nombre completo
+                List<UsuarioModel> resultados = datos.Where(d =>
+            d.Nombre.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            d.Apellido.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            (d.Nombre + " " + d.Apellido).IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
+            .ToList();
+                DataTable dataTable =ConvertidorListDatatable.ConvertirListaUsuario(resultados);
+
+                return dataTable;
             }
         }
 

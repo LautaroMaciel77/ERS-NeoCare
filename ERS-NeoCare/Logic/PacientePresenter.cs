@@ -103,24 +103,24 @@ namespace ERS_NeoCare.Logic
         public DataTable ObtenerPacienteBusquedaGeneral(string searchText)
         {
 
-
             List<PacienteModel> datos = _service.ObtenerDatosPaciente();
 
             if (int.TryParse(searchText, out int dni))
             {
                 // Realiza la búsqueda por DNI
-                List<PacienteModel> resultadosPorDNI = datos.Where(d => d.Dni == dni).ToList();
+                List<PacienteModel> resultadosPorDNI = datos
+                    .Where(d => d.Dni.ToString().StartsWith(searchText))
+                    .ToList();
                 DataTable dataTablePorDNI = convertirListaPaciente(resultadosPorDNI);
 
-
-                return   dataTablePorDNI;
+                return dataTablePorDNI;
             }
             else
             {
                 // Realiza la búsqueda por nombre, apellido o nombre completo
                 List<PacienteModel> resultados = datos.Where(d =>
-                     d.Nombre.Contains(searchText) || d.Apellido.Contains(searchText) ||
-                     (d.Nombre + " " + d.Apellido).Contains(searchText)).ToList();
+                     d.Nombre.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 || d.Apellido.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                     (d.Nombre + " " + d.Apellido).IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
                 DataTable dataTable = convertirListaPaciente(resultados);
 
                 return dataTable;

@@ -122,8 +122,11 @@ namespace ERS_NeoCare.Design
             panelAgregar.Visible = false;
         }
 
-   
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBox2.Text;
+            MostrarDatos(_presenter.ObtenerUsuariosBusquedaGeneral(searchText));
 
-
+        }
     }
 }

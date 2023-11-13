@@ -53,7 +53,7 @@ namespace ERS_NeoCare.Design.administrativo
             chartTurnos.Visible = false;
 
             panel1.Visible = false;
-            CargarUsuariosEnComboBox();
+        
             ConfigurarGraficoBarras();
         }
         private void ConfigurarGraficoBarras()
@@ -93,15 +93,41 @@ namespace ERS_NeoCare.Design.administrativo
         {
 
 
-            // Filtra la lista de usuarios por ProfesionID == 3
-            usuarios = usuarios.Where(u => u.ProfesionID == 3).ToList();
+            // Verifica si comboBox1 está seleccionado
+            if (comboBox1.SelectedItem != null)
+            {
+                // Obtiene el valor seleccionado
+                string filtro = comboBox1.SelectedItem.ToString();
 
-            // Configura el ComboBox
-            comboBoxUsuarios.DisplayMember = "Nombre"; // Propiedad del modelo que se mostrará en el ComboBox
-            comboBoxUsuarios.ValueMember = "id"; // Propiedad del modelo que se utilizará como valor seleccionado
-            comboBoxUsuarios.DataSource = usuarios;
+                // Filtra la lista de usuarios según el valor seleccionado
+                if (filtro == "Analisis")
+                {
+                    usuarios = usuarios.Where(u => u.ProfesionID == 4).ToList();
+                }
+                else
+                {
+                    usuarios = usuarios.Where(u => u.ProfesionID == 2).ToList();
+                }
+
+                // Configura el ComboBox
+                comboBoxUsuarios.DisplayMember = "Nombre"; // Propiedad del modelo que se mostrará en el ComboBox
+                comboBoxUsuarios.ValueMember = "id"; // Propiedad del modelo que se utilizará como valor seleccionado
+                comboBoxUsuarios.DataSource = usuarios;
+
+                // Deselecciona comboBox1
+                comboBox1.SelectedItem = null;
+            }
+            else
+            {
+                // Si comboBox1 no está seleccionado, filtra por ProfesionID == 3
+                usuarios = usuarios.Where(u => u.ProfesionID == 3).ToList();
+
+                // Configura el ComboBox
+                comboBoxUsuarios.DisplayMember = "Nombre"; // Propiedad del modelo que se mostrará en el ComboBox
+                comboBoxUsuarios.ValueMember = "id"; // Propiedad del modelo que se utilizará como valor seleccionado
+                comboBoxUsuarios.DataSource = usuarios;
+            }
         }
-
         private void buttonGenerarGrafico_Click_1(object sender, EventArgs e)
         {
             chartTurnos.Visible = true;
@@ -122,6 +148,8 @@ namespace ERS_NeoCare.Design.administrativo
         private void button1_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
+            comboBox1.SelectedItem = null;
+            CargarUsuariosEnComboBox();
 
         }
 
@@ -318,6 +346,17 @@ namespace ERS_NeoCare.Design.administrativo
                 "Órdenes Atendidas",
                 "Órdenes No Atendidas"
             );
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            CargarUsuariosEnComboBox();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
