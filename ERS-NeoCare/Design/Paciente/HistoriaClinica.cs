@@ -620,8 +620,8 @@ namespace ERS_NeoCare.Design.Paciente
                 string nombreArchivoImagen = "logo_hospital_eloisa_torrent.jpg";
 
                 // Combina el nombre del archivo con la ruta del directorio actual
-                string rutaCompleta = Path.Combine(Directory.GetCurrentDirectory(), nombreArchivoImagen);
-
+                string rutaCompleta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, nombreArchivoImagen);
+               
                 // Carga la imagen desde el archivo
                 return new Bitmap(rutaCompleta);
             }
