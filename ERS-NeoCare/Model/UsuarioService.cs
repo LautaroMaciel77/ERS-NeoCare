@@ -28,7 +28,11 @@ namespace ERS_NeoCare.Model
 
             using (var context = new ApplicationDbContext())
             {
-                var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && u.Password == contraseña);
+                // Obtener el hash SHA-256 de la contraseña proporcionada
+                string hashedPassword = Encrypt.GetSHA256(contraseña);
+
+                // Buscar un usuario con el DNI y la contraseña hash coincidentes
+                var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && u.Password == hashedPassword);
 
                 if (usuario != null)
                 {
@@ -43,7 +47,6 @@ namespace ERS_NeoCare.Model
                 }
             }
         }
-
         public void BuscarUsuario(string dni)
 
         {
@@ -64,40 +67,41 @@ namespace ERS_NeoCare.Model
 
         public bool InsertarUsuario(UsuarioModel usuario)
         {
+            try
             {
-                try
+                var context = DbContextManager.GetContext();
+
+                // Utiliza el método GetSHA256 para cifrar la contraseña
+                string hashedPassword = Encrypt.GetSHA256(usuario.Password);
+
+                // Crea un nuevo objeto UsuarioModel con la contraseña cifrada
+                var user = new UsuarioModel
                 {
-                    var context = DbContextManager.GetContext();
-                 
-                    var user = new UsuarioModel
-                        {
-                            DNI = usuario.DNI,
-                            Matricula = usuario.Matricula,
-                            Nombre = usuario.Nombre,
-                            Apellido = usuario.Apellido,
-                            ProfesionID = usuario.ProfesionID,
-                            Password = usuario.Password,
-                            Baja = usuario.Baja
-                        };
+                    DNI = usuario.DNI,
+                    Matricula = usuario.Matricula,
+                    Nombre = usuario.Nombre,
+                    Apellido = usuario.Apellido,
+                    ProfesionID = usuario.ProfesionID,
+                    Password = hashedPassword, // Asigna el hash SHA-256 cifrado
+                    Baja = usuario.Baja
+                };
 
-                        // Agrega el nuevo usuario al contexto
-                        context.Usuarios.Add(usuario);
+                // Agrega el nuevo usuario al contexto
+                context.Usuarios.Add(user);
 
-                        // Guarda los cambios en la base de datos
-                        context.SaveChanges();
+                // Guarda los cambios en la base de datos
+                context.SaveChanges();
 
-                        return true;
-                    
-                }
-                catch (Exception ex)
-                {
-                    // Maneja excepciones aquí.
-                    // Muestra un MessageBox con el mensaje de la excepción
-                    System.Windows.Forms.MessageBox.Show("Error al insertar usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Maneja excepciones aquí.
+                // Muestra un MessageBox con el mensaje de la excepción
+                System.Windows.Forms.MessageBox.Show("Error al insertar usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    Console.WriteLine("Error general: " + ex.Message);
-                    return false; // O maneja de otra manera apropiada
-                }
+                Console.WriteLine("Error general: " + ex.Message);
+                return false; // O maneja de otra manera apropiada
             }
         }
         public bool EditarUsuario(UsuarioModel usuario)
