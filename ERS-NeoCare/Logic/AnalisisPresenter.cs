@@ -27,11 +27,20 @@ namespace ERS_NeoCare.Logic
             _viewLista = view;
             _service = service;
         }
-
+        public AnalisisPresenter(AnalisisService service)
+        {
+             
+            _service = service;
+        }
         public void Insertar(AnalisisModel analisis)
         {
             _service.Insertar(analisis);
 
+        }
+        public List<AnalisisModel> listaAnalisis()
+        {
+            List<AnalisisModel> analisis = _service.ObtenerAnalisis();
+            return analisis;
         }
 
         public void TraerAnalisis()

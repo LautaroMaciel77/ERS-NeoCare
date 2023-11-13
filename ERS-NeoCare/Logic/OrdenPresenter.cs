@@ -29,7 +29,11 @@ namespace ERS_NeoCare.Logic
             _service = service;
             _viewEstados = view;
         }
-
+        public OrdenPresenter( OrdenService service)
+        {
+            _service = service;
+       
+        }
         public void Insertar(OrdenModel orden)
         {
             if (_service.Insertar(orden))
@@ -39,6 +43,13 @@ namespace ERS_NeoCare.Logic
             }
             _view.mensaje("error al guardar orden");
 
+        }
+        public List<OrdenModel> traerListaOrdenes()
+        {
+
+
+            List<OrdenModel> data = _service.traerOrdenes();
+            return data;
         }
         public void traerOrdenes()
         {

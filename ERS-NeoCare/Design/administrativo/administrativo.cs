@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERS_NeoCare.Design.administrativo;
+using System;
 using System.Windows.Forms;
 
 namespace ERS_NeoCare.Design
@@ -34,6 +35,31 @@ namespace ERS_NeoCare.Design
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ReporteAdminButtonClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            Reporte pacienteControl = new Reporte();
+            pacienteControl.Dock = DockStyle.Fill;
+
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
+
+
+
+
+            }
         }
     }
 }

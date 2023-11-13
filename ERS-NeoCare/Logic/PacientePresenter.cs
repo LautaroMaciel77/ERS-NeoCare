@@ -68,7 +68,14 @@ namespace ERS_NeoCare.Logic
         {
             _service.BuscarPaciente(dni);
         }
-        public void ObtenerPacienteBusqueda(string searchText)
+        public  List<PacienteModel> ObtenerListaPaciente()
+        {
+
+
+            List<PacienteModel> datos = _service.ObtenerDatosPaciente();
+            return datos;
+        }
+            public void ObtenerPacienteBusqueda(string searchText)
         {
 
 

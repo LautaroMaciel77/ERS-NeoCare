@@ -53,13 +53,18 @@ namespace ERS_NeoCare.Logic
         public void Buscar(string dni)
         {
           _model.BuscarUsuario(dni);
-            
+
         }
         //funcion para obtener los usuarios sin cargar un view
         public DataTable ObtenerUsuariosGeneral()
         {
             DataTable data = convertirListaUsuario(_model.ObtenerDatosUsuarios("n"));
             return data;
+        }
+        public List<UsuarioModel> ListaUsuarios()
+        {
+          return _model.ObtenerTodosLosUsuarios();
+           
         }
         public void ObtenerUsuariosBusqueda(string searchText)
         {

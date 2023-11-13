@@ -232,6 +232,7 @@
     <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -314,6 +315,12 @@
     <Compile Include="Design\administrativo\ListaTurnosAdministrativo.Designer.cs">
       <DependentUpon>ListaTurnosAdministrativo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\administrativo\Reporte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\administrativo\Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\administrativo\turnoAdministrativo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -325,6 +332,12 @@
     </Compile>
     <Compile Include="Design\admin\admin.Designer.cs">
       <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\admin\bd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\admin\bd.Designer.cs">
+      <DependentUpon>bd.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\admin\editar_usuario.cs">
       <SubType>UserControl</SubType>
@@ -571,12 +584,18 @@
     <EmbeddedResource Include="Design\administrativo\ListaTurnosAdministrativo.resx">
       <DependentUpon>ListaTurnosAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\administrativo\Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\administrativo\turnoAdministrativo.resx">
       <DependentUpon>turnoAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\admin\admin.resx">
       <DependentUpon>admin.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\admin\bd.resx">
+      <DependentUpon>bd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\admin\editar_usuario.resx">
       <DependentUpon>editar_usuario.cs</DependentUpon>

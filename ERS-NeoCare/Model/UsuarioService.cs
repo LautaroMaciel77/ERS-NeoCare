@@ -169,18 +169,31 @@ namespace ERS_NeoCare.Model
         }
         public List<UsuarioModel> ObtenerDatosUsuarios(string valorBaja)
         {
-                     
 
-          var context = DbContextManager.GetContext();
-         
-                var usuariosConBaja = context.Usuarios
-                    .Where(u => u.Baja == valorBaja)
-                    .ToList();
 
-                     
+            var context = DbContextManager.GetContext();
+
+            var usuariosConBaja = context.Usuarios
+                .Where(u => u.Baja == valorBaja)
+                .ToList();
+
+
 
             return usuariosConBaja;
         }
+    
+    public List<UsuarioModel> ObtenerTodosLosUsuarios( )
+    {
+
+
+        var context = DbContextManager.GetContext();
+
+        var usuariosConBaja = context.Usuarios.ToList();
+
+
+
+        return usuariosConBaja;
     }
+}
 }
     

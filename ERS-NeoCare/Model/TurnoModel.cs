@@ -17,7 +17,7 @@ namespace ERS_NeoCare.Model
         public int Id { get; set; }
 
         [Column("selectedDate")]
-        public DateTime? SelectedDate { get; set; }
+        public DateTime SelectedDate { get; set; }
 
         [Column("selectedTimeRange")]
         public TimeSpan? SelectedTimeRange { get; set; }
