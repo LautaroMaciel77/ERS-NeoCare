@@ -50,7 +50,8 @@ namespace ERS_NeoCare.Design
                     Directory.CreateDirectory(backupFolder);
                 }
 
-                string connectionString = "Data Source=DESKTOP-2JKMBB0\\SQLEXPRESS;Initial Catalog=DBNeoCare;Integrated Security=True";
+                //string connectionString = "Data Source=DESKTOP-2JKMBB0\\SQLEXPRESS;Initial Catalog=DBNeoCare;Integrated Security=True";
+                string connectionString = "Data Source=FARONOTE\\SQLEXPRESS_INST1;Initial Catalog=DBNeoCare;Integrated Security=True";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -114,7 +115,9 @@ namespace ERS_NeoCare.Design
             try
             {
                 string databaseName = "DBNeoCare";
-                string connectionString = "Data Source=DESKTOP-2JKMBB0\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";
+
+                //string connectionString = "Data Source=DESKTOP-2JKMBB0\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";
+                string connectionString = "Data Source=FARONOTE\\SQLEXPRESS_INST1;Initial Catalog=master;Integrated Security=True";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -150,5 +153,92 @@ namespace ERS_NeoCare.Design
             }
         }
 
+        private void iconButtonCrearCopia_Click(object sender, EventArgs e)
+        {
+            //using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            //{
+
+
+            //    string rutaCopiaSeguridad = saveFileDialog.FileName;
+            //    RealizarBackup();
+
+            //}
+
+            DialogResult resultado = MessageBox.Show("Esta acción creara una copia de seguridad de la base de datos actual. ¿Está seguro?",
+                                             "Confirmar Copia de Seguridad",
+                                             MessageBoxButtons.OKCancel,
+                                             MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.OK)
+            {
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    string rutaCopiaSeguridad = saveFileDialog.FileName;
+                    RealizarBackup();
+                }
+            }
+        }
+
+        private void iconButtonRestaurar_Click(object sender, EventArgs e)
+        {
+            //using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            //{
+            //    string backupFolder = Path.Combine(Application.StartupPath, "Recursos", "CopiasSeguridad");
+
+            //    // Establecer la carpeta inicial para el diálogo de selección de archivos
+            //    openFileDialog.InitialDirectory = backupFolder;
+
+            //    openFileDialog.Filter = "Archivos de copia de seguridad (*.bak)|*.bak";
+            //    openFileDialog.Title = "Seleccionar archivo de copia de seguridad";
+
+            //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        string rutaCopiaSeguridad = openFileDialog.FileName;
+
+            //        // Verificar si el archivo de copia de seguridad existe
+            //        if (File.Exists(rutaCopiaSeguridad))
+            //        {
+            //            RestaurarBackup(rutaCopiaSeguridad);
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("El archivo de copia de seguridad no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //    }
+            //}
+
+            DialogResult resultado = MessageBox.Show("Esta acción le permitirá seleccionar una copia de seguridad que sobrescribirá la base de datos actual. ¿Está seguro?",
+                                                      "Advertencia de Restauración",
+                                                      MessageBoxButtons.OKCancel,
+                                                      MessageBoxIcon.Warning);
+
+            
+            if (resultado == DialogResult.OK)
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    string backupFolder = Path.Combine(Application.StartupPath, "Recursos", "CopiasSeguridad");
+
+                    openFileDialog.InitialDirectory = backupFolder;
+
+                    openFileDialog.Filter = "Archivos de copia de seguridad (*.bak)|*.bak";
+                    openFileDialog.Title = "Seleccionar archivo de copia de seguridad";
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string rutaCopiaSeguridad = openFileDialog.FileName;
+
+                        if (File.Exists(rutaCopiaSeguridad))
+                        {
+                            RestaurarBackup(rutaCopiaSeguridad);
+                        }
+                        else
+                        {
+                            MessageBox.Show("El archivo de copia de seguridad no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
