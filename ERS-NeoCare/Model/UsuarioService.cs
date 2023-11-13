@@ -181,6 +181,7 @@ namespace ERS_NeoCare.Model
 
             return usuariosConBaja;
         }
+<<<<<<< HEAD
     
     public List<UsuarioModel> ObtenerTodosLosUsuarios( )
     {
@@ -197,3 +198,10 @@ namespace ERS_NeoCare.Model
 }
 }
     
+=======
+
+        
+    }
+}
+
+>>>>>>> ba7996e57a29ce816effc568f660a068a66d418f

@@ -121,25 +121,28 @@
   <data name="logo-NeoCare3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-NeoCare3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Icons-Land-Medical-People-Patient-Male.256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons-Land-Medical-People-Patient-Male.256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo-NeoCare2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-NeoCare2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoFondoNeoCare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoFondoNeoCare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user background icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user background icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icons-Land-Medical-People-Patient-Male.256" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons-Land-Medical-People-Patient-Male.256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check_box_FILL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_box_FILL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo-NeoCare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-NeoCare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="person_add_FILL0_wght400_GRAD0_opsz20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\person_add_FILL0_wght400_GRAD0_opsz20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="check_box_blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check_box_blank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check_box_FILL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check_box_FILL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo_hospital_eloisa_torrent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_hospital_eloisa_torrent.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

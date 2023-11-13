@@ -57,7 +57,7 @@
             this.iconTurno.FlatAppearance.BorderSize = 0;
             this.iconTurno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
             this.iconTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconTurno.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconTurno.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconTurno.ForeColor = System.Drawing.Color.Transparent;
             this.iconTurno.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.iconTurno.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
@@ -80,7 +80,7 @@
             this.iconVer.FlatAppearance.BorderSize = 0;
             this.iconVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
             this.iconVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconVer.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconVer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconVer.ForeColor = System.Drawing.Color.Transparent;
             this.iconVer.IconChar = FontAwesome.Sharp.IconChar.UserAltSlash;
             this.iconVer.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));

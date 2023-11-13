@@ -453,6 +453,8 @@
     <Compile Include="Design\Medico\evaluacion.Designer.cs">
       <DependentUpon>evaluacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Paciente\ContenidoHTML.cs" />
+    <Compile Include="Design\Paciente\EstilosCSS.cs" />
     <Compile Include="Helper\convertidorListDatatable.cs" />
     <Compile Include="Helper\ReemplazoPanelEventArgs .cs" />
     <Compile Include="Logic\AgregarPacientePresenter.cs" />
@@ -495,6 +497,11 @@
     <Compile Include="Logic\IListaPacientePresenter.cs" />
     <Compile Include="Model\UsuarioBusqueda.cs" />
     <Compile Include="Model\UsuarioSingleton.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="view\IlistaPacienteViewAdmin.cs" />
     <Compile Include="view\ILogin.cs" />
@@ -689,14 +696,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </None>
@@ -807,14 +809,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\check_box_FILL.png" />
-    <None Include="Resources\check_box_blank.png" />
+    <Content Include="Design\Paciente\logo_hospital_eloisa_torrent.jpg" />
+    <None Include="Resources\logo_hospital_eloisa_torrent.jpg" />
+    <None Include="Resources\logoFondoNeoCare.png" />
     <None Include="Resources\user background icon.png" />
     <None Include="Resources\logo-NeoCare3.png" />
     <None Include="Resources\logo-NeoCare2.png" />
     <None Include="Resources\logo-NeoCare.png" />
     <None Include="Resources\Icons-Land-Medical-People-Patient-Male.256.png" />
-    <None Include="Resources\person_add_FILL0_wght400_GRAD0_opsz20.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

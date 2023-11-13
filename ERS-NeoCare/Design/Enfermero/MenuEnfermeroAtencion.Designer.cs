@@ -40,9 +40,9 @@
             this.iconButton3.FlatAppearance.BorderSize = 0;
             this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton3.ForeColor = System.Drawing.Color.Transparent;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.UserNurse;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.HospitalUser;
             this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 35;
@@ -80,19 +80,19 @@
             this.btn_atender.FlatAppearance.BorderSize = 0;
             this.btn_atender.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
             this.btn_atender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_atender.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_atender.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_atender.ForeColor = System.Drawing.Color.Transparent;
             this.btn_atender.IconChar = FontAwesome.Sharp.IconChar.UserNurse;
             this.btn_atender.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
             this.btn_atender.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_atender.IconSize = 35;
             this.btn_atender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_atender.Location = new System.Drawing.Point(24, 79);
+            this.btn_atender.Location = new System.Drawing.Point(24, 88);
             this.btn_atender.Margin = new System.Windows.Forms.Padding(0);
             this.btn_atender.Name = "btn_atender";
             this.btn_atender.Size = new System.Drawing.Size(216, 40);
             this.btn_atender.TabIndex = 35;
-            this.btn_atender.Text = "Atender Paciente";
+            this.btn_atender.Text = "Atencion Paciente";
             this.btn_atender.UseVisualStyleBackColor = false;
             this.btn_atender.Click += new System.EventHandler(this.btn_atender_Click);
             // 

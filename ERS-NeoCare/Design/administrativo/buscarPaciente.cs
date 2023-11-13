@@ -1,4 +1,5 @@
-﻿using ERS_NeoCare.Helper;
+﻿using ERS_NeoCare.Design.Medico;
+using ERS_NeoCare.Helper;
 using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
 using ERS_NeoCare.Presenter;
@@ -122,6 +123,22 @@ namespace ERS_NeoCare.Design.administrativo
         private void btn_closePanel_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
+        }
+
+        private void iconButtonClose2_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void iconButtonClose_Click(object sender, EventArgs e)
+        {
+            CloseClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void iconAgregar_Click(object sender, EventArgs e)
+        {
+            CloseClick?.Invoke(this, EventArgs.Empty);
+           
         }
     }
 }

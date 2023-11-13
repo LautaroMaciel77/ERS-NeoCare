@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBoxPass = new System.Windows.Forms.TextBox();
             this.textBoxUser = new System.Windows.Forms.TextBox();
             this.labelContraseña = new System.Windows.Forms.Label();
             this.labelUser = new System.Windows.Forms.Label();
             this.iconButtonIniciar = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -54,43 +55,54 @@
             this.panelLogin.Size = new System.Drawing.Size(356, 311);
             this.panelLogin.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(115, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 28);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Bienvenido";
+            // 
             // textBoxPass
             // 
-            this.textBoxPass.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPass.Location = new System.Drawing.Point(75, 160);
             this.textBoxPass.Name = "textBoxPass";
-            this.textBoxPass.Size = new System.Drawing.Size(219, 23);
+            this.textBoxPass.Size = new System.Drawing.Size(219, 26);
             this.textBoxPass.TabIndex = 4;
             // 
             // textBoxUser
             // 
+            this.textBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUser.Location = new System.Drawing.Point(75, 89);
             this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(219, 20);
+            this.textBoxUser.Size = new System.Drawing.Size(219, 26);
             this.textBoxUser.TabIndex = 3;
             // 
             // labelContraseña
             // 
             this.labelContraseña.AutoSize = true;
-            this.labelContraseña.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelContraseña.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelContraseña.ForeColor = System.Drawing.Color.White;
-            this.labelContraseña.Location = new System.Drawing.Point(75, 141);
+            this.labelContraseña.Location = new System.Drawing.Point(71, 136);
             this.labelContraseña.Name = "labelContraseña";
-            this.labelContraseña.Size = new System.Drawing.Size(84, 17);
+            this.labelContraseña.Size = new System.Drawing.Size(103, 21);
             this.labelContraseña.TabIndex = 2;
             this.labelContraseña.Text = "Contraseña";
             // 
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUser.ForeColor = System.Drawing.Color.White;
-            this.labelUser.Location = new System.Drawing.Point(75, 70);
+            this.labelUser.Location = new System.Drawing.Point(71, 65);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(54, 17);
+            this.labelUser.Size = new System.Drawing.Size(66, 21);
             this.labelUser.TabIndex = 1;
             this.labelUser.Text = "Usuario";
-           
             // 
             // iconButtonIniciar
             // 
@@ -110,17 +122,6 @@
             this.iconButtonIniciar.Text = "Iniciar sesion";
             this.iconButtonIniciar.UseVisualStyleBackColor = false;
             this.iconButtonIniciar.Click += new System.EventHandler(this.iconButtonIniciar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(115, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 28);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Bienvenido";
             // 
             // pictureBoxLogo
             // 
@@ -143,6 +144,9 @@
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.panelLogin);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

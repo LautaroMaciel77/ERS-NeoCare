@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelSubMenu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -66,7 +67,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::ERS_NeoCare.Properties.Resources.Icons_Land_Medical_People_Patient_Male_256;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(40, 71);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -78,12 +79,12 @@
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.ForeColor = System.Drawing.Color.White;
             this.labelNombre.Location = new System.Drawing.Point(17, 173);
             this.labelNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(136, 17);
+            this.labelNombre.Size = new System.Drawing.Size(135, 18);
             this.labelNombre.TabIndex = 12;
             this.labelNombre.Text = "Nombre Apellido";
             // 
@@ -94,7 +95,7 @@
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Transparent;
             this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
             this.btnSalir.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
@@ -125,7 +126,7 @@
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(67)))), ((int)(((byte)(91)))));
-            this.pictureBoxLogo.BackgroundImage = global::ERS_NeoCare.Properties.Resources.logo_NeoCare2;
+            this.pictureBoxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.BackgroundImage")));
             this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBoxLogo.Location = new System.Drawing.Point(0, 0);
@@ -137,6 +138,8 @@
             // 
             // panelOpciones
             // 
+            this.panelOpciones.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelOpciones.BackgroundImage")));
+            this.panelOpciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelOpciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelOpciones.Location = new System.Drawing.Point(170, 0);
             this.panelOpciones.Name = "panelOpciones";

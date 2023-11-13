@@ -23,24 +23,17 @@ namespace ERS_NeoCare.Design
         {
             InitializeComponent();
 
-            
             _presenter = new ImenuPresenter(this, new ProfesionService(Configuracion.ConnectionString));           
             _presenter.CargarProfesion();
             _presenter.cargarUserControl();
-            
-        
+           
         }
-
-
 
             public void MostrarDescripcionProfesion(string descripcion)
         {
             
             labelProfesion.Text = descripcion;
         }
-
-        
-
 
         public void AgregarUserControl(UserControl userControl)
         {

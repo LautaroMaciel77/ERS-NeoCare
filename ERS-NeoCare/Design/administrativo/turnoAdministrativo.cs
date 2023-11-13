@@ -24,6 +24,7 @@ namespace ERS_NeoCare.Design.administrativo
             PacienteSingleton.Instance.Desautenticar();
             cargarHora();
             panelBuscar.Visible = false;
+            
         }
 
         private void cargarHora()
@@ -31,8 +32,28 @@ namespace ERS_NeoCare.Design.administrativo
             int intervaloEnMinutos = 30;
             int totalHoras = 24;
             int totalColumnas = (totalHoras * 60) / intervaloEnMinutos;
-            label2.Text = "horario seleccionada: ";
-         
+            labelHora.Text = "";
+            labelFecha.Text = "";
+            if (PacienteSingleton.Instance.pacienteAutenticado != null)
+            {
+                labelPaciente.Text = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " "
+                                + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
+            }
+            else {
+                labelPaciente.Text = "";
+            }
+
+            if (UsuarioBusqueda.Instance.UsuarioAutenticado != null)
+            {
+                labelMedico.Text = UsuarioBusqueda.Instance.UsuarioAutenticado.Nombre + " "
+                               + UsuarioBusqueda.Instance.UsuarioAutenticado.Apellido;
+            }
+            else {
+                labelMedico.Text = "";
+            }
+
+            
+
             for (int i = 0; i < totalColumnas; i++)
             {                
                 dataGridViewHora.Rows.Add();
@@ -44,8 +65,8 @@ namespace ERS_NeoCare.Design.administrativo
         private void cargarFecha()
         {
 
-           TimeSpan horaInicio = new TimeSpan(0, 0, 0); // 00:00
-            TimeSpan horaFin = new TimeSpan(23, 59, 59); // 23:59:59
+           TimeSpan horaInicio = new TimeSpan(7, 0, 0); // 00:00:00
+            TimeSpan horaFin = new TimeSpan(12, 0, 0); // 23:59:59
 
             int intervaloEnMinutos = 30;
             int totalBloques = (int)(horaFin.TotalMinutes / intervaloEnMinutos) + 1;
@@ -79,7 +100,7 @@ namespace ERS_NeoCare.Design.administrativo
             DateTime fechaSeleccionada = monthCalendar1.SelectionStart;
 
 
-            label1.Text = fechaSeleccionada.ToString("dd/MM/yyyy");
+            labelFecha.Text = fechaSeleccionada.ToString("dd/MM/yyyy");
             cargarFecha();
         }
 
@@ -122,7 +143,7 @@ namespace ERS_NeoCare.Design.administrativo
                 if (dataGridViewHora.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
                     rangoHora = dataGridViewHora.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    label2.Text = "horario seleccionada: " + rangoHora;
+                    labelHora.Text = rangoHora;
                     selectedRowIndex = e.RowIndex;
                 }
             }
@@ -137,6 +158,7 @@ namespace ERS_NeoCare.Design.administrativo
 
             }
         }
+
         private void iconAgregar_Click(object sender, EventArgs e)
         {
 
@@ -239,6 +261,69 @@ namespace ERS_NeoCare.Design.administrativo
 
 
             }
+        }
+
+        private void button_buscar_medico_paciente_Click(object sender, EventArgs e)
+        {
+            panelBuscar.Visible = true;
+            buscarPaciente buscarPaciente = new buscarPaciente();
+            buscarPaciente.Dock = DockStyle.Fill;
+            buscarPaciente.CloseClick += Closeclick;
+
+            panelBuscar.Controls.Clear();
+            panelBuscar.Controls.Add(buscarPaciente);
+            buscarPaciente.BringToFront();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+            if (UsuarioBusqueda.Instance.UsuarioAutenticado == null || PacienteSingleton.Instance.pacienteAutenticado == null)
+            {
+                MessageBox.Show("Asegúrate de seleccionar un medico y un paciente antes de agregar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (select == null || rangoHora == null)
+            {
+                MessageBox.Show("Asegúrate de seleccionar una fecha y un rango de hora antes de agregar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (select < DateTime.Now)
+            {
+                MessageBox.Show("Asegúrate de seleccionar una fecha correcta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+            if (prioridad == null)
+            {
+                MessageBox.Show("Asegúrate de seleccionar una prioridad de turno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (selectedRowIndex >= 0 && selectedRowIndex < dataGridViewHora.Rows.Count)
+            {
+                if (dataGridViewHora.Rows[selectedRowIndex].Cells[1].Value != null && dataGridViewHora.Rows[selectedRowIndex].Cells[1].Value.ToString() == "NO")
+                {
+                    MessageBox.Show("El turno seleccionado no está disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            string[] partes = rangoHora.Split('-');
+
+            TimeSpan horaInicio = TimeSpan.Parse(partes[0].Trim());
+
+            Turno turno = new Turno
+            {
+                SelectedDate = select,
+                SelectedTimeRange = horaInicio,
+                Prioridad = prioridad,
+                Estado = "n",
+                Medico_Id = UsuarioBusqueda.Instance.UsuarioAutenticado.id,
+                Paciente_Id = PacienteSingleton.Instance.pacienteAutenticado.Id
+            };
+
+            _presenter.insertarTurno(turno);
+            cargarFecha();
         }
     }
 }

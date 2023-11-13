@@ -45,15 +45,13 @@ namespace ERS_NeoCare.Design
         {
 
             _presenter.Buscar();
-            labelDni.Text += PacienteSingleton.Instance.pacienteAutenticado.Dni;
-
-            labelNombre.Text += PacienteSingleton.Instance.pacienteAutenticado.Nombre;
-            labelApellido.Text += PacienteSingleton.Instance.pacienteAutenticado.Apellido;
-
-            labelDomicilio.Text += PacienteSingleton.Instance.pacienteAutenticado.Domicilio;
-            labelFecha.Text += PacienteSingleton.Instance.pacienteAutenticado.FechaNacimiento;
-            labelSexo.Text += PacienteSingleton.Instance.pacienteAutenticado.Sexo;
-            labelObra.Text += PacienteSingleton.Instance.pacienteAutenticado.ObraSocial;
+            labelDni.Text = PacienteSingleton.Instance.pacienteAutenticado.Dni.ToString();
+            labelNombre.Text = PacienteSingleton.Instance.pacienteAutenticado.Nombre;
+            labelApellido.Text = PacienteSingleton.Instance.pacienteAutenticado.Apellido;
+            labelDomicilio.Text = PacienteSingleton.Instance.pacienteAutenticado.Domicilio;
+            labelFecha.Text = PacienteSingleton.Instance.pacienteAutenticado.FechaNacimiento.ToString("dd/MM/yyyy");
+            labelSexo.Text = PacienteSingleton.Instance.pacienteAutenticado.Sexo;
+            labelObra.Text = PacienteSingleton.Instance.pacienteAutenticado.ObraSocial;
 
 
         }
