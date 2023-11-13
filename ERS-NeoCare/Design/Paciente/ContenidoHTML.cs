@@ -42,50 +42,113 @@ namespace ImprmirPdf
             string pacienteTipoSangre = HistoriaClinicaSingleton.Instance.historiaAutenticado.TipoSangre;
 
             //Historia clinica
+                //Familiares
             string antecedentes = HistoriaClinicaSingleton.Instance.historiaAutenticado.Familiares;
+            string[] arregloAntecedentes = antecedentes.Split(';');
+            StringBuilder listaAntecedentes = new StringBuilder("");
+            foreach (string antecedente in arregloAntecedentes)
+            {
+                listaAntecedentes.Append($"<tr><td>{antecedente}</tr></td>");
+            }
+            
+
+                //Medicamentos
             string medicamentos = HistoriaClinicaSingleton.Instance.historiaAutenticado.Medicamentos;
+            string[] arregloMedicamentos = medicamentos.Split(';');
+            StringBuilder listaMedicamentos = new StringBuilder("");
+            foreach (string medicamento in arregloMedicamentos)
+            {
+                listaMedicamentos.Append($"<tr><td>{medicamento}</tr></td>");
+            }
+            
+
+                //Alergias
             string alergias = HistoriaClinicaSingleton.Instance.historiaAutenticado.Alergias;
+            string[] arregloAlergias = alergias.Split(';');
+            StringBuilder listaAlergias = new StringBuilder("");
+            foreach (string alergia in arregloAlergias)
+            {
+                listaAlergias.Append($"<tr><td>{alergia}</tr></td>");
+            }
+            
 
             string contenidoHTML = $@"
             <html>
-            <head>
-                <title>Historia Clínica</title>
-                <link rel='stylesheet' type='text/css' href='estilos.css' media='all'>
-            </head>
-                <body>
-                    <div id=""informacion-general"">
-                            <img src='logo_hospital_eloisa_torrent.jpg' alt='logo-hospital'/>
-                            <h1>{encabezado}</h1>
-                            <p>Fecha inicio: {historiaFechaInicio}</p>
-                            <p>Nro. de HC: {historiaNumero}</p>
-                            <h2>Medico</h2>
-                            <p>Nombre y apellido: {medicoNombreYAp}</p>
-                            <p>Matricula: {medicoMatricula}</p>
-                            <h2>Paciente</h2>
-                            <p>Nombre y apellido: {pacienteNombreYAp}</p>
-
-                            <p>DNI: {pacienteDni}</p>
-                            <p>Fecha de nacimiento: {pacienteFechaNac}</p>
-                            <p>Sexo: {pacienteSexo}</p>
-                            <p>Domicilio: {pacienteDomicilio}</p>
-                            <p>Obra social: {pacienteObraSocial}</p>
-
-                            <p>Tipo de sangre: {pacienteTipoSangre}</p>
-
-                            
-                            <h3>Antecedentes: Antecedentes medicos</h3>
-                            <p>Antecedentes: {antecedentes}</p>
-                            <p>Alergias: {alergias}</p>
-                            <p>Medicamentos: {medicamentos}</p>
-                        </div>
-                        <div id=""historial-medico"">
-                            <h2>Historial de Actuaciones Médicas</h2>
-                            <ul>
-                                <li>[Fecha]: [Descripción de la actuación médica]</li>
-                                <!-- Repetir esta estructura para cada actuación médica -->
-                            </ul>
-                     </div>
-                </body>
+                <head>
+                    <title>Historia Clinica - Nro. HC: {historiaNumero}</title>
+                    <link rel='stylesheet' type='text/css' href='estilos.css' media='all'>
+                </head>
+            <body>
+                <div class=""imagen-logo"">
+                    <img src=""logo_hospital_eloisa_torrent.jpg"" alt=""logo-hospital""/>
+                </div>
+                <h1 class=""titulo-hc"">Historia Clinica</h1>
+                    <div class=""datos-hc"">
+                        <div>Fecha Inicio: {historiaFechaInicio}</div>
+                        <div>Numero Historia Clinica: {historiaNumero}</div>
+                    </div>
+                <h2 class=""titulo-seccion-hc"">Datos</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th class=""titulo-tabla"" colspan=""2"">Medico de cabecera</th>
+                        </tr>
+                        <tr>
+                            <td>Nombre y apellido: {medicoNombreYAp}</td>
+                            <td>Matricula: {medicoMatricula}</td>
+                        </tr>
+                        <tr>
+                            <th class=""titulo-tabla"" colspan=""4"">Paciente</th>
+                        </tr>
+                        <tr>
+                            <td>Nombre y Apellido: {pacienteNombreYAp}</td>
+                            <td>DNI: {pacienteDni}</td>
+                        </tr>
+                        <tr>
+                            <td>Fecha de nacimiento: {pacienteFechaNac}</td>
+                            <td>Sexo: {pacienteSexo}</td>
+                        </tr>
+                        <tr>
+                            <td >Domicilio: {pacienteDomicilio}</td>
+                            <td >Obra Social: {pacienteObraSocial}</td>
+                        </tr>
+                       <tr>
+                            <td colspan=""2"">Tipo de sangre: {pacienteTipoSangre}</td>
+                
+                        </tr>
+                          </tbody>
+                          </table>
+                            <h2 class=""titulo-seccion-hc"">Antecedentes</h2>
+                        <table>
+                          <tbody>
+                        <tr>
+                            <th class=""titulo-tabla"" colspan=""2"">Antecedentes medicos</th>
+                        </tr>
+                            {listaAntecedentes}
+                        <tr>
+                          <th  class=""titulo-tabla"" colspan=""2"">Alergias</th>
+                        </tr>
+                            {listaAlergias}
+                        <tr>
+                          <th class=""titulo-tabla"" colspan=""2"">Medicamentos</th>
+                        </tr>
+                           {listaMedicamentos}
+                    </tbody>
+                </table>
+                <h2 class=""titulo-seccion-hc"">Historial de actuaciones medicas</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th class=""titulo-tabla"" colspan=""2"">Actuacion</th>
+                        </tr>
+                        <tr>
+                            <td>Fecha</td>
+                            <td>Descripcion</td>
+                        </tr>  
+                    </tbody>
+                </table>
+                <button class=""boton-imprimir"" onclick=""window.print()""><b>Imprimir <br>Historia Clinica</b></button>
+            </body>
             </html>";
 
             return contenidoHTML;
