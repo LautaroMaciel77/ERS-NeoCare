@@ -19,6 +19,21 @@ namespace ERS_NeoCare.Design
         {
             InitializeComponent();
         }
+      
+
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+
+
+                string rutaCopiaSeguridad = saveFileDialog.FileName;
+                RealizarBackup();
+
+            }
+        }
         private void RealizarBackup()
         {
             try
@@ -63,6 +78,37 @@ namespace ERS_NeoCare.Design
         }
 
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                string backupFolder = Path.Combine(Application.StartupPath, "Recursos", "CopiasSeguridad");
+
+                // Establecer la carpeta inicial para el diálogo de selección de archivos
+                openFileDialog.InitialDirectory = backupFolder;
+
+                openFileDialog.Filter = "Archivos de copia de seguridad (*.bak)|*.bak";
+                openFileDialog.Title = "Seleccionar archivo de copia de seguridad";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string rutaCopiaSeguridad = openFileDialog.FileName;
+
+                    // Verificar si el archivo de copia de seguridad existe
+                    if (File.Exists(rutaCopiaSeguridad))
+                    {
+                        RestaurarBackup(rutaCopiaSeguridad);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El archivo de copia de seguridad no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+          
+        }
+
+
         private void RestaurarBackup(string rutaCopiaSeguridad)
         {
             try
@@ -100,52 +146,9 @@ namespace ERS_NeoCare.Design
             }
             catch (Exception ex)
             {
-               
+
             }
         }
 
-
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-            {
-         
-             
-                    string rutaCopiaSeguridad = saveFileDialog.FileName;
-                    RealizarBackup();
-               
-            }
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                string backupFolder = Path.Combine(Application.StartupPath, "Recursos", "CopiasSeguridad");
-
-                // Establecer la carpeta inicial para el diálogo de selección de archivos
-                openFileDialog.InitialDirectory = backupFolder;
-
-                openFileDialog.Filter = "Archivos de copia de seguridad (*.bak)|*.bak";
-                openFileDialog.Title = "Seleccionar archivo de copia de seguridad";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string rutaCopiaSeguridad = openFileDialog.FileName;
-
-                    // Verificar si el archivo de copia de seguridad existe
-                    if (File.Exists(rutaCopiaSeguridad))
-                    {
-                        RestaurarBackup(rutaCopiaSeguridad);
-                    }
-                    else
-                    {
-                        MessageBox.Show("El archivo de copia de seguridad no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-          
-        }
     }
 }

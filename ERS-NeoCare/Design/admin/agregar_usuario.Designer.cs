@@ -195,6 +195,7 @@
             // 
             // ComboxProfesion
             // 
+            this.ComboxProfesion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboxProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboxProfesion.FormattingEnabled = true;
             this.ComboxProfesion.Items.AddRange(new object[] {

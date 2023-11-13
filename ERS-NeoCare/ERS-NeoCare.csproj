@@ -461,6 +461,7 @@
     <Compile Include="Design\Paciente\ContenidoHTML.cs" />
     <Compile Include="Design\Paciente\EstilosCSS.cs" />
     <Compile Include="Helper\convertidorListDatatable.cs" />
+    <Compile Include="Helper\Encrypt.cs" />
     <Compile Include="Helper\ReemplazoPanelEventArgs .cs" />
     <Compile Include="Logic\AgregarPacientePresenter.cs" />
     <Compile Include="Logic\AnalisisPresenter.cs" />

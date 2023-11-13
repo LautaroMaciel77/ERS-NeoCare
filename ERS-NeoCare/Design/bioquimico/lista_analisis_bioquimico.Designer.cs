@@ -158,7 +158,7 @@
             this.DGVAdministrativo.RowTemplate.Height = 40;
             this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
             this.DGVAdministrativo.TabIndex = 21;
-            this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick_1);
+      
             // 
             // id
             // 

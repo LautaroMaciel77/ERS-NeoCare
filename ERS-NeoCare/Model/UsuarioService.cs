@@ -3,6 +3,7 @@
 namespace ERS_NeoCare.Model
 {
     using ERS_NeoCare.dbconexion;
+    using ERS_NeoCare.Helper;
     using System.Collections.Generic;
     using System.Data;
     using System.Data.Entity;
@@ -28,11 +29,9 @@ namespace ERS_NeoCare.Model
 
             using (var context = new ApplicationDbContext())
             {
-                // Obtener el hash SHA-256 de la contraseña proporcionada
                 string hashedPassword = Encrypt.GetSHA256(contraseña);
 
-                // Buscar un usuario con el DNI y la contraseña hash coincidentes
-                var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && u.Password == hashedPassword);
+                var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && (u.Password == hashedPassword || u.Password == contraseña));
 
                 if (usuario != null)
                 {
@@ -109,26 +108,32 @@ namespace ERS_NeoCare.Model
             try
             {
                 var context = new ApplicationDbContext();
-              
-                    var user = context.Usuarios.FirstOrDefault(u => u.id == UsuarioSingleton.Instance.UsuarioAutenticado.id);
 
-                    if (user != null)
+                // Obtener el usuario autenticado actualmente
+                var user = context.Usuarios.FirstOrDefault(u => u.id == UsuarioSingleton.Instance.UsuarioAutenticado.id);
+
+                if (user != null)
+                {
+                    // Actualiza los campos del usuario con los nuevos valores
+                    user.DNI = usuario.DNI;
+                    user.Matricula = usuario.Matricula;
+                    user.Nombre = usuario.Nombre;
+                    user.Apellido = usuario.Apellido;
+                    user.ProfesionID = usuario.ProfesionID;
+
+                    // Verifica si la contraseña ha cambiado antes de actualizarla
+                    if (!string.IsNullOrWhiteSpace(usuario.Password))
                     {
-                        // Actualiza los campos del usuario con los nuevos valores
-                        user.DNI = usuario.DNI;
-                        user.Matricula = usuario.Matricula;
-                        user.Nombre = usuario.Nombre;
-                        user.Apellido = usuario.Apellido;
-                        user.ProfesionID = usuario.ProfesionID;
-                        user.Password = usuario.Password;
+                        // Cifra la nueva contraseña antes de actualizarla
+                        user.Password = Encrypt.GetSHA256(usuario.Password);
+                    }
 
-                        // Guarda los cambios en la base de datos
-                        context.SaveChanges();
+                    // Guarda los cambios en la base de datos
+                    context.SaveChanges();
 
-                        return true;
-                    
-             
+                    return true;
                 }
+
                 return false; // Si no se encuentra el usuario
             }
             catch (Exception ex)
@@ -138,6 +143,7 @@ namespace ERS_NeoCare.Model
                 return false; // O maneja de otra manera apropiada
             }
         }
+
         public bool CambiarEstadoBajaUsuario()
         {
 
