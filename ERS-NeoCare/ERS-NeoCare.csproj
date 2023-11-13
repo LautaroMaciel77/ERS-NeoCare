@@ -469,6 +469,7 @@
     <Compile Include="Logic\AtencionPresenter.cs" />
     <Compile Include="Logic\EvaluacionPresenter.cs" />
     <Compile Include="Logic\HistoriaClinicaPresenter.cs" />
+    <Compile Include="Logic\historialPresenter.cs" />
     <Compile Include="Logic\OrdenPresenter.cs" />
     <Compile Include="Logic\UsuarioPresenter.cs" />
     <Compile Include="Logic\ImenuPresenter.cs" />
@@ -492,6 +493,9 @@
     <Compile Include="Model\HistoriaClinicaModel.cs" />
     <Compile Include="Model\HistoriaClinicaSingleton.cs" />
     <Compile Include="Model\HistoriaClinicaService.cs" />
+    <Compile Include="Model\HistorialModel.cs" />
+    <Compile Include="Model\HistorialService.cs" />
+    <Compile Include="Model\HistorialSingleton.cs" />
     <Compile Include="Model\OrdenModel.cs" />
     <Compile Include="Model\OrdenService.cs" />
     <Compile Include="Model\OrdenSingleton.cs" />
