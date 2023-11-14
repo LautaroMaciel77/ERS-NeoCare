@@ -344,6 +344,7 @@
     <Compile Include="Design\admin\bd.Designer.cs">
       <DependentUpon>bd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\admin\copiaSeguridad.cs" />
     <Compile Include="Design\admin\editar_usuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -403,6 +404,12 @@
     </Compile>
     <Compile Include="Design\bioquimico\lista_paciente_bioquimico.Designer.cs">
       <DependentUpon>lista_paciente_bioquimico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\bioquimico\MenuBioquimicoAnalisisDatos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\bioquimico\MenuBioquimicoAnalisisDatos.Designer.cs">
+      <DependentUpon>MenuBioquimicoAnalisisDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\bioquimico\MenuBioquimicoAnalisis.cs">
       <SubType>UserControl</SubType>
@@ -665,6 +672,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\bioquimico\lista_paciente_bioquimico.resx">
       <DependentUpon>lista_paciente_bioquimico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\bioquimico\MenuBioquimicoAnalisisDatos.resx">
+      <DependentUpon>MenuBioquimicoAnalisisDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\bioquimico\MenuBioquimicoAnalisis.resx">
       <DependentUpon>MenuBioquimicoAnalisis.cs</DependentUpon>

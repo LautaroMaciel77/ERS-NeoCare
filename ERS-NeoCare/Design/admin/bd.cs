@@ -37,9 +37,11 @@ namespace ERS_NeoCare.Design
             {
                 string databaseName = "DBNeoCare";
                 string backupFolder = Path.Combine(Application.StartupPath, "Recursos", "CopiasSeguridad"); // Ruta de la carpeta de copias de seguridad en el proyecto
+                
                 string backupFileName = $"Backup_{DateTime.Now:yyyyMMdd_HHmmss}.bak"; // Nombre del archivo con la fecha
+                string rutaCopiaSeguridad = Path.GetFullPath(Path.Combine(backupFolder, backupFileName));
 
-                string rutaCopiaSeguridad = Path.Combine(backupFolder, backupFileName);
+                //string rutaCopiaSeguridad = Path.Combine(backupFolder, backupFileName);
 
                 // Verificar si la carpeta de copias de seguridad existe, y crearla si no
                 if (!Directory.Exists(backupFolder))
@@ -64,7 +66,7 @@ namespace ERS_NeoCare.Design
                         // Agregamos configuración de permisos para la carpeta de copia de seguridad
                         FileInfo fileInfo = new FileInfo(rutaCopiaSeguridad);
                         FileSecurity fileSecurity = fileInfo.GetAccessControl();
-                        fileSecurity.AddAccessRule(new FileSystemAccessRule("NT SERVICE\\TuServicio", FileSystemRights.FullControl, AccessControlType.Allow));
+                        fileSecurity.AddAccessRule(new FileSystemAccessRule("FARONOTE\\SQLEXPRESS_INST1", FileSystemRights.FullControl, AccessControlType.Allow));
                         fileInfo.SetAccessControl(fileSecurity);
                     }
                 }

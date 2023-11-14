@@ -87,7 +87,7 @@
             // 
             this.listViewMedicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewMedicamentos.HideSelection = false;
-            this.listViewMedicamentos.Location = new System.Drawing.Point(145, 582);
+            this.listViewMedicamentos.Location = new System.Drawing.Point(145, 549);
             this.listViewMedicamentos.Margin = new System.Windows.Forms.Padding(2);
             this.listViewMedicamentos.Name = "listViewMedicamentos";
             this.listViewMedicamentos.Size = new System.Drawing.Size(629, 150);
@@ -101,7 +101,7 @@
             this.listViewFamiliares.HideSelection = false;
             this.listViewFamiliares.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listViewFamiliares.Location = new System.Drawing.Point(145, 368);
+            this.listViewFamiliares.Location = new System.Drawing.Point(145, 330);
             this.listViewFamiliares.Margin = new System.Windows.Forms.Padding(2);
             this.listViewFamiliares.Name = "listViewFamiliares";
             this.listViewFamiliares.Size = new System.Drawing.Size(629, 150);
@@ -113,7 +113,7 @@
             // 
             this.listViewAlergias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewAlergias.HideSelection = false;
-            this.listViewAlergias.Location = new System.Drawing.Point(145, 799);
+            this.listViewAlergias.Location = new System.Drawing.Point(145, 763);
             this.listViewAlergias.Margin = new System.Windows.Forms.Padding(2);
             this.listViewAlergias.Name = "listViewAlergias";
             this.listViewAlergias.Size = new System.Drawing.Size(629, 150);
@@ -125,7 +125,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(141, 551);
+            this.label11.Location = new System.Drawing.Point(141, 518);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 20);
@@ -136,7 +136,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(141, 986);
+            this.label10.Location = new System.Drawing.Point(141, 951);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(139, 20);
@@ -180,7 +180,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(141, 768);
+            this.label5.Location = new System.Drawing.Point(141, 732);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 20);
@@ -191,7 +191,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(141, 337);
+            this.label4.Location = new System.Drawing.Point(141, 299);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 20);
@@ -271,7 +271,7 @@
             this.btnEditFamiliares.IconColor = System.Drawing.Color.Black;
             this.btnEditFamiliares.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditFamiliares.IconSize = 16;
-            this.btnEditFamiliares.Location = new System.Drawing.Point(742, 523);
+            this.btnEditFamiliares.Location = new System.Drawing.Point(742, 485);
             this.btnEditFamiliares.Name = "btnEditFamiliares";
             this.btnEditFamiliares.Size = new System.Drawing.Size(32, 22);
             this.btnEditFamiliares.TabIndex = 35;
@@ -288,7 +288,7 @@
             this.btnEditMedicamentos.IconColor = System.Drawing.Color.Black;
             this.btnEditMedicamentos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditMedicamentos.IconSize = 16;
-            this.btnEditMedicamentos.Location = new System.Drawing.Point(742, 737);
+            this.btnEditMedicamentos.Location = new System.Drawing.Point(742, 704);
             this.btnEditMedicamentos.Name = "btnEditMedicamentos";
             this.btnEditMedicamentos.Size = new System.Drawing.Size(32, 22);
             this.btnEditMedicamentos.TabIndex = 36;
@@ -305,7 +305,7 @@
             this.btnAlergias.IconColor = System.Drawing.Color.Black;
             this.btnAlergias.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAlergias.IconSize = 16;
-            this.btnAlergias.Location = new System.Drawing.Point(742, 954);
+            this.btnAlergias.Location = new System.Drawing.Point(742, 918);
             this.btnAlergias.Name = "btnAlergias";
             this.btnAlergias.Size = new System.Drawing.Size(32, 22);
             this.btnAlergias.TabIndex = 37;
@@ -316,12 +316,13 @@
             // 
             this.listViewArchivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewArchivos.HideSelection = false;
-            this.listViewArchivos.Location = new System.Drawing.Point(145, 1020);
+            this.listViewArchivos.Location = new System.Drawing.Point(145, 985);
             this.listViewArchivos.Margin = new System.Windows.Forms.Padding(2);
             this.listViewArchivos.Name = "listViewArchivos";
             this.listViewArchivos.Size = new System.Drawing.Size(629, 150);
             this.listViewArchivos.TabIndex = 28;
             this.listViewArchivos.UseCompatibleStateImageBehavior = false;
+            this.listViewArchivos.View = System.Windows.Forms.View.List;
             // 
             // btnGuardar
             // 
@@ -499,7 +500,7 @@
             this.btnCargarArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCargarArchivo.IconSize = 20;
             this.btnCargarArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargarArchivo.Location = new System.Drawing.Point(413, 1175);
+            this.btnCargarArchivo.Location = new System.Drawing.Point(413, 1140);
             this.btnCargarArchivo.Name = "btnCargarArchivo";
             this.btnCargarArchivo.Size = new System.Drawing.Size(157, 27);
             this.btnCargarArchivo.TabIndex = 43;
@@ -521,7 +522,7 @@
             this.btnBorrarArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBorrarArchivo.IconSize = 20;
             this.btnBorrarArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBorrarArchivo.Location = new System.Drawing.Point(576, 1175);
+            this.btnBorrarArchivo.Location = new System.Drawing.Point(576, 1140);
             this.btnBorrarArchivo.Name = "btnBorrarArchivo";
             this.btnBorrarArchivo.Size = new System.Drawing.Size(102, 27);
             this.btnBorrarArchivo.TabIndex = 44;
@@ -542,7 +543,7 @@
             this.btnVer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnVer.IconSize = 20;
             this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVer.Location = new System.Drawing.Point(683, 1175);
+            this.btnVer.Location = new System.Drawing.Point(683, 1140);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(91, 27);
             this.btnVer.TabIndex = 45;
@@ -568,7 +569,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 1366);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(965, 247);
+            this.panel3.Size = new System.Drawing.Size(948, 247);
             this.panel3.TabIndex = 47;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -579,7 +580,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(250, 15);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(454, 18);
+            this.label9.Size = new System.Drawing.Size(437, 18);
             this.label9.TabIndex = 1;
             this.label9.Text = "Historial actuaciones medicas";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -607,7 +608,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(915, 171);
+            this.dataGridView1.Size = new System.Drawing.Size(898, 171);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -739,7 +740,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LHistoriaClinica);
             this.Name = "HistoriaClinica";
-            this.Size = new System.Drawing.Size(965, 751);
+            this.Size = new System.Drawing.Size(948, 751);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
