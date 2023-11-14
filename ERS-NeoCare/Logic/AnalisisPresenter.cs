@@ -37,7 +37,7 @@ namespace ERS_NeoCare.Logic
 
         public AnalisisPresenter(AnalisisService analisisService)
         {
-            this.analisisService = analisisService;
+            _service = analisisService;
         }
 
         public void Insertar(AnalisisModel analisis)

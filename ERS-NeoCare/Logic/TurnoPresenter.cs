@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -142,6 +143,15 @@ namespace ERS_NeoCare.Logic
             }
             DataTable data = ConvertidorListDatatable.ConvertirListaTurno(listGeneral);
             return listGeneral;
+        }
+        internal bool TurnoAtendido(int id)
+        {
+            var context = DbContextManager.GetContext();
+
+            // Verificar si existe un turno con la ID y está atendido
+            var turnoAtendido = context.turnos.Any(t => t.Id == id && t.Estado == true);
+
+            return turnoAtendido;
         }
 
         public List<Turno> RecopilarTurnos()

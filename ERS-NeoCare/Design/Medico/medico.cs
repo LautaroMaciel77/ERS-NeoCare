@@ -10,7 +10,8 @@ namespace ERS_NeoCare.Design
 
         public event EventHandler PacienteButtonClick;
         public event EventHandler TurnoAdminButtonClick;
-        public event EventHandler ListaTurnosButtonClick;
+        public event EventHandler EvaluacionesButtonClick;
+
         public medico()
         {
             InitializeComponent();
@@ -28,12 +29,12 @@ namespace ERS_NeoCare.Design
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            ListaTurnosButtonClick?.Invoke(this, EventArgs.Empty);
+            EvaluacionesButtonClick?.Invoke(this, EventArgs.Empty);
         }
 
         private void iconButton2_Click_1(object sender, EventArgs e)
         {
-            
+            EvaluacionesButtonClick?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -49,19 +49,20 @@ namespace ERS_NeoCare.Model
                 return new List<OrdenModel>(); // Retorna una lista vacía o maneja de otra manera apropiada
             }
         }
-        internal void Buscar(string id)
+        internal void Buscar(int id)
         {
-
-   
-            int.TryParse(id, out int idInt);
             var context = DbContextManager.GetContext();
 
-            var orden = context.orden.FirstOrDefault(u => u.Id == idInt);
+            // Realizar la búsqueda por el campo int
+            var orden = context.orden.FirstOrDefault(u => u.Id == id);
 
             if (orden != null)
             {
-
                 OrdenSingleton.Instance.Autenticar(orden);
+            }
+            else
+            {
+                // Manejar el caso en el que no se encuentra ninguna orden con el ID proporcionado.
             }
         }
 

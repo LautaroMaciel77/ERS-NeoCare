@@ -483,6 +483,30 @@
     <Compile Include="Design\Medico\evaluacionDatos.Designer.cs">
       <DependentUpon>evaluacionDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Medico\Evaluaciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\Evaluaciones.Designer.cs">
+      <DependentUpon>Evaluaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Medico\MenuMedicoEvaluaciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\MenuMedicoEvaluaciones.Designer.cs">
+      <DependentUpon>MenuMedicoEvaluaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Medico\MenuMedicoOrdenes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\MenuMedicoOrdenes.Designer.cs">
+      <DependentUpon>MenuMedicoOrdenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Medico\OrdenMedicoDatos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\OrdenMedicoDatos.Designer.cs">
+      <DependentUpon>OrdenMedicoDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\Paciente\ContenidoHTML.cs" />
     <Compile Include="Design\Paciente\EstilosCSS.cs" />
     <Compile Include="Helper\convertidorListDatatable.cs" />
@@ -715,14 +739,26 @@
     <EmbeddedResource Include="Design\Medico\evaluacionDatos.resx">
       <DependentUpon>evaluacionDatos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\Evaluaciones.resx">
+      <DependentUpon>Evaluaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\medico.resx">
       <DependentUpon>medico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\MenuMedicoEvaluaciones.resx">
+      <DependentUpon>MenuMedicoEvaluaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\MenuMedicoOrdenes.resx">
+      <DependentUpon>MenuMedicoOrdenes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\MenuMedicoPacientes.resx">
       <DependentUpon>MenuMedicoPacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\ListaDeTurnos.resx">
       <DependentUpon>ListaDeTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\OrdenMedicoDatos.resx">
+      <DependentUpon>OrdenMedicoDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\PacientesMedico.resx">
       <DependentUpon>PacientesMedico.cs</DependentUpon>

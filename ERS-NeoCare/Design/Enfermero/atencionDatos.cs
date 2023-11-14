@@ -14,7 +14,7 @@ namespace ERS_NeoCare.Design.administrativo
         public event EventHandler recargar;
         public atencionDatos()
         {
-            _presenter = new AtencionPresenter(this, new AtencionService());
+            _presenter = new AtencionPresenter( new AtencionService());
             _presenterorden = new OrdenPresenter(new OrdenService());
             InitializeComponent();
 

@@ -96,13 +96,16 @@ namespace ERS_NeoCare.Helper
         {
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("Id", typeof(int));
-            dataTable.Columns.Add("PacienteDni", typeof(int));
-            dataTable.Columns.Add("SelectedDate", typeof(DateTime));
+
             dataTable.Columns.Add("SelectedTimeRange", typeof(TimeSpan));
+            dataTable.Columns.Add("SelectedDate", typeof(DateTime));
+     
+            dataTable.Columns.Add("PacienteDni", typeof(int));
+            dataTable.Columns.Add("NombrePaciente", typeof(string));
             dataTable.Columns.Add("Prioridad", typeof(string));
             dataTable.Columns.Add("Estado", typeof(bool));  // Cambiar tipo de columna a Image
-            dataTable.Columns.Add("NombrePaciente", typeof(string));
-            dataTable.Columns.Add("ObraSocial", typeof(string));
+       
+        
 
 
 
@@ -112,14 +115,16 @@ namespace ERS_NeoCare.Helper
              
                 dataTable.Rows.Add(
                     turno.Id,
-                    turno.Paciente.Dni,
-                    turno.SelectedDate,
+            
                     turno.SelectedTimeRange,
+                    turno.SelectedDate,
+        
+                    turno.Paciente.Dni,
+                  turno.Paciente.Nombre + " " + turno.Paciente.Apellido,
                     turno.Prioridad,
-                    turno.Estado, // Almacenar la imagen en lugar de "s" o "n"
-                    turno.Paciente.Nombre + " " + turno.Paciente.Apellido,
-                    turno.Paciente.ObraSocial + " " + turno.Paciente.ObraSocial
-
+                    turno.Estado // Almacenar la imagen en lugar de "s" o "n"
+             
+             
 
                 );
             }
@@ -265,5 +270,33 @@ namespace ERS_NeoCare.Helper
             }
             return dataTable;
         }
+        public static DataTable ConvertirListaEvaluacion(List<EvaluacionModel> evaluaciones)
+        {
+            DataTable dataTable = new DataTable();
+            if (evaluaciones != null)
+            {
+                dataTable.Columns.Add("id", typeof(int));
+                dataTable.Columns.Add("fecha_creacion", typeof(DateTime));
+                dataTable.Columns.Add("Medico", typeof(string)); 
+                dataTable.Columns.Add("Paciente", typeof(string));
+                dataTable.Columns.Add("dni_paciente", typeof(int));
+                dataTable.Columns.Add("dni_medico", typeof(int));
+                foreach (var evaluacion in evaluaciones)
+                {
+                    dataTable.Rows.Add(
+                        evaluacion.IdEvaluacion,
+                        evaluacion.FechaCreacion,
+                        evaluacion.Medico.Nombre + " " + evaluacion.Medico.Apellido,
+                        evaluacion.Paciente.Nombre+" "+evaluacion.Paciente.Apellido,
+          
+                        evaluacion.Paciente.Dni,
+         
+                        evaluacion.Medico.DNI
+                    );
+                }
+            }
+            return dataTable;
+        }
     }
+
 }

@@ -64,7 +64,7 @@ namespace ERS_NeoCare.Logic
                     medico m = new medico();
                     m.TurnoAdminButtonClick += TurnoMedButtonClick;
                     m.PacienteButtonClick += PacienteButtonClick;
-                    m.ListaTurnosButtonClick += ListaTurnosMedicoClick;
+                    m.EvaluacionesButtonClick += EvaluacionesButtonClick;
                     _view.AgregarUserControl(m);
                     break;
                 case 4:
@@ -127,9 +127,9 @@ namespace ERS_NeoCare.Logic
             _view.AgregarSubMenu(lista);
         }
 
-        private void ListaTurnosMedicoClick(object sender, EventArgs e)
+        private void EvaluacionesButtonClick(object sender, EventArgs e)
         {
-            ListaDeTurnos turno = new ListaDeTurnos();
+            Evaluaciones turno = new Evaluaciones();
             _view.AgregarSubMenu(turno);
         }
 

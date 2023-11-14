@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using ERS_NeoCare.Helper;
 using System.Data;
 using ERS_NeoCare.Design.Medico;
+using System.Web.Services.Description;
 
 namespace ERS_NeoCare.Logic
 {
@@ -58,7 +59,14 @@ namespace ERS_NeoCare.Logic
             DataTable data = ConvertidorListDatatable.ConvertirOrdenes(_service.traerOrdenes());
             _viewEstados.cargarOrdenes(data);
         }
-        public void BuscarMedico(string searchText)
+    
+    public void buscarOrden(int id)
+    {
+            _service.Buscar(id);
+
+       
+    }
+    public void BuscarMedico(string searchText)
         {
             List<OrdenModel> listGeneral = _service.traerOrdenes().Where(t => t.Medico.id == UsuarioSingleton.Instance.UsuarioAutenticado.id).ToList();
 
@@ -89,25 +97,20 @@ namespace ERS_NeoCare.Logic
             _service.CambiarEstado(id);
         
         }
-        internal void CargarFiltro(bool v)
+        internal void CargarFiltro(bool? estado, bool? urgencia, string tipo)
         {
-
-            List<OrdenModel> ordenes = _service.traerOrdenes().Where(t => t.Medico.id == UsuarioSingleton.Instance.UsuarioAutenticado.id && t.Estado==v).ToList();
+            List<OrdenModel> ordenes = _service.traerOrdenes()
+                .Where(t => t.Medico.id == UsuarioSingleton.Instance.UsuarioAutenticado.id &&
+                            (!estado.HasValue || t.Estado == estado.Value) &&
+                            (!urgencia.HasValue || t.Urgencia == urgencia.Value) &&
+                            (string.IsNullOrEmpty(tipo) || t.TipoOrden == tipo))
+                .ToList();
 
             DataTable data = ConvertidorListDatatable.ConvertirOrdenes(ordenes);
-
             _viewEstados.cargarOrdenes(data);
         }
 
-        internal void FiltroUrgencia(bool v)
-        {
-            List<OrdenModel> ordenes = _service.traerOrdenes().Where(t => t.Medico.id == UsuarioSingleton.Instance.UsuarioAutenticado.id && t.Urgencia == v).ToList();
-
-            DataTable data = ConvertidorListDatatable.ConvertirOrdenes(ordenes);
-
-            _viewEstados.cargarOrdenes(data);
-        }
-
+       
 
     }
 }

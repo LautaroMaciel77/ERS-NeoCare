@@ -31,6 +31,24 @@ namespace ERS_NeoCare.Model
                 return false; // O maneja de otra manera apropiada
             }
         }
+        internal List<EvaluacionModel> ObtenerEvaluaciones()
+        {
+            try
+            {
+                var context = DbContextManager.GetContext();
+
+                // Consultar la tabla de evaluaciones y traer todos los registros
+                List<EvaluacionModel> evaluaciones = context.evaluacion.ToList();
+
+                return evaluaciones;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones generales aquí.
+                Console.WriteLine("Error al obtener evaluaciones: " + ex.Message);
+                return null; // O manejar de otra manera apropiada, como lanzar una excepción
+            }
+        }
         internal EvaluacionModel BuscarPorId(int id)
         {
             try

@@ -32,7 +32,7 @@ namespace ERS_NeoCare.Logic
             _view.MostrarDatosPaciente(data);
         }
 
-        internal void Buscar(string idOrden)
+        internal void Buscar(int idOrden)
         {
             _model.Buscar(idOrden);
         }

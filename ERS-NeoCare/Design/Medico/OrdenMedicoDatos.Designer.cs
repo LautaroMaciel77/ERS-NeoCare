@@ -31,7 +31,6 @@
             this.labelIndicaciones = new System.Windows.Forms.Label();
             this.labelUrgencia = new System.Windows.Forms.Label();
             this.radioButtonSi = new System.Windows.Forms.RadioButton();
-            this.radioButtonNo = new System.Windows.Forms.RadioButton();
             this.textBoxIndicaciones = new System.Windows.Forms.TextBox();
             this.labelTipoOrden = new System.Windows.Forms.Label();
             this.labelOrden = new System.Windows.Forms.Label();
@@ -39,6 +38,7 @@
             this.labelFechaEvaluacion = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.radioButtonNo = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // labelIndicaciones
@@ -72,20 +72,7 @@
             this.radioButtonSi.TabStop = true;
             this.radioButtonSi.Text = "Si";
             this.radioButtonSi.UseVisualStyleBackColor = true;
-            this.radioButtonSi.CheckedChanged += new System.EventHandler(this.radioButtonSi_CheckedChanged);
-            // 
-            // radioButtonNo
-            // 
-            this.radioButtonNo.AutoSize = true;
-            this.radioButtonNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonNo.Location = new System.Drawing.Point(420, 268);
-            this.radioButtonNo.Name = "radioButtonNo";
-            this.radioButtonNo.Size = new System.Drawing.Size(47, 24);
-            this.radioButtonNo.TabIndex = 3;
-            this.radioButtonNo.TabStop = true;
-            this.radioButtonNo.Text = "No";
-            this.radioButtonNo.UseVisualStyleBackColor = true;
-            this.radioButtonNo.CheckedChanged += new System.EventHandler(this.radioButtonNo_CheckedChanged);
+     
             // 
             // textBoxIndicaciones
             // 
@@ -110,10 +97,10 @@
             // labelOrden
             // 
             this.labelOrden.AutoSize = true;
-            this.labelOrden.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOrden.Location = new System.Drawing.Point(526, 34);
             this.labelOrden.Name = "labelOrden";
-            this.labelOrden.Size = new System.Drawing.Size(170, 25);
+            this.labelOrden.Size = new System.Drawing.Size(172, 25);
             this.labelOrden.TabIndex = 40;
             this.labelOrden.Text = "Orden (Pedido)";
             // 
@@ -157,6 +144,19 @@
             this.label2.TabIndex = 43;
             this.label2.Text = "Fecha:";
             // 
+            // radioButtonNo
+            // 
+            this.radioButtonNo.AutoSize = true;
+            this.radioButtonNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonNo.Location = new System.Drawing.Point(420, 268);
+            this.radioButtonNo.Name = "radioButtonNo";
+            this.radioButtonNo.Size = new System.Drawing.Size(47, 24);
+            this.radioButtonNo.TabIndex = 3;
+            this.radioButtonNo.TabStop = true;
+            this.radioButtonNo.Text = "No";
+            this.radioButtonNo.UseVisualStyleBackColor = true;
+          
+            // 
             // OrdenMedicoDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,7 +184,6 @@
         private System.Windows.Forms.Label labelIndicaciones;
         private System.Windows.Forms.Label labelUrgencia;
         private System.Windows.Forms.RadioButton radioButtonSi;
-        private System.Windows.Forms.RadioButton radioButtonNo;
         private System.Windows.Forms.TextBox textBoxIndicaciones;
         private System.Windows.Forms.Label labelTipoOrden;
         private System.Windows.Forms.Label labelOrden;
@@ -192,5 +191,6 @@
         private System.Windows.Forms.Label labelFechaEvaluacion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton radioButtonNo;
     }
 }

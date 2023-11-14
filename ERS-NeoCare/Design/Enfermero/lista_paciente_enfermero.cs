@@ -126,9 +126,10 @@ namespace ERS_NeoCare.Design
                         string dniPaciente = DGVAdministrativo.Rows[e.RowIndex].Cells["dni_paciente"].Value.ToString();
                         string medico = DGVAdministrativo.Rows[e.RowIndex].Cells["dni_medico"].Value.ToString();
                         string idOrden = DGVAdministrativo.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                        int.TryParse(idOrden, out int id);
                         _presenterPaciente.cargarPaciente(dniPaciente);
                         _presenterMedico.Buscar(medico);
-                        _presenter.Buscar(idOrden);
+                        _presenter.Buscar(id);
                         MostrarMenu();
 
 

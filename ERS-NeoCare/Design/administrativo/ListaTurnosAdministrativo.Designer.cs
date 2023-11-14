@@ -34,15 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dBNeoCareDataSet1 = new ERS_NeoCare.DBNeoCareDataSet1();
-            this.turnoTableAdapter = new ERS_NeoCare.DBNeoCareDataSet1TableAdapters.TurnoTableAdapter();
-            this.label2 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SelectedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SelectedTimeRange = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +43,15 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MedicoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PacienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dBNeoCareDataSet1 = new ERS_NeoCare.DBNeoCareDataSet1();
+            this.turnoTableAdapter = new ERS_NeoCare.DBNeoCareDataSet1TableAdapters.TurnoTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -61,6 +61,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -122,6 +123,72 @@
             this.DGVAdministrativo.RowTemplate.Height = 40;
             this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
             this.DGVAdministrativo.TabIndex = 16;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // SelectedDate
+            // 
+            this.SelectedDate.DataPropertyName = "SelectedDate";
+            this.SelectedDate.HeaderText = "Dia del turno";
+            this.SelectedDate.Name = "SelectedDate";
+            this.SelectedDate.ReadOnly = true;
+            // 
+            // SelectedTimeRange
+            // 
+            this.SelectedTimeRange.DataPropertyName = "SelectedTimeRange";
+            this.SelectedTimeRange.HeaderText = "Hora del turno";
+            this.SelectedTimeRange.Name = "SelectedTimeRange";
+            this.SelectedTimeRange.ReadOnly = true;
+            // 
+            // NombrePaciente
+            // 
+            this.NombrePaciente.DataPropertyName = "NombrePaciente";
+            this.NombrePaciente.HeaderText = "Nombre Paciente";
+            this.NombrePaciente.Name = "NombrePaciente";
+            this.NombrePaciente.ReadOnly = true;
+            // 
+            // NombreMedico
+            // 
+            this.NombreMedico.DataPropertyName = "NombreMedico";
+            this.NombreMedico.HeaderText = "Nombre Medico";
+            this.NombreMedico.Name = "NombreMedico";
+            this.NombreMedico.ReadOnly = true;
+            // 
+            // Prioridad
+            // 
+            this.Prioridad.DataPropertyName = "Prioridad";
+            this.Prioridad.HeaderText = "Prioridad";
+            this.Prioridad.Name = "Prioridad";
+            this.Prioridad.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // MedicoId
+            // 
+            this.MedicoId.DataPropertyName = "MedicoId";
+            this.MedicoId.HeaderText = "MedicoId";
+            this.MedicoId.Name = "MedicoId";
+            this.MedicoId.ReadOnly = true;
+            this.MedicoId.Visible = false;
+            // 
+            // PacienteId
+            // 
+            this.PacienteId.DataPropertyName = "PacienteId";
+            this.PacienteId.HeaderText = "PacienteId";
+            this.PacienteId.Name = "PacienteId";
+            this.PacienteId.ReadOnly = true;
+            this.PacienteId.Visible = false;
             // 
             // label7
             // 
@@ -206,72 +273,6 @@
             this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 20;
             this.label2.Text = "Estado";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // SelectedDate
-            // 
-            this.SelectedDate.DataPropertyName = "SelectedDate";
-            this.SelectedDate.HeaderText = "Dia del turno";
-            this.SelectedDate.Name = "SelectedDate";
-            this.SelectedDate.ReadOnly = true;
-            // 
-            // SelectedTimeRange
-            // 
-            this.SelectedTimeRange.DataPropertyName = "SelectedTimeRange";
-            this.SelectedTimeRange.HeaderText = "Hora del turno";
-            this.SelectedTimeRange.Name = "SelectedTimeRange";
-            this.SelectedTimeRange.ReadOnly = true;
-            // 
-            // NombrePaciente
-            // 
-            this.NombrePaciente.DataPropertyName = "NombrePaciente";
-            this.NombrePaciente.HeaderText = "Nombre Paciente";
-            this.NombrePaciente.Name = "NombrePaciente";
-            this.NombrePaciente.ReadOnly = true;
-            // 
-            // NombreMedico
-            // 
-            this.NombreMedico.DataPropertyName = "NombreMedico";
-            this.NombreMedico.HeaderText = "Nombre Medico";
-            this.NombreMedico.Name = "NombreMedico";
-            this.NombreMedico.ReadOnly = true;
-            // 
-            // Prioridad
-            // 
-            this.Prioridad.DataPropertyName = "Prioridad";
-            this.Prioridad.HeaderText = "Prioridad";
-            this.Prioridad.Name = "Prioridad";
-            this.Prioridad.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // MedicoId
-            // 
-            this.MedicoId.DataPropertyName = "MedicoId";
-            this.MedicoId.HeaderText = "MedicoId";
-            this.MedicoId.Name = "MedicoId";
-            this.MedicoId.ReadOnly = true;
-            this.MedicoId.Visible = false;
-            // 
-            // PacienteId
-            // 
-            this.PacienteId.DataPropertyName = "PacienteId";
-            this.PacienteId.HeaderText = "PacienteId";
-            this.PacienteId.Name = "PacienteId";
-            this.PacienteId.ReadOnly = true;
-            this.PacienteId.Visible = false;
             // 
             // ListaTurnosAdministrativo
             // 

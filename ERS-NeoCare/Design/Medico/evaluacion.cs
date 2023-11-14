@@ -62,7 +62,7 @@ namespace ERS_NeoCare.Design.administrativo
             limpiarCampos();
             HistorialModel historialModel = new HistorialModel()
             {
-                Id = AnalisisSingleton.Instance.AnalisisAutenticado.IdAnalisis,
+                Id = EvaluacionSingleton.Instance.evaluacionAutenticada.IdEvaluacion,
                 Tipo = "Evaluacion",
                 fecha = DateTime.Now,
                 IdAtencion = null,

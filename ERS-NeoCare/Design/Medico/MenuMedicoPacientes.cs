@@ -15,6 +15,7 @@ namespace ERS_NeoCare.Design.Medico
 
         public event EventHandler closeclick;
         public event EventHandler cambiarEstado;
+        public event EventHandler registrarclick;
         public MenuMedicoPacientes()
         {
 
@@ -79,27 +80,7 @@ namespace ERS_NeoCare.Design.Medico
 
         private void iconEvaluacion_Click(object sender, EventArgs e)
         {
-            evaluacion pacienteControl = new evaluacion();
-            pacienteControl.Dock = DockStyle.Fill;
-
-            // Accede al formulario 'menu' desde el control actual
-            menu menuForm = this.ParentForm as menu;
-
-            if (menuForm != null)
-            {
-                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
-
-
-
-                panelOpciones.Controls.Clear();
-
-
-                panelOpciones.Controls.Add(pacienteControl);
-
-
-
-
-            }
+            registrarclick?.Invoke(this, EventArgs.Empty);  
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

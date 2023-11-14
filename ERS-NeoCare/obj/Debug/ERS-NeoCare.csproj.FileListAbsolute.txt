@@ -170,3 +170,11 @@ C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.De
 C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.atencionDatos.resources
 C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.evaluacionDatos.resources
 C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.MenuBioquimicoAnalisisDatos.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.analisisDatos.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.MenuBioquimicoAnalisisDatos.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.atencionDatos.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.administrativo.evaluacionDatos.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.Evaluaciones.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuMedicoOrdenes.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.OrdenMedicoDatos.resources
+E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuMedicoEvaluaciones.resources

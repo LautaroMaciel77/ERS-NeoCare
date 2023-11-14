@@ -36,60 +36,56 @@ namespace ERS_NeoCare.Design.Medico
             {
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
+                    int valorIdObject = (int)DGVAdministrativo.Rows[e.RowIndex].Cells["Id"].Value;
+                 
+                    DialogResult result = MessageBox.Show("¿Está seguro de querer ver los datos de esta orden?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        // Si el usuario confirma, buscar la orden y cargar los datos
+                        presenter.buscarOrden(valorIdObject);
+                        cargarOrdenDatos();
+                    }
                 }
             }
 
         }
 
+        private void cargarOrdenDatos()
+        {
+            OrdenMedicoDatos pacienteControl = new OrdenMedicoDatos();
+            pacienteControl.Dock = DockStyle.Fill;
+
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
+
+
+
+
+            }
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string seleccion = comboBox1.SelectedItem.ToString();
-
-            // Utiliza un switch para tomar diferentes acciones según el valor seleccionado
-
-            switch (seleccion)
-            {
-                case "Atendido":
-                    presenter.CargarFiltro(true);
-                    break;
-
-
-                case "No Atendido":
-                    presenter.CargarFiltro(false);
-                    break;
-                case "Todos":
-                    presenter.traerOrdenes();
-                    break;
-                default:
-                    presenter.traerOrdenes();
-                    break;
-            }
+            RealizarBusqueda();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string seleccion = comboBox2.SelectedItem.ToString();
-
-            // Utiliza un switch para tomar diferentes acciones según el valor seleccionado
-
-            switch (seleccion)
-            {
-                case "Urgente":
-                    presenter.FiltroUrgencia(true);
-                    break;
+            RealizarBusqueda();
 
 
-                case "No Urgente":
-                    presenter.FiltroUrgencia(false);
-                    break;
-                case "Todos":
-                    presenter.traerOrdenes();
-                    break;
-                default:
-                    presenter.traerOrdenes();
-                    break;
-            }
-          
 
 
         }
@@ -102,9 +98,36 @@ namespace ERS_NeoCare.Design.Medico
             presenter.BuscarMedico(searchText);
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
+ 
 
+        private void comboBoxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RealizarBusqueda();
         }
+
+        private void RealizarBusqueda()
+        {
+            string seleccionEstado = comboBox1.SelectedItem?.ToString();
+            string seleccionUrgencia = comboBox2.SelectedItem?.ToString();
+            string seleccionTipo = comboBoxTipo.SelectedItem?.ToString();
+
+            // Verificar si al menos un ComboBox está seleccionado
+            if (!string.IsNullOrEmpty(seleccionEstado) || !string.IsNullOrEmpty(seleccionUrgencia) || !string.IsNullOrEmpty(seleccionTipo))
+            {
+                // Convertir las cadenas a valores booleanos
+                bool? estado = !string.IsNullOrEmpty(seleccionEstado) ? (seleccionEstado.ToLower() == "atendido") : (bool?)null;
+                bool? urgencia = !string.IsNullOrEmpty(seleccionUrgencia) ? (seleccionUrgencia.ToLower() == "urgente") : (bool?)null;
+
+                // Llamar a la función de búsqueda con los criterios seleccionados
+                presenter.CargarFiltro(estado, urgencia, seleccionTipo);
+            }
+            else
+            {
+                // Manejar el caso donde ningún ComboBox está seleccionado
+            }
+        }
+
+
     }
+
 }
