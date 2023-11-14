@@ -21,7 +21,7 @@ namespace ERS_NeoCare.Design
         {
 
             InitializeComponent();
-            panelAgregar.Visible = false;
+
 
             presenter = new AnalisisPresenter(this, new AnalisisService());
 
@@ -35,11 +35,6 @@ namespace ERS_NeoCare.Design
 
 
 
-        private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        
-
-        }
 
         private void cargarOrdenDatos()
         {
@@ -74,6 +69,30 @@ namespace ERS_NeoCare.Design
             }
 
 
+        }
+
+        private void DGVAdministrativo_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && DGVAdministrativo.Rows.Count > 0)
+            {
+                if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+
+                    int id = (int)DGVAdministrativo.Rows[e.RowIndex].Cells["id"].Value;
+
+                    DialogResult result = MessageBox.Show("¿Está seguro de querer ver los datos de este Analisis?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        presenter.BuscaryRemplazar(id);
+                        cargarOrdenDatos();
+
+                    }
+
+
+                }
+
+            }
         }
     }
 }
