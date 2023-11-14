@@ -1,4 +1,5 @@
-﻿using ERS_NeoCare.Logic;
+﻿using ERS_NeoCare.Design.administrativo;
+using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
 using System;
 using System.Data;
@@ -36,8 +37,28 @@ namespace ERS_NeoCare.Design
 
         private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == DGVAdministrativo.Columns["acciones"].Index)
+        
+
+        }
+
+        private void cargarOrdenDatos()
+        {
+            analisisDatos pacienteControl = new analisisDatos();
+            pacienteControl.Dock = DockStyle.Fill;
+
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
             {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
 
 
 

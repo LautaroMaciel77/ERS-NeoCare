@@ -21,7 +21,7 @@ namespace ERS_NeoCare.Design
       
         public string userDni;
         public event EventHandler<Tuple<string>> TurnoMedicoClick;
-
+        private int IdPaciente;
         private int idTurno;
         private TurnoPresenter _presenter;
         private PacientePresenter _pacientePresenter;
@@ -64,6 +64,7 @@ namespace ERS_NeoCare.Design
                     string dniPaciente = DGVAdministrativo.Rows[e.RowIndex].Cells["PacienteDni"].Value.ToString();
                     idTurno = (int)DGVAdministrativo.Rows[e.RowIndex].Cells["Id"].Value;
                     _pacientePresenter.cargarPaciente(dniPaciente);
+
                     if (_presenter.TurnoAtendido(idTurno))
                     {
                         MessageBox.Show("Este turno ya está atendido. No puedes realizar más acciones.", "Turno Atendido", MessageBoxButtons.OK, MessageBoxIcon.Error);

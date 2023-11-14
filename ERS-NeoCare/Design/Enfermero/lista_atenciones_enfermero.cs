@@ -49,21 +49,26 @@ namespace ERS_NeoCare.Design
             {
                 if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
-                    if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
-                    {
+                 
                         string id = DGVAdministrativo.Rows[e.RowIndex].Cells["id"].Value.ToString();
-                        _presenter.buscar(id);
-                        cargarMenu();
+                 
+                    DialogResult result = MessageBox.Show("¿Está seguro de querer ver los datos de esta atencion?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                    if (result == DialogResult.Yes)
+                    {
+                        _presenter.buscar(id);
+                        cargarOrdenDatos();
                     }
+
+
                 }
 
             }
         }
 
-        private void cargarMenu()
+        private void cargarOrdenDatos()
         {
-            PacienteView pacienteControl = new PacienteView();
+            atencionDatos pacienteControl = new atencionDatos();
             pacienteControl.Dock = DockStyle.Fill;
 
             // Accede al formulario 'menu' desde el control actual

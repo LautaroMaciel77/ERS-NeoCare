@@ -32,8 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.atencion_enfermeriaTableAdapter = new ERS_NeoCare.DBNeoCareDataSet5TableAdapters.atencion_enfermeriaTableAdapter();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,14 +45,9 @@
             this.dni_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni_medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.atencion_enfermeriaTableAdapter = new ERS_NeoCare.DBNeoCareDataSet5TableAdapters.atencion_enfermeriaTableAdapter();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.panelAgregar = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -63,15 +62,29 @@
             this.panel2.Size = new System.Drawing.Size(1196, 71);
             this.panel2.TabIndex = 14;
             // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Medkit;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 41;
+            this.iconPictureBox1.Location = new System.Drawing.Point(34, 17);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(41, 41);
+            this.iconPictureBox1.TabIndex = 5;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.label1.Location = new System.Drawing.Point(79, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 23);
+            this.label1.Size = new System.Drawing.Size(115, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Atenciones";
             // 
@@ -123,6 +136,31 @@
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(92, 84);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(196, 27);
+            this.textBox2.TabIndex = 13;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(30, 86);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 18);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Buscar";
+            // 
+            // atencion_enfermeriaTableAdapter
+            // 
+            this.atencion_enfermeriaTableAdapter.ClearBeforeFill = true;
+            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -167,63 +205,13 @@
             this.CAcciones.ReadOnly = true;
             this.CAcciones.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.CAcciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.CAcciones.Text = "Menu ";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(92, 84);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 27);
-            this.textBox2.TabIndex = 13;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(30, 86);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 18);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Buscar";
-            // 
-            // atencion_enfermeriaTableAdapter
-            // 
-            this.atencion_enfermeriaTableAdapter.ClearBeforeFill = true;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Medkit;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 41;
-            this.iconPictureBox1.Location = new System.Drawing.Point(34, 17);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(41, 41);
-            this.iconPictureBox1.TabIndex = 5;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // panelAgregar
-            // 
-            this.panelAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelAgregar.AutoSize = true;
-            this.panelAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
-            this.panelAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelAgregar.Location = new System.Drawing.Point(468, 309);
-            this.panelAgregar.Name = "panelAgregar";
-            this.panelAgregar.Size = new System.Drawing.Size(260, 150);
-            this.panelAgregar.TabIndex = 19;
+            this.CAcciones.Text = "Ver Detalles";
+            this.CAcciones.UseColumnTextForButtonValue = true;
             // 
             // lista_atenciones_enfermero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelAgregar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.DGVAdministrativo);
@@ -232,8 +220,8 @@
             this.Size = new System.Drawing.Size(1196, 768);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,6 +243,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dni_paciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni_medico;
         private System.Windows.Forms.DataGridViewButtonColumn CAcciones;
-        private System.Windows.Forms.Panel panelAgregar;
     }
 }
