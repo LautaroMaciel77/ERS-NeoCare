@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ERS_NeoCare.Model
 {
@@ -14,18 +16,37 @@ namespace ERS_NeoCare.Model
             {
                 var context = DbContextManager.GetContext();
 
+                if (context == null)
+                {
+                    // Asegúrate de que el contexto no sea nulo
+                    Console.WriteLine("Error: Contexto de base de datos nulo.");
+                    MessageBox.Show("Error: Contexto de base de datos nulo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
                 // Agregar el historial al contexto
                 context.historial.Add(historial);
 
                 // Guardar los cambios en la base de datos
                 int rowsAffected = context.SaveChanges();
 
-                return rowsAffected > 0;
+                if (rowsAffected > 0)
+                {
+                    return true; // La inserción fue exitosa
+                }
+                else
+                {
+                    // Puedes manejar de manera diferente si no se afectaron filas
+                    Console.WriteLine("Error: No se afectaron filas en la base de datos.");
+                    MessageBox.Show("Error: No se afectaron filas en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
             catch (Exception ex)
             {
-                // Manejar excepciones generales aquí.
+                // Manejar otras excepciones generales aquí.
                 Console.WriteLine("Error al insertar historial: " + ex.Message);
+                MessageBox.Show("Error al insertar historial: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false; // O manejar de otra manera apropiada
             }
         }
@@ -37,20 +58,28 @@ namespace ERS_NeoCare.Model
                 var context = DbContextManager.GetContext();
 
                 // Consultar la tabla de historial y traer todos los registros
-                List<HistorialModel> historial = context.historial.ToList();
+                List<HistorialModel> historiales = context.historial.ToList();
 
-                foreach (var historialItem in historial)
+                // Cargar explícitamente las propiedades relacionadas para cada elemento en la lista
+                foreach (var historial in historiales)
                 {
-                    // Cargar las propiedades de navegación según sea necesario
-                    context.Entry(historialItem).Reference(h => h.Turno).Load();
-                    context.Entry(historialItem).Reference(h => h.Analisis).Load();
-                    context.Entry(historialItem).Reference(h => h.AtencionEnfermeria).Load();
-                    context.Entry(historialItem).Reference(h => h.Medico).Load();
-                    context.Entry(historialItem).Reference(h => h.Paciente).Load();
-                    // Cargar otras propiedades de navegación si es necesario
+                    if (historial.AtencionEnfermeria != null)
+                        context.Entry(historial).Reference(h => h.AtencionEnfermeria).Load();
+
+                    if (historial.Paciente != null)
+                        context.Entry(historial).Reference(h => h.Paciente).Load();
+
+                    if (historial.Medico != null)
+                        context.Entry(historial).Reference(h => h.Medico).Load();
+
+                    if (historial.Evaluacion != null)
+                        context.Entry(historial).Reference(h => h.Evaluacion).Load();
+
+                    if (historial.Analisis != null)
+                        context.Entry(historial).Reference(h => h.Analisis).Load();
                 }
 
-                return historial;
+                return historiales;
             }
             catch (Exception ex)
             {

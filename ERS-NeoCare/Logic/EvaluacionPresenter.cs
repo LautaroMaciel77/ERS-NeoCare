@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Services.Description;
 
 namespace ERS_NeoCare.Logic
 {
@@ -12,6 +13,12 @@ namespace ERS_NeoCare.Logic
     {
         private evaluacion _viewEvaluacion;
         private EvaluacionService _service;
+        private EvaluacionService evaluacionService;
+
+        public EvaluacionPresenter(EvaluacionService evaluacionService)
+        {
+            _service = evaluacionService;
+        }
 
         public EvaluacionPresenter(evaluacion evaluacion, EvaluacionService service)
         {
@@ -29,6 +36,13 @@ namespace ERS_NeoCare.Logic
             }
             _viewEvaluacion.mostrarMensaje("Error al crear evaluacion");
         }
+
+        internal void BuscarPorId(int id)
+        {
+            _service.BuscarPorId(id);
+        }
+
+        
     }
 
 }

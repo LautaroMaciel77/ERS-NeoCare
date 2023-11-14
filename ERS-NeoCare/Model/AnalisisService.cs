@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace ERS_NeoCare.Model
 {
@@ -19,8 +20,9 @@ namespace ERS_NeoCare.Model
 
                 // Guardar los cambios en la base de datos
                 int rowsAffected = context.SaveChanges();
-
-                return rowsAffected > 0;
+                AnalisisSingleton.Instance.AutenticarAnalisis(analisis);
+                    
+                    return rowsAffected > 0;
             }
             catch (Exception ex)
             {
@@ -52,6 +54,30 @@ namespace ERS_NeoCare.Model
                 // Manejar excepciones generales aquí.
                 Console.WriteLine("Error general: " + ex.Message);
                 return null; // O manejar de otra manera apropiada, como lanzar una excepción
+            }
+        }
+        internal AnalisisModel ObtenerYAutenticarPorId(int id)
+        {
+            try
+            {
+                var context = DbContextManager.GetContext();
+
+                // Buscar el análisis por ID
+                AnalisisModel analisisEncontrado = context.analisis.Find(id);
+
+                // Autenticar el análisis en AnalisisSingleton si se encontró
+                if (analisisEncontrado != null)
+                {
+                    AnalisisSingleton.Instance.AutenticarAnalisis(analisisEncontrado);
+                }
+
+                return analisisEncontrado;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones generales aquí.
+                Console.WriteLine("Error general: " + ex.Message);
+                return null; // O manejar de otra manera apropiada
             }
         }
     }

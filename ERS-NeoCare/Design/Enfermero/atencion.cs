@@ -12,10 +12,12 @@ namespace ERS_NeoCare.Design.administrativo
         private AtencionPresenter _presenter;
         private OrdenPresenter _presenterorden;
         public event EventHandler recargar;
+        private historialPresenter _presenterHistorial;
         public atencion()
         {
             _presenter = new AtencionPresenter(this, new AtencionService());
             _presenterorden = new OrdenPresenter(new OrdenService());
+            _presenterHistorial = new historialPresenter(new HistorialService());
             InitializeComponent();
 
             labelFechaOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.FechaCreacion.ToString("dd/MM/yyyy");
@@ -73,12 +75,28 @@ namespace ERS_NeoCare.Design.administrativo
                 IdUsuario = UsuarioSingleton.Instance.UsuarioAutenticado.id,
                 IdMedico = UsuarioBusqueda.Instance.UsuarioAutenticado.id,
                 IdPaciente = PacienteSingleton.Instance.pacienteAutenticado.Id,
-                IdOrden=OrdenSingleton.Instance.OrdenAutenticada.Id
+                IdOrden = OrdenSingleton.Instance.OrdenAutenticada.Id
 
             };
             _presenter.insertar(atencion);
+
             _presenterorden.cambiarEstado(OrdenSingleton.Instance.OrdenAutenticada.Id);
-    
+
+            HistorialModel historialModel = new HistorialModel()
+            {
+                Id = AtencionSingleton.Instance.AtencionAutenticada.IdAtencion,
+                Tipo = "Atencion",
+                fecha = DateTime.Now,
+                IdAtencion= AtencionSingleton.Instance.AtencionAutenticada.IdAtencion,
+                IdPaciente=PacienteSingleton.Instance.pacienteAutenticado.Id,
+                IdMedico=UsuarioSingleton.Instance.UsuarioAutenticado.id,
+                IdEvaluacion = null,
+                IdAnalisis = null
+
+
+            };
+            _presenterHistorial.Insertar(historialModel);
+
 
 
 

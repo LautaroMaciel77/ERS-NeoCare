@@ -23,6 +23,11 @@ namespace ERS_NeoCare.Logic
             _view = view;
             _model = model;
         }
+        public AtencionPresenter( AtencionService model)
+        {
+            
+            _model = model;
+        }
         public AtencionPresenter(lista_atenciones_enfermero view, AtencionService model)
         {
             _viewLista = view;

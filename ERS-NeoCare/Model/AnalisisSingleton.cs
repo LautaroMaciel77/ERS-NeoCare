@@ -8,21 +8,22 @@ namespace ERS_NeoCare.Model
 {
     internal class AnalisisSingleton
     {
-        private static AnalisisModel instance;
-     
+        private static AnalisisSingleton instance;
+
         public AnalisisModel AnalisisAutenticado { get; private set; }
         private AnalisisSingleton()
         {
 
         }
 
-        public static AnalisisModel Instance
+
+        public static AnalisisSingleton Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new AnalisisModel();
+                    instance = new AnalisisSingleton();
                 }
                 return instance;
             }

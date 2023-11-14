@@ -50,8 +50,8 @@ namespace ERS_NeoCare.Design
                     Directory.CreateDirectory(backupFolder);
                 }
 
-                //string connectionString = "Data Source=DESKTOP-2JKMBB0\\SQLEXPRESS;Initial Catalog=DBNeoCare;Integrated Security=True";
-                string connectionString = "Data Source=FARONOTE\\SQLEXPRESS_INST1;Initial Catalog=DBNeoCare;Integrated Security=True";
+                string connectionString = "Data Source=DESKTOP-2JKMBB0\\SQLEXPRESS;Initial Catalog=DBNeoCare;Integrated Security=True";
+                //string connectionString = "Data Source=FARONOTE\\SQLEXPRESS_INST1;Initial Catalog=DBNeoCare;Integrated Security=True";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

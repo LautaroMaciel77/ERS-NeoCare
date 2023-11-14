@@ -31,7 +31,7 @@ namespace ERS_NeoCare.Model
             {
                 string hashedPassword = Encrypt.GetSHA256(contraseña);
 
-                 var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && (u.Password == hashedPassword || u.Password == contraseña));
+                 var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && (u.Password == contraseña));
 
                 if (usuario != null)
                 {

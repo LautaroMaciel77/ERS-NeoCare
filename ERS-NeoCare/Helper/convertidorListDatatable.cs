@@ -233,5 +233,37 @@ namespace ERS_NeoCare.Helper
 
             return dataTable;
         }
+        public static DataTable ConvertirListaHistorial(List<HistorialModel> historiales)
+        {
+            DataTable dataTable = new DataTable();
+            if (historiales != null)
+            {
+                dataTable.Columns.Add("id_historial", typeof(int));
+                dataTable.Columns.Add("Tipo", typeof(string));
+
+                dataTable.Columns.Add("fecha", typeof(DateTime));
+                dataTable.Columns.Add("id_atencion", typeof(int));
+                dataTable.Columns.Add("id_paciente", typeof(int));
+                dataTable.Columns.Add("id_medico", typeof(int));
+                dataTable.Columns.Add("id_evaluacion", typeof(int));
+                dataTable.Columns.Add("id_analisis", typeof(int));
+
+                foreach (var historial in historiales)
+                {
+                    dataTable.Rows.Add(
+                        historial.IdHistorial,
+                        historial.Tipo,
+             
+                        historial.fecha,
+                        historial.IdAtencion,
+                        historial.IdPaciente,
+                        historial.IdMedico,
+                        historial.IdEvaluacion,
+                        historial.IdAnalisis 
+                    );
+                }
+            }
+            return dataTable;
+        }
     }
 }

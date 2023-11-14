@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace ERS_NeoCare.Model
 {
@@ -45,7 +46,7 @@ namespace ERS_NeoCare.Model
 
                 // Guardar los cambios en la base de datos
                 int rowsAffected = context.SaveChanges();
-
+                AtencionSingleton.Instance.Autenticar(atencion);
                 return rowsAffected > 0;
             }
             catch (Exception ex)

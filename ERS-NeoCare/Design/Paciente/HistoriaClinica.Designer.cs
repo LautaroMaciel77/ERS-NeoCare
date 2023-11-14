@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
             this.listViewMedicamentos = new System.Windows.Forms.ListView();
             this.listViewFamiliares = new System.Windows.Forms.ListView();
             this.Descripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,10 +67,16 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CEvento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CDatos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconButtonImprimir = new FontAwesome.Sharp.IconButton();
+            this.id_historial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CDatos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_atencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_evaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_analisis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -94,7 +100,7 @@
             this.listViewFamiliares.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewFamiliares.HideSelection = false;
             this.listViewFamiliares.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem3});
             this.listViewFamiliares.Location = new System.Drawing.Point(145, 368);
             this.listViewFamiliares.Margin = new System.Windows.Forms.Padding(2);
             this.listViewFamiliares.Name = "listViewFamiliares";
@@ -217,11 +223,11 @@
             // LHistoriaClinica
             // 
             this.LHistoriaClinica.AutoSize = true;
-            this.LHistoriaClinica.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LHistoriaClinica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LHistoriaClinica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.LHistoriaClinica.Location = new System.Drawing.Point(380, 19);
             this.LHistoriaClinica.Name = "LHistoriaClinica";
-            this.LHistoriaClinica.Size = new System.Drawing.Size(149, 23);
+            this.LHistoriaClinica.Size = new System.Drawing.Size(149, 24);
             this.LHistoriaClinica.TabIndex = 15;
             this.LHistoriaClinica.Text = "Historia Clinica";
             // 
@@ -323,7 +329,7 @@
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(220)))), ((int)(((byte)(198)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.btnGuardar.IconColor = System.Drawing.Color.Black;
@@ -486,7 +492,7 @@
             this.btnCargarArchivo.FlatAppearance.BorderSize = 0;
             this.btnCargarArchivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(220)))), ((int)(((byte)(198)))));
             this.btnCargarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargarArchivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarArchivo.ForeColor = System.Drawing.Color.Black;
             this.btnCargarArchivo.IconChar = FontAwesome.Sharp.IconChar.Upload;
             this.btnCargarArchivo.IconColor = System.Drawing.Color.Black;
@@ -508,7 +514,7 @@
             this.btnBorrarArchivo.FlatAppearance.BorderSize = 0;
             this.btnBorrarArchivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(220)))), ((int)(((byte)(198)))));
             this.btnBorrarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrarArchivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarArchivo.ForeColor = System.Drawing.Color.Black;
             this.btnBorrarArchivo.IconChar = FontAwesome.Sharp.IconChar.X;
             this.btnBorrarArchivo.IconColor = System.Drawing.Color.Black;
@@ -529,7 +535,7 @@
             this.btnVer.FlatAppearance.BorderSize = 0;
             this.btnVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(220)))), ((int)(((byte)(198)))));
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.ForeColor = System.Drawing.Color.Black;
             this.btnVer.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
             this.btnVer.IconColor = System.Drawing.Color.Black;
@@ -562,58 +568,48 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 1366);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(798, 247);
+            this.panel3.Size = new System.Drawing.Size(788, 247);
             this.panel3.TabIndex = 47;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(250, 15);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(287, 18);
+            this.label9.Size = new System.Drawing.Size(277, 18);
             this.label9.TabIndex = 1;
             this.label9.Text = "Historial actuaciones medicas";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CEvento,
+            this.id_historial,
+            this.Tipo,
             this.CDatos,
+            this.id_atencion,
+            this.id_paciente,
+            this.id_medico,
+            this.id_evaluacion,
+            this.id_analisis,
             this.CAcciones});
             this.dataGridView1.Location = new System.Drawing.Point(27, 52);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(748, 171);
+            this.dataGridView1.Size = new System.Drawing.Size(738, 171);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // CEvento
-            // 
-            this.CEvento.HeaderText = "Evento";
-            this.CEvento.MinimumWidth = 6;
-            this.CEvento.Name = "CEvento";
-            this.CEvento.ReadOnly = true;
-            // 
-            // CDatos
-            // 
-            this.CDatos.HeaderText = "Fecha";
-            this.CDatos.MinimumWidth = 6;
-            this.CDatos.Name = "CDatos";
-            this.CDatos.ReadOnly = true;
-            // 
-            // CAcciones
-            // 
-            this.CAcciones.HeaderText = "Acciones";
-            this.CAcciones.MinimumWidth = 6;
-            this.CAcciones.Name = "CAcciones";
-            this.CAcciones.ReadOnly = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // iconButtonImprimir
             // 
@@ -621,7 +617,7 @@
             this.iconButtonImprimir.FlatAppearance.BorderSize = 0;
             this.iconButtonImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(220)))), ((int)(((byte)(198)))));
             this.iconButtonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonImprimir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
             this.iconButtonImprimir.IconColor = System.Drawing.Color.Black;
             this.iconButtonImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -635,6 +631,76 @@
             this.iconButtonImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonImprimir.UseVisualStyleBackColor = false;
             this.iconButtonImprimir.Click += new System.EventHandler(this.iconButtonImprimir_Click);
+            // 
+            // id_historial
+            // 
+            this.id_historial.DataPropertyName = "id_historial";
+            this.id_historial.HeaderText = "id_historial";
+            this.id_historial.Name = "id_historial";
+            this.id_historial.ReadOnly = true;
+            this.id_historial.Visible = false;
+            // 
+            // Tipo
+            // 
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Evento";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // CDatos
+            // 
+            this.CDatos.DataPropertyName = "fecha";
+            this.CDatos.HeaderText = "Fecha";
+            this.CDatos.MinimumWidth = 6;
+            this.CDatos.Name = "CDatos";
+            this.CDatos.ReadOnly = true;
+            // 
+            // id_atencion
+            // 
+            this.id_atencion.DataPropertyName = "id_atencion";
+            this.id_atencion.HeaderText = "id_atencion";
+            this.id_atencion.Name = "id_atencion";
+            this.id_atencion.ReadOnly = true;
+            this.id_atencion.Visible = false;
+            // 
+            // id_paciente
+            // 
+            this.id_paciente.DataPropertyName = "id_paciente";
+            this.id_paciente.HeaderText = "id_paciente";
+            this.id_paciente.Name = "id_paciente";
+            this.id_paciente.ReadOnly = true;
+            this.id_paciente.Visible = false;
+            // 
+            // id_medico
+            // 
+            this.id_medico.DataPropertyName = "id_medico";
+            this.id_medico.HeaderText = "id_medico";
+            this.id_medico.Name = "id_medico";
+            this.id_medico.ReadOnly = true;
+            this.id_medico.Visible = false;
+            // 
+            // id_evaluacion
+            // 
+            this.id_evaluacion.DataPropertyName = "id_evaluacion";
+            this.id_evaluacion.HeaderText = "id_evaluacion";
+            this.id_evaluacion.Name = "id_evaluacion";
+            this.id_evaluacion.ReadOnly = true;
+            this.id_evaluacion.Visible = false;
+            // 
+            // id_analisis
+            // 
+            this.id_analisis.DataPropertyName = "id_analisis";
+            this.id_analisis.HeaderText = "id_analisis";
+            this.id_analisis.Name = "id_analisis";
+            this.id_analisis.ReadOnly = true;
+            this.id_analisis.Visible = false;
+            // 
+            // CAcciones
+            // 
+            this.CAcciones.HeaderText = "Acciones";
+            this.CAcciones.MinimumWidth = 6;
+            this.CAcciones.Name = "CAcciones";
+            this.CAcciones.ReadOnly = true;
             // 
             // HistoriaClinica
             // 
@@ -673,7 +739,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LHistoriaClinica);
             this.Name = "HistoriaClinica";
-            this.Size = new System.Drawing.Size(798, 768);
+            this.Size = new System.Drawing.Size(781, 751);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -723,9 +789,15 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CEvento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CDatos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CAcciones;
         private FontAwesome.Sharp.IconButton iconButtonImprimir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_historial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CDatos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_atencion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_paciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_medico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_evaluacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_analisis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CAcciones;
     }
 }

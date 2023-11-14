@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ERS_NeoCare.Helper;
+using System.Data;
+using ERS_NeoCare.Design.Paciente;
+using System.Web.Services.Description;
 
 namespace ERS_NeoCare.Logic
 {
@@ -14,6 +18,8 @@ namespace ERS_NeoCare.Logic
     {
      
         private HistorialService _service;
+        private HistoriaClinica historiaClinica;
+        private HistorialService historialService;
 
         public historialPresenter(HistorialService service)
         {
@@ -21,6 +27,11 @@ namespace ERS_NeoCare.Logic
             _service = service;
         }
 
+        public historialPresenter(HistoriaClinica historiaClinica, HistorialService historialService)
+        {
+            this.historiaClinica = historiaClinica;
+            _service = historialService;
+        }
 
         public void Insertar(HistorialModel historialModel)
         {
@@ -29,10 +40,12 @@ namespace ERS_NeoCare.Logic
         }
         public void TraerHistorial()
         {
-            List<HistorialModel> historiales = _service.ObtenerHistorial();
 
-            // Filtrar la lista según el id_paciente
-            List<HistorialModel> historialesDelPaciente = historiales.Where(h => h.IdPaciente == PacienteSingleton.Instance.pacienteAutenticado.Id).ToList();
+            List<HistorialModel> historialesUsuario = _service.ObtenerHistorial()
+                .Where(h => h.Paciente.Id == PacienteSingleton.Instance.pacienteAutenticado.Id)
+                .ToList();
+            DataTable data = ConvertidorListDatatable.ConvertirListaHistorial(historialesUsuario);
+            this.historiaClinica.CargarHistorial(data);
         }
 
     }

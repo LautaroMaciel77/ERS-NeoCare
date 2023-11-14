@@ -56,6 +56,12 @@ namespace ERS_NeoCare.Logic
             DataTable data = ConvertidorListDatatable.ConvertirAnalisis(analisis);
             _viewLista.MostrarDatosPaciente(data);
         }
+        public void BuscaryRemplazar(int id)
+        {
+
+            _service.ObtenerYAutenticarPorId(id);
+        }
+
         internal void buscarTexto(string searchText)
         {
             List<AnalisisModel> datos = _service.ObtenerAnalisis();

@@ -23,18 +23,28 @@ namespace ERS_NeoCare.Design.Paciente
     {
         private HistoriaClinicaPresenter _presenter;
         private ArchivoEstudioPresenter _presenterArchivo;
+        private EvaluacionPresenter _presenterEvaluacion;
+
         string tipoEditar;
         private Dictionary<string, ListView> listViews = new Dictionary<string, ListView>();
         bool editarflag;
         private string sangre;
         List<ArchivoEstudio> archivos = new List<ArchivoEstudio>();
         List<ArchivoEstudio> archivosEliminar = new List<ArchivoEstudio>();
+        private historialPresenter _presenterHM;
+        private AnalisisPresenter _presenterAnalisis;
+        private AtencionPresenter _presenterAtencion;
         public HistoriaClinica()
         {
             InitializeComponent();
             _presenter = new HistoriaClinicaPresenter(this, new HistoriaClinicaService(Configuracion.ConnectionString));
             _presenterArchivo = new ArchivoEstudioPresenter(this, new ArchivoEstudioService(Configuracion.ConnectionString));
+            _presenterHM = new historialPresenter(this, new HistorialService());
+            _presenterEvaluacion = new EvaluacionPresenter(new EvaluacionService());
+            _presenterAnalisis = new AnalisisPresenter(new AnalisisService());
+            _presenterAtencion = new AtencionPresenter( new AtencionService());
             CargarDatos();
+            _presenterHM.TraerHistorial();
             panel1.Visible = false;
 
             // Agrega los ListView al diccionario
@@ -43,7 +53,10 @@ namespace ERS_NeoCare.Design.Paciente
             listViews["Medico"] = listViewMedicamentos;
 
         }
-
+        internal void CargarHistorial(DataTable data)
+        {
+            dataGridView1.DataSource = data;
+        }
         internal void CargarDatos()
         {
 
@@ -362,7 +375,7 @@ namespace ERS_NeoCare.Design.Paciente
                     MessageBox.Show("El archivo ya existe en la lista.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            
+
         }
 
 
@@ -449,8 +462,8 @@ namespace ERS_NeoCare.Design.Paciente
         }
         private string ObtenerRutaDelArchivo(string nombreArchivo)
         {
-        
-            
+
+
             ArchivoEstudio archivo = archivos.FirstOrDefault(a => a.NombreArchivo == nombreArchivo);
             if (archivo != null)
             {
@@ -466,13 +479,13 @@ namespace ERS_NeoCare.Design.Paciente
             string extension = Path.GetExtension(rutaArchivo);
             return extension.Equals(".pdf", StringComparison.OrdinalIgnoreCase);
         }
- 
+
         private void MostrarPDF(string rutaPDF)
         {
- 
+
             try
             {
-                Process.Start(rutaPDF); 
+                Process.Start(rutaPDF);
             }
             catch (Exception ex)
             {
@@ -622,7 +635,7 @@ namespace ERS_NeoCare.Design.Paciente
 
                 // Combina el nombre del archivo con la ruta del directorio actual
                 string rutaCompleta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, nombreArchivoImagen);
-               
+
                 // Carga la imagen desde el archivo
                 return new Bitmap(rutaCompleta);
             }
@@ -634,7 +647,48 @@ namespace ERS_NeoCare.Design.Paciente
             }
         }
 
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dataGridView1.Rows.Count > 0)
+            {
+                if (dataGridView1.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+                    object valorCelda = dataGridView1.Rows[e.RowIndex].Cells["Tipo"].Value;
+
+                    // Llamar al método correspondiente según el valor de la celda
+                    if (valorCelda != null)
+                    {
+                        if (valorCelda.Equals("Atencion"))
+                        {
+                            object valorIdObject = dataGridView1.Rows[e.RowIndex].Cells["id_atencion"].Value;
+
+                            string valorId = valorIdObject.ToString();
+                            _presenterAtencion.buscar(valorId);
+                        
+
+                        }
+                        else if (valorCelda.Equals("Evaluacion"))
+                        {
+                            int valorId = (int)dataGridView1.Rows[e.RowIndex].Cells["id_evaluacion"].Value;
+                            _presenterEvaluacion.BuscarPorId(valorId);
+
+                        }
+                        else if (valorCelda.Equals("Analisis"))
+                        {
+                            int valorId = (int)dataGridView1.Rows[e.RowIndex].Cells["analisis"].Value;
+                            _presenterAnalisis.BuscaryRemplazar(valorId);
+                        }
+                    }
+
+                }
+            }
+
+        }
 
     }
-
 }

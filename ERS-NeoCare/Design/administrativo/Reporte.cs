@@ -29,11 +29,14 @@ namespace ERS_NeoCare.Design.administrativo
         private List<AnalisisModel> listaAnalisis;
 
         private List<OrdenModel> listaOrden;
-        private  bool TurnoFlag;
+        private bool TurnoFlag;
+        private DateTime fechaInicio;
+        private DateTime fechaFin;
         public Reporte()
         {
             InitializeComponent();
             iniciarDatos();
+
         }
 
         private void iniciarDatos()
@@ -43,8 +46,7 @@ namespace ERS_NeoCare.Design.administrativo
             _presenterusuario = new UsuarioPresenter(new UsuarioService(Configuracion.ConnectionString));
             _analisis = new AnalisisPresenter(new AnalisisService());
             _ordenPresenter = new OrdenPresenter(new OrdenService());
-            comboBoxFiltro.Items.AddRange(new object[] { "1 mes", "2 meses", "3 meses", "1 año","Todo" });
-            comboBoxFiltro.SelectedIndex = 0; // Seleccionar "Todos" por defecto
+           
             comboBox1.Items.AddRange(new object[] { "Analisis","Atencion" });
             comboBox1.SelectedIndex = 0; // Seleccionar "Todos" por defecto
             turnos = _presenterturno.RecopilarTurnos();
@@ -95,7 +97,7 @@ namespace ERS_NeoCare.Design.administrativo
         {
             chartTurnos.Visible = true;
 
-            string filtro = comboBoxFiltro.SelectedItem.ToString();
+            string filtro = "";
 
             // Llama al método para generar el gráfico
             GenerarGrafico(
@@ -167,7 +169,7 @@ namespace ERS_NeoCare.Design.administrativo
         {
             chartTurnos.Visible = true;
 
-            string filtro = comboBoxFiltro.SelectedItem.ToString();
+            string filtro = "";
 
             // Llama al método para generar el gráfico
             GenerarGrafico(
@@ -179,40 +181,17 @@ namespace ERS_NeoCare.Design.administrativo
                 t => comboBoxUsuarios.SelectedIndex != -1 && t.Medico.id == ((UsuarioModel)comboBoxUsuarios.SelectedItem).id
             );
         }
-        private bool CumpleFiltroDeTiempo(DateTime fechaTurno, string filtro)
+        private bool CumpleFiltroDeTiempo(DateTime fechaCreacion)
         {
-            DateTime fechaLimite;
-
-            // Calcula la fecha límite según el filtro seleccionado
-            switch (filtro)
-            {
-                case "1 mes":
-                    fechaLimite = DateTime.Now.AddMonths(-1);
-                    break;
-                case "2 meses":
-                    fechaLimite = DateTime.Now.AddMonths(-2);
-                    break;
-                case "3 meses":
-                    fechaLimite = DateTime.Now.AddMonths(-3);
-                    break;
-                case "1 año":
-                    fechaLimite = DateTime.Now.AddYears(-1);
-                    break;
-                case "Todo": // Nuevo caso para no aplicar filtro de tiempo
-                    return true;
-                default:
-                    // Si el filtro no coincide con ninguno de los casos anteriores, retorna false
-                    return false;
-            }
-
-            // Compara la fecha del turno con la fecha límite
-            return fechaTurno >= fechaLimite;
+            // Implementa la lógica de filtro de tiempo utilizando fechaInicio y fechaFin
+            return fechaCreacion >= fechaInicio && fechaCreacion <= fechaFin;
         }
+
 
         private void GenerarGrafico(List<Turno> turnos, string filtro, Chart chart, string serieAtendidos, string serieNoAtendidos, Func<Turno, bool> filtroAdicional = null)
         {
             // Filtra los turnos según el filtro de tiempo
-            var turnosFiltrados = turnos.Where(t => CumpleFiltroDeTiempo(t.SelectedDate, filtro)).ToList();
+            var turnosFiltrados = turnos.Where(t => CumpleFiltroDeTiempo(t.SelectedDate)).ToList();
 
             // Aplica un filtro adicional si se proporciona
             if (filtroAdicional != null)
@@ -228,13 +207,18 @@ namespace ERS_NeoCare.Design.administrativo
             chart.Series[serieAtendidos].ChartType = SeriesChartType.Column;
             chart.Series[serieNoAtendidos].ChartType = SeriesChartType.Column;
 
+            int maximoEjeY = turnosFiltrados.Count + 1;
+            chart.ChartAreas[0].AxisY.Maximum = maximoEjeY;
+
             // Agrega los datos al gráfico
             Dictionary<string, int> datosGraficoAtendidos = new Dictionary<string, int>();
             Dictionary<string, int> datosGraficoNoAtendidos = new Dictionary<string, int>();
 
             foreach (var turno in turnosFiltrados)
             {
-                string periodo = comboBoxFiltro.SelectedItem.ToString();
+                // Utiliza la fecha del turno para el periodo
+                string periodo = turno.SelectedDate.ToString("MM/yyyy");
+
                 int cantidadPacientes = 1; // Puedes ajustar esto según tus necesidades
 
                 if (turno.Estado == true)
@@ -276,9 +260,9 @@ namespace ERS_NeoCare.Design.administrativo
         private void GenerarGraficoOrdenes(List<OrdenModel> ordenes, string filtro, string fecha, Chart chart, string serieAtendido, string serieNoAtendido)
         {
             // Filtra las órdenes según el tipo y el filtro de tiempo
+            var ordenesFiltradas = ordenes.Where(o => o.TipoOrden == filtro);
+            ordenesFiltradas = ordenesFiltradas.Where(t => CumpleFiltroDeTiempo(t.FechaCreacion)).ToList();
 
-            var ordenesFiltradas = ordenes.Where(o => o.TipoOrden == filtro );
-            ordenesFiltradas = ordenesFiltradas.Where(t => CumpleFiltroDeTiempo(t.FechaCreacion, fecha)).ToList();
             // Configura el gráfico
             chart.Series.Clear();
             chart.Series.Add(serieAtendido);
@@ -287,12 +271,16 @@ namespace ERS_NeoCare.Design.administrativo
             chart.Series[serieAtendido].ChartType = SeriesChartType.Column;
             chart.Series[serieNoAtendido].ChartType = SeriesChartType.Column;
 
+            int maximoEjeY = ordenesFiltradas.Count() + 1;
+            chart.ChartAreas[0].AxisY.Maximum = maximoEjeY;
+
             // Agrega los datos al gráfico
             Dictionary<string, int> datosGraficoAtendido = new Dictionary<string, int>();
             Dictionary<string, int> datosGraficoNoAtendido = new Dictionary<string, int>();
 
             foreach (var orden in ordenesFiltradas)
             {
+                // Utiliza la fecha de la orden para el periodo
                 string periodo = orden.FechaCreacion.ToString("MM/yyyy");
                 int cantidadOrdenes = 1; // Puedes ajustar esto según tus necesidades
 
@@ -339,7 +327,7 @@ namespace ERS_NeoCare.Design.administrativo
          
 
             //   string tipoOrden = comboBoxTipoOrden.SelectedItem.ToString();
-            string fecha = comboBoxFiltro.SelectedItem.ToString();
+            string fecha = "";
             string filtro = comboBox1.SelectedItem.ToString();
 
             // Llama al método para generar el gráfico de órdenes
@@ -364,5 +352,27 @@ namespace ERS_NeoCare.Design.administrativo
         {
 
         }
+
+        private void comboBoxFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePickerInicio_ValueChanged(object sender, EventArgs e)
+        {
+
+            fechaInicio = dateTimePickerInicio.Value;
+        }
+
+        private void dateTimePickerFin_ValueChanged(object sender, EventArgs e)
+        {
+            fechaFin = dateTimePickerFin.Value;
+        }
+
+        private void btnPacientes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    }
+

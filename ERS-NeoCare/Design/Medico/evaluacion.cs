@@ -10,11 +10,12 @@ namespace ERS_NeoCare.Design.administrativo
         public event EventHandler UserControlClosed;
         private lista_paciente MainForm { get; set; }
         private EvaluacionPresenter _presenter;
+        private historialPresenter _presenterHistorial;
         public evaluacion()
         {
             InitializeComponent();
             _presenter = new EvaluacionPresenter(this, new EvaluacionService());
-
+            _presenterHistorial = new historialPresenter(new HistorialService());
             labelFechaEvaluacion.Text = DateTime.Now.ToString("dd/MM/yyyy");
             labelPacienteEvaluacion.Text = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " " + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
 
@@ -59,6 +60,20 @@ namespace ERS_NeoCare.Design.administrativo
             };
             _presenter.insertar(evaluacionModel);
             limpiarCampos();
+            HistorialModel historialModel = new HistorialModel()
+            {
+                Id = AnalisisSingleton.Instance.AnalisisAutenticado.IdAnalisis,
+                Tipo = "Evaluacion",
+                fecha = DateTime.Now,
+                IdAtencion = null,
+                IdPaciente = PacienteSingleton.Instance.pacienteAutenticado.Id,
+                IdMedico = UsuarioSingleton.Instance.UsuarioAutenticado.id,
+                IdEvaluacion = EvaluacionSingleton.Instance.evaluacionAutenticada.IdEvaluacion,
+                IdAnalisis = null,
+
+
+            };
+            _presenterHistorial.Insertar(historialModel);
 
 
 
