@@ -1,6 +1,6 @@
 ﻿namespace ERS_NeoCare.Design.Medico
 {
-    partial class EstadoOrden
+    partial class Evaluaciones
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -33,18 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.ordenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dBNeoCareDataSet3 = new ERS_NeoCare.DBNeoCareDataSet3();
-            this.ordenTableAdapter = new ERS_NeoCare.DBNeoCareDataSet3TableAdapters.ordenTableAdapter();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +42,14 @@
             this.urgencia = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ordenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dBNeoCareDataSet3 = new ERS_NeoCare.DBNeoCareDataSet3();
+            this.ordenTableAdapter = new ERS_NeoCare.DBNeoCareDataSet3TableAdapters.ordenTableAdapter();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet3)).BeginInit();
@@ -112,58 +108,74 @@
             this.DGVAdministrativo.TabIndex = 11;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
-            // comboBox1
+            // Id
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Atendido",
-            "No Atendido",
-            "Todos",
-            ""});
-            this.comboBox1.Location = new System.Drawing.Point(407, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(284, 28);
-            this.comboBox1.TabIndex = 19;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
-            // comboBox2
+            // fecha_creacion
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Urgente",
-            "No Urgente",
-            "Todos"});
-            this.comboBox2.Location = new System.Drawing.Point(707, 117);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(284, 28);
-            this.comboBox2.TabIndex = 20;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.fecha_creacion.DataPropertyName = "fecha_creacion";
+            this.fecha_creacion.HeaderText = "Fecha";
+            this.fecha_creacion.Name = "fecha_creacion";
+            this.fecha_creacion.ReadOnly = true;
             // 
-            // label2
+            // Medico
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(404, 96);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 18);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Estado Turno";
+            this.Medico.DataPropertyName = "Medico";
+            this.Medico.HeaderText = "Medico";
+            this.Medico.Name = "Medico";
+            this.Medico.ReadOnly = true;
             // 
-            // label1
+            // Paciente
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(704, 96);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 18);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Tipo Urgencia";
+            this.Paciente.DataPropertyName = "Paciente";
+            this.Paciente.HeaderText = "Paciente";
+            this.Paciente.Name = "Paciente";
+            this.Paciente.ReadOnly = true;
+            // 
+            // dni_paciente
+            // 
+            this.dni_paciente.DataPropertyName = "dni_paciente";
+            this.dni_paciente.HeaderText = "DNI paciente";
+            this.dni_paciente.Name = "dni_paciente";
+            this.dni_paciente.ReadOnly = true;
+            // 
+            // dni_medico
+            // 
+            this.dni_medico.DataPropertyName = "dni_medico";
+            this.dni_medico.HeaderText = "dni medico";
+            this.dni_medico.Name = "dni_medico";
+            this.dni_medico.ReadOnly = true;
+            this.dni_medico.Visible = false;
+            // 
+            // urgencia
+            // 
+            this.urgencia.DataPropertyName = "urgencia";
+            this.urgencia.HeaderText = "urgencia";
+            this.urgencia.Name = "urgencia";
+            this.urgencia.ReadOnly = true;
+            this.urgencia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.urgencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Accion
+            // 
+            this.Accion.HeaderText = "Acciones";
+            this.Accion.Name = "Accion";
+            this.Accion.ReadOnly = true;
+            this.Accion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label7
             // 
@@ -235,92 +247,19 @@
             this.label3.Location = new System.Drawing.Point(79, 27);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 23);
+            this.label3.Size = new System.Drawing.Size(133, 23);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Ordenes";
+            this.label3.Text = "Evaluaciones";
             // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // fecha_creacion
-            // 
-            this.fecha_creacion.DataPropertyName = "fecha_creacion";
-            this.fecha_creacion.HeaderText = "Fecha";
-            this.fecha_creacion.Name = "fecha_creacion";
-            this.fecha_creacion.ReadOnly = true;
-            // 
-            // Medico
-            // 
-            this.Medico.DataPropertyName = "Medico";
-            this.Medico.HeaderText = "Medico";
-            this.Medico.Name = "Medico";
-            this.Medico.ReadOnly = true;
-            // 
-            // Paciente
-            // 
-            this.Paciente.DataPropertyName = "Paciente";
-            this.Paciente.HeaderText = "Paciente";
-            this.Paciente.Name = "Paciente";
-            this.Paciente.ReadOnly = true;
-            // 
-            // dni_paciente
-            // 
-            this.dni_paciente.DataPropertyName = "dni_paciente";
-            this.dni_paciente.HeaderText = "DNI paciente";
-            this.dni_paciente.Name = "dni_paciente";
-            this.dni_paciente.ReadOnly = true;
-            // 
-            // dni_medico
-            // 
-            this.dni_medico.DataPropertyName = "dni_medico";
-            this.dni_medico.HeaderText = "dni medico";
-            this.dni_medico.Name = "dni_medico";
-            this.dni_medico.ReadOnly = true;
-            this.dni_medico.Visible = false;
-            // 
-            // urgencia
-            // 
-            this.urgencia.DataPropertyName = "urgencia";
-            this.urgencia.HeaderText = "urgencia";
-            this.urgencia.Name = "urgencia";
-            this.urgencia.ReadOnly = true;
-            this.urgencia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.urgencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Accion
-            // 
-            this.Accion.HeaderText = "Acciones";
-            this.Accion.Name = "Accion";
-            this.Accion.ReadOnly = true;
-            this.Accion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // EstadoOrden
+            // Evaluaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.DGVAdministrativo);
-            this.Name = "EstadoOrden";
+            this.Name = "Evaluaciones";
             this.Size = new System.Drawing.Size(1196, 768);
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordenBindingSource)).EndInit();
@@ -340,10 +279,6 @@
         private System.Windows.Forms.BindingSource ordenBindingSource;
         private DBNeoCareDataSet3 dBNeoCareDataSet3;
         private DBNeoCareDataSet3TableAdapters.ordenTableAdapter ordenTableAdapter;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel2;

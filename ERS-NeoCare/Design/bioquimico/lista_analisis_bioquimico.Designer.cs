@@ -37,6 +37,7 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
+            this.panelAgregar = new System.Windows.Forms.Panel();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -158,7 +159,17 @@
             this.DGVAdministrativo.RowTemplate.Height = 40;
             this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
             this.DGVAdministrativo.TabIndex = 21;
-      
+            // 
+            // panelAgregar
+            // 
+            this.panelAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelAgregar.AutoSize = true;
+            this.panelAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
+            this.panelAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelAgregar.Location = new System.Drawing.Point(468, 309);
+            this.panelAgregar.Name = "panelAgregar";
+            this.panelAgregar.Size = new System.Drawing.Size(260, 150);
+            this.panelAgregar.TabIndex = 22;
             // 
             // id
             // 
@@ -170,7 +181,7 @@
             // fecha
             // 
             this.fecha.DataPropertyName = "fecha";
-            this.fecha.HeaderText = "fecha creacion";
+            this.fecha.HeaderText = "Fecha creacion";
             this.fecha.Name = "fecha";
             // 
             // Medico
@@ -182,13 +193,13 @@
             // Pacientes
             // 
             this.Pacientes.DataPropertyName = "Paciente";
-            this.Pacientes.HeaderText = "Pacientes";
+            this.Pacientes.HeaderText = "Paciente";
             this.Pacientes.Name = "Pacientes";
             // 
             // dni_paciente
             // 
             this.dni_paciente.DataPropertyName = "dni_paciente";
-            this.dni_paciente.HeaderText = "dni paciente";
+            this.dni_paciente.HeaderText = "DNI paciente";
             this.dni_paciente.Name = "dni_paciente";
             // 
             // dni_medico
@@ -196,18 +207,21 @@
             this.dni_medico.DataPropertyName = "dni_medico";
             this.dni_medico.HeaderText = "dni medico";
             this.dni_medico.Name = "dni_medico";
+            this.dni_medico.Visible = false;
             // 
             // urgencia
             // 
             this.urgencia.DataPropertyName = "urgencia";
             this.urgencia.HeaderText = "urgencia";
             this.urgencia.Name = "urgencia";
+            this.urgencia.Visible = false;
             // 
             // estado
             // 
             this.estado.DataPropertyName = "estado";
             this.estado.HeaderText = "estado";
             this.estado.Name = "estado";
+            this.estado.Visible = false;
             // 
             // Acciones
             // 
@@ -218,6 +232,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelAgregar);
             this.Controls.Add(this.DGVAdministrativo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox2);
@@ -240,6 +255,7 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DGVAdministrativo;
+        private System.Windows.Forms.Panel panelAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Medico;

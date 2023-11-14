@@ -47,7 +47,7 @@ namespace ERS_NeoCare.Logic
 
         public void insertarTurno(Turno turnoModel)
         {
-            _viewAdministrativo.Insertar(_service.insertar(turnoModel));
+            _viewAdministrativo.Insertar(_service.Insertar(turnoModel));
 
 
         }

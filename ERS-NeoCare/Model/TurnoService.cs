@@ -18,43 +18,38 @@ namespace ERS_NeoCare.Model
         {
             _connectionString = connectionString;
         }
-        internal bool insertar(Turno turnoModel)
+        internal bool Insertar(Turno turnoModel)
         {
-        
+            try
+            {
+                var context = DbContextManager.GetContext();
+
+                // Crea una nueva instancia de Turno y configura sus propiedades
+                var nuevoTurno = new Turno
                 {
-                    try
-                    {
-                        var context = DbContextManager.GetContext();
+                    SelectedDate = turnoModel.SelectedDate,
+                    SelectedTimeRange = turnoModel.SelectedTimeRange,
+                    Prioridad = turnoModel.Prioridad,
+                    Estado = turnoModel.Estado,
+                    Medico_Id = turnoModel.Medico_Id,
+                    Paciente_Id = turnoModel.Paciente_Id,
+                };
 
-                        var turno = new Turno
-                        {
-             
-                SelectedDate = turnoModel.SelectedDate ,
-                SelectedTimeRange = turnoModel.SelectedTimeRange,
-                Prioridad = turnoModel.Prioridad,
-                Estado = turnoModel.Estado ,
-                Medico_Id = turnoModel.Medico_Id ,
-                Paciente_Id = turnoModel .Paciente_Id ,
-            };
-                
-                    context.Entry(turno).Reload();
-                        // Agrega el nuevo usuario al contexto
-                        context.turnos.Add(turno);
+                // Agrega el nuevo turno al contexto
+                context.turnos.Add(nuevoTurno);
 
-                        // Guarda los cambios en la base de datos
-                        context.SaveChanges();
+                // Guarda los cambios en la base de datos
+                context.SaveChanges();
 
-                        return true;
-
-                    }
-                    catch (Exception ex)
-                    {
-                        // Maneja excepciones aquí.
-                        Console.WriteLine("Error general: " + ex.Message);
-                        return false; // O maneja de otra manera apropiada
-                    }
-                }
+                return true;
             }
+            catch (Exception ex)
+            {
+                // Maneja excepciones aquí.
+                Console.WriteLine("Error general: " + ex.Message);
+                return false; // O maneja de otra manera apropiada
+            }
+        }
 
         public List<Turno> ObtenerDatos()
         {

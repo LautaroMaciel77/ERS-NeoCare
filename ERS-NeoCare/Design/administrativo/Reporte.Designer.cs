@@ -110,7 +110,7 @@
             this.panel1.Controls.Add(this.btnTurnos);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.comboBoxUsuarios);
-            this.panel1.Location = new System.Drawing.Point(349, 152);
+            this.panel1.Location = new System.Drawing.Point(209, 410);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(263, 158);
             this.panel1.TabIndex = 5;

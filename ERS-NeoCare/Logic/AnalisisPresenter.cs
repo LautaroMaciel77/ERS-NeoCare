@@ -17,6 +17,7 @@ namespace ERS_NeoCare.Logic
         private analisis _view;
         private lista_analisis_bioquimico _viewLista;
         private AnalisisService _service;
+        private AnalisisService analisisService;
 
         public AnalisisPresenter(analisis view, AnalisisService service)
         {
@@ -28,11 +29,17 @@ namespace ERS_NeoCare.Logic
             _viewLista = view;
             _service = service;
         }
-        public AnalisisPresenter(AnalisisService service)
+        public AnalisisPresenter(analisisDatos analisisDatos, AnalisisService service)
         {
              
             _service = service;
         }
+
+        public AnalisisPresenter(AnalisisService analisisService)
+        {
+            this.analisisService = analisisService;
+        }
+
         public void Insertar(AnalisisModel analisis)
         {
             if (_service.Insertar(analisis))

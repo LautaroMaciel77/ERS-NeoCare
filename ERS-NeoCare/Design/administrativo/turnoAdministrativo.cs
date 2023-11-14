@@ -261,13 +261,11 @@ namespace ERS_NeoCare.Design.administrativo
         {
             if (v)
             {
-                MessageBox.Show("Turno insertado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Turno generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Turno no insertado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
+                MessageBox.Show("Hubo un error y no se pudo generar el turno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

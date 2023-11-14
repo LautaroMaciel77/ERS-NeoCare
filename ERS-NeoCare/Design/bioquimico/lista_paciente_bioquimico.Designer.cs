@@ -198,7 +198,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
-            this.DGVAdministrativo.Location = new System.Drawing.Point(34, 112);
+            this.DGVAdministrativo.Location = new System.Drawing.Point(33, 123);
             this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
             this.DGVAdministrativo.Name = "DGVAdministrativo";
             this.DGVAdministrativo.RowHeadersVisible = false;
@@ -218,7 +218,7 @@
             // fecha_creacion
             // 
             this.fecha_creacion.DataPropertyName = "fecha_creacion";
-            this.fecha_creacion.HeaderText = "fecha creacion";
+            this.fecha_creacion.HeaderText = "Fecha pedido";
             this.fecha_creacion.Name = "fecha_creacion";
             // 
             // Medico
@@ -230,13 +230,13 @@
             // Pacientes
             // 
             this.Pacientes.DataPropertyName = "Paciente";
-            this.Pacientes.HeaderText = "Pacientes";
+            this.Pacientes.HeaderText = "Paciente";
             this.Pacientes.Name = "Pacientes";
             // 
             // dni_paciente
             // 
             this.dni_paciente.DataPropertyName = "dni_paciente";
-            this.dni_paciente.HeaderText = "dni paciente";
+            this.dni_paciente.HeaderText = "DNI paciente";
             this.dni_paciente.Name = "dni_paciente";
             // 
             // dni_medico
@@ -244,6 +244,7 @@
             this.dni_medico.DataPropertyName = "dni_medico";
             this.dni_medico.HeaderText = "dni medico";
             this.dni_medico.Name = "dni_medico";
+            this.dni_medico.Visible = false;
             // 
             // urgencia
             // 
@@ -267,7 +268,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(318, 85);
+            this.label2.Location = new System.Drawing.Point(316, 83);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 18);
@@ -284,7 +285,7 @@
             "Urgente",
             "No Urgente",
             "Todos"});
-            this.comboBox2.Location = new System.Drawing.Point(423, 81);
+            this.comboBox2.Location = new System.Drawing.Point(421, 79);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(284, 28);
             this.comboBox2.TabIndex = 25;
@@ -329,6 +330,8 @@
         private System.Windows.Forms.BindingSource pacienteBindingSource2;
         private System.Windows.Forms.Panel panelAgregar;
         private System.Windows.Forms.DataGridView DGVAdministrativo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_creacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Medico;
@@ -338,7 +341,5 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn urgencia;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estado;
         private System.Windows.Forms.DataGridViewButtonColumn Acciones;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

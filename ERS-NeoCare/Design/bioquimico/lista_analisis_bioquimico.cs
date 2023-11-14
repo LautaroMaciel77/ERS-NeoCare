@@ -20,7 +20,10 @@ namespace ERS_NeoCare.Design
         {
 
             InitializeComponent();
+            panelAgregar.Visible = false;
+
             presenter = new AnalisisPresenter(this, new AnalisisService());
+
             presenter.TraerAnalisis();
 
         }
