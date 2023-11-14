@@ -490,6 +490,7 @@
     <Compile Include="Model\AtencionSingleton.cs" />
     <Compile Include="Model\EvaluacionModel.cs" />
     <Compile Include="Model\EvaluacionService.cs" />
+    <Compile Include="Model\EvaluacionSingleton.cs" />
     <Compile Include="Model\HistoriaClinicaModel.cs" />
     <Compile Include="Model\HistoriaClinicaSingleton.cs" />
     <Compile Include="Model\HistoriaClinicaService.cs" />
