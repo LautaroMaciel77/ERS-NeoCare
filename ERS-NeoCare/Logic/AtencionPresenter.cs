@@ -18,6 +18,9 @@ namespace ERS_NeoCare.Logic
         private AtencionService _model;
         private atencion _view;
         lista_atenciones_enfermero _viewLista;
+        private atencionDatos atencionDatos;
+        private AtencionService atencionService;
+
         public AtencionPresenter(atencion view, AtencionService model)
         {
             _view = view;
@@ -28,6 +31,13 @@ namespace ERS_NeoCare.Logic
             _viewLista = view;
             _model = model;
         }
+
+        public AtencionPresenter(atencionDatos atencionDatos, AtencionService atencionService)
+        {
+            this.atencionDatos = atencionDatos;
+            this.atencionService = atencionService;
+        }
+
         public void insertar(AtencionEnfermeriaModel model)
         {
             if (_model.Insertar(model))
