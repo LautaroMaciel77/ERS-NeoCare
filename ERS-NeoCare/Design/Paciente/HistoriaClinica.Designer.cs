@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.listViewMedicamentos = new System.Windows.Forms.ListView();
             this.listViewFamiliares = new System.Windows.Forms.ListView();
             this.Descripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,7 +67,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iconButtonImprimir = new FontAwesome.Sharp.IconButton();
             this.id_historial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CDatos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +76,7 @@
             this.id_evaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_analisis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CAcciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconButtonImprimir = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -100,7 +100,7 @@
             this.listViewFamiliares.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewFamiliares.HideSelection = false;
             this.listViewFamiliares.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem1});
             this.listViewFamiliares.Location = new System.Drawing.Point(145, 368);
             this.listViewFamiliares.Margin = new System.Windows.Forms.Padding(2);
             this.listViewFamiliares.Name = "listViewFamiliares";
@@ -568,7 +568,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 1366);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(788, 247);
+            this.panel3.Size = new System.Drawing.Size(965, 247);
             this.panel3.TabIndex = 47;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -579,7 +579,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(250, 15);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(277, 18);
+            this.label9.Size = new System.Drawing.Size(454, 18);
             this.label9.TabIndex = 1;
             this.label9.Text = "Historial actuaciones medicas";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -607,30 +607,9 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(738, 171);
+            this.dataGridView1.Size = new System.Drawing.Size(915, 171);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // iconButtonImprimir
-            // 
-            this.iconButtonImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(158)))));
-            this.iconButtonImprimir.FlatAppearance.BorderSize = 0;
-            this.iconButtonImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(220)))), ((int)(((byte)(198)))));
-            this.iconButtonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.iconButtonImprimir.IconColor = System.Drawing.Color.Black;
-            this.iconButtonImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonImprimir.IconSize = 30;
-            this.iconButtonImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonImprimir.Location = new System.Drawing.Point(663, 1257);
-            this.iconButtonImprimir.Name = "iconButtonImprimir";
-            this.iconButtonImprimir.Size = new System.Drawing.Size(111, 56);
-            this.iconButtonImprimir.TabIndex = 48;
-            this.iconButtonImprimir.Text = "Imprimir";
-            this.iconButtonImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonImprimir.UseVisualStyleBackColor = false;
-            this.iconButtonImprimir.Click += new System.EventHandler(this.iconButtonImprimir_Click);
             // 
             // id_historial
             // 
@@ -702,6 +681,27 @@
             this.CAcciones.Name = "CAcciones";
             this.CAcciones.ReadOnly = true;
             // 
+            // iconButtonImprimir
+            // 
+            this.iconButtonImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(158)))));
+            this.iconButtonImprimir.FlatAppearance.BorderSize = 0;
+            this.iconButtonImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(220)))), ((int)(((byte)(198)))));
+            this.iconButtonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.iconButtonImprimir.IconColor = System.Drawing.Color.Black;
+            this.iconButtonImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonImprimir.IconSize = 30;
+            this.iconButtonImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonImprimir.Location = new System.Drawing.Point(663, 1257);
+            this.iconButtonImprimir.Name = "iconButtonImprimir";
+            this.iconButtonImprimir.Size = new System.Drawing.Size(111, 56);
+            this.iconButtonImprimir.TabIndex = 48;
+            this.iconButtonImprimir.Text = "Imprimir";
+            this.iconButtonImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonImprimir.UseVisualStyleBackColor = false;
+            this.iconButtonImprimir.Click += new System.EventHandler(this.iconButtonImprimir_Click);
+            // 
             // HistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -739,7 +739,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LHistoriaClinica);
             this.Name = "HistoriaClinica";
-            this.Size = new System.Drawing.Size(781, 751);
+            this.Size = new System.Drawing.Size(965, 751);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

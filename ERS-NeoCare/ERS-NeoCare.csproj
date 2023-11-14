@@ -380,6 +380,12 @@
     <Compile Include="Design\bioquimico\analisis.Designer.cs">
       <DependentUpon>analisis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\bioquimico\analisisDatos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\bioquimico\analisisDatos.Designer.cs">
+      <DependentUpon>analisisDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\bioquimico\bioquimico.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -409,6 +415,12 @@
     </Compile>
     <Compile Include="Design\enfermero\atencion.Designer.cs">
       <DependentUpon>atencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\enfermero\atencionDatos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\enfermero\atencionDatos.Designer.cs">
+      <DependentUpon>atencionDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\enfermero\enfermero.cs">
       <SubType>UserControl</SubType>
@@ -458,6 +470,12 @@
     <Compile Include="Design\Medico\evaluacion.Designer.cs">
       <DependentUpon>evaluacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Medico\evaluacionDatos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Medico\evaluacionDatos.Designer.cs">
+      <DependentUpon>evaluacionDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\Paciente\ContenidoHTML.cs" />
     <Compile Include="Design\Paciente\EstilosCSS.cs" />
     <Compile Include="Helper\convertidorListDatatable.cs" />
@@ -490,6 +508,7 @@
     <Compile Include="Model\AtencionSingleton.cs" />
     <Compile Include="Model\EvaluacionModel.cs" />
     <Compile Include="Model\EvaluacionService.cs" />
+    <Compile Include="Model\EvaluacionSingleton.cs" />
     <Compile Include="Model\HistoriaClinicaModel.cs" />
     <Compile Include="Model\HistoriaClinicaSingleton.cs" />
     <Compile Include="Model\HistoriaClinicaService.cs" />
@@ -509,6 +528,7 @@
     <Compile Include="Logic\IListaPacientePresenter.cs" />
     <Compile Include="Model\UsuarioBusqueda.cs" />
     <Compile Include="Model\UsuarioSingleton.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -634,6 +654,9 @@
     <EmbeddedResource Include="Design\bioquimico\analisis.resx">
       <DependentUpon>analisis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\bioquimico\analisisDatos.resx">
+      <DependentUpon>analisisDatos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\bioquimico\bioquimico.resx">
       <DependentUpon>bioquimico.cs</DependentUpon>
     </EmbeddedResource>
@@ -648,6 +671,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\enfermero\atencion.resx">
       <DependentUpon>atencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\enfermero\atencionDatos.resx">
+      <DependentUpon>atencionDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\enfermero\enfermero.resx">
       <DependentUpon>enfermero.cs</DependentUpon>
@@ -675,6 +701,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\evaluacion.resx">
       <DependentUpon>evaluacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Medico\evaluacionDatos.resx">
+      <DependentUpon>evaluacionDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Medico\medico.resx">
       <DependentUpon>medico.cs</DependentUpon>
@@ -711,6 +740,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include=".vs\ERS-NeoCare\FileContentIndex\f4a731b8-6528-4d01-b80f-c73df2e9b28a.vsidx" />
+    <None Include=".vs\ERS-NeoCare\v17\.wsuo" />
+    <None Include=".vs\ProjectSettings.json" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="bin\Debug\recursos\Maria Gomez\Base_de_Datos_Laboratorio.pdf" />
+    <None Include="bin\Debug\recursos\Maria Gomez\comprobante taller 1 18-10-2023.pdf" />
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </None>
@@ -825,6 +861,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\logo_hospital_eloisa_torrent.jpg" />
     <Content Include="Database1.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -854,6 +891,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\recursos\CopiasSeguridad\" />
+    <Folder Include="bin\Release\" />
     <Folder Include="Data\" />
     <Folder Include="ERS_NeoCare\" />
     <Folder Include="recursos\" />

@@ -15,7 +15,7 @@ namespace ERS_NeoCare.Logic
         private EvaluacionService _service;
         private EvaluacionService evaluacionService;
 
-        public EvaluacionPresenter(EvaluacionService evaluacionService)
+        public EvaluacionPresenter(evaluacionDatos evaluacionDatos, EvaluacionService evaluacionService)
         {
             _service = evaluacionService;
         }
@@ -24,6 +24,11 @@ namespace ERS_NeoCare.Logic
         {
             _viewEvaluacion = evaluacion;
             _service = service;
+        }
+
+        public EvaluacionPresenter(EvaluacionService evaluacionService)
+        {
+            this.evaluacionService = evaluacionService;
         }
 
         internal void insertar(EvaluacionModel evaluacionModel)
