@@ -7,6 +7,7 @@ namespace ERS_NeoCare.Model
     using System.Collections.Generic;
     using System.Data;
     using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
     using System.Data.SqlClient;
     using System.Linq;
     using System.Net;
@@ -31,7 +32,7 @@ namespace ERS_NeoCare.Model
             {
                 string hashedPassword = Encrypt.GetSHA256(contraseña);
 
-                 var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni && (u.Password == contraseña));
+                 var usuario = context.Usuarios.FirstOrDefault(u => u.DNI == dni &&( (u.Password == hashedPassword) ||(u.Password == contraseña)));
 
                 if (usuario != null)
                 {
@@ -93,12 +94,26 @@ namespace ERS_NeoCare.Model
 
                 return true;
             }
+            catch (DbUpdateException ex)
+            {
+                // Si hay una violación de unicidad, muestra un mensaje específico
+                if (ex.InnerException is System.Data.SqlClient.SqlException sqlException && sqlException.Number == 2601)
+                {
+                    System.Windows.Forms.MessageBox.Show("Error: Ya existe un usuario con el mismo DNI o Matrícula.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    // Si la excepción no es por violación de unicidad, muestra un mensaje general
+                    System.Windows.Forms.MessageBox.Show("Error al insertar usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                Console.WriteLine("Error general: " + ex.Message);
+                return false; // O maneja de otra manera apropiada
+            }
             catch (Exception ex)
             {
-                // Maneja excepciones aquí.
-                // Muestra un MessageBox con el mensaje de la excepción
+                // Maneja otras excepciones aquí.
                 System.Windows.Forms.MessageBox.Show("Error al insertar usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 Console.WriteLine("Error general: " + ex.Message);
                 return false; // O maneja de otra manera apropiada
             }
