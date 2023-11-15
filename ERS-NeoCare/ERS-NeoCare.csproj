@@ -520,6 +520,9 @@
     <Compile Include="Logic\HistoriaClinicaPresenter.cs" />
     <Compile Include="Logic\historialPresenter.cs" />
     <Compile Include="Logic\OrdenPresenter.cs" />
+    <Compile Include="Logic\TipoAnalisisPresenter.cs" />
+    <Compile Include="Model\TipoAnalisisService.cs" />
+    <Compile Include="Model\TipoAnalisModel.cs" />
     <Compile Include="Model\TurnoSingleton.cs" />
     <Compile Include="Logic\UsuarioPresenter.cs" />
     <Compile Include="Logic\ImenuPresenter.cs" />

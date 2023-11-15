@@ -2,6 +2,7 @@
 using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace ERS_NeoCare.Design.administrativo
         private ArchivoEstudio archivo;
         public event EventHandler recargar;
         private historialPresenter _presenterHistorial;
+        private TipoAnalisisPresenter _presenterTipoAnalisis;
 
         public analisis()
         {
@@ -27,6 +29,7 @@ namespace ERS_NeoCare.Design.administrativo
             _presenterAnalisis = new AnalisisPresenter(this, new AnalisisService());
             _presenterorden = new OrdenPresenter(new OrdenService());
             _presenterHistorial = new historialPresenter(new HistorialService());
+            _presenterTipoAnalisis = new TipoAnalisisPresenter(new TipoAnalisisService());
             InitializeComponent();
 
             labelFechaOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.FechaCreacion.ToString("dd/MM/yyyy");
@@ -36,7 +39,13 @@ namespace ERS_NeoCare.Design.administrativo
             labelMedicoMatriculaOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.Medico.Matricula.ToString();
 
             textBoxOrdenIndicaciones.Text = OrdenSingleton.Instance.OrdenAutenticada.Indicaciones;
+       
+            List<TipoAnalisModel> tiposAnalisis = _presenterTipoAnalisis.ObtenerTiposAnalisis();
 
+
+            comboBox1.DisplayMember = "descripcion";
+            comboBox1.ValueMember = "id";
+            comboBox1.DataSource = tiposAnalisis;
         }
 
  
@@ -48,6 +57,20 @@ namespace ERS_NeoCare.Design.administrativo
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
 
+            TipoAnalisModel tipoSeleccionado = (TipoAnalisModel)comboBox1.SelectedItem;
+
+            // Verificar si se seleccionó un elemento
+            if (tipoSeleccionado == null)
+            {
+
+                MessageBox.Show("Por favor, seleccione un tipo analisis.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            
+
+
+
+        }
+            string descripcionSeleccionada = tipoSeleccionado.descripcion;
             // Verificar si textNombre, textApellido y textDomicilio no están vacíos
             if (string.IsNullOrWhiteSpace(textBoxObservaciones.Text))
             {
@@ -74,7 +97,7 @@ namespace ERS_NeoCare.Design.administrativo
                     Observaciones = textBoxObservaciones.Text,
                     IdOrden = OrdenSingleton.Instance.OrdenAutenticada.Id,
                     IdUsuario = UsuarioSingleton.Instance.UsuarioAutenticado.id,
-                    TipoAnalisis = comboBox1.SelectedItem.ToString(),
+                    TipoAnalisis = descripcionSeleccionada,
                     IdArchivo = ArchivoEstudiosSingleton.Instance.archivoEstudio.Id,
 
 

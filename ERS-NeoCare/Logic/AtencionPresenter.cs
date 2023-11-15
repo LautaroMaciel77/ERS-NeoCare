@@ -51,7 +51,7 @@ namespace ERS_NeoCare.Logic
                 return;
             }
             _view.mensaje("error al insertar");
-
+      
         }
         public void ObtenerAtenciones()
         {

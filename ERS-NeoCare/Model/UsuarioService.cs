@@ -64,7 +64,6 @@ namespace ERS_NeoCare.Model
 
         }
 
-
         public bool InsertarUsuario(UsuarioModel usuario)
         {
             try
@@ -94,29 +93,28 @@ namespace ERS_NeoCare.Model
 
                 return true;
             }
-            catch (DbUpdateException ex)
+            catch (Exception ex)
             {
-                // Si hay una violación de unicidad, muestra un mensaje específico
-                if (ex.InnerException is System.Data.SqlClient.SqlException sqlException && sqlException.Number == 2601)
-                {
-                    System.Windows.Forms.MessageBox.Show("Error: Ya existe un usuario con el mismo DNI o Matrícula.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    // Si la excepción no es por violación de unicidad, muestra un mensaje general
-                    System.Windows.Forms.MessageBox.Show("Error al insertar usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                // Maneja excepciones aquí.
+                // Muestra un MessageBox con el mensaje de la excepción
+                System.Windows.Forms.MessageBox.Show("Error al insertar usuario: " + ObtenerMensajeExcepcion(ex), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 Console.WriteLine("Error general: " + ex.Message);
                 return false; // O maneja de otra manera apropiada
             }
-            catch (Exception ex)
+        }
+
+        private string ObtenerMensajeExcepcion(Exception ex)
+        {
+            string mensaje = ex.Message;
+
+            // Verifica si hay una excepción interna
+            if (ex.InnerException != null)
             {
-                // Maneja otras excepciones aquí.
-                System.Windows.Forms.MessageBox.Show("Error al insertar usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine("Error general: " + ex.Message);
-                return false; // O maneja de otra manera apropiada
+                mensaje += " " + ObtenerMensajeExcepcion(ex.InnerException);
             }
+
+            return mensaje;
         }
         public bool EditarUsuario(UsuarioModel usuario)
         {

@@ -27,5 +27,6 @@ namespace ERS_NeoCare.dbconexion
         public DbSet<AtencionEnfermeriaModel> atencion { get; set; }
         public DbSet<AnalisisModel> analisis { get; set; }
         public DbSet<HistorialModel> historial { get; set; }
+        public DbSet<TipoAnalisModel> TipoAnalis { get; set; }
     }
 }

@@ -74,7 +74,7 @@ namespace ERS_NeoCare.Logic
         {
             List<Turno> listaTurnos = _service.ObtenerDatos();
            
-            List<Turno> turnosMedico = listaTurnos.Where(t => (t.Medico_Id == UsuarioSingleton.Instance.UsuarioAutenticado.id) &&( t.Estado=false)).ToList();
+            List<Turno> turnosMedico = listaTurnos.Where(t => (t.Medico_Id == UsuarioSingleton.Instance.UsuarioAutenticado.id) &&( t.Estado==false)).ToList();
          
             DataTable data = ConvertidorListDatatable.ConvertirListaTurnoMedico(turnosMedico);
             _viewMedico.MostrarDatosPaciente(data);
@@ -83,7 +83,7 @@ namespace ERS_NeoCare.Logic
         {
             List<Turno> listaTurnos = _service.ObtenerDatos();
 
-            List<Turno> turnosMedico = listaTurnos.Where(t => (t.Medico_Id == UsuarioSingleton.Instance.UsuarioAutenticado.id) && (t.Estado = true)).ToList();
+            List<Turno> turnosMedico = listaTurnos.Where(t => (t.Medico_Id == UsuarioSingleton.Instance.UsuarioAutenticado.id) && (t.Estado == true)).ToList();
 
             DataTable data = ConvertidorListDatatable.ConvertirListaTurnoMedico(turnosMedico);
             _viewlistaTurnos.MostrarDatosPaciente(data);
