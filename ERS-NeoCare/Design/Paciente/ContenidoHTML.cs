@@ -1,4 +1,5 @@
-﻿using ERS_NeoCare.Model;
+﻿using ERS_NeoCare.Logic;
+using ERS_NeoCare.Model;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -15,9 +16,22 @@ namespace ImprmirPdf
     public  static class ContenidoHTML
     {
 
-
+     
         public static string ObtenerContenidoHTML()
         {
+            //USAR LISTA DE STRING O algo similar recorda q son muchas historial model no una q se recorre
+            //List<HistorialModel> historiales = HistorialSingleton.Instance.historialesAutenticados;
+            //if (historiales != null)
+            //{
+            //    foreach (var historial in historiales)
+            //    {
+            //        string nombre = historial.Paciente.Nombre;
+            //        string nombremedico = historial.Medico.Nombre;
+            //        string tipo = historial.Tipo;
+            
+            //    }
+            //}
+          
             string encabezado = "Historia Clinica";
 
             //Historia clinica

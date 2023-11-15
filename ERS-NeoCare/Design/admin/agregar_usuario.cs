@@ -181,5 +181,10 @@ namespace ERS_NeoCare.Design.administrativo
         {
 
         }
+
+        private void ComboxProfesion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
