@@ -86,7 +86,7 @@ namespace ERS_NeoCare.Logic
             List<Turno> turnosMedico = listaTurnos.Where(t => (t.Medico_Id == UsuarioSingleton.Instance.UsuarioAutenticado.id) && (t.Estado = true)).ToList();
 
             DataTable data = ConvertidorListDatatable.ConvertirListaTurnoMedico(turnosMedico);
-            _viewMedico.MostrarDatosPaciente(data);
+            _viewlistaTurnos.MostrarDatosPaciente(data);
         }
         public void BuscarPacienteAtendido(string searchText)
         {
@@ -226,16 +226,27 @@ namespace ERS_NeoCare.Logic
         internal void cambiarEstado(int id)
         {
             _service.CambiarEstado(id);
-            _viewMedico.mensaje("estado cambiado");
+         
         }
-        internal void CargarFiltro(bool v)
-        {
 
-            List<Turno> turnos = _service.ObtenerTurnoEstado(v).Where(t => t.Medico_Id == UsuarioSingleton.Instance.UsuarioAutenticado.id).ToList();
+        internal void CargarFiltro(string prioridad)
+        {
+            List<Turno> listaTurnos = _service.ObtenerDatos();
+            List<Turno> turnos = listaTurnos.Where(t => (t.Medico_Id == UsuarioSingleton.Instance.UsuarioAutenticado.id) && (t.Estado = false) && (t.Prioridad == prioridad) ).ToList();
             
             DataTable data = ConvertidorListDatatable.ConvertirListaTurnoMedico(turnos);
 
             _viewMedico.MostrarDatosPaciente(data);
+        }
+
+        internal void CargarFiltroAtendidos(string prioridad)
+        {
+
+            List<Turno> turnos = _service.ObtenerTurnoEstado(true).Where(t => t.Prioridad == prioridad).ToList();
+
+            DataTable data = ConvertidorListDatatable.ConvertirListaTurnoMedico(turnos);
+
+            _viewlistaTurnos.MostrarDatosPaciente(data);
         }
 
     }

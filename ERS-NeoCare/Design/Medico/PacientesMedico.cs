@@ -169,24 +169,15 @@ namespace ERS_NeoCare.Design
             string seleccion = comboBox1.SelectedItem.ToString();
 
             // Utiliza un switch para tomar diferentes acciones según el valor seleccionado
-
-            switch (seleccion)
+            if(seleccion == "Todos")
             {
-                case "Atendido":
-                    _presenter.CargarFiltro(true);
-                    break;
-
-
-                case "No Atendido":
-                    _presenter.CargarFiltro(false);
-                    break;
-                case "Todos":
-                    _presenter.CargarPacienteMedico();
-                    break;
-                default:
-                    _presenter.CargarPacienteMedico();
-                    break;
+                _presenter.CargarPacienteMedico();
             }
+            else
+            {
+                _presenter.CargarFiltro(seleccion);
+            }
+     
         }
 
         internal void mensaje(string v)
