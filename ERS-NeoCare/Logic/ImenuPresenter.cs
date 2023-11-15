@@ -62,7 +62,8 @@ namespace ERS_NeoCare.Logic
                     break;
                 case 3:
                     medico m = new medico();
-                    m.TurnoAdminButtonClick += TurnoMedButtonClick;
+                    m.OrdenesAdminButtonClick += OrdenoMedButtonClick;
+                    m.PacientesAtendidosClick += M_PacientesAtendidosClick;
                     m.PacienteButtonClick += PacienteButtonClick;
                     m.EvaluacionesButtonClick += EvaluacionesButtonClick;
                     _view.AgregarUserControl(m);
@@ -78,6 +79,12 @@ namespace ERS_NeoCare.Logic
                     // Manejar caso por defecto si es necesario.
                     break;
             }
+        }
+
+        private void M_PacientesAtendidosClick(object sender, EventArgs e)
+        {
+            ListaDeTurnos lista = new ListaDeTurnos();
+            _view.AgregarSubMenu(lista);
         }
 
         private void ListaAnalisisHechoClick(object sender, EventArgs e)
@@ -133,7 +140,7 @@ namespace ERS_NeoCare.Logic
             _view.AgregarSubMenu(turno);
         }
 
-        private void TurnoMedButtonClick(object sender, EventArgs e)
+        private void OrdenoMedButtonClick(object sender, EventArgs e)
 
         {
             EstadoOrden turno = new EstadoOrden();

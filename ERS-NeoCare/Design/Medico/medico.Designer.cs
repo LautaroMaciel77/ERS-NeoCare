@@ -31,6 +31,7 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.pacientesAtendidos = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // iconButton1
@@ -39,7 +40,7 @@
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.Transparent;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
             this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
@@ -61,7 +62,7 @@
             this.iconButton3.FlatAppearance.BorderSize = 0;
             this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton3.ForeColor = System.Drawing.Color.Transparent;
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.UserInjured;
             this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
@@ -83,7 +84,7 @@
             this.iconButton2.FlatAppearance.BorderSize = 0;
             this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton2.ForeColor = System.Drawing.Color.Transparent;
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.UserMd;
             this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
@@ -99,15 +100,38 @@
             this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click_1);
             // 
+            // pacientesAtendidos
+            // 
+            this.pacientesAtendidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(77)))), ((int)(((byte)(101)))));
+            this.pacientesAtendidos.FlatAppearance.BorderSize = 0;
+            this.pacientesAtendidos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(107)))), ((int)(((byte)(132)))));
+            this.pacientesAtendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pacientesAtendidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pacientesAtendidos.ForeColor = System.Drawing.Color.Transparent;
+            this.pacientesAtendidos.IconChar = FontAwesome.Sharp.IconChar.UserMd;
+            this.pacientesAtendidos.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
+            this.pacientesAtendidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.pacientesAtendidos.IconSize = 35;
+            this.pacientesAtendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pacientesAtendidos.Location = new System.Drawing.Point(0, 120);
+            this.pacientesAtendidos.Margin = new System.Windows.Forms.Padding(0);
+            this.pacientesAtendidos.Name = "pacientesAtendidos";
+            this.pacientesAtendidos.Size = new System.Drawing.Size(172, 40);
+            this.pacientesAtendidos.TabIndex = 22;
+            this.pacientesAtendidos.Text = "Pacientes Atendidos";
+            this.pacientesAtendidos.UseVisualStyleBackColor = false;
+            this.pacientesAtendidos.Click += new System.EventHandler(this.pacientesAtendidos_Click);
+            // 
             // medico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pacientesAtendidos);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.iconButton3);
             this.Name = "medico";
-            this.Size = new System.Drawing.Size(169, 120);
+            this.Size = new System.Drawing.Size(169, 160);
             this.ResumeLayout(false);
 
         }
@@ -117,5 +141,6 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton pacientesAtendidos;
     }
 }

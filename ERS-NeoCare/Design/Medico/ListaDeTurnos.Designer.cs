@@ -32,8 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.turnoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dBNeoCareDataSet2 = new ERS_NeoCare.DBNeoCareDataSet2();
             this.turnoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -50,14 +48,16 @@
             this.turnoTableAdapter1 = new ERS_NeoCare.DBNeoCareDataSet2TableAdapters.TurnoTableAdapter();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.selectedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.selectedTimeRangeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prioridadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notasComentariosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicoidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pacienteidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectedTimeRange = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PacienteDni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombrePaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ObraSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource1)).BeginInit();
@@ -70,26 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(31, 83);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 20);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Buscar";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(90, 80);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 27);
-            this.textBox2.TabIndex = 13;
             // 
             // turnoBindingSource2
             // 
@@ -140,12 +120,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.label1.Location = new System.Drawing.Point(79, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 23);
+            this.label1.Size = new System.Drawing.Size(82, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Turnos ";
             // 
@@ -199,7 +179,6 @@
             this.DGVAdministrativo.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.DGVAdministrativo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DGVAdministrativo.AutoGenerateColumns = false;
             this.DGVAdministrativo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVAdministrativo.BackgroundColor = System.Drawing.Color.White;
             this.DGVAdministrativo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -214,15 +193,14 @@
             this.DGVAdministrativo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVAdministrativo.ColumnHeadersHeight = 40;
             this.DGVAdministrativo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.selectedDateDataGridViewTextBoxColumn,
-            this.selectedTimeRangeDataGridViewTextBoxColumn,
-            this.prioridadDataGridViewTextBoxColumn,
-            this.notasComentariosDataGridViewTextBoxColumn,
-            this.medicoidDataGridViewTextBoxColumn,
-            this.pacienteidDataGridViewTextBoxColumn,
-            this.estadoDataGridViewTextBoxColumn});
-            this.DGVAdministrativo.DataSource = this.turnoBindingSource2;
+            this.Id,
+            this.SelectedTimeRange,
+            this.SelectedDate,
+            this.PacienteDni,
+            this.NombrePaciente,
+            this.Prioridad,
+            this.Estado,
+            this.ObraSocial});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -232,8 +210,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVAdministrativo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVAdministrativo.EnableHeadersVisualStyles = false;
-            this.DGVAdministrativo.Location = new System.Drawing.Point(34, 120);
-            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(2);
+            this.DGVAdministrativo.Location = new System.Drawing.Point(20, 121);
+            this.DGVAdministrativo.Margin = new System.Windows.Forms.Padding(20, 2, 20, 2);
             this.DGVAdministrativo.Name = "DGVAdministrativo";
             this.DGVAdministrativo.ReadOnly = true;
             this.DGVAdministrativo.RowHeadersVisible = false;
@@ -241,73 +219,95 @@
             this.DGVAdministrativo.RowTemplate.Height = 40;
             this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
             this.DGVAdministrativo.TabIndex = 15;
+            this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
-            // idDataGridViewTextBoxColumn
+            // label7
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(24, 94);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 18);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Buscar";
             // 
-            // selectedDateDataGridViewTextBoxColumn
+            // textBox2
             // 
-            this.selectedDateDataGridViewTextBoxColumn.DataPropertyName = "selectedDate";
-            this.selectedDateDataGridViewTextBoxColumn.HeaderText = "selectedDate";
-            this.selectedDateDataGridViewTextBoxColumn.Name = "selectedDateDataGridViewTextBoxColumn";
-            this.selectedDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(83, 91);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(196, 26);
+            this.textBox2.TabIndex = 17;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // selectedTimeRangeDataGridViewTextBoxColumn
+            // Id
             // 
-            this.selectedTimeRangeDataGridViewTextBoxColumn.DataPropertyName = "selectedTimeRange";
-            this.selectedTimeRangeDataGridViewTextBoxColumn.HeaderText = "selectedTimeRange";
-            this.selectedTimeRangeDataGridViewTextBoxColumn.Name = "selectedTimeRangeDataGridViewTextBoxColumn";
-            this.selectedTimeRangeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
-            // prioridadDataGridViewTextBoxColumn
+            // SelectedTimeRange
             // 
-            this.prioridadDataGridViewTextBoxColumn.DataPropertyName = "prioridad";
-            this.prioridadDataGridViewTextBoxColumn.HeaderText = "prioridad";
-            this.prioridadDataGridViewTextBoxColumn.Name = "prioridadDataGridViewTextBoxColumn";
-            this.prioridadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.SelectedTimeRange.DataPropertyName = "SelectedTimeRange";
+            this.SelectedTimeRange.HeaderText = "Hora de Turno";
+            this.SelectedTimeRange.Name = "SelectedTimeRange";
+            this.SelectedTimeRange.ReadOnly = true;
             // 
-            // notasComentariosDataGridViewTextBoxColumn
+            // SelectedDate
             // 
-            this.notasComentariosDataGridViewTextBoxColumn.DataPropertyName = "notasComentarios";
-            this.notasComentariosDataGridViewTextBoxColumn.HeaderText = "notasComentarios";
-            this.notasComentariosDataGridViewTextBoxColumn.Name = "notasComentariosDataGridViewTextBoxColumn";
-            this.notasComentariosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.notasComentariosDataGridViewTextBoxColumn.Visible = false;
+            this.SelectedDate.DataPropertyName = "SelectedDate";
+            this.SelectedDate.HeaderText = "Dia del turno";
+            this.SelectedDate.Name = "SelectedDate";
+            this.SelectedDate.ReadOnly = true;
             // 
-            // medicoidDataGridViewTextBoxColumn
+            // PacienteDni
             // 
-            this.medicoidDataGridViewTextBoxColumn.DataPropertyName = "medico_id";
-            this.medicoidDataGridViewTextBoxColumn.HeaderText = "medico_id";
-            this.medicoidDataGridViewTextBoxColumn.Name = "medicoidDataGridViewTextBoxColumn";
-            this.medicoidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.medicoidDataGridViewTextBoxColumn.Visible = false;
+            this.PacienteDni.DataPropertyName = "PacienteDni";
+            this.PacienteDni.HeaderText = "DNI Paciente";
+            this.PacienteDni.Name = "PacienteDni";
+            this.PacienteDni.ReadOnly = true;
             // 
-            // pacienteidDataGridViewTextBoxColumn
+            // NombrePaciente
             // 
-            this.pacienteidDataGridViewTextBoxColumn.DataPropertyName = "paciente_id";
-            this.pacienteidDataGridViewTextBoxColumn.HeaderText = "paciente_id";
-            this.pacienteidDataGridViewTextBoxColumn.Name = "pacienteidDataGridViewTextBoxColumn";
-            this.pacienteidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pacienteidDataGridViewTextBoxColumn.Visible = false;
+            this.NombrePaciente.DataPropertyName = "NombrePaciente";
+            this.NombrePaciente.HeaderText = "Nombre Paciente";
+            this.NombrePaciente.Name = "NombrePaciente";
+            this.NombrePaciente.ReadOnly = true;
             // 
-            // estadoDataGridViewTextBoxColumn
+            // Prioridad
             // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Prioridad.DataPropertyName = "Prioridad";
+            this.Prioridad.HeaderText = "Prioridad";
+            this.Prioridad.Name = "Prioridad";
+            this.Prioridad.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Atendido";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ObraSocial
+            // 
+            this.ObraSocial.DataPropertyName = "ObraSocial";
+            this.ObraSocial.HeaderText = "Obra Social";
+            this.ObraSocial.Name = "ObraSocial";
+            this.ObraSocial.ReadOnly = true;
+            this.ObraSocial.Visible = false;
             // 
             // ListaDeTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.DGVAdministrativo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.DGVAdministrativo);
             this.Controls.Add(this.panel2);
             this.Name = "ListaDeTurnos";
             this.Size = new System.Drawing.Size(1196, 768);
@@ -329,8 +329,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.BindingSource pacienteBindingSource;
         private DatabaseDataSet databaseDataSet;
         private System.Windows.Forms.Panel panel2;
@@ -347,13 +345,15 @@
         private DBNeoCareDataSet2TableAdapters.TurnoTableAdapter turnoTableAdapter1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridView DGVAdministrativo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn selectedDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn selectedTimeRangeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prioridadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notasComentariosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medicoidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pacienteidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SelectedTimeRange;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SelectedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PacienteDni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombrePaciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prioridad;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ObraSocial;
     }
 }

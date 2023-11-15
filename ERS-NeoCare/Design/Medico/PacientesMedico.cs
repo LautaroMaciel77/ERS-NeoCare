@@ -65,11 +65,6 @@ namespace ERS_NeoCare.Design
                     idTurno = (int)DGVAdministrativo.Rows[e.RowIndex].Cells["Id"].Value;
                     _pacientePresenter.cargarPaciente(dniPaciente);
 
-                    if (_presenter.TurnoAtendido(idTurno))
-                    {
-                        MessageBox.Show("Este turno ya está atendido. No puedes realizar más acciones.", "Turno Atendido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return; 
-                    }
 
                     MenuMedicoPacientes menuPaciente = new MenuMedicoPacientes();
                     menuPaciente.closeclick += closeclick;
@@ -83,11 +78,7 @@ namespace ERS_NeoCare.Design
 
         private void registrarClick(object sender, EventArgs e)
         {
-            if (evaluacionPresenter.VerificarExistencia())
-            {
-                MessageBox.Show("Este turno ya tiene creado una evaluacion", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+   
             
             evaluacion pacienteControl = new evaluacion();
             pacienteControl.Dock = DockStyle.Fill;
@@ -114,11 +105,7 @@ namespace ERS_NeoCare.Design
 
         private void cambiarEstado(object sender, EventArgs e)
         {
-            if (!evaluacionPresenter.VerificarExistencia())
-            {
-                MessageBox.Show("Este turno no tiene creado una evaluacion", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+         
             DialogResult resultado = MessageBox.Show("Al cambiar a 'Atendido', ya no podrás realizar más acciones a este turno y pasará a la vista de evaluaciones. ¿Estás seguro?", "Confirmar Cambio de Estado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (resultado == DialogResult.Yes)
