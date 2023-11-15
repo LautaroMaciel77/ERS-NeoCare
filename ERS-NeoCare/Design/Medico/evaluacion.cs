@@ -57,7 +57,7 @@ namespace ERS_NeoCare.Design.administrativo
             if (resultado == DialogResult.No)
             {
                 // Si el usuario elige "Sí", cambiar el estado
-                //_presenterTurno.cambiarEstado();
+                _presenterTurno.cambiarEstado(TurnoSingleton.Instance.TurnoAutenticado.Id);
 
                 // Invalidar y refrescar el DataGridView
            

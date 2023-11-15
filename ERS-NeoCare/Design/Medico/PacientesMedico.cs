@@ -64,7 +64,7 @@ namespace ERS_NeoCare.Design
                     string dniPaciente = DGVAdministrativo.Rows[e.RowIndex].Cells["PacienteDni"].Value.ToString();
                     idTurno = (int)DGVAdministrativo.Rows[e.RowIndex].Cells["Id"].Value;
                     _pacientePresenter.cargarPaciente(dniPaciente);
-
+                    _presenter.BuscarYAuntenticar(idTurno);
 
                     MenuMedicoPacientes menuPaciente = new MenuMedicoPacientes();
                     menuPaciente.closeclick += closeclick;

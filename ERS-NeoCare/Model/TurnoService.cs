@@ -49,9 +49,34 @@ namespace ERS_NeoCare.Model
                 Console.WriteLine("Error general: " + ex.Message);
                 return false; // O maneja de otra manera apropiada
             }
-        }
 
-        public List<Turno> ObtenerDatos()
+        }
+        internal void AutenticarTurnoPorId(int turnoId)
+        {
+            try
+            {
+                var context = DbContextManager.GetContext();
+
+
+                var turnoEncontrado = context.turnos.FirstOrDefault(t => t.Id == turnoId);
+
+
+                if (turnoEncontrado != null)
+                {
+                    TurnoSingleton.Instance.AutenticarTurno(turnoEncontrado);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error al obtener y autenticar el turno por ID: " + ex.Message);
+
+            }
+        }
+    
+
+
+    public List<Turno> ObtenerDatos()
         {
 
             var context = DbContextManager.GetContext();

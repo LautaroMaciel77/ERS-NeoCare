@@ -57,6 +57,12 @@ namespace ERS_NeoCare.Logic
 
 
         }
+        public void BuscarYAuntenticar(int id)
+        {
+
+            _service.AutenticarTurnoPorId(id);
+
+        }
         public void CargarPacientePorTurno()
         {
             List<Turno> listaTurnos = _service.ObtenerDatos();
