@@ -53,7 +53,7 @@ namespace ERS_NeoCare.Design.administrativo
             usuarios = _presenterusuario.ListaUsuarios();
             listaAnalisis = _analisis.listaAnalisis();
             listaOrden = _ordenPresenter.traerListaOrdenes();
-            chartTurnos.Visible = false;
+            chartTurnos.Visible = true;
 
             panel1.Visible = false;
         
@@ -86,13 +86,21 @@ namespace ERS_NeoCare.Design.administrativo
 
             foreach (var item in data)
             {
-                chart1.Series["Cantidad de Pacientes por Género"].Points.AddXY(item.Genero, item.Cantidad);
+                // Agregar el punto al gráfico
+                var point = chart1.Series["Cantidad de Pacientes por Género"].Points.Add(item.Cantidad);
+
+                // Mostrar la cantidad en la etiqueta de la porción
+                point.Label = $"{item.Genero}: {item.Cantidad}";
             }
 
             // Configurar el tipo de gráfico (puedes ajustarlo según tus necesidades)
-            chart1.Series["Cantidad de Pacientes por Género"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            chart1.Series["Cantidad de Pacientes por Género"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+
+            // Configurar propiedad para mostrar las etiquetas
+            chart1.Series["Cantidad de Pacientes por Género"]["PieLabelStyle"] = "Inside";
+            chart1.Series["Cantidad de Pacientes por Género"].IsValueShownAsLabel = true;
         }
-      
+
         private void buttonGenerarGrafico_Click_1(object sender, EventArgs e)
         {
             chartTurnos.Visible = true;
@@ -180,6 +188,7 @@ namespace ERS_NeoCare.Design.administrativo
                 "Pacientes No Atendidos",
                 t => comboBoxUsuarios.SelectedIndex != -1 && t.Medico.id == ((UsuarioModel)comboBoxUsuarios.SelectedItem).id
             );
+            panel1.Visible = false;
         }
         private bool CumpleFiltroDeTiempo(DateTime fechaCreacion)
         {
@@ -372,6 +381,11 @@ namespace ERS_NeoCare.Design.administrativo
         private void btnPacientes_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void iconButtonClose_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
         }
     }
     }
