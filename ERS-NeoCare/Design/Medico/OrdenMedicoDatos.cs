@@ -50,12 +50,15 @@ namespace ERS_NeoCare.Design
            
                 if (_presenterAnalisis.buscaryRemplazarIdOrden(OrdenSingleton.Instance.OrdenAutenticada.Id))
                 {
-                if(AnalisisSingleton.Instance.AnalisisAutenticado == null)
+                    if(AnalisisSingleton.Instance.AnalisisAutenticado == null)
                     {
+                        panelPendiente.Visible = true;
                         return;
+                        
                     }
-                    panelAnalisis.Visible = true;
+                    panelPendiente.Visible = false;
                     panelAtencion.Visible = false;
+                    panelAnalisis.Visible = true;
                     labelAnalisisNumero.Text = AnalisisSingleton.Instance.AnalisisAutenticado.IdAnalisis.ToString();
                     labelAnalisisFecha.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Fecha.ToString("dd/MM/yyyy");
                     labelAnalisisBioquimico.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Usuario.Nombre +"" + AnalisisSingleton.Instance.AnalisisAutenticado.Usuario.Apellido;
@@ -71,6 +74,13 @@ namespace ERS_NeoCare.Design
              
                 if (_presenterAtencion.buscaryRemplazarIdOrden(OrdenSingleton.Instance.OrdenAutenticada.Id))
                 {
+                    if (AtencionSingleton.Instance.AtencionAutenticada == null)
+                    {
+                        panelPendiente.Visible = true;
+                        return;
+
+                    }
+                    panelPendiente.Visible = false;
                     panelAnalisis.Visible = false;
                     panelAtencion.Visible = true;
                     labelAtencionNumero.Text = AtencionSingleton.Instance.AtencionAutenticada.IdAtencion.ToString();

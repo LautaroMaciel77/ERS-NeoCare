@@ -79,8 +79,13 @@
             this.textBoxAnalisisObservaciones = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panelAtencion = new System.Windows.Forms.Panel();
+            this.panelPendiente = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panelAnalisis.SuspendLayout();
             this.panelAtencion.SuspendLayout();
+            this.panelPendiente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelIndicaciones
@@ -415,6 +420,7 @@
             // 
             // panelAnalisis
             // 
+            this.panelAnalisis.Controls.Add(this.panelPendiente);
             this.panelAnalisis.Controls.Add(this.label20);
             this.panelAnalisis.Controls.Add(this.labelAnalisisNumero);
             this.panelAnalisis.Controls.Add(this.labelAnalisisFecha);
@@ -439,17 +445,10 @@
             // label20
             // 
             this.label20.AutoSize = true;
-<<<<<<< HEAD
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(145, 18);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(220, 25);
-=======
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(145, 18);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(233, 25);
->>>>>>> 671e02703a366dc0823b119d99f6e5c0ae7f614d
             this.label20.TabIndex = 104;
             this.label20.Text = "Resumen de Analisis";
             // 
@@ -559,11 +558,7 @@
             this.btnVer.FlatAppearance.BorderSize = 0;
             this.btnVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(220)))), ((int)(((byte)(198)))));
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-<<<<<<< HEAD
-            this.btnVer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-=======
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
->>>>>>> 671e02703a366dc0823b119d99f6e5c0ae7f614d
             this.btnVer.ForeColor = System.Drawing.Color.Black;
             this.btnVer.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
             this.btnVer.IconColor = System.Drawing.Color.Black;
@@ -576,10 +571,7 @@
             this.btnVer.TabIndex = 93;
             this.btnVer.Text = "Abrir";
             this.btnVer.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-=======
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
->>>>>>> 671e02703a366dc0823b119d99f6e5c0ae7f614d
             // 
             // listViewArchivos
             // 
@@ -591,6 +583,7 @@
             this.listViewArchivos.Size = new System.Drawing.Size(445, 150);
             this.listViewArchivos.TabIndex = 92;
             this.listViewArchivos.UseCompatibleStateImageBehavior = false;
+            this.listViewArchivos.View = System.Windows.Forms.View.List;
             // 
             // label5
             // 
@@ -643,6 +636,39 @@
             this.panelAtencion.Size = new System.Drawing.Size(528, 642);
             this.panelAtencion.TabIndex = 95;
             // 
+            // panelPendiente
+            // 
+            this.panelPendiente.Controls.Add(this.iconPictureBox1);
+            this.panelPendiente.Controls.Add(this.label21);
+            this.panelPendiente.Location = new System.Drawing.Point(3, 46);
+            this.panelPendiente.Name = "panelPendiente";
+            this.panelPendiente.Size = new System.Drawing.Size(528, 593);
+            this.panelPendiente.TabIndex = 96;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(192, 13);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(134, 25);
+            this.label21.TabIndex = 105;
+            this.label21.Text = "(Pendiente)";
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 171;
+            this.iconPictureBox1.Location = new System.Drawing.Point(177, 52);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(171, 183);
+            this.iconPictureBox1.TabIndex = 106;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // OrdenMedicoDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,6 +701,9 @@
             this.panelAnalisis.PerformLayout();
             this.panelAtencion.ResumeLayout(false);
             this.panelAtencion.PerformLayout();
+            this.panelPendiente.ResumeLayout(false);
+            this.panelPendiente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -733,5 +762,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label labelAnalisisTipo;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel panelPendiente;
+        private System.Windows.Forms.Label label21;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }
