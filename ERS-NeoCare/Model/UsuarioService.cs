@@ -123,7 +123,7 @@ namespace ERS_NeoCare.Model
                 var context = new ApplicationDbContext();
 
                 // Obtener el usuario autenticado actualmente
-                var user = context.Usuarios.FirstOrDefault(u => u.id == UsuarioSingleton.Instance.UsuarioAutenticado.id);
+                var user = context.Usuarios.FirstOrDefault(u => u.id == UsuarioBusqueda.Instance.UsuarioAutenticado.id);
 
                 if (user != null)
                 {
@@ -152,7 +152,14 @@ namespace ERS_NeoCare.Model
             catch (Exception ex)
             {
                 // Maneja excepciones aquí.
-                Console.WriteLine("Error general: " + ex.Message);
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine("Inner Exception: " + ex.InnerException.Message);
+                }
+                else
+                {
+                    Console.WriteLine("Exception: " + ex.Message);
+                }
                 return false; // O maneja de otra manera apropiada
             }
         }

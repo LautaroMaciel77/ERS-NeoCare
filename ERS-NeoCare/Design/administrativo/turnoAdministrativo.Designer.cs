@@ -131,14 +131,7 @@
             this.panelBuscar.AutoSize = true;
             this.panelBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(53)))), ((int)(((byte)(76)))));
             this.panelBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-
-
             this.panelBuscar.Location = new System.Drawing.Point(247, 141);
-
-            this.panelBuscar.Location = new System.Drawing.Point(191, 129);
-
-            this.panelBuscar.Location = new System.Drawing.Point(247, 141);
-
             this.panelBuscar.Name = "panelBuscar";
             this.panelBuscar.Size = new System.Drawing.Size(823, 401);
             this.panelBuscar.TabIndex = 22;

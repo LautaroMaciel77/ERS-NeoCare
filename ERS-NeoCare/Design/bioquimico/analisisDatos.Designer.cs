@@ -372,6 +372,7 @@
             this.listViewArchivos.Size = new System.Drawing.Size(445, 150);
             this.listViewArchivos.TabIndex = 85;
             this.listViewArchivos.UseCompatibleStateImageBehavior = false;
+            this.listViewArchivos.View = System.Windows.Forms.View.List;
             // 
             // label10
             // 

@@ -35,15 +35,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pacientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni_medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urgencia = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Acciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new ERS_NeoCare.Database1DataSet();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,6 +47,15 @@
             this.ordenTableAdapter = new ERS_NeoCare.DBNeoCareDataSet4TableAdapters.ordenTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pacientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni_medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urgencia = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Acciones = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -135,61 +135,6 @@
             this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            // 
-            // fecha_creacion
-            // 
-            this.fecha_creacion.DataPropertyName = "fecha_creacion";
-            this.fecha_creacion.HeaderText = "fecha_creacion";
-            this.fecha_creacion.Name = "fecha_creacion";
-            // 
-            // Medico
-            // 
-            this.Medico.DataPropertyName = "Medico";
-            this.Medico.HeaderText = "Medico";
-            this.Medico.Name = "Medico";
-            // 
-            // Pacientes
-            // 
-            this.Pacientes.DataPropertyName = "Paciente";
-            this.Pacientes.HeaderText = "Pacientes";
-            this.Pacientes.Name = "Pacientes";
-            // 
-            // dni_paciente
-            // 
-            this.dni_paciente.DataPropertyName = "dni_paciente";
-            this.dni_paciente.HeaderText = "dni_paciente";
-            this.dni_paciente.Name = "dni_paciente";
-            // 
-            // dni_medico
-            // 
-            this.dni_medico.DataPropertyName = "dni_medico";
-            this.dni_medico.HeaderText = "dni_medico";
-            this.dni_medico.Name = "dni_medico";
-            // 
-            // urgencia
-            // 
-            this.urgencia.DataPropertyName = "urgencia";
-            this.urgencia.HeaderText = "urgencia";
-            this.urgencia.Name = "urgencia";
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "estado";
-            this.estado.Name = "estado";
-            this.estado.Visible = false;
-            // 
-            // Acciones
-            // 
-            this.Acciones.HeaderText = "Acciones";
-            this.Acciones.Name = "Acciones";
             // 
             // pacienteBindingSource
             // 
@@ -295,6 +240,63 @@
             this.comboBox2.TabIndex = 23;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // fecha_creacion
+            // 
+            this.fecha_creacion.DataPropertyName = "fecha_creacion";
+            this.fecha_creacion.HeaderText = "fecha_creacion";
+            this.fecha_creacion.Name = "fecha_creacion";
+            // 
+            // Medico
+            // 
+            this.Medico.DataPropertyName = "Medico";
+            this.Medico.HeaderText = "Medico";
+            this.Medico.Name = "Medico";
+            // 
+            // Pacientes
+            // 
+            this.Pacientes.DataPropertyName = "Paciente";
+            this.Pacientes.HeaderText = "Pacientes";
+            this.Pacientes.Name = "Pacientes";
+            // 
+            // dni_paciente
+            // 
+            this.dni_paciente.DataPropertyName = "dni_paciente";
+            this.dni_paciente.HeaderText = "dni_paciente";
+            this.dni_paciente.Name = "dni_paciente";
+            // 
+            // dni_medico
+            // 
+            this.dni_medico.DataPropertyName = "dni_medico";
+            this.dni_medico.HeaderText = "dni_medico";
+            this.dni_medico.Name = "dni_medico";
+            // 
+            // urgencia
+            // 
+            this.urgencia.DataPropertyName = "urgencia";
+            this.urgencia.HeaderText = "urgencia";
+            this.urgencia.Name = "urgencia";
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "estado";
+            this.estado.Name = "estado";
+            this.estado.Visible = false;
+            // 
+            // Acciones
+            // 
+            this.Acciones.HeaderText = "Acciones";
+            this.Acciones.Name = "Acciones";
+            this.Acciones.Text = "Menu";
+            this.Acciones.UseColumnTextForButtonValue = true;
+            // 
             // lista_paciente_enfermero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +337,8 @@
         private System.Windows.Forms.BindingSource ordenBindingSource;
         private DBNeoCareDataSet4 dBNeoCareDataSet4;
         private DBNeoCareDataSet4TableAdapters.ordenTableAdapter ordenTableAdapter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_creacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Medico;
@@ -344,7 +348,5 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn urgencia;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estado;
         private System.Windows.Forms.DataGridViewButtonColumn Acciones;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

@@ -3,6 +3,7 @@ using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
 using ERS_NeoCare.Presenter;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Windows.Forms;
 
@@ -23,17 +24,24 @@ namespace ERS_NeoCare.Design.administrativo
             cargarCampos();
             _presenter = new UsuarioPresenter(new UsuarioService(Configuracion.ConnectionString));
             ComboxProfesion.DropDownStyle = ComboBoxStyle.DropDownList;
-            ComboxProfesion.SelectedIndex = 0;
+            List<string> profesionesList = new List<string> { "administrativo", "enfermero", "medico", "bioquimico", "admin" };
+            ComboxProfesion.DataSource = profesionesList;
+            var profesionID = UsuarioBusqueda.Instance.UsuarioAutenticado.ProfesionID;
+
+            
+            if (profesionID >= 1 && profesionID <= profesionesList.Count)
+            {
+                ComboxProfesion.SelectedIndex = profesionID - 1;
+            }
         }
 
         private void cargarCampos()
         {
-          //  textNombre.Text = user.Nombre; ;
-            //textApellido.Text = user.Apellido;
-            //textMatricula.Text=user.Matricula.ToString();
-            //textDni.Text=user.DNI.ToString();
-            //textBoxProfesion.Text=user.ProfesionID.ToString();
-       
+            textNombre.Text = UsuarioBusqueda.Instance.UsuarioAutenticado.Nombre;
+            textApellido.Text = UsuarioBusqueda.Instance.UsuarioAutenticado.Apellido;
+            textMatricula.Text = UsuarioBusqueda.Instance.UsuarioAutenticado.Matricula.ToString();
+            textDni.Text = UsuarioBusqueda.Instance.UsuarioAutenticado.DNI.ToString();
+
         }
 
         private void textDni_KeyPress(object sender, KeyPressEventArgs e)
@@ -135,7 +143,7 @@ namespace ERS_NeoCare.Design.administrativo
         {
             if (string.IsNullOrWhiteSpace(textNombre.Text) || string.IsNullOrWhiteSpace(textApellido.Text)
             || string.IsNullOrWhiteSpace(textDni.Text) 
-            || string.IsNullOrWhiteSpace(textMatricula.Text) || string.IsNullOrWhiteSpace(textContraseña.Text)
+            || string.IsNullOrWhiteSpace(textMatricula.Text) 
             )
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -151,11 +159,11 @@ namespace ERS_NeoCare.Design.administrativo
         
             if (textMatricula.Text.Length > 12)
             {
-                MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El campo matricula  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             UsuarioModel user = new UsuarioModel();
-            if (radioPass.Checked && string.IsNullOrWhiteSpace(textContraseña.Text))
+            if (radioPass.Checked)
             {
 
                 user.Password = textContraseña.Text;
@@ -164,7 +172,6 @@ namespace ERS_NeoCare.Design.administrativo
             user.Apellido = textApellido.Text;
             user.Matricula = int.Parse(textMatricula.Text);
             user.DNI = int.Parse(textDni.Text);
-            user.ProfesionID = ObtenerProfesionID(ComboxProfesion.SelectedItem.ToString());
             bool editarUser = _presenter.EditarUsuario(user);
             if (editarUser)
             {

@@ -19,19 +19,7 @@ namespace ImprmirPdf
      
         public static string ObtenerContenidoHTML()
         {
-            //USAR LISTA DE STRING O algo similar recorda q son muchas historial model no una q se recorre
-            //List<HistorialModel> historiales = HistorialSingleton.Instance.historialesAutenticados;
-            //if (historiales != null)
-            //{
-            //    foreach (var historial in historiales)
-            //    {
-            //        string nombre = historial.Paciente.Nombre;
-            //        string nombremedico = historial.Medico.Nombre;
-            //        string tipo = historial.Tipo;
-            
-            //    }
-            //}
-          
+       
             string encabezado = "Historia Clinica";
 
             //Historia clinica
@@ -84,7 +72,23 @@ namespace ImprmirPdf
             {
                 listaAlergias.Append($"<tr><td>{alergia}</tr></td>");
             }
+
+                //Historial
             
+            List<HistorialModel> historiales = HistorialSingleton.Instance.historialesAutenticados;
+            StringBuilder listaHistoriales = new StringBuilder("");
+            if (historiales != null)
+            {
+                foreach (var historial in historiales)
+                {
+                    //string nombre = historial.Paciente.Nombre;
+                    //string nombremedico = historial.Medico.Nombre;
+                    //string tipo = historial.Tipo;
+                    listaHistoriales.Append($"<tr><td>{historial.fecha}</td><td>{historial.Tipo}</tr></td>");
+                    
+                }
+            }
+
 
             string contenidoHTML = $@"
             <html>
@@ -159,6 +163,7 @@ namespace ImprmirPdf
                             <td>Fecha</td>
                             <td>Descripcion</td>
                         </tr>  
+                        {listaHistoriales}
                     </tbody>
                 </table>
                 <button class=""boton-imprimir"" onclick=""window.print()""><b>Imprimir <br>Historia Clinica</b></button>

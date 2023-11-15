@@ -86,7 +86,7 @@
             // 
             // textBoxAnalisis
             // 
-            this.textBoxAnalisis.Location = new System.Drawing.Point(257, 480);
+            this.textBoxAnalisis.Location = new System.Drawing.Point(396, 502);
             this.textBoxAnalisis.Name = "textBoxAnalisis";
             this.textBoxAnalisis.Size = new System.Drawing.Size(229, 20);
             this.textBoxAnalisis.TabIndex = 5;
@@ -94,23 +94,23 @@
             // 
             // buttonInsertar
             // 
-            this.buttonInsertar.Location = new System.Drawing.Point(519, 480);
+            this.buttonInsertar.Location = new System.Drawing.Point(645, 500);
             this.buttonInsertar.Name = "buttonInsertar";
-            this.buttonInsertar.Size = new System.Drawing.Size(206, 23);
+            this.buttonInsertar.Size = new System.Drawing.Size(185, 23);
             this.buttonInsertar.TabIndex = 6;
-            this.buttonInsertar.Text = "Crear Analisis";
+            this.buttonInsertar.Text = "Crear tipo analisis";
             this.buttonInsertar.UseVisualStyleBackColor = true;
             this.buttonInsertar.Click += new System.EventHandler(this.buttonInsertar_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(252, 430);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(392, 479);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 25);
+            this.label2.Size = new System.Drawing.Size(178, 20);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Sistema Analisis";
+            this.label2.Text = "Crear tipo de analisis";
             // 
             // bd
             // 

@@ -3,6 +3,7 @@ using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
 using ERS_NeoCare.Presenter;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ERS_NeoCare.Design.administrativo
@@ -68,9 +69,9 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("El campo DNI debe contener solo números y tener un máximo de 8 caracteres.", "Formato de DNI incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (!int.TryParse(textObra.Text, out int obra) || textDni.Text.Length > 8)
+            if (!Regex.IsMatch(textObra.Text, "^[a-zA-Z]+$") || textDni.Text.Length > 8)
             {
-                MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El campo obra debe contener solo letras.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -91,7 +92,7 @@ namespace ERS_NeoCare.Design.administrativo
                 Apellido = textApellido.Text,
                 Domicilio = textDomicilio.Text,
                 Dni = dni,
-                ObraSocial = obra.ToString(),
+                ObraSocial = textObra.Text,
                 Sexo = radioMujer.Checked ? "Mujer" : "Hombre"
             };
             bool insercionExitosa = _presenter.IngresarPaciente(paciente);
@@ -123,7 +124,7 @@ namespace ERS_NeoCare.Design.administrativo
 
         private void textObra_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
 
@@ -202,9 +203,9 @@ namespace ERS_NeoCare.Design.administrativo
                 MessageBox.Show("El campo DNI debe contener solo números y tener un máximo de 8 caracteres.", "Formato de DNI incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (!int.TryParse(textObra.Text, out int obra) || textDni.Text.Length > 8)
+            if (!Regex.IsMatch(textObra.Text, "^[a-zA-Z]+$") || textDni.Text.Length > 8)
             {
-                MessageBox.Show("El campo obra  debe contener solo números .", "Formato  incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El campo obra debe contener solo letras.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -225,7 +226,7 @@ namespace ERS_NeoCare.Design.administrativo
                 Apellido = textApellido.Text,
                 Domicilio = textDomicilio.Text,
                 Dni = dni,
-                ObraSocial = obra.ToString(),
+                ObraSocial = textObra.Text,
                 Sexo = radioMujer.Checked ? "Mujer" : "Hombre"
             };
             bool insercionExitosa = _presenter.IngresarPaciente(paciente);

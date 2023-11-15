@@ -62,6 +62,9 @@
             this.labelNumeroOrden = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panelAnalisis = new System.Windows.Forms.Panel();
+            this.panelPendiente = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.labelAnalisisNumero = new System.Windows.Forms.Label();
             this.labelAnalisisFecha = new System.Windows.Forms.Label();
@@ -79,13 +82,10 @@
             this.textBoxAnalisisObservaciones = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panelAtencion = new System.Windows.Forms.Panel();
-            this.panelPendiente = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panelAnalisis.SuspendLayout();
-            this.panelAtencion.SuspendLayout();
             this.panelPendiente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panelAtencion.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelIndicaciones
@@ -420,7 +420,6 @@
             // 
             // panelAnalisis
             // 
-            this.panelAnalisis.Controls.Add(this.panelPendiente);
             this.panelAnalisis.Controls.Add(this.label20);
             this.panelAnalisis.Controls.Add(this.labelAnalisisNumero);
             this.panelAnalisis.Controls.Add(this.labelAnalisisFecha);
@@ -441,6 +440,39 @@
             this.panelAnalisis.Name = "panelAnalisis";
             this.panelAnalisis.Size = new System.Drawing.Size(528, 642);
             this.panelAnalisis.TabIndex = 94;
+            // 
+            // panelPendiente
+            // 
+            this.panelPendiente.Controls.Add(this.iconPictureBox1);
+            this.panelPendiente.Controls.Add(this.label21);
+            this.panelPendiente.Location = new System.Drawing.Point(649, 100);
+            this.panelPendiente.Name = "panelPendiente";
+            this.panelPendiente.Size = new System.Drawing.Size(528, 593);
+            this.panelPendiente.TabIndex = 96;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 171;
+            this.iconPictureBox1.Location = new System.Drawing.Point(177, 52);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(171, 183);
+            this.iconPictureBox1.TabIndex = 106;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(192, 13);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(134, 25);
+            this.label21.TabIndex = 105;
+            this.label21.Text = "(Pendiente)";
             // 
             // label20
             // 
@@ -636,43 +668,11 @@
             this.panelAtencion.Size = new System.Drawing.Size(528, 642);
             this.panelAtencion.TabIndex = 95;
             // 
-            // panelPendiente
-            // 
-            this.panelPendiente.Controls.Add(this.iconPictureBox1);
-            this.panelPendiente.Controls.Add(this.label21);
-            this.panelPendiente.Location = new System.Drawing.Point(3, 46);
-            this.panelPendiente.Name = "panelPendiente";
-            this.panelPendiente.Size = new System.Drawing.Size(528, 593);
-            this.panelPendiente.TabIndex = 96;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(192, 13);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(134, 25);
-            this.label21.TabIndex = 105;
-            this.label21.Text = "(Pendiente)";
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 171;
-            this.iconPictureBox1.Location = new System.Drawing.Point(177, 52);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(171, 183);
-            this.iconPictureBox1.TabIndex = 106;
-            this.iconPictureBox1.TabStop = false;
-            // 
             // OrdenMedicoDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelPendiente);
             this.Controls.Add(this.panelAnalisis);
             this.Controls.Add(this.panelAtencion);
             this.Controls.Add(this.labelNumeroOrden);
@@ -699,11 +699,11 @@
             this.Size = new System.Drawing.Size(1196, 768);
             this.panelAnalisis.ResumeLayout(false);
             this.panelAnalisis.PerformLayout();
-            this.panelAtencion.ResumeLayout(false);
-            this.panelAtencion.PerformLayout();
             this.panelPendiente.ResumeLayout(false);
             this.panelPendiente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panelAtencion.ResumeLayout(false);
+            this.panelAtencion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

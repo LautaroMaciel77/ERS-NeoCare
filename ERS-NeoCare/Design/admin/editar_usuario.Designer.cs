@@ -47,6 +47,7 @@
             // 
             // textContraseña
             // 
+            this.textContraseña.Enabled = false;
             this.textContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textContraseña.Location = new System.Drawing.Point(517, 382);
             this.textContraseña.Name = "textContraseña";
@@ -95,7 +96,7 @@
             // textDni
             // 
             this.textDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDni.Location = new System.Drawing.Point(517, 215);
+            this.textDni.Location = new System.Drawing.Point(517, 249);
             this.textDni.Name = "textDni";
             this.textDni.Size = new System.Drawing.Size(236, 26);
             this.textDni.TabIndex = 26;
@@ -104,7 +105,7 @@
             // textNombre
             // 
             this.textNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNombre.Location = new System.Drawing.Point(517, 175);
+            this.textNombre.Location = new System.Drawing.Point(517, 161);
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(236, 26);
             this.textNombre.TabIndex = 25;
@@ -113,7 +114,7 @@
             // textApellido
             // 
             this.textApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textApellido.Location = new System.Drawing.Point(517, 258);
+            this.textApellido.Location = new System.Drawing.Point(517, 207);
             this.textApellido.Name = "textApellido";
             this.textApellido.Size = new System.Drawing.Size(236, 26);
             this.textApellido.TabIndex = 24;
@@ -133,7 +134,7 @@
             // 
             this.labelDni.AutoSize = true;
             this.labelDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDni.Location = new System.Drawing.Point(358, 218);
+            this.labelDni.Location = new System.Drawing.Point(358, 252);
             this.labelDni.Name = "labelDni";
             this.labelDni.Size = new System.Drawing.Size(49, 20);
             this.labelDni.TabIndex = 18;
@@ -143,7 +144,7 @@
             // 
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(358, 178);
+            this.labelNombre.Location = new System.Drawing.Point(358, 164);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(69, 20);
             this.labelNombre.TabIndex = 17;
@@ -153,7 +154,7 @@
             // 
             this.labelApellido.AutoSize = true;
             this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelApellido.Location = new System.Drawing.Point(358, 261);
+            this.labelApellido.Location = new System.Drawing.Point(358, 210);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(69, 20);
             this.labelApellido.TabIndex = 16;
@@ -194,6 +195,7 @@
             // 
             // ComboxProfesion
             // 
+            this.ComboxProfesion.Enabled = false;
             this.ComboxProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboxProfesion.FormattingEnabled = true;
             this.ComboxProfesion.Items.AddRange(new object[] {

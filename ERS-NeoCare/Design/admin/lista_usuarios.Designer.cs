@@ -269,7 +269,8 @@
             this.Acciones.Name = "Acciones";
             this.Acciones.ReadOnly = true;
             this.Acciones.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Acciones.Text = "Acciones";
+            this.Acciones.Text = "Menu";
+            this.Acciones.UseColumnTextForButtonValue = true;
             // 
             // lista_usuarios
             // 
