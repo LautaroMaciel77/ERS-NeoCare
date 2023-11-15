@@ -56,7 +56,7 @@
             this.labelApellido.Size = new System.Drawing.Size(69, 20);
             this.labelApellido.TabIndex = 16;
             this.labelApellido.Text = "Apellido:";
-            this.labelApellido.Click += new System.EventHandler(this.labelApellido_Click);
+         
             // 
             // labelNombre
             // 
@@ -67,7 +67,7 @@
             this.labelNombre.Size = new System.Drawing.Size(69, 20);
             this.labelNombre.TabIndex = 17;
             this.labelNombre.Text = "Nombre:";
-            this.labelNombre.Click += new System.EventHandler(this.labelNombre_Click);
+         
             // 
             // labelDni
             // 
@@ -78,7 +78,7 @@
             this.labelDni.Size = new System.Drawing.Size(49, 20);
             this.labelDni.TabIndex = 18;
             this.labelDni.Text = "D.N.I:";
-            this.labelDni.Click += new System.EventHandler(this.labelDni_Click);
+           
             // 
             // labelFecha
             // 
@@ -89,7 +89,7 @@
             this.labelFecha.Size = new System.Drawing.Size(161, 20);
             this.labelFecha.TabIndex = 19;
             this.labelFecha.Text = "Fecha de nacimiento:";
-            this.labelFecha.Click += new System.EventHandler(this.labelFecha_Click);
+          
             // 
             // labelObra
             // 
@@ -100,7 +100,7 @@
             this.labelObra.Size = new System.Drawing.Size(95, 20);
             this.labelObra.TabIndex = 20;
             this.labelObra.Text = "Obra Social:";
-            this.labelObra.Click += new System.EventHandler(this.labelObra_Click);
+           
             // 
             // LabelDomicilio
             // 
@@ -111,7 +111,7 @@
             this.LabelDomicilio.Size = new System.Drawing.Size(76, 20);
             this.LabelDomicilio.TabIndex = 21;
             this.LabelDomicilio.Text = "Domicilio:";
-            this.LabelDomicilio.Click += new System.EventHandler(this.LabelDomicilio_Click);
+ 
             // 
             // labelSexo
             // 
@@ -122,7 +122,7 @@
             this.labelSexo.Size = new System.Drawing.Size(49, 20);
             this.labelSexo.TabIndex = 22;
             this.labelSexo.Text = "Sexo:";
-            this.labelSexo.Click += new System.EventHandler(this.labelSexo_Click);
+          
             // 
             // dateTimePicker1
             // 
@@ -133,7 +133,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(236, 26);
             this.dateTimePicker1.TabIndex = 23;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+    
             // 
             // textApellido
             // 
@@ -142,7 +142,7 @@
             this.textApellido.Name = "textApellido";
             this.textApellido.Size = new System.Drawing.Size(236, 26);
             this.textApellido.TabIndex = 24;
-            this.textApellido.TextChanged += new System.EventHandler(this.textApellido_TextChanged);
+      
             this.textApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textApellido_KeyPress);
             // 
             // textNombre
@@ -152,7 +152,7 @@
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(236, 26);
             this.textNombre.TabIndex = 25;
-            this.textNombre.TextChanged += new System.EventHandler(this.textNombre_TextChanged);
+      
             this.textNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNombre_KeyPress);
             // 
             // textDni
@@ -162,7 +162,7 @@
             this.textDni.Name = "textDni";
             this.textDni.Size = new System.Drawing.Size(236, 26);
             this.textDni.TabIndex = 26;
-            this.textDni.TextChanged += new System.EventHandler(this.textDni_TextChanged);
+
             this.textDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textDni_KeyPress);
             // 
             // textDomicilio
@@ -172,7 +172,7 @@
             this.textDomicilio.Name = "textDomicilio";
             this.textDomicilio.Size = new System.Drawing.Size(236, 26);
             this.textDomicilio.TabIndex = 28;
-            this.textDomicilio.TextChanged += new System.EventHandler(this.textDomicilio_TextChanged);
+
             // 
             // radioHombre
             // 
@@ -209,7 +209,7 @@
             this.label1.Size = new System.Drawing.Size(178, 25);
             this.label1.TabIndex = 33;
             this.label1.Text = "Nuevo Paciente";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+     
             // 
             // textObra
             // 
@@ -218,7 +218,7 @@
             this.textObra.Name = "textObra";
             this.textObra.Size = new System.Drawing.Size(236, 26);
             this.textObra.TabIndex = 27;
-            this.textObra.TextChanged += new System.EventHandler(this.textObra_TextChanged);
+ 
             this.textObra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textObra_KeyPress);
             // 
             // btnRegistrarPaciente
