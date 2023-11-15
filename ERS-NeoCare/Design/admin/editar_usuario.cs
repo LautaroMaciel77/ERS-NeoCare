@@ -67,12 +67,7 @@ namespace ERS_NeoCare.Design.administrativo
         }
         private void LimpiarCampos()
         {
-              textNombre.Clear();
-           textApellido.Clear();
-            textMatricula.Clear();
-           textDni.Clear();
-            ComboxProfesion.SelectedIndex = 0;
-            textContraseña.Clear();
+        
 
 
         }
@@ -150,7 +145,7 @@ namespace ERS_NeoCare.Design.administrativo
                 return;
             }
 
-            // Verificar si textDni contiene solo números y tiene un máximo de 8 caracteres
+            // Verificar máximo de 8 caracteres
             if (!int.TryParse(textDni.Text, out int dni) || textDni.Text.Length > 8)
             {
                 MessageBox.Show("El campo DNI debe contener solo números y tener un máximo de 8 caracteres.", "Formato de DNI incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -173,6 +168,7 @@ namespace ERS_NeoCare.Design.administrativo
             user.Matricula = int.Parse(textMatricula.Text);
             user.DNI = int.Parse(textDni.Text);
             bool editarUser = _presenter.EditarUsuario(user);
+
             if (editarUser)
             {
                 MessageBox.Show("Usuario editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -204,7 +200,7 @@ namespace ERS_NeoCare.Design.administrativo
                     return 5;
 
                 default:
-                    // Manejar un caso por defecto o mostrar un mensaje de error, según sea necesario
+         
                     return 1; // Otra opción podría ser lanzar una excepción
             }
         }

@@ -1,4 +1,5 @@
-﻿using ERS_NeoCare.Logic;
+﻿using ERS_NeoCare.Helper;
+using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
 using System;
 using System.Collections.Generic;
@@ -121,8 +122,8 @@ namespace ERS_NeoCare.Design
             {
                 string databaseName = "DBNeoCare";
 
-                //string connectionString = "Data Source=DESKTOP-2JKMBB0\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";
-                string connectionString = "Data Source=FARONOTE\\SQLEXPRESS_INST1;Initial Catalog=master;Integrated Security=True";
+                string connectionString = Configuracion.ConnectionString;
+                //string connectionString = "Data Source=FARONOTE\\SQLEXPRESS_INST1;Initial Catalog=master;Integrated Security=True";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

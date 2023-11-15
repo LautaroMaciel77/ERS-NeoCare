@@ -42,7 +42,7 @@ namespace ERS_NeoCare.Logic
 
         public bool IngresarUsuario(UsuarioModel usuario)
         {
-            // Llama al método de inserción del modelo y devuelve el resultado
+           
             return _model.InsertarUsuario(usuario);
         }
         

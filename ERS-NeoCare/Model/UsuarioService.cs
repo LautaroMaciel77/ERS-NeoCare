@@ -11,6 +11,7 @@ namespace ERS_NeoCare.Model
     using System.Data.SqlClient;
     using System.Linq;
     using System.Net;
+    using System.Text;
     using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Forms;
@@ -41,9 +42,8 @@ namespace ERS_NeoCare.Model
                 }
                 else
                 {
-                    // No se encontró un usuario que coincida con el nombre de usuario y contraseña.
-                    // Puedes manejarlo de alguna manera, por ejemplo, retornar null o lanzar una excepción personalizada.
-                    return null; // O podrías lanzar una excepción aquí si lo prefieres.
+       
+                    return null;
                 }
             }
         }
@@ -70,10 +70,10 @@ namespace ERS_NeoCare.Model
             {
                 var context = DbContextManager.GetContext();
 
-                // Utiliza el método GetSHA256 para cifrar la contraseña
+                //  GetSHA256 para cifrar la contraseña
                 string hashedPassword = Encrypt.GetSHA256(usuario.Password);
 
-                // Crea un nuevo objeto UsuarioModel con la contraseña cifrada
+       
                 var user = new UsuarioModel
                 {
                     DNI = usuario.DNI,
@@ -85,22 +85,22 @@ namespace ERS_NeoCare.Model
                     Baja = usuario.Baja
                 };
 
-                // Agrega el nuevo usuario al contexto
+            
                 context.Usuarios.Add(user);
 
-                // Guarda los cambios en la base de datos
+               
                 context.SaveChanges();
 
                 return true;
             }
             catch (Exception ex)
             {
-                // Maneja excepciones aquí.
+          
                 // Muestra un MessageBox con el mensaje de la excepción
                 System.Windows.Forms.MessageBox.Show("Error al insertar usuario: " + ObtenerMensajeExcepcion(ex), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 Console.WriteLine("Error general: " + ex.Message);
-                return false; // O maneja de otra manera apropiada
+                return false; 
             }
         }
 
@@ -120,48 +120,57 @@ namespace ERS_NeoCare.Model
         {
             try
             {
-                var context = new ApplicationDbContext();
+                var context = DbContextManager.GetContext();
 
-                // Obtener el usuario autenticado actualmente
+            
                 var user = context.Usuarios.FirstOrDefault(u => u.id == UsuarioBusqueda.Instance.UsuarioAutenticado.id);
 
                 if (user != null)
                 {
-                    // Actualiza los campos del usuario con los nuevos valores
+     
                     user.DNI = usuario.DNI;
                     user.Matricula = usuario.Matricula;
                     user.Nombre = usuario.Nombre;
                     user.Apellido = usuario.Apellido;
-                    user.ProfesionID = usuario.ProfesionID;
+             
 
-                    // Verifica si la contraseña ha cambiado antes de actualizarla
+                 
                     if (!string.IsNullOrWhiteSpace(usuario.Password))
                     {
-                        // Cifra la nueva contraseña antes de actualizarla
+                    
                         user.Password = Encrypt.GetSHA256(usuario.Password);
                     }
 
                     // Guarda los cambios en la base de datos
-                    context.SaveChanges();
 
-                    return true;
+
+                    int filasModificadas = context.SaveChanges();
+
+                    return filasModificadas > 0;
                 }
 
                 return false; // Si no se encuentra el usuario
             }
             catch (Exception ex)
             {
-                // Maneja excepciones aquí.
-                if (ex.InnerException != null)
+                
+
+                // Muestra un cuadro de mensaje con el mensaje de la excepción actual y sus excepciones internas
+                StringBuilder errorMessage = new StringBuilder();
+                errorMessage.AppendLine($"Error: {ex.Message}");
+
+                Exception innerException = ex.InnerException;
+                while (innerException != null)
                 {
-                    Console.WriteLine("Inner Exception: " + ex.InnerException.Message);
+                    errorMessage.AppendLine($"Inner Exception: {innerException.Message}");
+                    innerException = innerException.InnerException;
                 }
-                else
-                {
-                    Console.WriteLine("Exception: " + ex.Message);
-                }
-                return false; // O maneja de otra manera apropiada
+
+                System.Windows.Forms.MessageBox.Show(errorMessage.ToString(), "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+
+                return false;
             }
+
         }
 
         public bool CambiarEstadoBajaUsuario()
@@ -179,7 +188,7 @@ namespace ERS_NeoCare.Model
                     // Cambia el estado de baja del usuario
                     user.Baja = (user.Baja == "n") ?"s" : "n";
 
-                    // Guarda los cambios en la base de datos
+                
                     context.SaveChanges();
 
                     return true;
@@ -192,14 +201,14 @@ namespace ERS_NeoCare.Model
                 // excepción de SQL Server aquí.
 
                 Console.WriteLine("Error de SQL: " + ex.Message);
-                return false; // O maneja de otra manera apropiada
+                return false;
             }
             catch (Exception ex)
             {
                 // excepciones generales aquí.
                 // excepciones de conexión, null reference, etc.
                 Console.WriteLine("Error general: " + ex.Message);
-                return false; // O maneja de otra manera apropiada
+                return false; 
             }
         }
         public List<UsuarioModel> ObtenerDatosUsuarios(string valorBaja)
