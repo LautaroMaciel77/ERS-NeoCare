@@ -14,19 +14,27 @@ namespace ERS_NeoCare.Design.administrativo
         public event EventHandler recargar;
         public atencionDatos()
         {
-            _presenter = new AtencionPresenter( new AtencionService());
+            _presenter = new AtencionPresenter(new AtencionService());
             _presenterorden = new OrdenPresenter(new OrdenService());
             InitializeComponent();
 
-            labelFechaOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.FechaCreacion.ToString("dd/MM/yyyy");
-            labelPacienteNombreOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.Paciente.Nombre + " " + OrdenSingleton.Instance.OrdenAutenticada.Paciente.Apellido;
-            labelPacienteDniOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.Paciente.Dni.ToString();
-            labelMedicoNombreOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.Medico.Nombre + " " + OrdenSingleton.Instance.OrdenAutenticada.Medico.Apellido;
-            labelMedicoMatriculaOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.Medico.Matricula.ToString();
+            labelNumeroOrden.Text = AtencionSingleton.Instance.AtencionAutenticada.Orden.Id.ToString();
+            labelFechaOrden.Text = AtencionSingleton.Instance.AtencionAutenticada.Orden.FechaCreacion.ToString("dd/MM/yyyy");
+            labelPacienteNombreOrden.Text = AtencionSingleton.Instance.AtencionAutenticada.Orden.Paciente.Nombre + " " + 
+                                            AtencionSingleton.Instance.AtencionAutenticada.Orden.Paciente.Apellido;
+            labelPacienteDniOrden.Text = AtencionSingleton.Instance.AtencionAutenticada.Orden.Paciente.Dni.ToString();
+            labelMedicoNombreOrden.Text = AtencionSingleton.Instance.AtencionAutenticada.Orden.Medico.NombreApellido;
+            labelMedicoMatriculaOrden.Text = AtencionSingleton.Instance.AtencionAutenticada.Orden.Medico.Matricula.ToString();
+            textBoxOrdenIndicaciones.Text = AtencionSingleton.Instance.AtencionAutenticada.Orden.Indicaciones;
 
-            textBoxOrdenIndicaciones.Text = OrdenSingleton.Instance.OrdenAutenticada.Indicaciones;
-
-
+            labelNumeroAtencion.Text = AtencionSingleton.Instance.AtencionAutenticada.IdAtencion.ToString();
+            labelFechaAtencion.Text = AtencionSingleton.Instance.AtencionAutenticada.Fecha.ToString("dd/MM/yyyy");
+            
+            //cambiar por enfermero
+            labelEnfermeroAtencion.Text = AtencionSingleton.Instance.AtencionAutenticada.Usuario.NombreApellido;
+            labelEnfermeroMatriculaAtencion.Text = AtencionSingleton.Instance.AtencionAutenticada.Usuario.Matricula.ToString();
+            textBoxAtencionIndicaciones.Text = AtencionSingleton.Instance.AtencionAutenticada.Indicaciones;
+            textAtencionObservaciones.Text = AtencionSingleton.Instance.AtencionAutenticada.Observaciones;
 
         }
 

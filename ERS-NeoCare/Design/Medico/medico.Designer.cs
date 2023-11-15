@@ -47,7 +47,7 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 35;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 40);
+            this.iconButton1.Location = new System.Drawing.Point(0, 80);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(172, 40);
@@ -91,7 +91,7 @@
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 35;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 80);
+            this.iconButton2.Location = new System.Drawing.Point(0, 120);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(172, 40);
@@ -108,17 +108,17 @@
             this.pacientesAtendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pacientesAtendidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pacientesAtendidos.ForeColor = System.Drawing.Color.Transparent;
-            this.pacientesAtendidos.IconChar = FontAwesome.Sharp.IconChar.UserMd;
+            this.pacientesAtendidos.IconChar = FontAwesome.Sharp.IconChar.UserCheck;
             this.pacientesAtendidos.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(188)))));
             this.pacientesAtendidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.pacientesAtendidos.IconSize = 35;
             this.pacientesAtendidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.pacientesAtendidos.Location = new System.Drawing.Point(0, 120);
+            this.pacientesAtendidos.Location = new System.Drawing.Point(0, 40);
             this.pacientesAtendidos.Margin = new System.Windows.Forms.Padding(0);
             this.pacientesAtendidos.Name = "pacientesAtendidos";
             this.pacientesAtendidos.Size = new System.Drawing.Size(172, 40);
             this.pacientesAtendidos.TabIndex = 22;
-            this.pacientesAtendidos.Text = "Pacientes Atendidos";
+            this.pacientesAtendidos.Text = "Atendidos";
             this.pacientesAtendidos.UseVisualStyleBackColor = false;
             this.pacientesAtendidos.Click += new System.EventHandler(this.pacientesAtendidos_Click);
             // 

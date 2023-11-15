@@ -41,9 +41,10 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni_medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni_medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Enfermero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -113,9 +114,10 @@
             this.Id,
             this.fecha_creacion,
             this.Medico,
+            this.dni_medico,
             this.Paciente,
             this.dni_paciente,
-            this.dni_medico,
+            this.Enfermero,
             this.CAcciones});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -166,6 +168,7 @@
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // fecha_creacion
             // 
@@ -179,6 +182,13 @@
             this.Medico.HeaderText = "Medico";
             this.Medico.Name = "Medico";
             // 
+            // dni_medico
+            // 
+            this.dni_medico.DataPropertyName = "dni_medico";
+            this.dni_medico.HeaderText = "dni medico";
+            this.dni_medico.Name = "dni_medico";
+            this.dni_medico.Visible = false;
+            // 
             // Paciente
             // 
             this.Paciente.DataPropertyName = "Paciente";
@@ -188,14 +198,14 @@
             // dni_paciente
             // 
             this.dni_paciente.DataPropertyName = "dni_paciente";
-            this.dni_paciente.HeaderText = "dni paciente";
+            this.dni_paciente.HeaderText = "DNI paciente";
             this.dni_paciente.Name = "dni_paciente";
             // 
-            // dni_medico
+            // Enfermero
             // 
-            this.dni_medico.DataPropertyName = "dni_medico";
-            this.dni_medico.HeaderText = "dni medico";
-            this.dni_medico.Name = "dni_medico";
+            this.Enfermero.DataPropertyName = "Enfermero";
+            this.Enfermero.HeaderText = "Enfermero";
+            this.Enfermero.Name = "Enfermero";
             // 
             // CAcciones
             // 
@@ -239,9 +249,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_creacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Medico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni_medico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Paciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni_paciente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni_medico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Enfermero;
         private System.Windows.Forms.DataGridViewButtonColumn CAcciones;
     }
 }

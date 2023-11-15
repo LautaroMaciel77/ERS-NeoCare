@@ -71,6 +71,7 @@ namespace ERS_NeoCare.Design
                         // Agregamos configuración de permisos para la carpeta de copia de seguridad
                         FileInfo fileInfo = new FileInfo(rutaCopiaSeguridad);
                         FileSecurity fileSecurity = fileInfo.GetAccessControl();
+                        //fileSecurity.AddAccessRule(new FileSystemAccessRule("DESKTOP-2JKMBB0\\SQLEXPRESS", FileSystemRights.FullControl, AccessControlType.Allow));
                         fileSecurity.AddAccessRule(new FileSystemAccessRule("FARONOTE\\SQLEXPRESS_INST1", FileSystemRights.FullControl, AccessControlType.Allow));
                         fileInfo.SetAccessControl(fileSecurity);
                     }

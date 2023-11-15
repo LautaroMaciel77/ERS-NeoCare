@@ -46,7 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.labelMedicoEvaluacion = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelMedicoMatriculaEvaluacion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -229,21 +229,21 @@
             this.label7.TabIndex = 49;
             this.label7.Text = "Matricula:";
             // 
-            // label8
+            // labelMedicoMatriculaEvaluacion
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(745, 131);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(121, 20);
-            this.label8.TabIndex = 50;
-            this.label8.Text = "label paciente";
+            this.labelMedicoMatriculaEvaluacion.AutoSize = true;
+            this.labelMedicoMatriculaEvaluacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedicoMatriculaEvaluacion.Location = new System.Drawing.Point(745, 131);
+            this.labelMedicoMatriculaEvaluacion.Name = "labelMedicoMatriculaEvaluacion";
+            this.labelMedicoMatriculaEvaluacion.Size = new System.Drawing.Size(125, 20);
+            this.labelMedicoMatriculaEvaluacion.TabIndex = 50;
+            this.labelMedicoMatriculaEvaluacion.Text = "label matricula";
             // 
             // evaluacionDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.labelMedicoMatriculaEvaluacion);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelMedicoEvaluacion);
             this.Controls.Add(this.label6);
@@ -288,6 +288,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelMedicoEvaluacion;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelMedicoMatriculaEvaluacion;
     }
 }
