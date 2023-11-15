@@ -1,4 +1,5 @@
-﻿using ERS_NeoCare.Logic;
+﻿using ERS_NeoCare.Helper;
+using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
 using System;
 using System.Windows.Forms;
@@ -10,12 +11,14 @@ namespace ERS_NeoCare.Design.administrativo
         public event EventHandler UserControlClosed;
         private lista_paciente MainForm { get; set; }
         private EvaluacionPresenter _presenter;
+        private TurnoPresenter _presenterTurno;
         private historialPresenter _presenterHistorial;
         public evaluacion()
         {
             InitializeComponent();
             _presenter = new EvaluacionPresenter(this, new EvaluacionService());
             _presenterHistorial = new historialPresenter(new HistorialService());
+            _presenterTurno = new TurnoPresenter(new TurnoService(Configuracion.ConnectionString));
             labelFechaEvaluacion.Text = DateTime.Now.ToString("dd/MM/yyyy");
             labelPacienteEvaluacion.Text = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " " + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
 
@@ -48,6 +51,21 @@ namespace ERS_NeoCare.Design.administrativo
             {
                 MessageBox.Show("Por favor, complete Observaciones.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
+            DialogResult resultado = MessageBox.Show("Al insertar Evaluacion el Paciente pasara a Atendido. ¿Estás seguro?", "Confirmar Cambio de Estado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.No)
+            {
+                // Si el usuario elige "Sí", cambiar el estado
+                //_presenterTurno.cambiarEstado();
+
+                // Invalidar y refrescar el DataGridView
+           
+                return;
+
+
+
+
             }
             EvaluacionModel evaluacionModel = new EvaluacionModel()
             {
