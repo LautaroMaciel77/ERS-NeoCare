@@ -38,6 +38,12 @@ namespace ERS_NeoCare.Logic
 
             _service.Insertar(historialModel);
         }
+
+        public void buscar(int idPaciente)
+        {
+
+            _service.buscar(idPaciente);
+        }
         public void TraerHistorial()
         {
 

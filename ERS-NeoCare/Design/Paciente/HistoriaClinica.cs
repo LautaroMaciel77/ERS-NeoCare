@@ -1,4 +1,5 @@
-﻿using ERS_NeoCare.Helper;
+﻿using ERS_NeoCare.Design.administrativo;
+using ERS_NeoCare.Helper;
 using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
 using ImprmirPdf;
@@ -34,6 +35,8 @@ namespace ERS_NeoCare.Design.Paciente
         private historialPresenter _presenterHM;
         private AnalisisPresenter _presenterAnalisis;
         private AtencionPresenter _presenterAtencion;
+        private OrdenPresenter _presenterOrden;
+     
         public HistoriaClinica()
         {
             InitializeComponent();
@@ -43,6 +46,7 @@ namespace ERS_NeoCare.Design.Paciente
             _presenterEvaluacion = new EvaluacionPresenter(new EvaluacionService());
             _presenterAnalisis = new AnalisisPresenter(new AnalisisService());
             _presenterAtencion = new AtencionPresenter( new AtencionService());
+            _presenterOrden = new OrdenPresenter(new OrdenService());
             CargarDatos();
             _presenterHM.TraerHistorial();
             panel1.Visible = false;
@@ -591,6 +595,8 @@ namespace ERS_NeoCare.Design.Paciente
 
         private void iconButtonImprimir_Click(object sender, EventArgs e)
         {
+            // cargar historial singleton
+            _presenterHM.buscar(PacienteSingleton.Instance.pacienteAutenticado.Id);
             // Genera el contenido HTML y CSS
             string contenidoHTML = ContenidoHTML.ObtenerContenidoHTML();
             string estilosCSS = EstilosCSS.ObtenerEstilosCSS();
@@ -669,19 +675,23 @@ namespace ERS_NeoCare.Design.Paciente
 
                             string valorId = valorIdObject.ToString();
                             _presenterAtencion.buscar(valorId);
-                        
+                            _presenterOrden.buscarOrden(AtencionSingleton.Instance.AtencionAutenticada.IdOrden);
+                            cargarOrdenDatos();
 
                         }
                         else if (valorCelda.Equals("Evaluacion"))
                         {
                             int valorId = (int)dataGridView1.Rows[e.RowIndex].Cells["id_evaluacion"].Value;
                             _presenterEvaluacion.BuscarPorId(valorId);
+                            cargarEvaluacionDatos();
 
                         }
                         else if (valorCelda.Equals("Analisis"))
                         {
-                            int valorId = (int)dataGridView1.Rows[e.RowIndex].Cells["analisis"].Value;
+                            int valorId = (int)dataGridView1.Rows[e.RowIndex].Cells["id_analisis"].Value;
                             _presenterAnalisis.BuscaryRemplazar(valorId);
+                            _presenterOrden.buscarOrden(AnalisisSingleton.Instance.AnalisisAutenticado.IdOrden);
+                            cargarOrdenDatos();
                         }
                     }
 
@@ -689,10 +699,55 @@ namespace ERS_NeoCare.Design.Paciente
             }
 
         }
-
-        private void HistoriaClinica_Load(object sender, EventArgs e)
+        private void cargarEvaluacionDatos()
         {
+            evaluacionDatos pacienteControl = new evaluacionDatos();
+            pacienteControl.Dock = DockStyle.Fill;
 
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
+
+
+
+
+            }
         }
+
+        private void cargarOrdenDatos()
+        {
+            OrdenMedicoDatos pacienteControl = new OrdenMedicoDatos();
+            pacienteControl.Dock = DockStyle.Fill;
+
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
+
+
+
+
+            }
+        }
+
     }
 }

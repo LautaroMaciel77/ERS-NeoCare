@@ -9,21 +9,22 @@ namespace ERS_NeoCare.Model
     internal class HistorialSingleton
     {
      
-            private static HistorialModel instance;
+            private static HistorialSingleton instance;
 
             public HistorialModel historialAutenticado { get; private set; }
-            private HistorialSingleton()
+            public List<HistorialModel> historialesAutenticados;
+        private HistorialSingleton()
             {
 
             }
 
-            public static HistorialModel Instance
+            public static HistorialSingleton Instance
             {
                 get
                 {
                     if (instance == null)
                     {
-                        instance = new HistorialModel();
+                        instance = new HistorialSingleton();
                     }
                     return instance;
                 }
@@ -33,11 +34,20 @@ namespace ERS_NeoCare.Model
             {
             historialAutenticado = archivos;
             }
-            public void DesautenticarAnalisis()
+            public void AutenticarHistoriales(List<HistorialModel> archivos)
             {
-            historialAutenticado = null;
+                  historialesAutenticados = archivos;
+            }
+            public void DesuatenticarHistorial()
+            {
+                historialAutenticado = null;
+            }
+            public void DesuatenticarHistoriales()
+            {
+                    historialesAutenticados = null;
             }
 
-        }
+
+    }
     
 }
