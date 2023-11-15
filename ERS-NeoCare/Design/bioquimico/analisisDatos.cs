@@ -25,15 +25,20 @@ namespace ERS_NeoCare.Design.administrativo
             _presenterAnalisis = new AnalisisPresenter(this, new AnalisisService());
             _presenterorden = new OrdenPresenter(new OrdenService());
             InitializeComponent();
+            
+            labelFechaOrden.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Orden.FechaCreacion.ToString("dd/MM/yyyy");
+            labelPacienteNombreOrden.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Orden.Paciente.Nombre + " " + AnalisisSingleton.Instance.AnalisisAutenticado.Orden.Paciente.Apellido;
+            labelPacienteDniOrden.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Orden.Paciente.Dni.ToString();
+            labelMedicoNombreOrden.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Orden.Medico.NombreApellido;
+            labelMedicoMatriculaOrden.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Orden.Medico.Matricula.ToString();
+            textBoxOrdenIndicaciones.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Orden.Indicaciones;
 
-            labelFechaOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.FechaCreacion.ToString("dd/MM/yyyy");
-            labelPacienteNombreOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.Paciente.Nombre + " " + OrdenSingleton.Instance.OrdenAutenticada.Paciente.Apellido;
-            labelPacienteDniOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.Paciente.Dni.ToString();
-            labelMedicoNombreOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.Medico.Nombre + " " + OrdenSingleton.Instance.OrdenAutenticada.Medico.Apellido;
-            labelMedicoMatriculaOrden.Text = OrdenSingleton.Instance.OrdenAutenticada.Medico.Matricula.ToString();
-
-            textBoxOrdenIndicaciones.Text = OrdenSingleton.Instance.OrdenAutenticada.Indicaciones;
-
+            labelNumeroAnalisis.Text = AnalisisSingleton.Instance.AnalisisAutenticado.IdAnalisis.ToString();
+            labelFechaAnalisis.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Fecha.ToString("dd/MM/yyyy");
+            labelAnalisisBioquimico.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Usuario.NombreApellido;
+            labelAnalisisBioquimicoMatricula.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Usuario.Matricula.ToString();
+            labelAnalisisTipo.Text = AnalisisSingleton.Instance.AnalisisAutenticado.TipoAnalisis;
+            textBoxObservaciones.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Observaciones;
         }
 
         private void btnVer_Click(object sender, EventArgs e)

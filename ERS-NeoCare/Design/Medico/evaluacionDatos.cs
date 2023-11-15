@@ -15,55 +15,19 @@ namespace ERS_NeoCare.Design.administrativo
             InitializeComponent();
             _presenter = new EvaluacionPresenter(this, new EvaluacionService());
 
-            labelFechaEvaluacion.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            labelPacienteEvaluacion.Text = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " " + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
+            labelNumeroEvaluacion.Text = EvaluacionSingleton.Instance.evaluacionAutenticada.IdEvaluacion.ToString();
+            labelFechaEvaluacion.Text = EvaluacionSingleton.Instance.evaluacionAutenticada.FechaCreacion.ToString("dd/MM/yyyy");
+            labelPacienteEvaluacion.Text = EvaluacionSingleton.Instance.evaluacionAutenticada.Paciente.Nombre + " " +
+                                            EvaluacionSingleton.Instance.evaluacionAutenticada.Paciente.Apellido;
+            labelPacienteDniEvaluacion.Text = EvaluacionSingleton.Instance.evaluacionAutenticada.Paciente.Dni.ToString();
+            labelMedicoEvaluacion.Text = EvaluacionSingleton.Instance.evaluacionAutenticada.Medico.NombreApellido;
+            labelMedicoMatriculaEvaluacion.Text = EvaluacionSingleton.Instance.evaluacionAutenticada.Medico.Matricula.ToString();
 
-        }
-
-
-
-        private void textDni_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-
-            }
-        }
-
-       
-
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            UserControlClosed?.Invoke(this, EventArgs.Empty);
+            textBoxSintomas.Text = EvaluacionSingleton.Instance.evaluacionAutenticada.Sintomas;
+            textBoxIndicacionesPaciente.Text = EvaluacionSingleton.Instance.evaluacionAutenticada.Indicaciones;
+            textObservaciones.Text = EvaluacionSingleton.Instance.evaluacionAutenticada.Observaciones;
         }
 
         
-        private void limpiarCampos()
-        {
-            textObservaciones.Text = null;
-            textBoxSintomas.Text = null;
-            textBoxIndicacionesPaciente.Text = null;
-
-        }
-        private void textObra_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-
-            }
-        }
-
-        private void iconButtonClose_Click(object sender, EventArgs e)
-        {
-            UserControlClosed?.Invoke(this, EventArgs.Empty);
-        }
-
-        internal void mostrarMensaje(string v)
-        {
-            MessageBox.Show(v, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
     }
 }

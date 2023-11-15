@@ -178,3 +178,7 @@ E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ER
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuMedicoOrdenes.resources
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.OrdenMedicoDatos.resources
 E:\taller programacion\neo care\ERS_NeoCare\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuMedicoEvaluaciones.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.Evaluaciones.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuMedicoEvaluaciones.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.Medico.MenuMedicoOrdenes.resources
+C:\Users\farid\Documents\GitHub\ERS-NeoCare\ERS-NeoCare\obj\Debug\ERS_NeoCare.Design.OrdenMedicoDatos.resources
