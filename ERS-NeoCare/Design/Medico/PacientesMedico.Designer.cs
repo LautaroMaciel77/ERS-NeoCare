@@ -36,6 +36,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
+            this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new ERS_NeoCare.DatabaseDataSet();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pacienteTableAdapter = new ERS_NeoCare.DatabaseDataSetTableAdapters.PacienteTableAdapter();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SelectedTimeRange = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SelectedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,14 +53,6 @@
             this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ObraSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new ERS_NeoCare.DatabaseDataSet();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pacienteTableAdapter = new ERS_NeoCare.DatabaseDataSetTableAdapters.PacienteTableAdapter();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -144,74 +144,6 @@
             this.DGVAdministrativo.TabIndex = 10;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
             // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // SelectedTimeRange
-            // 
-            this.SelectedTimeRange.DataPropertyName = "SelectedTimeRange";
-            this.SelectedTimeRange.HeaderText = "Hora de Turno";
-            this.SelectedTimeRange.Name = "SelectedTimeRange";
-            this.SelectedTimeRange.ReadOnly = true;
-            // 
-            // SelectedDate
-            // 
-            this.SelectedDate.DataPropertyName = "SelectedDate";
-            this.SelectedDate.HeaderText = "Dia del turno";
-            this.SelectedDate.Name = "SelectedDate";
-            this.SelectedDate.ReadOnly = true;
-            // 
-            // PacienteDni
-            // 
-            this.PacienteDni.DataPropertyName = "PacienteDni";
-            this.PacienteDni.HeaderText = "DNI Paciente";
-            this.PacienteDni.Name = "PacienteDni";
-            this.PacienteDni.ReadOnly = true;
-            // 
-            // NombrePaciente
-            // 
-            this.NombrePaciente.DataPropertyName = "NombrePaciente";
-            this.NombrePaciente.HeaderText = "Nombre Paciente";
-            this.NombrePaciente.Name = "NombrePaciente";
-            this.NombrePaciente.ReadOnly = true;
-            // 
-            // Prioridad
-            // 
-            this.Prioridad.DataPropertyName = "Prioridad";
-            this.Prioridad.HeaderText = "Prioridad";
-            this.Prioridad.Name = "Prioridad";
-            this.Prioridad.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Atendido";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ObraSocial
-            // 
-            this.ObraSocial.DataPropertyName = "ObraSocial";
-            this.ObraSocial.HeaderText = "Obra Social";
-            this.ObraSocial.Name = "ObraSocial";
-            this.ObraSocial.ReadOnly = true;
-            this.ObraSocial.Visible = false;
-            // 
-            // CAcciones
-            // 
-            this.CAcciones.HeaderText = "Acciones";
-            this.CAcciones.MinimumWidth = 6;
-            this.CAcciones.Name = "CAcciones";
-            this.CAcciones.ReadOnly = true;
-            this.CAcciones.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CAcciones.Text = "menu";
-            // 
             // pacienteBindingSource
             // 
             this.pacienteBindingSource.DataMember = "Paciente";
@@ -290,6 +222,75 @@
             this.label2.Size = new System.Drawing.Size(126, 18);
             this.label2.TabIndex = 19;
             this.label2.Text = "Prioridad paciente";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // SelectedTimeRange
+            // 
+            this.SelectedTimeRange.DataPropertyName = "SelectedTimeRange";
+            this.SelectedTimeRange.HeaderText = "Hora de Turno";
+            this.SelectedTimeRange.Name = "SelectedTimeRange";
+            this.SelectedTimeRange.ReadOnly = true;
+            // 
+            // SelectedDate
+            // 
+            this.SelectedDate.DataPropertyName = "SelectedDate";
+            this.SelectedDate.HeaderText = "Dia del turno";
+            this.SelectedDate.Name = "SelectedDate";
+            this.SelectedDate.ReadOnly = true;
+            // 
+            // PacienteDni
+            // 
+            this.PacienteDni.DataPropertyName = "PacienteDni";
+            this.PacienteDni.HeaderText = "DNI Paciente";
+            this.PacienteDni.Name = "PacienteDni";
+            this.PacienteDni.ReadOnly = true;
+            // 
+            // NombrePaciente
+            // 
+            this.NombrePaciente.DataPropertyName = "NombrePaciente";
+            this.NombrePaciente.HeaderText = "Nombre Paciente";
+            this.NombrePaciente.Name = "NombrePaciente";
+            this.NombrePaciente.ReadOnly = true;
+            // 
+            // Prioridad
+            // 
+            this.Prioridad.DataPropertyName = "Prioridad";
+            this.Prioridad.HeaderText = "Prioridad";
+            this.Prioridad.Name = "Prioridad";
+            this.Prioridad.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Atendido";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ObraSocial
+            // 
+            this.ObraSocial.DataPropertyName = "ObraSocial";
+            this.ObraSocial.HeaderText = "Obra Social";
+            this.ObraSocial.Name = "ObraSocial";
+            this.ObraSocial.ReadOnly = true;
+            this.ObraSocial.Visible = false;
+            // 
+            // CAcciones
+            // 
+            this.CAcciones.HeaderText = "Acciones";
+            this.CAcciones.MinimumWidth = 6;
+            this.CAcciones.Name = "CAcciones";
+            this.CAcciones.ReadOnly = true;
+            this.CAcciones.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CAcciones.Text = "menu";
+            this.CAcciones.UseColumnTextForButtonValue = true;
             // 
             // PacientesMedico
             // 

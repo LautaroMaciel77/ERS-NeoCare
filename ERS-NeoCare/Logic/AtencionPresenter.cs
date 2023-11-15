@@ -97,5 +97,10 @@ namespace ERS_NeoCare.Logic
                     _viewLista.CargarDatosPaciente(dataTable);
                 }
             }
+
+        internal bool buscaryRemplazarIdOrden(int id)
+        {
+            return _model.BuscaryAutenticarIdOrden(id);
         }
+    }
   } 

@@ -569,7 +569,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 1366);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(948, 247);
+            this.panel3.Size = new System.Drawing.Size(931, 247);
             this.panel3.TabIndex = 47;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -580,7 +580,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(250, 15);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(437, 18);
+            this.label9.Size = new System.Drawing.Size(420, 18);
             this.label9.TabIndex = 1;
             this.label9.Text = "Historial actuaciones medicas";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -608,7 +608,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(898, 171);
+            this.dataGridView1.Size = new System.Drawing.Size(881, 171);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -740,7 +740,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LHistoriaClinica);
             this.Name = "HistoriaClinica";
-            this.Size = new System.Drawing.Size(948, 751);
+            this.Size = new System.Drawing.Size(931, 751);
+            this.Load += new System.EventHandler(this.HistoriaClinica_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

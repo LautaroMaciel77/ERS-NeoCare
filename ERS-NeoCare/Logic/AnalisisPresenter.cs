@@ -106,5 +106,9 @@ namespace ERS_NeoCare.Logic
             }
         }
 
+        internal bool buscaryRemplazarIdOrden(int id)
+        {
+           return _service.ObtenerYAutenticarPorIdOrden(id);
+        }
     }
 }

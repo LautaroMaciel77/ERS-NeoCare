@@ -37,5 +37,14 @@ namespace ERS_NeoCare.Model
         {
             archivoEstudio = archivos;
         }
+        public void DesautenticarArchivos()
+        {
+            archivosEstudio = null;
+        }
+
+        public void DesautenticarArchivo()
+        {
+            archivoEstudio = null;
+        }
     }
 }

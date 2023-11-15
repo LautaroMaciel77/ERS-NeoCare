@@ -216,6 +216,8 @@
             // 
             this.Acciones.HeaderText = "Acciones";
             this.Acciones.Name = "Acciones";
+            this.Acciones.Text = "Ver Detalles";
+            this.Acciones.UseColumnTextForButtonValue = true;
             // 
             // lista_analisis_bioquimico
             // 

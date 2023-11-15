@@ -31,7 +31,42 @@ namespace ERS_NeoCare.Design
         }
         private void DGVAdministrativo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0 && DGVAdministrativo.Rows.Count > 0)
+            {
 
+
+                if (DGVAdministrativo.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+                    string dniPaciente = DGVAdministrativo.Rows[e.RowIndex].Cells["PacienteDni"].Value.ToString();
+                    _pacientePresenter.cargarPaciente(dniPaciente);
+                    verPaciente();
+                } 
+            } 
+        }
+
+        private void verPaciente()
+        {
+            PacienteView pacienteControl = new PacienteView();
+            pacienteControl.Dock = DockStyle.Fill;
+
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
+
+
+
+
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

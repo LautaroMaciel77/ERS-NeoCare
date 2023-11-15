@@ -56,11 +56,7 @@ namespace ERS_NeoCare.Design.administrativo
 
             if (resultado == DialogResult.No)
             {
-                // Si el usuario elige "Sí", cambiar el estado
-                _presenterTurno.cambiarEstado(TurnoSingleton.Instance.TurnoAutenticado.Id);
-
-                // Invalidar y refrescar el DataGridView
-           
+                      
                 return;
 
 
@@ -92,13 +88,39 @@ namespace ERS_NeoCare.Design.administrativo
 
             };
             _presenterHistorial.Insertar(historialModel);
-
-
+            _presenterTurno.cambiarEstado(TurnoSingleton.Instance.TurnoAutenticado.Id);
+            volerPaciente();
 
 
 
 
         }
+
+        private void volerPaciente()
+        {
+            PacientesMedico pacienteControl = new PacientesMedico();
+            pacienteControl.Dock = DockStyle.Fill;
+
+            // Accede al formulario 'menu' desde el control actual
+            menu menuForm = this.ParentForm as menu;
+
+            if (menuForm != null)
+            {
+                Panel panelOpciones = menuForm.Controls["panelOpciones"] as Panel;
+
+
+
+                panelOpciones.Controls.Clear();
+
+
+                panelOpciones.Controls.Add(pacienteControl);
+
+
+
+
+            }
+        }
+
         private void limpiarCampos()
         {
             textObservaciones.Text = null;

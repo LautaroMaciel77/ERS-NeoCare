@@ -33,6 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVAdministrativo = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni_medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urgencia = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,15 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxTipo = new System.Windows.Forms.ComboBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni_medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urgencia = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet3)).BeginInit();
@@ -113,6 +113,78 @@
             this.DGVAdministrativo.Size = new System.Drawing.Size(1127, 609);
             this.DGVAdministrativo.TabIndex = 11;
             this.DGVAdministrativo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAdministrativo_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // fecha_creacion
+            // 
+            this.fecha_creacion.DataPropertyName = "fecha_creacion";
+            this.fecha_creacion.HeaderText = "Fecha";
+            this.fecha_creacion.Name = "fecha_creacion";
+            this.fecha_creacion.ReadOnly = true;
+            // 
+            // Medico
+            // 
+            this.Medico.DataPropertyName = "Medico";
+            this.Medico.HeaderText = "Medico";
+            this.Medico.Name = "Medico";
+            this.Medico.ReadOnly = true;
+            // 
+            // Paciente
+            // 
+            this.Paciente.DataPropertyName = "Paciente";
+            this.Paciente.HeaderText = "Paciente";
+            this.Paciente.Name = "Paciente";
+            this.Paciente.ReadOnly = true;
+            // 
+            // dni_paciente
+            // 
+            this.dni_paciente.DataPropertyName = "dni_paciente";
+            this.dni_paciente.HeaderText = "DNI paciente";
+            this.dni_paciente.Name = "dni_paciente";
+            this.dni_paciente.ReadOnly = true;
+            // 
+            // dni_medico
+            // 
+            this.dni_medico.DataPropertyName = "dni_medico";
+            this.dni_medico.HeaderText = "dni medico";
+            this.dni_medico.Name = "dni_medico";
+            this.dni_medico.ReadOnly = true;
+            this.dni_medico.Visible = false;
+            // 
+            // urgencia
+            // 
+            this.urgencia.DataPropertyName = "urgencia";
+            this.urgencia.HeaderText = "urgencia";
+            this.urgencia.Name = "urgencia";
+            this.urgencia.ReadOnly = true;
+            this.urgencia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.urgencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Accion
+            // 
+            this.Accion.HeaderText = "Acciones";
+            this.Accion.Name = "Accion";
+            this.Accion.ReadOnly = true;
+            this.Accion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Accion.Text = "Ver Detalles";
+            this.Accion.ToolTipText = "Ver Detalles";
+            this.Accion.UseColumnTextForButtonValue = true;
             // 
             // comboBox1
             // 
@@ -266,78 +338,6 @@
             this.comboBoxTipo.TabIndex = 26;
             this.comboBoxTipo.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipo_SelectedIndexChanged);
             // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // fecha_creacion
-            // 
-            this.fecha_creacion.DataPropertyName = "fecha_creacion";
-            this.fecha_creacion.HeaderText = "Fecha";
-            this.fecha_creacion.Name = "fecha_creacion";
-            this.fecha_creacion.ReadOnly = true;
-            // 
-            // Medico
-            // 
-            this.Medico.DataPropertyName = "Medico";
-            this.Medico.HeaderText = "Medico";
-            this.Medico.Name = "Medico";
-            this.Medico.ReadOnly = true;
-            // 
-            // Paciente
-            // 
-            this.Paciente.DataPropertyName = "Paciente";
-            this.Paciente.HeaderText = "Paciente";
-            this.Paciente.Name = "Paciente";
-            this.Paciente.ReadOnly = true;
-            // 
-            // dni_paciente
-            // 
-            this.dni_paciente.DataPropertyName = "dni_paciente";
-            this.dni_paciente.HeaderText = "DNI paciente";
-            this.dni_paciente.Name = "dni_paciente";
-            this.dni_paciente.ReadOnly = true;
-            // 
-            // dni_medico
-            // 
-            this.dni_medico.DataPropertyName = "dni_medico";
-            this.dni_medico.HeaderText = "dni medico";
-            this.dni_medico.Name = "dni_medico";
-            this.dni_medico.ReadOnly = true;
-            this.dni_medico.Visible = false;
-            // 
-            // urgencia
-            // 
-            this.urgencia.DataPropertyName = "urgencia";
-            this.urgencia.HeaderText = "urgencia";
-            this.urgencia.Name = "urgencia";
-            this.urgencia.ReadOnly = true;
-            this.urgencia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.urgencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Accion
-            // 
-            this.Accion.HeaderText = "Acciones";
-            this.Accion.Name = "Accion";
-            this.Accion.ReadOnly = true;
-            this.Accion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Accion.Text = "Ver Detalles";
-            this.Accion.ToolTipText = "Ver Detalles";
-            this.Accion.UseColumnTextForButtonValue = true;
-            // 
             // EstadoOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +354,7 @@
             this.Controls.Add(this.DGVAdministrativo);
             this.Name = "EstadoOrden";
             this.Size = new System.Drawing.Size(1196, 768);
+
             ((System.ComponentModel.ISupportInitialize)(this.DGVAdministrativo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBNeoCareDataSet3)).EndInit();

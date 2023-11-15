@@ -2,13 +2,16 @@
 using ERS_NeoCare.Logic;
 using ERS_NeoCare.Model;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
 namespace ERS_NeoCare.Design.administrativo
 {
+
     public partial class analisisDatos : UserControl
+    
     {
         public event EventHandler UserControlClosed;
         private lista_paciente MainForm { get; set; }
@@ -18,12 +21,14 @@ namespace ERS_NeoCare.Design.administrativo
         private OrdenPresenter _presenterorden;
         private ArchivoEstudio archivo;
         public event EventHandler recargar;
+        private ArchivoEstudio archivoEstudio;
         public analisisDatos()
         {
             _presenter = new HistoriaClinicaPresenter( new HistoriaClinicaService(Configuracion.ConnectionString));
             _presenterArchivo = new ArchivoEstudioPresenter(new ArchivoEstudioService(Configuracion.ConnectionString));
             _presenterAnalisis = new AnalisisPresenter(this, new AnalisisService());
             _presenterorden = new OrdenPresenter(new OrdenService());
+
             InitializeComponent();
             
             labelFechaOrden.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Orden.FechaCreacion.ToString("dd/MM/yyyy");
@@ -39,15 +44,99 @@ namespace ERS_NeoCare.Design.administrativo
             labelAnalisisBioquimicoMatricula.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Usuario.Matricula.ToString();
             labelAnalisisTipo.Text = AnalisisSingleton.Instance.AnalisisAutenticado.TipoAnalisis;
             textBoxObservaciones.Text = AnalisisSingleton.Instance.AnalisisAutenticado.Observaciones;
+            cargarArchivos();
         }
-
-        private void btnVer_Click(object sender, EventArgs e)
+        internal void cargarArchivos( )
         {
 
+
+
+           
+            int? idArchivo = AnalisisSingleton.Instance.AnalisisAutenticado?.IdArchivo;
+
+            if (idArchivo.HasValue)
+            {
+            
+                _presenterArchivo.cargarArchivo(idArchivo.Value);
+
+              
+                listViewArchivos.Items.Clear();
+
+          
+                listViewArchivos.Items.Add(new ListViewItem(ArchivoEstudiosSingleton.Instance.archivoEstudio.NombreArchivo));
+            }
+            else
+            {
+                
+                MessageBox.Show("No hay Archivo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            if (listViewArchivos.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listViewArchivos.SelectedItems[0];
+                string nombreArchivo = selectedItem.Text;
+                string rutaArchivo = ObtenerRutaDelArchivo(nombreArchivo);
+
+                if (!string.IsNullOrEmpty(rutaArchivo))
+                {
+                    // Verifica si el archivo es un PDF
+                    if (EsArchivoPDF(rutaArchivo))
+                    {
+                        // Abre el PDF usando Pdfium o el visor de PDF predeterminado
+                        MostrarPDF(rutaArchivo);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este no es un archivo PDF.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un archivo para abrir.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private string ObtenerRutaDelArchivo(string nombreArchivo)
+        {
+
+      
+
+            if (ArchivoEstudiosSingleton.Instance.archivoEstudio.NombreArchivo == nombreArchivo)
+            {
+                return ArchivoEstudiosSingleton.Instance.archivoEstudio.Ubicacion;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        private bool EsArchivoPDF(string rutaArchivo)
+        {
+            string extension = Path.GetExtension(rutaArchivo);
+            return extension.Equals(".pdf", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private void MostrarPDF(string rutaPDF)
+        {
+
+            try
+            {
+                Process.Start(rutaPDF);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir el PDF: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 
 }
+
+       
+
+
 
      
     

@@ -62,12 +62,7 @@
             this.labelNumeroOrden = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panelAnalisis = new System.Windows.Forms.Panel();
-            this.btnVer = new FontAwesome.Sharp.IconButton();
-            this.listViewArchivos = new System.Windows.Forms.ListView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxAnalisisObservaciones = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panelAtencion = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
             this.labelAnalisisNumero = new System.Windows.Forms.Label();
             this.labelAnalisisFecha = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -78,7 +73,12 @@
             this.label18 = new System.Windows.Forms.Label();
             this.labelAnalisisTipo = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.btnVer = new FontAwesome.Sharp.IconButton();
+            this.listViewArchivos = new System.Windows.Forms.ListView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxAnalisisObservaciones = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panelAtencion = new System.Windows.Forms.Panel();
             this.panelAnalisis.SuspendLayout();
             this.panelAtencion.SuspendLayout();
             this.SuspendLayout();
@@ -126,10 +126,10 @@
             // labelOrden
             // 
             this.labelOrden.AutoSize = true;
-            this.labelOrden.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOrden.Location = new System.Drawing.Point(551, 32);
             this.labelOrden.Name = "labelOrden";
-            this.labelOrden.Size = new System.Drawing.Size(77, 25);
+            this.labelOrden.Size = new System.Drawing.Size(76, 25);
             this.labelOrden.TabIndex = 40;
             this.labelOrden.Text = "Orden";
             // 
@@ -176,10 +176,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(246, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 25);
+            this.label1.Size = new System.Drawing.Size(85, 25);
             this.label1.TabIndex = 47;
             this.label1.Text = "Pedido";
             // 
@@ -296,10 +296,10 @@
             // labelTituloTipoOrden
             // 
             this.labelTituloTipoOrden.AutoSize = true;
-            this.labelTituloTipoOrden.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTituloTipoOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTituloTipoOrden.Location = new System.Drawing.Point(154, 18);
             this.labelTituloTipoOrden.Name = "labelTituloTipoOrden";
-            this.labelTituloTipoOrden.Size = new System.Drawing.Size(236, 25);
+            this.labelTituloTipoOrden.Size = new System.Drawing.Size(242, 25);
             this.labelTituloTipoOrden.TabIndex = 72;
             this.labelTituloTipoOrden.Text = "Resumen de Atencion";
             // 
@@ -431,92 +431,20 @@
             this.panelAnalisis.Controls.Add(this.label5);
             this.panelAnalisis.Controls.Add(this.textBoxAnalisisObservaciones);
             this.panelAnalisis.Controls.Add(this.label9);
-            this.panelAnalisis.Location = new System.Drawing.Point(649, 51);
+            this.panelAnalisis.Location = new System.Drawing.Point(649, 54);
             this.panelAnalisis.Name = "panelAnalisis";
             this.panelAnalisis.Size = new System.Drawing.Size(528, 642);
             this.panelAnalisis.TabIndex = 94;
             // 
-            // btnVer
+            // label20
             // 
-            this.btnVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(158)))));
-            this.btnVer.FlatAppearance.BorderSize = 0;
-            this.btnVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(220)))), ((int)(((byte)(198)))));
-            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.ForeColor = System.Drawing.Color.Black;
-            this.btnVer.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
-            this.btnVer.IconColor = System.Drawing.Color.Black;
-            this.btnVer.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVer.IconSize = 20;
-            this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVer.Location = new System.Drawing.Point(410, 538);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(91, 27);
-            this.btnVer.TabIndex = 93;
-            this.btnVer.Text = "Abrir";
-            this.btnVer.UseVisualStyleBackColor = false;
-            // 
-            // listViewArchivos
-            // 
-            this.listViewArchivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewArchivos.HideSelection = false;
-            this.listViewArchivos.Location = new System.Drawing.Point(56, 383);
-            this.listViewArchivos.Margin = new System.Windows.Forms.Padding(2);
-            this.listViewArchivos.Name = "listViewArchivos";
-            this.listViewArchivos.Size = new System.Drawing.Size(445, 150);
-            this.listViewArchivos.TabIndex = 92;
-            this.listViewArchivos.UseCompatibleStateImageBehavior = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(52, 361);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 20);
-            this.label5.TabIndex = 91;
-            this.label5.Text = "Resultados";
-            // 
-            // textBoxAnalisisObservaciones
-            // 
-            this.textBoxAnalisisObservaciones.Enabled = false;
-            this.textBoxAnalisisObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAnalisisObservaciones.Location = new System.Drawing.Point(56, 194);
-            this.textBoxAnalisisObservaciones.Multiline = true;
-            this.textBoxAnalisisObservaciones.Name = "textBoxAnalisisObservaciones";
-            this.textBoxAnalisisObservaciones.Size = new System.Drawing.Size(445, 146);
-            this.textBoxAnalisisObservaciones.TabIndex = 90;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(52, 171);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(187, 20);
-            this.label9.TabIndex = 89;
-            this.label9.Text = "Observaciones (opcional)";
-            // 
-            // panelAtencion
-            // 
-            this.panelAtencion.Controls.Add(this.textBoxAtencionIndicaciones);
-            this.panelAtencion.Controls.Add(this.labelObservaciones);
-            this.panelAtencion.Controls.Add(this.label4);
-            this.panelAtencion.Controls.Add(this.textAtencionObservaciones);
-            this.panelAtencion.Controls.Add(this.label10);
-            this.panelAtencion.Controls.Add(this.labelAtencionFecha);
-            this.panelAtencion.Controls.Add(this.label14);
-            this.panelAtencion.Controls.Add(this.labelAtencionEnfermero);
-            this.panelAtencion.Controls.Add(this.label12);
-            this.panelAtencion.Controls.Add(this.labelAtencionEnfermeroMatricula);
-            this.panelAtencion.Controls.Add(this.label11);
-            this.panelAtencion.Controls.Add(this.labelAtencionNumero);
-            this.panelAtencion.Controls.Add(this.labelTituloTipoOrden);
-            this.panelAtencion.Location = new System.Drawing.Point(649, 54);
-            this.panelAtencion.Name = "panelAtencion";
-            this.panelAtencion.Size = new System.Drawing.Size(528, 642);
-            this.panelAtencion.TabIndex = 95;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(145, 18);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(233, 25);
+            this.label20.TabIndex = 104;
+            this.label20.Text = "Resumen de Analisis";
             // 
             // labelAnalisisNumero
             // 
@@ -618,15 +546,88 @@
             this.label19.TabIndex = 94;
             this.label19.Text = "Tipo de analisis:";
             // 
-            // label20
+            // btnVer
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(145, 18);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(220, 25);
-            this.label20.TabIndex = 104;
-            this.label20.Text = "Resumen de Analisis";
+            this.btnVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(158)))));
+            this.btnVer.FlatAppearance.BorderSize = 0;
+            this.btnVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(220)))), ((int)(((byte)(198)))));
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.ForeColor = System.Drawing.Color.Black;
+            this.btnVer.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
+            this.btnVer.IconColor = System.Drawing.Color.Black;
+            this.btnVer.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVer.IconSize = 20;
+            this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVer.Location = new System.Drawing.Point(410, 538);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(91, 27);
+            this.btnVer.TabIndex = 93;
+            this.btnVer.Text = "Abrir";
+            this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // listViewArchivos
+            // 
+            this.listViewArchivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewArchivos.HideSelection = false;
+            this.listViewArchivos.Location = new System.Drawing.Point(56, 383);
+            this.listViewArchivos.Margin = new System.Windows.Forms.Padding(2);
+            this.listViewArchivos.Name = "listViewArchivos";
+            this.listViewArchivos.Size = new System.Drawing.Size(445, 150);
+            this.listViewArchivos.TabIndex = 92;
+            this.listViewArchivos.UseCompatibleStateImageBehavior = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(52, 361);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 20);
+            this.label5.TabIndex = 91;
+            this.label5.Text = "Resultados";
+            // 
+            // textBoxAnalisisObservaciones
+            // 
+            this.textBoxAnalisisObservaciones.Enabled = false;
+            this.textBoxAnalisisObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAnalisisObservaciones.Location = new System.Drawing.Point(56, 194);
+            this.textBoxAnalisisObservaciones.Multiline = true;
+            this.textBoxAnalisisObservaciones.Name = "textBoxAnalisisObservaciones";
+            this.textBoxAnalisisObservaciones.Size = new System.Drawing.Size(445, 146);
+            this.textBoxAnalisisObservaciones.TabIndex = 90;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(52, 171);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(187, 20);
+            this.label9.TabIndex = 89;
+            this.label9.Text = "Observaciones (opcional)";
+            // 
+            // panelAtencion
+            // 
+            this.panelAtencion.Controls.Add(this.textBoxAtencionIndicaciones);
+            this.panelAtencion.Controls.Add(this.labelObservaciones);
+            this.panelAtencion.Controls.Add(this.label4);
+            this.panelAtencion.Controls.Add(this.textAtencionObservaciones);
+            this.panelAtencion.Controls.Add(this.label10);
+            this.panelAtencion.Controls.Add(this.labelAtencionFecha);
+            this.panelAtencion.Controls.Add(this.label14);
+            this.panelAtencion.Controls.Add(this.labelAtencionEnfermero);
+            this.panelAtencion.Controls.Add(this.label12);
+            this.panelAtencion.Controls.Add(this.labelAtencionEnfermeroMatricula);
+            this.panelAtencion.Controls.Add(this.label11);
+            this.panelAtencion.Controls.Add(this.labelAtencionNumero);
+            this.panelAtencion.Controls.Add(this.labelTituloTipoOrden);
+            this.panelAtencion.Location = new System.Drawing.Point(649, 54);
+            this.panelAtencion.Name = "panelAtencion";
+            this.panelAtencion.Size = new System.Drawing.Size(528, 642);
+            this.panelAtencion.TabIndex = 95;
             // 
             // OrdenMedicoDatos
             // 
