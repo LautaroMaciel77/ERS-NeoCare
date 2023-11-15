@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERS_NeoCare.dbconexion;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -86,6 +87,21 @@ namespace ERS_NeoCare.Model
                 // Manejar excepciones generales aquí.
                 Console.WriteLine("Error al obtener historial: " + ex.Message);
                 return null; // O manejar de otra manera apropiada, como lanzar una excepción
+            }
+        }
+        public void buscar(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var archivos = context.historial.Where(a => a.IdPaciente == id).ToList();
+
+                if (archivos != null)
+                {
+                    HistorialSingleton.Instance.AutenticarHistoriales(archivos);
+
+
+                }
+
             }
         }
     }

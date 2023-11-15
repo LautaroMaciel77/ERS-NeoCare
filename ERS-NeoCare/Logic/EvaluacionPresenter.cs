@@ -38,7 +38,7 @@ namespace ERS_NeoCare.Logic
 
         public EvaluacionPresenter(EvaluacionService evaluacionService)
         {
-            this.evaluacionService = evaluacionService;
+            _service = evaluacionService;
         }
 
         internal void insertar(EvaluacionModel evaluacionModel)

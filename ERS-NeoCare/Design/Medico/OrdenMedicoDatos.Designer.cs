@@ -458,9 +458,9 @@
             this.labelAnalisisNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAnalisisNumero.Location = new System.Drawing.Point(119, 64);
             this.labelAnalisisNumero.Name = "labelAnalisisNumero";
-            this.labelAnalisisNumero.Size = new System.Drawing.Size(57, 20);
+            this.labelAnalisisNumero.Size = new System.Drawing.Size(89, 20);
             this.labelAnalisisNumero.TabIndex = 103;
-            this.labelAnalisisNumero.Text = "label8";
+            this.labelAnalisisNumero.Text = "pendiente";
             // 
             // labelAnalisisFecha
             // 
