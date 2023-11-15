@@ -28,6 +28,7 @@ namespace ERS_NeoCare.Design.administrativo
             textObservaciones.Text = EvaluacionSingleton.Instance.evaluacionAutenticada.Observaciones;
         }
 
-        
+    
+     
     }
 }

@@ -42,5 +42,6 @@ namespace ERS_NeoCare.Model
         [ForeignKey("IdArchivo")]
         public ArchivoEstudio ArchivoEstudio { get; set; }
 
+
     }
 }

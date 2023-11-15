@@ -38,6 +38,9 @@ namespace ERS_NeoCare.Design.administrativo
 
         }
 
-   
+        private void textBoxAtencionIndicaciones_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

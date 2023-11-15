@@ -126,10 +126,10 @@
             // labelOrden
             // 
             this.labelOrden.AutoSize = true;
-            this.labelOrden.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOrden.Location = new System.Drawing.Point(551, 32);
             this.labelOrden.Name = "labelOrden";
-            this.labelOrden.Size = new System.Drawing.Size(77, 25);
+            this.labelOrden.Size = new System.Drawing.Size(76, 25);
             this.labelOrden.TabIndex = 40;
             this.labelOrden.Text = "Orden";
             // 
@@ -176,10 +176,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(246, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 25);
+            this.label1.Size = new System.Drawing.Size(85, 25);
             this.label1.TabIndex = 47;
             this.label1.Text = "Pedido";
             // 
@@ -296,10 +296,10 @@
             // labelTituloTipoOrden
             // 
             this.labelTituloTipoOrden.AutoSize = true;
-            this.labelTituloTipoOrden.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTituloTipoOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTituloTipoOrden.Location = new System.Drawing.Point(154, 18);
             this.labelTituloTipoOrden.Name = "labelTituloTipoOrden";
-            this.labelTituloTipoOrden.Size = new System.Drawing.Size(236, 25);
+            this.labelTituloTipoOrden.Size = new System.Drawing.Size(242, 25);
             this.labelTituloTipoOrden.TabIndex = 72;
             this.labelTituloTipoOrden.Text = "Resumen de Atencion";
             // 
@@ -431,7 +431,7 @@
             this.panelAnalisis.Controls.Add(this.label5);
             this.panelAnalisis.Controls.Add(this.textBoxAnalisisObservaciones);
             this.panelAnalisis.Controls.Add(this.label9);
-            this.panelAnalisis.Location = new System.Drawing.Point(649, 51);
+            this.panelAnalisis.Location = new System.Drawing.Point(649, 54);
             this.panelAnalisis.Name = "panelAnalisis";
             this.panelAnalisis.Size = new System.Drawing.Size(528, 642);
             this.panelAnalisis.TabIndex = 94;
@@ -439,10 +439,17 @@
             // label20
             // 
             this.label20.AutoSize = true;
+<<<<<<< HEAD
             this.label20.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(145, 18);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(220, 25);
+=======
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(145, 18);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(233, 25);
+>>>>>>> 671e02703a366dc0823b119d99f6e5c0ae7f614d
             this.label20.TabIndex = 104;
             this.label20.Text = "Resumen de Analisis";
             // 
@@ -552,7 +559,11 @@
             this.btnVer.FlatAppearance.BorderSize = 0;
             this.btnVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(220)))), ((int)(((byte)(198)))));
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.btnVer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> 671e02703a366dc0823b119d99f6e5c0ae7f614d
             this.btnVer.ForeColor = System.Drawing.Color.Black;
             this.btnVer.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
             this.btnVer.IconColor = System.Drawing.Color.Black;
@@ -565,6 +576,10 @@
             this.btnVer.TabIndex = 93;
             this.btnVer.Text = "Abrir";
             this.btnVer.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+>>>>>>> 671e02703a366dc0823b119d99f6e5c0ae7f614d
             // 
             // listViewArchivos
             // 

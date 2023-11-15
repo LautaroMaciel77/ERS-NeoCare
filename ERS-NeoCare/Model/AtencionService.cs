@@ -24,16 +24,51 @@ namespace ERS_NeoCare.Model
                 int.TryParse(id, out int idInt);
                 var context = DbContextManager.GetContext();
 
-                var orden = context.atencion.FirstOrDefault(u => u.IdAtencion == idInt);
-
-                if (orden != null)
+                var atencionEncontrado = context.atencion.FirstOrDefault(u => u.IdAtencion == idInt);
+            context.Entry(atencionEncontrado).Reference(a => a.Medico).Load();
+            context.Entry(atencionEncontrado).Reference(a => a.Paciente).Load();
+            context.Entry(atencionEncontrado).Reference(a => a.Orden).Load();
+            context.Entry(atencionEncontrado).Reference(a => a.Usuario).Load();
+            if (atencionEncontrado != null)
                 {
 
-                    AtencionSingleton.Instance.Autenticar(orden);
+                    AtencionSingleton.Instance.Autenticar(atencionEncontrado);
                 }
             
 
         }
+
+        internal bool BuscaryAutenticarIdOrden(int id)
+        {
+          try
+                {
+                    var context = DbContextManager.GetContext();
+
+
+                    AtencionEnfermeriaModel atencionEncontrado = context.atencion
+                        .FirstOrDefault(a => a.Orden != null && a.Orden.Id == id);
+                context.Entry(atencionEncontrado).Reference(a => a.Medico).Load();
+                context.Entry(atencionEncontrado).Reference(a => a.Paciente).Load();
+                context.Entry(atencionEncontrado).Reference(a => a.Orden).Load();
+                context.Entry(atencionEncontrado).Reference(a => a.Usuario).Load();
+
+                if (atencionEncontrado != null)
+                    {
+                        AtencionSingleton.Instance.Autenticar(atencionEncontrado);
+                        return true;
+                    }
+
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    // Manejar excepciones generales aquí.
+                    Console.WriteLine("Error general: " + ex.Message);
+                    return false;
+           }
+           
+        }
+        
 
         internal bool Insertar(AtencionEnfermeriaModel atencion)
         {
@@ -70,6 +105,7 @@ namespace ERS_NeoCare.Model
                     context.Entry(atencion).Reference(a => a.Medico).Load();
                     context.Entry(atencion).Reference(a => a.Paciente).Load();
                     context.Entry(atencion).Reference(a => a.Orden).Load();
+                    context.Entry(atencion).Reference(a => a.Usuario).Load();
 
                 }
                 return Atenciones;

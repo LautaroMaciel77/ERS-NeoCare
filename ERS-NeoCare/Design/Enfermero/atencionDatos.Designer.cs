@@ -61,10 +61,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(749, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 25);
+            this.label1.Size = new System.Drawing.Size(242, 25);
             this.label1.TabIndex = 33;
             this.label1.Text = "Resumen de Atencion";
             // 
@@ -87,6 +87,7 @@
             this.textBoxAtencionIndicaciones.Name = "textBoxAtencionIndicaciones";
             this.textBoxAtencionIndicaciones.Size = new System.Drawing.Size(445, 120);
             this.textBoxAtencionIndicaciones.TabIndex = 35;
+            this.textBoxAtencionIndicaciones.TextChanged += new System.EventHandler(this.textBoxAtencionIndicaciones_TextChanged);
             // 
             // labelIndicaciones
             // 
@@ -191,7 +192,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(170, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(206, 25);

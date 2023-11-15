@@ -60,8 +60,12 @@ namespace ERS_NeoCare.Logic
         public void TraerAnalisis()
         {
             List<AnalisisModel> analisis =_service.ObtenerAnalisis();
+            if (analisis == null) {
+                return;
+            }
             DataTable data = ConvertidorListDatatable.ConvertirAnalisis(analisis);
             _viewLista.MostrarDatosPaciente(data);
+
         }
         public void BuscaryRemplazar(int id)
         {
@@ -102,5 +106,9 @@ namespace ERS_NeoCare.Logic
             }
         }
 
+        internal bool buscaryRemplazarIdOrden(int id)
+        {
+           return _service.ObtenerYAutenticarPorIdOrden(id);
+        }
     }
 }

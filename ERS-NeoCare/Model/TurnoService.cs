@@ -30,7 +30,7 @@ namespace ERS_NeoCare.Model
                     SelectedDate = turnoModel.SelectedDate,
                     SelectedTimeRange = turnoModel.SelectedTimeRange,
                     Prioridad = turnoModel.Prioridad,
-                    Estado = turnoModel.Estado,
+                    Estado = false,
                     Medico_Id = turnoModel.Medico_Id,
                     Paciente_Id = turnoModel.Paciente_Id,
                 };

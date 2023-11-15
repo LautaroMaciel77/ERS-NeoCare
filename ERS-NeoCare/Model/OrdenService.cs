@@ -75,7 +75,7 @@ namespace ERS_NeoCare.Model
             if (turno != null)
             {
                 // Cambiar el estado de "s" a "n" o de "n" a "s"
-                turno.Estado = !turno.Estado;
+                turno.Estado = true;
 
                 context.SaveChanges();
             }

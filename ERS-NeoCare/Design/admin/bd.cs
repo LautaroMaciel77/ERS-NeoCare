@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ERS_NeoCare.Logic;
+using ERS_NeoCare.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +17,12 @@ namespace ERS_NeoCare.Design
 {
     public partial class bd : UserControl
     {
+        private TipoAnalisisPresenter _presenterTipoAnalisis;
+
         public bd()
         {
             InitializeComponent();
+            _presenterTipoAnalisis = new TipoAnalisisPresenter(this, new TipoAnalisisService());
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -206,5 +211,40 @@ namespace ERS_NeoCare.Design
                 }
             }
         }
+        public void MostrarMensaje(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void buttonInsertar_Click(object sender, EventArgs e)
+        {
+         
+         
+                if (string.IsNullOrWhiteSpace(textBoxAnalisis.Text))
+                {
+                    MessageBox.Show("La descripción debe existir.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; 
+                }
+
+             
+                TipoAnalisModel tipo = new TipoAnalisModel()
+                {
+                    descripcion = textBoxAnalisis.Text,
+                };
+             _presenterTipoAnalisis.insertar(tipo);
+            
+
+        }
+
+        private void textBoxAnalisis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+         
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+  
+                e.Handled = true;
+            }
+
+        }
     }
-}
+    }
+

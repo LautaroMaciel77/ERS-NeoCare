@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERS_NeoCare.Design.administrativo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,42 +10,45 @@ namespace ERS_NeoCare.Model
 {
     internal class AnalisisService
     {
+        //insertar un  analisisModel a la bd
         internal bool Insertar(AnalisisModel analisis)
         {
             try
             {
                 var context = DbContextManager.GetContext();
 
-                // Agregar el análisis al contexto
+
                 context.analisis.Add(analisis);
 
-                // Guardar los cambios en la base de datos
                 int rowsAffected = context.SaveChanges();
                 AnalisisSingleton.Instance.AutenticarAnalisis(analisis);
-                    
-                    return rowsAffected > 0;
+
+                return rowsAffected > 0;
             }
             catch (Exception ex)
             {
-                // Manejar excepciones generales aquí.
+
                 Console.WriteLine("Error general: " + ex.Message);
-                return false; // O manejar de otra manera apropiada
+                return false;
             }
         }
+        //traer una lista de analisisModel de la bd
         internal List<AnalisisModel> ObtenerAnalisis()
         {
             try
             {
                 var context = DbContextManager.GetContext();
 
-                // Consultar la tabla de análisis y traer todos los registros
+              
                 List<AnalisisModel> analisis = context.analisis.ToList();
 
                 foreach (var analisisItem in analisis)
                 {
                     context.Entry(analisisItem).Reference(a => a.Orden).Load();
                     context.Entry(analisisItem).Reference(a => a.Usuario).Load();
+       
                     context.Entry(analisisItem).Reference(a => a.ArchivoEstudio).Load();
+               
                 }
 
                 return analisis;
@@ -53,19 +57,23 @@ namespace ERS_NeoCare.Model
             {
                 // Manejar excepciones generales aquí.
                 Console.WriteLine("Error general: " + ex.Message);
-                return null; // O manejar de otra manera apropiada, como lanzar una excepción
+                return null; 
             }
         }
+        //remplazar el singleton de analisis si encuentra una con el mismo id analisis
         internal AnalisisModel ObtenerYAutenticarPorId(int id)
         {
             try
             {
                 var context = DbContextManager.GetContext();
 
-                // Buscar el análisis por ID
+               
                 AnalisisModel analisisEncontrado = context.analisis.Find(id);
 
-                // Autenticar el análisis en AnalisisSingleton si se encontró
+                context.Entry(analisisEncontrado).Reference(a => a.Orden).Load();
+                context.Entry(analisisEncontrado).Reference(a => a.Usuario).Load();
+                context.Entry(analisisEncontrado).Reference(a => a.ArchivoEstudio).Load();
+
                 if (analisisEncontrado != null)
                 {
                     AnalisisSingleton.Instance.AutenticarAnalisis(analisisEncontrado);
@@ -77,7 +85,36 @@ namespace ERS_NeoCare.Model
             {
                 // Manejar excepciones generales aquí.
                 Console.WriteLine("Error general: " + ex.Message);
-                return null; // O manejar de otra manera apropiada
+                return null; 
+            }
+        }
+        //remplazar el singleton de analisis si encuentra una con el mismo id orden
+        internal bool ObtenerYAutenticarPorIdOrden(int idOrden)
+        {
+            try
+            {
+                var context = DbContextManager.GetContext();
+
+               
+                AnalisisModel analisisEncontrado = context.analisis
+                    .FirstOrDefault(a => a.Orden != null && a.Orden.Id == idOrden);
+                context.Entry(analisisEncontrado).Reference(a => a.Orden).Load();
+                context.Entry(analisisEncontrado).Reference(a => a.Usuario).Load();
+                context.Entry(analisisEncontrado).Reference(a => a.ArchivoEstudio).Load();
+
+                if (analisisEncontrado != null)
+                {
+                    AnalisisSingleton.Instance.AutenticarAnalisis(analisisEncontrado);
+                    return true; 
+                }
+
+                return false; 
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones generales aquí.
+                Console.WriteLine("Error general: " + ex.Message);
+                return false; 
             }
         }
     }

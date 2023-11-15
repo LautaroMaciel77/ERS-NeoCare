@@ -690,5 +690,9 @@ namespace ERS_NeoCare.Design.Paciente
 
         }
 
+        private void HistoriaClinica_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

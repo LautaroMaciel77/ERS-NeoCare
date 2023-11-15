@@ -31,6 +31,10 @@ namespace ERS_NeoCare.Logic
             _model = model;
         }
 
+        public void cargarArchivo(int id)
+        {
+            _model.buscarIndividual(id);
+        }
         public void cargarArchivos()
         {
             _model.buscar(HistoriaClinicaSingleton.Instance.historiaAutenticado.Id);

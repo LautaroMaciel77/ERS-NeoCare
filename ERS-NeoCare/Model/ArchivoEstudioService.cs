@@ -35,6 +35,18 @@ namespace ERS_NeoCare.Model
 
             }
         }
+        public void buscarIndividual(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                ArchivoEstudio archivoEncontrado = context.archivosEstudios.FirstOrDefault(a => a.Id == id);
+
+                if (archivoEncontrado != null)
+                {
+                    ArchivoEstudiosSingleton.Instance.AutenticarArchivo(archivoEncontrado);
+                }
+            }
+        }
         internal bool insertar(ArchivoEstudio archivo)
         {
             using (var context = new ApplicationDbContext())

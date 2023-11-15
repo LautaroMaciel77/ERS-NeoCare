@@ -187,7 +187,6 @@
             this.dni_medico.DataPropertyName = "dni_medico";
             this.dni_medico.HeaderText = "dni medico";
             this.dni_medico.Name = "dni_medico";
-            this.dni_medico.Visible = false;
             // 
             // Paciente
             // 
@@ -203,7 +202,7 @@
             // 
             // Enfermero
             // 
-            this.Enfermero.DataPropertyName = "Enfermero";
+            this.Enfermero.DataPropertyName = "usuario";
             this.Enfermero.HeaderText = "Enfermero";
             this.Enfermero.Name = "Enfermero";
             // 
