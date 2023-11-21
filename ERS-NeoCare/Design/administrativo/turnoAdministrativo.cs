@@ -126,9 +126,17 @@ namespace ERS_NeoCare.Design.administrativo
                         {
                             if (row.Cells[0].Value != null && row.Cells[0].Value.ToString().StartsWith(rangoHoraTurno))
                             {
-                                // Marca la celda como "NO" si el turno ya está seleccionado
-                                row.Cells[1].Value = "NO";
-                                break;
+                                if(UsuarioBusqueda.Instance.UsuarioAutenticado == null)
+                                {
+
+                                    break;
+                                }
+                                if (turno.Medico_Id == UsuarioBusqueda.Instance.UsuarioAutenticado.id)
+                                {
+                                    row.Cells[1].Value = "NO";
+                                    break;
+                                }
+                           
                             }
                         }
                     }
@@ -238,7 +246,7 @@ namespace ERS_NeoCare.Design.administrativo
             {
                 labelPaciente.Text = PacienteSingleton.Instance.pacienteAutenticado.Nombre + " " + PacienteSingleton.Instance.pacienteAutenticado.Apellido;
             }
-          
+            CargarDatosEnDataGridView();
 
         }
 
@@ -247,6 +255,7 @@ namespace ERS_NeoCare.Design.administrativo
         private void Closeclick(object sender, EventArgs e)
         {
             panelBuscar.Visible = false;
+            CargarDatosEnDataGridView();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

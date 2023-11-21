@@ -150,30 +150,7 @@ namespace ERS_NeoCare.Design.administrativo
         }
 
 
-        private void labelSexo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textObra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelAgregarPaciente_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void textApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -243,54 +220,6 @@ namespace ERS_NeoCare.Design.administrativo
             actualizarTabla?.Invoke(this, EventArgs.Empty);
         }
 
-        private void textApellido_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelApellido_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelNombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelDni_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelFecha_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelObra_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textDni_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LabelDomicilio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textDomicilio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+   
     }
 }
